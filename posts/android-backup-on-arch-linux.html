@@ -1,0 +1,49 @@
+---
+author: admin
+categories:
+- Technical
+date: 2014-11-23 13:51:31-07:00
+markup: html
+source: wordpress
+tags:
+- android
+- arch linux
+- backup
+- phone
+- system administration
+title: Android backup on arch linux
+updated: 2015-04-24 02:41:58-07:00
+wordpress_id: 63
+wordpress_slug: android-backup-on-arch-linux
+---
+<!-- blogpost -->
+<article class="post-63 post type-post status-publish format-standard hentry category-technical tag-android tag-arch-linux tag-backup tag-phone tag-system-administration" id="post-63">
+<h1 class="entry-title">Android backup on arch linux</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2014-11-23T13:51:31-07:00"> <a href="https://blog.za3k.com/android-backup-on-arch-linux/" rel="bookmark" title="1:51 pm"><span class="entry-date">November 23, 2014</span> <span class="entry-time"> - 1:51 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-04-24T02:41:58-07:00">April 24, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>Edit: See <a href="https://blog.za3k.com/backup-android-on-plugin/" title="Backup android on plugin">here</a> for an automatic version of the backup portion.</p>
+<p>Connecting android to Windows and Mac, pretty easy. On arch linux? Major pain. Here’s what I did, mostly via the help of the <a href="https://wiki.archlinux.org/index.php/MTP" title="arch wiki">arch wiki</a>:</p>
+<ol>
+<li>Rooted my phone. Otherwise you can’t back up major parts of the file system (including text messages and most application data) [EDIT: Actually, you can’t back these up over MTP even once you root your phone. Oops.]</li>
+<li>Installed <a href="https://aur.archlinux.org/packages/jmtpfs/" title="jmtpfs">jmtpfs</a>, a FUSE filesystem for mounting MTP, the new alternative to mount-as-storage on portable devices.</li>
+<li>Enabled ‘user_allow_other’ in /etc/fuse.conf. I’m not sure if I <strong>needed</strong> to, but I did.</li>
+<li>Plugged in the phone, and mounted the filesystem:
+<pre>jmtpfs /media/android</pre>
+<p>The biggest pitfall I had was that if the phone’s screen is not unlocked at this point, mysterious failures will pop up later.</p></li>
+<li>Synced the contents of the phone. For reasons I didn’t diagnose (I assume specific to FUSE), this actually fails as root:
+<pre>rsync -aAXv --progress --fake-super --one-file-system /media/android --delete --delete-excluded "$SYNC_DESTINATION"
+</pre>
+</li>
+</ol>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/android/" rel="tag">android</a>, <a href="https://blog.za3k.com/tag/arch-linux/" rel="tag">arch linux</a>, <a href="https://blog.za3k.com/tag/backup/" rel="tag">backup</a>, <a href="https://blog.za3k.com/tag/phone/" rel="tag">phone</a>, <a href="https://blog.za3k.com/tag/system-administration/" rel="tag">system administration</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/android-backup-on-arch-linux/" rel="bookmark" title="Permalink to Android backup on arch linux"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->
+<ol class="commentlist">
+<li class="post pingback">
+<p>Pingback: <a class="url" href="https://blog.za3k.com/backup-android-on-plugin/" rel="ugc">Backup android on plugin | Optimal Prime</a></p>
+</li><!-- #comment-## -->
+</ol>

@@ -1,0 +1,50 @@
+---
+author: admin
+categories:
+- Technical
+date: 2015-03-12 19:09:37-07:00
+markup: html
+source: wordpress
+tags:
+- command-line
+- ide
+- lightweight
+- linux
+- screen
+- tmux
+- unix
+title: Screen and Tmux IDEs
+updated: 2015-03-12 19:09:37-07:00
+wordpress_id: 98
+wordpress_slug: screen-and-tmux-ides
+---
+<!-- blogpost -->
+<article class="post-98 post type-post status-publish format-standard hentry category-technical tag-command-line tag-ide tag-lightweight tag-linux tag-screen tag-tmux tag-unix" id="post-98">
+<h1 class="entry-title">Screen and Tmux IDEs</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-03-12T19:09:37-07:00"> <a href="https://blog.za3k.com/screen-and-tmux-ides/" rel="bookmark" title="7:09 pm"><span class="entry-date">March 12, 2015</span> <span class="entry-time"> - 7:09 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-03-12T19:09:37-07:00">March 12, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>I don’t usually like IDEs. They’re hard to switch off of, they do too much. They don’t let me customize things, and I always have to use external tools anyway. I’d really rather do things with a bunch of small tools, the linux way. The problem is, if I close everything, I’ll have trouble getting started back up again. Saving state is one solution. Quick start-up is another. Basically, write a checklist for myself to make starting things up easy (open such-and-such files in the editor, start the server in debug mode, etc).</p>
+<p>But we’re programmers, so obviously we’re not going to use a literal checklist. Instead, we’re going to write a little script to auto-start things in a new screen session:</p>
+<pre>#!/usr/bin/screen -c
+# game_development.screen.conf
+# Run stand-alone or with screen -c game_devel.screen.conf
+screen -t "Vim" 2 bash -c "vim -p *.t"
+bind "r" screen -t "Game" 2 bash run.sh</pre>
+<p>Or if you prefer tmux:</p>
+<pre># game_development.tmux.conf
+# Run with tmux -f game_development.tmux.conf attach
+new-session -s game_development
+new-window -n "Vim" "bash -c 'vim -p *.t'"
+bind r new-window -n "Game" "bash run.sh"</pre>
+<p>Note the main features being used: a shebang line hack for screen, to let this file be self-contained and executable. Opening files in vim in place of a text editor. Binding keys for unit tests, running the program, restarting the server, etc. Now, a similar approach is to add new key bindings to the text editor, but I feel like text editors should edit text, and I like being able to document all the additions with help menus (which screen and tmux both support).</p>
+<p>Note: <a href="http://www.nongnu.org/ratpoison/">ratpoison</a> is similar to screen/tmux so you can do similar things in X.</p>
+<p>One thing I’d love is if this kind of file was easy to dump from the current state, especially for things like positioning windows, etc. A little assistance is available, but not too much. Ratpoison and tmux let you dump sizing information. Nothing outputs keybindings or a list of running programs with their windows.</p>
+<p>There <strong>is</strong> a program called <a href="https://github.com/tmuxinator/tmuxinator">tmuxinator</a> to let you write the same config in nested <a href="http://yaml.org/">YAML</a> of sessions, panes, and windows, which might appeal to some users.</p>
+<p>Also, check out <a href="http://dtach.sourceforge.net/">dtach</a> if you don’t need panes and windows, and just want a detachable process.</p>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/command-line/" rel="tag">command-line</a>, <a href="https://blog.za3k.com/tag/ide/" rel="tag">ide</a>, <a href="https://blog.za3k.com/tag/lightweight/" rel="tag">lightweight</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/screen/" rel="tag">screen</a>, <a href="https://blog.za3k.com/tag/tmux/" rel="tag">tmux</a>, <a href="https://blog.za3k.com/tag/unix/" rel="tag">unix</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/screen-and-tmux-ides/" rel="bookmark" title="Permalink to Screen and Tmux IDEs"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->

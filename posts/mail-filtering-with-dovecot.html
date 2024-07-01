@@ -1,0 +1,114 @@
+---
+author: admin
+categories:
+- Technical
+date: 2015-11-10 04:21:16-07:00
+markup: html
+source: wordpress
+tags:
+- debian
+- dovecot
+- linux
+- sieve
+- spamassassin
+- system administration
+title: Mail filtering with Dovecot
+updated: 2015-11-29 22:33:56-07:00
+wordpress_id: 370
+wordpress_slug: mail-filtering-with-dovecot
+---
+<!-- blogpost -->
+<article class="post-370 post type-post status-publish format-standard hentry category-technical tag-debian tag-dovecot tag-linux tag-sieve tag-spamassassin tag-system-administration" id="post-370">
+<h1 class="entry-title">Mail filtering with Dovecot</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-11-10T04:21:16-07:00"> <a href="https://blog.za3k.com/mail-filtering-with-dovecot/" rel="bookmark" title="4:21 am"><span class="entry-date">November 10, 2015</span> <span class="entry-time"> - 4:21 am</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-11-29T22:33:56-07:00">November 29, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>This expands on my previous post about <a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/" title="Installing email with Postfix and Dovecot (with Postgres)">how to set up an email server</a>.</p>
+<p>We’re going to set up a few spam filters in Dovecot under Debian. We’re going to use Sieve, which lets the user set up whichever filters they want. However, we’re going to run a couple pre-baked spam filters regardless of what the user sets up.<span id="more-370"></span></p>
+<ol>
+<li>Install Sieve.
+<pre>sudo apt-get install dovecot-sieve dovecot-managesieved</pre>
+</li>
+<li>Add Sieve to Dovecot
+<pre># /etc/dovecot/dovecot.conf
+# Sieve and ManageSieve
+protocols = $protocols sieve
+protocol lmtp {
+ mail_plugins = $mail_plugins sieve
+}
+service managesieve-login {
+ inet_listener sieve {
+ port = 4190
+ }
+}
+protocol sieve {
+ managesieve_logout_format = bytes ( in=%i : out=%o )
+}
+plugin {
+ # Settings for the Sieve and ManageSieve plugin
+ sieve = file:~/sieve;active=~/.dovecot.sieve
+ sieve_before = /etc/dovecot/sieve.d/
+ sieve_dir = ~/sieve # For old version of ManageSieve
+ #sieve_extensions = +vnd.dovecot.filter
+ #sieve_plugins = sieve_extprograms
+}
+</pre>
+</li>
+<li>Install and update SpamAssassin, a heuristic perl script for spam filtering.
+<pre>sudo apt-get install spamasssassin
+sudo sa-update</pre>
+<pre># /etc/default/spamassassin
+ENABLED=1
+#CRON=1 # Update automatically</pre>
+<pre># /etc/spamassassin/local.cf
+report_safe 0 # Don't modify headers
+</pre>
+<pre>sudo service spamassassin start
+</pre>
+</li>
+<li>There’s a lot of custom configuration and training you should do to get SpamAssassin to accurately categorize what you consider spam. I’m including a minimal amount here. The following will train SpamAssassin system-wide based on what users sort into spam folders.
+<pre>#!/bin/sh
+# /etc/cron.daily/spamassassin-train
+all_folders() {
+        find /var/mail/vmail -type d -regextype posix-extended -regex '.*/cur|new$'
+}
+
+all_folders | grep "Spam" | sa-learn --spam -f - &gt;/dev/null 2&gt;/dev/null
+all_folders | grep -v "Spam" | sa-learn --ham -f - &gt;/dev/null 2&gt;/dev/null
+</pre>
+</li>
+<li>Make Postfix run SpamAssassin as a filter, so that it can add headers as mail comes in.
+<pre># /etc/postfix/master.cf
+smtp inet n - - - - smtpd
+ -o content_filter=spamassassin
+# ...
+spamassassin unix - n n - - pipe user=debian-spamd argv=/usr/bin/spamc -f -e /usr/sbin/sendmail -oi -f ${sender} ${recipient}
+</pre>
+<pre>sudo service postfix restart</pre>
+</li>
+<li>Add SpamAssassin to Sieve. Dovecot (via Sieve) will now move messages with spam headers from SpamAssassin to your spam folder. Make sure you have a “Spam” folder and that it’s set to autosubscribe.
+<pre># /etc/dovecot/sieve.d/spam-assassin.sieve
+require ["fileinto"];
+# Move spam to spam folder
+if header :contains "X-Spam-Flag" "YES" {
+ fileinto "Spam";
+ # Stop here - if there are other rules, ignore them for spam messages
+ stop;
+}</pre>
+<pre>cd /etc/dovecot/sieve.d
+sudo sievec spam-assassin.sieve</pre>
+</li>
+<li>Restart Dovecot
+<pre>sudo service dovecot restart</pre>
+</li>
+<li>Test spam. The <a href="https://spamassassin.apache.org/gtube/">GTUBE</a> is designed to definitely get rejected. Set the content of your email to this:
+<pre style="color: #3f3f3f;">XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X</pre>
+</li>
+<li>You should also be able to create user-defined filters in Sieve, via the ManageSieve protocol. I tested this using a Sieve thunderbird extension. You’re on your own here.</li>
+</ol>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/debian/" rel="tag">debian</a>, <a href="https://blog.za3k.com/tag/dovecot/" rel="tag">dovecot</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/sieve/" rel="tag">sieve</a>, <a href="https://blog.za3k.com/tag/spamassassin/" rel="tag">spamassassin</a>, <a href="https://blog.za3k.com/tag/system-administration/" rel="tag">system administration</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/mail-filtering-with-dovecot/" rel="bookmark" title="Permalink to Mail filtering with Dovecot"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->

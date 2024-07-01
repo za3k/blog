@@ -1,0 +1,39 @@
+---
+author: admin
+categories:
+- Technical
+date: 2015-03-13 11:15:07-07:00
+markup: html
+source: wordpress
+tags:
+- git
+- markdown
+- system administration
+- website
+title: Roll-your-own git push-to-deploy, and markdown support
+updated: 2015-03-13 13:15:05-07:00
+wordpress_id: 136
+wordpress_slug: markdown-support
+---
+<!-- blogpost -->
+<article class="post-136 post type-post status-publish format-standard hentry category-technical tag-git tag-markdown tag-system-administration tag-website" id="post-136">
+<h1 class="entry-title">Roll-your-own git push-to-deploy, and markdown support</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-03-13T11:15:07-07:00"> <a href="https://blog.za3k.com/markdown-support/" rel="bookmark" title="11:15 am"><span class="entry-date">March 13, 2015</span> <span class="entry-time"> - 11:15 am</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-03-13T13:15:05-07:00">March 13, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>Today I added support for development of za3k.com using git:</p>
+<pre lang="bash"># !/bin/sh
+# /git/bare-repos/za3k.com/hooks/post-update
+cd ~za3k/public_html
+env -i git pull
+echo "Deployed za3k.com"
+</pre>
+<p>and markdown support, via a <a href="https://github.com/alue/markdown-handler/blob/master/README.md">cgi markdown wrapper</a> someone wrote for apache (yes, I’m still using Apache).</p>
+<p>Edit: I ended up wanting support for tables in markdown, so I used <a href="https://www.ruby-lang.org/">Ruby</a>‘s <a href="https://github.com/vmg/redcarpet">redcarpet</a> markdown gem (the same thing <a href="https://github.com/">Github</a> uses, supports <a href="http://www.tablesgenerator.com/markdown_tables">this style of tables</a> as well as code blocks).</p>
+<p>CGI support via <a href="http://blog.tonns.org/2013/10/enabling-markdown-on-your-apache.html">http://blog.tonns.org/2013/10/enabling-markdown-on-your-apache.html</a></p>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/git/" rel="tag">git</a>, <a href="https://blog.za3k.com/tag/markdown/" rel="tag">markdown</a>, <a href="https://blog.za3k.com/tag/system-administration/" rel="tag">system administration</a>, <a href="https://blog.za3k.com/tag/website/" rel="tag">website</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/markdown-support/" rel="bookmark" title="Permalink to Roll-your-own git push-to-deploy, and markdown support"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->

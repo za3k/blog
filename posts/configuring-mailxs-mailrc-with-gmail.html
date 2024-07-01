@@ -1,0 +1,42 @@
+---
+author: admin
+categories:
+- Technical
+date: 2014-10-30 08:56:07-07:00
+markup: html
+source: wordpress
+tags:
+- configuration
+- linux
+- mailx
+title: "Configuring mailx\u2019s .mailrc with Gmail"
+updated: 2014-10-30 08:57:14-07:00
+wordpress_id: 33
+wordpress_slug: configuring-mailxs-mailrc-with-gmail
+---
+<!-- blogpost -->
+<article class="post-33 post type-post status-publish format-standard hentry category-technical tag-configuration tag-linux tag-mailx" id="post-33">
+<h1 class="entry-title">Configuring mailx’s .mailrc with Gmail</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2014-10-30T08:56:07-07:00"> <a href="https://blog.za3k.com/configuring-mailxs-mailrc-with-gmail/" rel="bookmark" title="8:56 am"><span class="entry-date">October 30, 2014</span> <span class="entry-time"> - 8:56 am</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2014-10-30T08:57:14-07:00">October 30, 2014</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>Here’s how I added gmail to .mailrc for the BSD program mailx, provided by the <em>s-nail</em> package in arch.</p>
+<pre>account gmail {
+  set folder=imaps://example@gmail.com@imap.gmail.com
+  set password-example@gmail.com@imap.gmail.com="PASS"
+  set smtp-use-starttls
+  set smtp=smtp://smtp.gmail.com:587
+  set smtp-auth=login
+  set smtp-auth-user=example@gmail.com
+  set smtp-auth-password="PASS"
+  set from="John Smith &lt;example@gmail.com&gt;"
+}
+</pre>
+<p>Replace <strong>PASS</strong> with your actual password, and <strong>example@gmail.com</strong> with your actual email. Read the documentation if you want to avoid plaintext passwords.</p>
+<p>You can send mail with ‘mail -A gmail &lt;params&gt;’. If you have only one account, remove the first and last line and use ‘mail &lt;params&gt;’</p>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/configuration/" rel="tag">configuration</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/mailx/" rel="tag">mailx</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/configuring-mailxs-mailrc-with-gmail/" rel="bookmark" title="Permalink to Configuring mailx’s .mailrc with Gmail"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->

@@ -1,0 +1,172 @@
+---
+author: admin
+categories:
+- Technical
+date: 2014-10-04 02:10:39-07:00
+markup: html
+source: wordpress
+tags:
+- minecraft
+title: Running a forge server on headless linux
+updated: 2014-10-18 03:29:32-07:00
+wordpress_id: 13
+wordpress_slug: running-a-forge-server-on-headless-linux
+---
+<!-- blogpost -->
+<article class="post-13 post type-post status-publish format-standard hentry category-technical tag-minecraft-2" id="post-13">
+<h1 class="entry-title">Running a forge server on headless linux</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2014-10-04T02:10:39-07:00"> <a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/" rel="bookmark" title="2:10 am"><span class="entry-date">October 4, 2014</span> <span class="entry-time"> - 2:10 am</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2014-10-18T03:29:32-07:00">October 18, 2014</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>I’ve had a lot of trouble getting Minecraft Forge to run headless. They have a friendly installer option that I just can’t use in my situation, but one of the devs seems actively hostile around providing help to headless servers, so I didn’t bother asking forge for help. I thought I’d write up what I had to do to get things working. As a warning, it requires some local work; you can’t do everything headless with these directions.</p>
+<p>I’m running Minecraft 1.6.4, with the latest version of forge for that, 9.11.1.965.</p>
+<ol>
+<li>Locally, download and start the minecraft client for the correct version at least once. Not sure if you’ll need to ‘play online’ or not. If you have the current installer, you need to make a new profile with the correct minecraft version and play that.</li>
+<li>Copy ~/.minecraft/libraries to the headless machine.</li>
+<li>Download forge (the installer version, not the universal) from <a href="http://files.minecraftforge.net/">http://files.minecraftforge.net/</a>. The non-adly version is the little star for non-interactive use.</li>
+<li>Run
+<pre>java -jar forge-1.6.4-9.11.1.965-installer.jar --installServer</pre>
+</li>
+<li>Delete the installer, you don’t need it any more.</li>
+<li>Install any mods you want to the ‘mods’ directory, edit server.properties, etc. Normal server setup.</li>
+<li>To execute the server, run the file indicated in the installer. In my case, I run
+<pre>java -jar minecraftforge-universal-1.6.4-9.11.1.965-v164-pregradle.jar nogui</pre>
+</li>
+</ol>
+<p>Alternatively, you can install the entire server locally and copy it over.</p>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/minecraft-2/" rel="tag">minecraft</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/" rel="bookmark" title="Permalink to Running a forge server on headless linux"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-511">
+<div id="comment-511">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/eca9fbfd1236b50f30aec8f7b95ef721?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/eca9fbfd1236b50f30aec8f7b95ef721?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn"><a class="url" href="https://2dminecraft.wordpress.com/" rel="ugc external nofollow">Susan Tatun</a></cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/#comment-511">
+			July 10, 2015 at 11:31 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>An honest sharing about downloaing and installing Minecraft 1.6.4.  I followed what you mentioned and did it sucessfully. Right now, I’m playing with my little son and guiding him what the terrific things are. Anyway, thanks a lot!</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Susan Tatun" class="comment-reply-link" data-belowelement="comment-511" data-commentid="511" data-postid="13" data-replyto="Reply to Susan Tatun" data-respondelement="respond" href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/?replytocom=511#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-1349">
+<div id="comment-1349">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/f386723170dfc6b4122c5fe2d95ffbbc?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/f386723170dfc6b4122c5fe2d95ffbbc?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lynx</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/#comment-1349">
+			August 18, 2015 at 1:44 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>4am installs of servers is hard, and trying to follow the Forge wiki which is inaccurate at best is hard.<br/>
+You got me from dead brick to running box in ten minutes. Thank you.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lynx" class="comment-reply-link" data-belowelement="comment-1349" data-commentid="1349" data-postid="13" data-replyto="Reply to Lynx" data-respondelement="respond" href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/?replytocom=1349#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-1689">
+<div id="comment-1689">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/746c2f840c27e88b6bfc135f14f4ce37?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/746c2f840c27e88b6bfc135f14f4ce37?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">crumpuppet</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/#comment-1689">
+			September 7, 2015 at 1:32 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Thanks so much! I’ve been looking for these steps for a while, and finally found something that works. Would have been first prize if it could be used along with a GUI frontend like mcmyadmin, but oh well 🙂</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to crumpuppet" class="comment-reply-link" data-belowelement="comment-1689" data-commentid="1689" data-postid="13" data-replyto="Reply to crumpuppet" data-respondelement="respond" href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/?replytocom=1689#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-2468">
+<div id="comment-2468">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/48ef5c93bf1c483b50dd6b7977b9cbca?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/48ef5c93bf1c483b50dd6b7977b9cbca?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Dave</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/#comment-2468">
+			November 9, 2015 at 11:14 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Same here.  Searched all over found yours and running in moments.  My kids have been hooked on mods and wanted a server.  I have VMware and can spin up a linux box up in moments.  This was so easy. Thanks.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Dave" class="comment-reply-link" data-belowelement="comment-2468" data-commentid="2468" data-postid="13" data-replyto="Reply to Dave" data-respondelement="respond" href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/?replytocom=2468#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-3252">
+<div id="comment-3252">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/8cc161f40686089efa4eb9dbc381797a?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/8cc161f40686089efa4eb9dbc381797a?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn"><a class="url" href="https://minecraftapkmod.info/download/" rel="ugc external nofollow">Minecraft Lover</a></cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/#comment-3252">
+			February 6, 2019 at 6:40 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Very useful information, Thank you</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Minecraft Lover" class="comment-reply-link" data-belowelement="comment-3252" data-commentid="3252" data-postid="13" data-replyto="Reply to Minecraft Lover" data-respondelement="respond" href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/?replytocom=3252#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-3788">
+<div id="comment-3788">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/4589e18b3dc7de6c60e1b99052acfe1d?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/4589e18b3dc7de6c60e1b99052acfe1d?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Leon</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/#comment-3788">
+			September 9, 2019 at 9:12 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Does anyone here have problems with installing the mods. Im donwloading them in the mods directory with the cmd “wget” and nothing works.Am i using the wrong command or what?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Leon" class="comment-reply-link" data-belowelement="comment-3788" data-commentid="3788" data-postid="13" data-replyto="Reply to Leon" data-respondelement="respond" href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/?replytocom=3788#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-3991">
+<div id="comment-3991">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/b50d1a265153eee6da6b41d6adc0eb06?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/b50d1a265153eee6da6b41d6adc0eb06?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn"><a class="url" href="https://apkstreet.com/roblox-mod-apk-unlimited-robux/" rel="ugc external nofollow">Rajan Chopra</a></cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/#comment-3991">
+			March 7, 2020 at 3:45 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Thanks for sharing Minecraft. Can you also share Roblox Apk?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Rajan Chopra" class="comment-reply-link" data-belowelement="comment-3991" data-commentid="3991" data-postid="13" data-replyto="Reply to Rajan Chopra" data-respondelement="respond" href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/?replytocom=3991#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-4324">
+<div id="comment-4324">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/52ce2f57adc4ccfc3e6274ffa86bf9f5?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/52ce2f57adc4ccfc3e6274ffa86bf9f5?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Neckbeard Hater</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/#comment-4324">
+			January 4, 2021 at 10:22 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>“one of the devs seems actively hostile around providing help to …”</p>
+<p>this is so typical of the linux community. really.  And I am a developer with 20 years experience, I hate the Linux community.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Neckbeard Hater" class="comment-reply-link" data-belowelement="comment-4324" data-commentid="4324" data-postid="13" data-replyto="Reply to Neckbeard Hater" data-respondelement="respond" href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/?replytocom=4324#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-9669">
+<div id="comment-9669">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/cca172695c7bd7d417748775c1ad3c36?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/cca172695c7bd7d417748775c1ad3c36?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">nat</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/#comment-9669">
+			February 14, 2023 at 9:17 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>lol this tutorial still works 9 years later thanks tho this helped so much!!</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to nat" class="comment-reply-link" data-belowelement="comment-9669" data-commentid="9669" data-postid="13" data-replyto="Reply to nat" data-respondelement="respond" href="https://blog.za3k.com/running-a-forge-server-on-headless-linux/?replytocom=9669#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ol>

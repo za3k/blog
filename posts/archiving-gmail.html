@@ -1,0 +1,32 @@
+---
+author: admin
+categories:
+- Technical
+date: 2014-11-23 13:14:46-07:00
+markup: html
+source: wordpress
+tags:
+- backup
+- email
+- gmail
+title: Archiving gmail
+updated: 2014-11-23 13:14:46-07:00
+wordpress_id: 59
+wordpress_slug: archiving-gmail
+---
+<!-- blogpost -->
+<article class="post-59 post type-post status-publish format-standard hentry category-technical tag-backup tag-email tag-gmail" id="post-59">
+<h1 class="entry-title">Archiving gmail</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2014-11-23T13:14:46-07:00"> <a href="https://blog.za3k.com/archiving-gmail/" rel="bookmark" title="1:14 pm"><span class="entry-date">November 23, 2014</span> <span class="entry-time"> - 1:14 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2014-11-23T13:14:46-07:00">November 23, 2014</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>I set up an automatic archiver for gmail, using the special-purpose tool <a href="http://gmvault.org/">gm-vault</a>. It was fairly straightforward, no tutorial here. The daily sync:</p>
+<pre>@daily cd ~gmail &amp;&amp; cronic gmvault sync -d "/home/gmail/vanceza@gmail.com" vanceza@gmail.com</pre>
+<p>I’m specifying a backup folder here (-d) so I can easily support multiple accounts, one per line.</p>
+<p><a href="http://habilis.net/cronic/" title="Cronic">Cronic</a> is a tool designed to make cron’s default email behavior better, so I get emailed only on actual backup failures.</p>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/backup/" rel="tag">backup</a>, <a href="https://blog.za3k.com/tag/email/" rel="tag">email</a>, <a href="https://blog.za3k.com/tag/gmail/" rel="tag">gmail</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/archiving-gmail/" rel="bookmark" title="Permalink to Archiving gmail"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->

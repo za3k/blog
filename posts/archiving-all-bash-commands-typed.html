@@ -1,0 +1,44 @@
+---
+author: admin
+categories:
+- Technical
+date: 2015-12-05 19:25:52-07:00
+markup: html
+source: wordpress
+tags:
+- backup
+- bash
+- linux
+- sysadmin
+title: Archiving all bash commands typed
+updated: 2015-12-05 19:25:52-07:00
+wordpress_id: 391
+wordpress_slug: archiving-all-bash-commands-typed
+---
+<!-- blogpost -->
+<article class="post-391 post type-post status-publish format-standard hentry category-technical tag-backup tag-bash tag-linux tag-sysadmin" id="post-391">
+<h1 class="entry-title">Archiving all bash commands typed</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-12-05T19:25:52-07:00"> <a href="https://blog.za3k.com/archiving-all-bash-commands-typed/" rel="bookmark" title="7:25 pm"><span class="entry-date">December 5, 2015</span> <span class="entry-time"> - 7:25 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-12-05T19:25:52-07:00">December 5, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>This one’s a quickie. Just a second of my config to record all bash commands to a file (.bash_eternal_history) forever. The default bash HISTFILESIZE is 500. Setting it to a non-numeric value will make the history file grow forever (although not your actual history size, which is controlled by HISTSIZE).</p>
+<p>I do this in addition:</p>
+<pre class="" lang="bash">#~/.bash.d/eternal-history
+# don't put duplicate lines in the history
+HISTCONTROL=ignoredups
+# append to the history file, don't overwrite it
+shopt -s histappend
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTFILESIZE=infinite
+# Creates an eternal bash log in the form
+# PID USER INDEX TIMESTAMP COMMAND
+export HISTTIMEFORMAT="%s "
+
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \
+"$(history 1)" &gt;&gt; ~/.bash_eternal_history'</pre>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/backup/" rel="tag">backup</a>, <a href="https://blog.za3k.com/tag/bash/" rel="tag">bash</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/sysadmin/" rel="tag">sysadmin</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/archiving-all-bash-commands-typed/" rel="bookmark" title="Permalink to Archiving all bash commands typed"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->

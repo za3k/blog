@@ -1,0 +1,158 @@
+---
+author: admin
+categories:
+- Technical
+date: 2024-05-12 19:59:50-07:00
+markup: html
+source: wordpress
+tags:
+- command-line
+- linux
+title: A mystery in the text editor
+updated: 2024-05-13 12:49:32-07:00
+wordpress_id: 1351
+wordpress_slug: a-mystery-in-the-text-editor
+---
+<!-- blogpost -->
+<article class="post-1351 post type-post status-publish format-standard hentry category-technical tag-command-line tag-linux" id="post-1351">
+<h1 class="entry-title">A mystery in the text editor</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2024-05-12T19:59:50-07:00"> <a href="https://blog.za3k.com/a-mystery-in-the-text-editor/" rel="bookmark" title="7:59 pm"><span class="entry-date">May 12, 2024</span> <span class="entry-time"> - 7:59 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2024-05-13T12:49:32-07:00">May 13, 2024</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>Hello, Linux terminal users! Let me present you a simple feature you’ve all seen, but might not have noticed.</p>
+<figure class="wp-block-image size-full"><a href="https://blog.za3k.com/wp-content/uploads/2024/05/01-mystery.png"><img alt="" class="wp-image-1352" decoding="async" fetchpriority="high" height="277" sizes="(max-width: 961px) 100vw, 961px" src="https://blog.za3k.com/wp-content/uploads/2024/05/01-mystery.png" srcset="https://blog.za3k.com/wp-content/uploads/2024/05/01-mystery.png 961w, https://blog.za3k.com/wp-content/uploads/2024/05/01-mystery-300x86.png 300w, https://blog.za3k.com/wp-content/uploads/2024/05/01-mystery-768x221.png 768w, https://blog.za3k.com/wp-content/uploads/2024/05/01-mystery-150x43.png 150w, https://blog.za3k.com/wp-content/uploads/2024/05/01-mystery-250x72.png 250w" width="961"/></a></figure>
+<p>You’re on the terminal, and you open a text editor of chice–nano, vim, emacs, acme etc.</p>
+<figure class="wp-block-image size-full"><a href="https://blog.za3k.com/wp-content/uploads/2024/05/02-mystery.png"><img alt="" class="wp-image-1353" decoding="async" height="277" sizes="(max-width: 961px) 100vw, 961px" src="https://blog.za3k.com/wp-content/uploads/2024/05/02-mystery.png" srcset="https://blog.za3k.com/wp-content/uploads/2024/05/02-mystery.png 961w, https://blog.za3k.com/wp-content/uploads/2024/05/02-mystery-300x86.png 300w, https://blog.za3k.com/wp-content/uploads/2024/05/02-mystery-768x221.png 768w, https://blog.za3k.com/wp-content/uploads/2024/05/02-mystery-150x43.png 150w, https://blog.za3k.com/wp-content/uploads/2024/05/02-mystery-250x72.png 250w" width="961"/></a></figure>
+<p>After you edit for a bit, you close the editor.</p>
+<figure class="wp-block-image size-full"><a href="https://blog.za3k.com/wp-content/uploads/2024/05/03-mystery.png"><img alt="" class="wp-image-1354" decoding="async" height="277" sizes="(max-width: 961px) 100vw, 961px" src="https://blog.za3k.com/wp-content/uploads/2024/05/03-mystery.png" srcset="https://blog.za3k.com/wp-content/uploads/2024/05/03-mystery.png 961w, https://blog.za3k.com/wp-content/uploads/2024/05/03-mystery-300x86.png 300w, https://blog.za3k.com/wp-content/uploads/2024/05/03-mystery-768x221.png 768w, https://blog.za3k.com/wp-content/uploads/2024/05/03-mystery-150x43.png 150w, https://blog.za3k.com/wp-content/uploads/2024/05/03-mystery-250x72.png 250w" width="961"/></a></figure>
+<p>Now you’re back where you left off. My question is, <em>how?</em>  How  does nano remember what used to be on screen? How does it get restored? Is nano doing this, or bash?</p>
+<p>Well, I took at look at the <a href="https://github.com/madnight/nano/blob/master/src/nano.c">source code</a> to <em>nano</em>. Then I thought, “whoa! that’s way too complicated.” So I found a much simpler project called <em>ted</em> someone made to educate themselves. That was <a href="https://github.com/madnight/nano/blob/master/src/nano.c">also</a> a little complicated, but both seemed to use ncurses. So I wrote the following simple program, which <em>also</em> displays something and then restores the screen. Even though it’s very simple, it still works.</p>
+<pre class="wp-block-code"><code>// Compile with: gcc -lncurses editor.c -o editor
+
+#include &lt;curses.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(int argc, char **argv) {
+    initscr();
+
+    refresh();
+    printw("Hello world");
+    getch();
+
+    endwin();
+    return 0;
+}</code></pre>
+<p>Aha, so it’s something in ncurses, maybe. Let’s dive deeper.</p>
+<p>So <em>initscr() </em>presumably saves the state in some fashion. <em>endwin()</em> definitely restores it, because if we comment that out, the terminal stops being restored. Since <em>initscr()</em> probably does lots of other irrelevant logic, we could take a look at <em>endwin()</em> to dive in. But let’s do something even simpler first.</p>
+<p>As background, the linux command line is pretending to be an obsolete piece of hardware called a <a href="https://en.wikipedia.org/wiki/Computer_terminal">terminal</a>. Specifically, it’s pretending to be a model called the DEC VT100 (or a later one, but they’re mostly backwards compatible). The terminal accepted text over a wire, and printed it to the screen. </p>
+<p>When it got special text, it would do special things. These are captured today as “escape codes”–special non-printable characters, which cause your software terminal to also do special things. What kind of special things? Well one example escape code is “Backspace”, which deletes the last character. Another code is “\r\n” (carriage return; new line), which goes to the beginning of the line, and down one.</p>
+<p>I suspect the answer to what’s happening with save and restore of my terminal might be some magic escape codes. So let’s just redirect the output to a file, and see what data is being center over the virtual wire to our virtual terminal.</p>
+<pre class="wp-block-code"><code>$ ./editor &gt;magic.txt
+$ xxd &lt; magic.txt
+00000000: 1b28 421b 2930 1b5b 3f31 3034 3968 1b5b  .(B.)0.[?1049h.[
+00000010: 313b 3530 721b 5b6d 0f1b 5b34 6c1b 5b48  1;50r.[m..[4l.[H
+00000020: 1b5b 4a48 656c 6c6f 2077 6f72 6c64 6a1b  .[JHello worldj.
+00000030: 5b35 303b 3148 1b5b 3f31 3034 396c 0d1b  [50;1H.[?1049l..
+00000040: 5b3f 316c 1b3e                           [?1l.&gt;
+</code></pre>
+<p>Well, that’s certainly a bunch of magic. Now something cool happens:</p>
+<pre class="wp-block-code"><code>$ cat magic.txt</code></pre>
+<p>This command does <em>nothing visible</em>. It doesn’t print “Hello world”, even though that’s in the file. In other words, it’s printing Hello world, then really quick resetting the terminal. Just too fast for my poor human eyes to see. </p>
+<p>We’ve confirmed the escape code theory! This file has everything we need. We can look at the source code to ncurses if we’re curious, but we don’t need to (and I won’t).</p>
+<p>One thing I immediately see in this file, is that it <em>doesn’t</em> seem to contain the words that were on screen. So it’s not that the program read what was on screen, and printed it back later. Rather, there are some magic escape sequences happening to save and restore the terminal.</p>
+<p>Okay, so somewhere in those 70 bytes is a magic code or two we want. Let’s examine all the bytes.</p>
+<p>What kinds of escape codes appear here? Hex <strong>0x1b</strong> is ESC, basically <em>the</em> escape sequence–it cues the terminal in that a special escape code is coming. <strong>0x1b9b </strong>(<strong> ESC</strong> followed by <strong>[ </strong>)is the CSI escape code. <a href="https://en.wikipedia.org/wiki/VT100">DEC private codes</a> refer to other escape sequences used by the DEC terminals like the VT00 (I’ll just shorten this to “DEC” below).</p>
+<p>Without further ado, let’s break down those 70 bytes. Apologies for any errors below–correct me in the comments.</p>
+<ul>
+<li><strong>0x1b</strong> (B
+<ul>
+<li>Set first character set to US ASCII [<a href="https://www.xfree86.org/current/ctlseqs.html">xterm DEC guide</a>]</li>
+</ul>
+</li>
+<li><strong>0x1b </strong>)0
+<ul>
+<li>Set second character set to “DEC Special Character and Line Drawing Set” [<a href="https://www.xfree86.org/current/ctlseqs.html">xterm DEC guide</a>]</li>
+</ul>
+</li>
+<li><strong>0x1b9b</strong> ?1049h
+<ul>
+<li><strong>Save cursor as in DECSC and use Alternate Screen Buffer, clearing it first. </strong>[<a href="https://www.xfree86.org/current/ctlseqs.html">xterm CSI guide</a>]</li>
+</ul>
+</li>
+<li><strong><strong>0x1b</strong>9b</strong> 1;49r
+<ul>
+<li>DECSTBM: Set scrolling region to rows 1-49 [<a href="https://www.xfree86.org/current/ctlseqs.html">xterm CSI guide</a>]<br/>(When I ran the program, my terminal was 49 lines tall inside tmux–so the whole terminal in other words.)</li>
+</ul>
+</li>
+<li><strong>0x1b9b</strong> m
+<ul>
+<li>(Empty) color and style set comand [<a href="https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797">ANSI/CSI</a>]<br/>I think this could be left out entirely.</li>
+</ul>
+</li>
+<li><strong>0x0f (Ctrl-O)</strong>
+<ul>
+<li>Shift In. Use the standard character set. [<a href="https://www.xfree86.org/current/ctlseqs.html">xterm</a>]</li>
+</ul>
+</li>
+<li><strong>0x1b9b</strong> 4l
+<ul>
+<li>RM: Replace Mode / IRM [<a href="https://www.xfree86.org/current/ctlseqs.html">xterm CSI guide</a>]<br/>Typing doesn’t shift everything over, it writes over existing content.</li>
+</ul>
+</li>
+<li><strong>0x1b9b</strong> H
+<ul>
+<li>Move the cursor to “home” (top left of the screen) [<a href="https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797">ANSI/CSI</a>]</li>
+</ul>
+</li>
+<li><strong>0x1b9b</strong> J
+<ul>
+<li>Clear the screen [<a href="https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797">ANSI/CSI</a>]</li>
+</ul>
+</li>
+<li>Hello worldj
+<ul>
+<li>The program prints “Hello world”. The final j was echoed when I pressed “j” to exit.</li>
+</ul>
+</li>
+<li><strong>0x1b9b</strong> 49;1H
+<ul>
+<li>Move the cursor to line 49, column 1 — the bottom-left corner [<a href="https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797">ANSI/CSI</a>]</li>
+</ul>
+</li>
+<li><strong>0x1b9b</strong> ?1049l
+<ul>
+<li><strong>Use Normal Screen Buffer and restore cursor as in DECRC</strong> [<a href="https://www.xfree86.org/current/ctlseqs.html">xterm CSI guide</a>]</li>
+</ul>
+</li>
+<li><strong>0x0d (\r or Ctrl-M)</strong>
+<ul>
+<li>Carriage return [<a href="https://www.xfree86.org/current/ctlseqs.html">xterm</a>]<br/>Moves cursor to column 0</li>
+</ul>
+</li>
+<li><strong><strong>0x1b</strong>9b</strong> ?1l
+<ul>
+<li>DECCKM reset: Re-enables the cursor? [<a href="https://vt100.net/docs/vt220-rm/chapter4.html#S4.6.18">VT100</a>]</li>
+</ul>
+</li>
+<li><strong>0x1b </strong>&gt;
+<ul>
+<li>DECONM: Normal Keypad [<a href="https://www.xfree86.org/current/ctlseqs.html">xterm DEC guide</a>, <a href="https://vt100.net/docs/vt220-rm/chapter4.html#S4.6.18">VT100</a>]</li>
+</ul>
+</li>
+</ul>
+<p>OK, solved. The magic save bytes are <strong>1b 9b 3f 31 30 34 39 68</strong> (&lt;ESC&gt; [?1049h). The magic restore bytes are <strong>1b 9b 3f 31 30 34 39 6c</strong> (&lt;ESC&gt; [?1049l). And xterm or tmux is doing the save/restore magic, based on seeing this escape mode.</p>
+<p>Hmm, how minimal can we get a working file, I wonder?</p>
+<pre class="wp-block-code"><code>#!/bin/sh
+echo -ne '\x1b[?1049h' # Save terminal
+echo -ne '\x1b[H'      # Home the cursor
+echo "Hello world"
+sleep 1
+echo -ne '\x1b[?1049l' # Restore terminal</code></pre>
+<p>Yep. That works fine.</p>
+<p>ANSI: <a href="https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797">https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797</a><br/>DEC: <a href="https://vt100.net/emu/ctrlseq_dec.html">https://vt100.net/emu/ctrlseq_dec.html</a><br/>DEC: <a href="https://vt100.net/docs/vt220-rm/chapter4.html#S4.6.18">https://vt100.net/docs/vt220-rm/chapter4.html#S4.6.18</a><br/>xterm’s control sequences: <a href="https://www.xfree86.org/current/ctlseqs.html">https://www.xfree86.org/current/ctlseqs.html</a></p>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/command-line/" rel="tag">command-line</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/a-mystery-in-the-text-editor/" rel="bookmark" title="Permalink to A mystery in the text editor"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->

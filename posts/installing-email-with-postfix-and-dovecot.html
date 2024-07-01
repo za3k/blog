@@ -1,0 +1,492 @@
+---
+author: admin
+categories:
+- Technical
+date: 2015-11-07 17:31:25-07:00
+markup: html
+source: wordpress
+tags:
+- debian
+- dovecot
+- email
+- linux
+- postfix
+- system administration
+title: Installing email with Postfix and Dovecot (with Postgres)
+updated: 2017-04-05 19:09:13-07:00
+wordpress_id: 358
+wordpress_slug: installing-email-with-postfix-and-dovecot
+---
+<!-- blogpost -->
+<article class="post-358 post type-post status-publish format-standard hentry category-technical tag-debian tag-dovecot tag-email tag-linux tag-postfix tag-system-administration" id="post-358">
+<h1 class="entry-title">Installing email with Postfix and Dovecot (with Postgres)</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-11-07T17:31:25-07:00"> <a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/" rel="bookmark" title="5:31 pm"><span class="entry-date">November 7, 2015</span> <span class="entry-time"> - 5:31 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2017-04-05T19:09:13-07:00">April 5, 2017</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>I’m posting my email setup here. The end result will:</p>
+<ul>
+<li>Use Postfix for SMTP</li>
+<li>Use Dovecot for IMAP and authentication</li>
+<li>Store usernames, email forwards, and passwords in a Postgres SQL database</li>
+<li>Only be accessible over encrypted channels</li>
+<li>Pass all common spam checks</li>
+<li>Support SMTP sending and IMAP email checking. I did not include POP3 because I don’t use it, but it should be easy to add</li>
+<li>NOT add spam filtering or web mail (this article is long enough as it is, maybe in a follow-up)</li>
+</ul>
+<p><span id="more-358"></span>Note: My set up is pretty standard, except that rDNS for smtp.za3k.com resolves to za3k.com because I only have one IP. You may need to change your hostnames if you’re using mail.example.com or smtp.example.com.</p>
+<p>On to the install!</p>
+<ol>
+<li>Install debian packages
+<pre lang="bash">sudo apt-get install postfix # Postfix \
+      dovecot-core dovecot-imapd dovecot-lmtpd # Dovecot \
+      postgresql dovecot-pgsql postfix-pgsql # Postgres \
+      opendkim opendkim-tools # DKIM</pre>
+</li>
+<li>Set up security. smtp.za3k.com cert is at /etc/certs/zak3.com.pem, the key is at /etc/ssl/private/smtp.za3k.com.key. dhparams for postfix are at /etc/postfix/dhparams.pem. (If you need a certificate and don’t know how to get one, you can read <a href="https://blog.za3k.com/setting-up-ssl-certificates-using-startssl/" title="Setting up SSL certificates using StartSSL">Setting up SSL certificates using StartSSL</a>)</li>
+<li>Install Postfix
+<pre title="/etc/postfix/master.cf"># /etc/postfix/master.cf
+smtp       inet  n       -       -       -       -       smtpd
+submission inet  n       -       -       -       -       smtpd
+  -o syslog_name=postfix/submission
+  -o smtpd_tls_security_level=encrypt
+  -o smtpd_sasl_auth_enable=yes
+  -o smtpd_reject_unlisted_recipient=no
+  -o milter_macro_daemon_name=ORIGINATING
+</pre>
+<pre title="/etc/postfix/main.cf"># /etc/postfix/main.cf additions
+# TLS parameters
+smtpd_tls_cert_file=/etc/ssl/certs/smtp.za3k.com.pem
+smtpd_tls_key_file=/etc/ssl/private/smtp.za3k.com.key
+smtpd_use_tls=yes
+smtpd_tls_mandatory_protocols=!SSLv2,!SSLv3
+smtp_tls_mandatory_protocols=!SSLv2,!SSLv3
+smtpd_tls_protocols=!SSLv2,!SSLv3
+smtp_tls_protocols=!SSLv2,!SSLv3
+smtpd_tls_exclude_ciphers = aNULL, eNULL, EXPORT, DES, RC4, MD5, PSK, aECDH, EDH-DSS-DES-CBC3-SHA, EDH-RSA-DES-CDC3-SHA, KRB5-DE5, CBC3-SHA
+
+# Relay and recipient settings
+myhostname = za3k.com
+myorigin = /etc/mailname
+mydestination = za3k.com, smtp.za3k.com, localhost.com, localhost
+relayhost =
+mynetworks_style = host
+mailbox_size_limit = 0
+inet_interfaces = all
+smtpd_relay_restrictions = permit_mynetworks,
+  permit_sasl_authenticated,
+  reject_unauth_destination
+
+alias_maps = hash:/etc/aliases
+local_recipient_maps = $alias_maps
+mailbox_transport = lmtp:unix:private/dovecot-lmtp
+</pre>
+</li>
+<li>Install Dovecot
+<pre class="" title="/etc/dovecot/dovecot.cf"># /etc/dovecot/dovecot.cf
+mail_privileged_group = mail # Local mail
+disable_plaintext_auth = no
+
+protocols = imap
+
+ssl=required
+ssl_cert = &lt;/etc/ssl/certs/imap.za3k.com.pem
+ssl_key = &lt;/etc/ssl/private/imap.za3k.com.key
+
+# IMAP Folders
+namespace {
+ inbox = yes
+ mailbox Trash {
+ auto = create
+ special_use = \Trash
+ }
+ mailbox Drafts {
+ auto = no
+ special_use = \Drafts
+ }
+ mailbox Sent {
+ auto = subscribe
+ special_use = \Sent
+ }
+ mailbox Spam {
+ auto = subscribe
+ special_use = \Junk
+ }
+}
+
+# Expunging / deleting mail should FAIL, use the lazy_expunge plugin for this
+namespace {
+ prefix = .EXPUNGED/
+ hidden = yes
+ list = no
+ location = maildir:~/expunged
+}
+mail_plugins = $mail_plugins lazy_expunge
+plugin {
+ lazy_expunge = .EXPUNGED/
+}
+</pre>
+<pre title="/etc/postfix/main.cf"># /etc/postfix/main.cf
+# SASL authentication is done through Dovecot to let users relay mail
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+</pre>
+</li>
+<li>Set up the database and virtual users. Commands
+<pre lang="bash" title="Set up the vmail user"># Create the user vmail for storing virtual mail
+# vmail:x:5000:5000::/var/mail/vmail:/usr/bin/nologin
+groupadd -g 5000 vmail
+mkdir /var/mail/vmail
+useradd -M -d /var/mail/vmail --shell=/usr/bin/nologin -u 5000 -g vmail vmail
+chown vmail:vmail /var/mail/vmail
+chmod 700 /var/mail/vmail
+</pre>
+<pre lang="SQL" title="Email database">psql -U postgres
+; Set up the users
+CREATE USER 'postfix' PASSWORD 'XXX';
+CREATE USER 'dovecot' PASSWORD 'XXX';
+
+; Create the database
+CREATE DATABASE email;
+\connect email
+
+; Set up the schema 
+
+CREATE TABLE aliases (
+    alias text NOT NULL,
+    email text NOT NULL
+);
+
+CREATE TABLE users (
+    username text NOT NULL,
+    domain text NOT NULL,
+    created timestamp with time zone DEFAULT now(),
+    password text NOT NULL
+);
+
+REVOKE ALL ON TABLE aliases FROM PUBLIC;
+GRANT ALL ON TABLE aliases TO postfix;
+GRANT ALL ON TABLE aliases TO dovecot;
+
+REVOKE ALL ON TABLE users FROM PUBLIC;
+GRANT ALL ON TABLE users TO dovecot;
+GRANT ALL ON TABLE users TO postfix;
+</pre>
+<pre title="/etc/dovecot/dovecot.conf"># /etc/dovecot/dovecot.conf
+# Since we're giving each virtual user their own directory under /var/mail/vmail, just use that directly and not a subdirectory
+mail_location = maildir:~/
+
+# /etc/dovecot/dovecot-sql.conf defines the DB queries used for authorization
+passdb {
+  driver = sql
+  args = /etc/dovecot/dovecot-sql.conf
+}
+userdb {
+  driver = prefetch
+}
+userdb {
+  driver = sql
+  args = /etc/dovecot/dovecot-sql.conf
+}
+</pre>
+<pre title="/etc/postfix/main.cf"># /etc/postfix/main.cf
+pgsql:/etc/postfix/pgsql-virtual-aliases.cf
+local_recipient_maps = pgsql:/etc/postfix/pgsql-virtual-mailbox.cf 
+</pre>
+<pre title="/etc/postfix/pgsql-virtual-aliases.cf"># /etc/postfix/pgsql-virtual-aliases.cf
+# hosts = localhost
+user = postfix
+password = XXXXXX
+dbname = email
+
+query = SELECT email FROM aliases WHERE alias='%s'
+</pre>
+<pre title="/etc/postfix/pgsql-virtual-aliases.cf"># /etc/postfix/pgsql-virtual-mailbox.cf
+# hosts = localhost
+user = postfix
+password = XXXXXX
+dbname = email
+
+query = SELECT concat(username,'@',domain,'/') as email FROM users WHERE username='%s'
+</pre>
+<pre title="/etc/dovecot/dovecot-sql.conf"># /etc/dovecot/dovecot-sql.conf
+driver = pgsql
+connect = host=localhost dbname=email user=dovecot password=XXXXXX
+default_pass_scheme = SHA512
+password_query = SELECT \
+  CONCAT(username,'@',domain) as user, \
+  password, \
+  'vmail' AS userdb_uid, \
+  'vmail' AS userdb_gid, \
+  '/var/mail/vmail/%u' as userdb_home \
+  FROM users \
+  WHERE concat(username,'@',domain) = '%u';
+
+user_query = SELECT username, \
+  CONCAT('maildir:/var/mail/vmail/',username,'@',domain) as mail, \
+  '/var/mail/vmail/%u' as home, \
+  'vmail' as uid, \
+  'vmail' as gid \
+  FROM users \
+  WHERE concat(username,'@',domain) = '%u';
+</pre>
+</li>
+<li>Set up users. Example user creation:
+<pre lang="bash"># Generate a password
+$ doveadm pw -s sha512 -r 100
+Enter new password: ...
+Retype new password: ...
+{SHA512}.............................................................==
+</pre>
+<pre lang="sql">psql -U dovecot -d email
+; Create a user za3k@za3k.com
+mail=# INSERT INTO users (
+    username,
+    domain,
+    password
+) VALUES (
+    'za3k',
+    'za3k.com'
+    '{SHA512}.............................................................==',
+);
+</pre>
+</li>
+<li>Set up aliases/redirects. Example redirect creation:
+<pre lang="sql">psql -U dovecot -d email
+; Redirect mail from foo@example.com to bar@example.net
+mail=# INSERT INTO users ( email, alias ) VALUES (
+    'bar@example.net',
+    'foo@example.com'
+);
+</pre>
+</li>
+<li>Test setup locally by hand. Try using <a href="https://www.port25.com/how-to-check-an-smtp-connection-with-a-manual-telnet-session-2/">TELNET</a>. Test remote setup using STARTSSL. This is similar to the previous step, but to start the connection use:
+<pre>openssl s_client -connect smtp.za3k.com:587 -starttls smtp</pre>
+<p>Make sure to test email to addresses at your domain or that you’ve set up (final destination), and emails you’re trying to send somewhere else (relay email)</p>
+<p>A small <a href="https://www.fastmail.com/help/technical/ssltlsstarttls.html">digression</a>: port 25 is used for unencrypted email and support STARTTLS, 587 is used for STARTTLS only, and <span style="color: #3f3a33;">465 (obsolete) is used for TLS. My ISP, Comcast, blocks access to port 25 on outgoing traffic.</span></p></li>
+<li>Make sure you’re not running an open relay at <a href="http://mxtoolbox.com/diagnostic.aspx">http://mxtoolbox.com/diagnostic.aspx</a></li>
+<li>Set your DNS so that the <a href="https://en.wikipedia.org/wiki/MX_record">MX</a> record points at your new mailserver. You’ll probably want a <a href="https://en.wikipedia.org/wiki/Store_and_forward">store and forward</a> backup mail server (mine is provided by my registrar). Email should arrive at your mail server from now on. This is the absolute minimum setup. Everything from here on is to help the community combat spam (and you not to get blacklisted).</li>
+<li>Set up <a href="https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail">DKIM</a> (DomainKeys Identified Mail). DKIM signs outgoing mail to show that it’s from your server, which helps you not get flagged as spam.<br/>
+None of these files or folders exist to begin with in debian.
+<pre title="Add to /etc/opendkim.conf"># Add to /etc/opendkim.conf
+KeyTable                /etc/opendkim/KeyTable
+SigningTable            /etc/opendkim/SigningTable
+ExternalIgnoreList      /etc/opendkim/TrustedHosts
+InternalHosts           /etc/opendkim/TrustedHosts
+LogWhy yes
+</pre>
+<pre title="/etc/opendkim/TrustedHosts"># /etc/opendkim/TrustedHosts
+127.0.0.1
+[::1]
+localhost
+za3k.com
+smtp.za3k.com
+</pre>
+<pre lang="bash">mkdir -p /etc/opendkim/keys/za3k.com
+cd /etc/opendkim/keys/za3k.com
+opendkim-genkey -s default -d za3k.com
+chown opendkim:opendkim default.private
+</pre>
+<pre title="/etc/opendkim/KeyTable"># /etc/opendkim/KeyTable
+default._domainkey.za3k.com za3k.com:default:/etc/opendkim/keys/za3k.com/default.private
+</pre>
+<pre title="/etc/opendkim/SigningTable"># /etc/opendkim/SigningTable
+za3k.com default._domainkey.za3k.com
+</pre>
+<p>Display the DNS public key to set in a <a href="https://en.wikipedia.org/wiki/TXT_Record">TXT</a> record with:</p>
+<pre># sudo cat /etc/opendkim/keys/za3k.com/default.txt
+default._domainkey      IN      TXT     ( "v=DKIM1; k=rsa; "
+          "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCggdv3OtQMek/fnu+hRrHYZTUcpUFcSGL/+Sbq+GffR98RCgabx/jjPJo3HmqsB8czaXf7yjO2UiSN/a8Ae6/yu23d7hyTPUDacatEM+2Xc4/zG+eAlAMQOLRJeo3z53sNiq0SmJET6R6yH4HCv9VkuS0TQczkvME5hApft+ZedwIDAQAB" )  ; ----- DKIM
+
+# My registrar doesn't support this syntax so it ends up looking like: 
+$ dig txt default._domainkey.za3k.com txt
+default._domainkey.za3k.com. 10800 IN   TXT     "v=DKIM1\; k=rsa\; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCggdv3OtQMek/fnu+hRrHYZTUcpUFcSGL/+Sbq+GffR98RCgabx/jjPJo3HmqsB8czaXf7yjO2UiSN/a8Ae6/yu23d7hyTPUDacatEM+2Xc4/zG+eAlAMQOLRJeo3z53sNiq0SmJET6R6yH4HCv9VkuS0TQczkvME5hApft+ZedwIDAQAB"
+</pre>
+<pre title="Uncomment in /etc/default/opendkim"># Uncomment in /etc/default/opendkim
+SOCKET="inet:12345@localhost" # listen on loopback on port 12345
+</pre>
+<pre title="/etc/postfix/main.cf"># /etc/postfix/main.cf
+# DKIM
+milter_default_action = accept
+milter_protocol = 6
+smtpd_milters = inet:localhost:12345
+non_smtpd_milters = inet:localhost:12345
+</pre>
+</li>
+<li>Set up <a href="https://en.wikipedia.org/wiki/Sender_Policy_Framework">SPF</a> (Sender Policy Framework). SPF explains to other services which IPs can send email on your behalf. You can set up whatever policy you like. A guide to the syntax is at: <a href="http://www.openspf.org/SPF_Record_Syntax">http://www.openspf.org/SPF_Record_Syntax</a>.  Mine is
+<pre>@ 10800 IN TXT "v=spf1 +a:za3k.com +mx:za3k.com ~all"
+</pre>
+<p>You should also be verifying this on your end as part of combating spam, but as far as outgoing mail all you need to do is add a TXT record to your DNS record.</p></li>
+<li>Set your <a href="https://en.wikipedia.org/wiki/Reverse_DNS_lookup">rDNS</a> (reverse DNS) if it’s not already. This should point at the same hostname reported by Postfix during SMTP. This will be handled by whoever assigns your IP address (in my case, my hosting provider).</li>
+<li>Test your spam reputability using <a href="https://www.mail-tester.com/">https://www.mail-tester.com</a> or <a href="https://www.port25.com/support/authentication-center/email-verification/">https://www.port25.com/support/authentication-center/email-verification</a>. You can monitor if you’re on any blacklists at <a href="http://mxtoolbox.com/blacklists.aspx">http://mxtoolbox.com/blacklists.aspx</a>.</li>
+<li>Set up <a href="https://dmarc.org/overview/">DMARC</a>. DMARC declares your policy around DKIM being mandatory. You can set up whatever policy you like.  Mine is
+<pre>_dmarc 10800 IN TXT "v=DMARC1;p=reject;aspf=s;adkim=s;pct=100;rua=mailto:postmaster@za3k.com"</pre>
+</li>
+</ol>
+<p>My sources writing this:</p>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/Postfix">https://wiki.archlinux.org/index.php/Postfix</a> and <a href="http://www.postfix.org/postconf.5.html">http://www.postfix.org/postconf.5.html</a> on Postfix</li>
+<li><a href="https://wiki.archlinux.org/index.php/Dovecot%20">https://wiki.archlinux.org/index.php/Dovecot</a> on Dovecot</li>
+<li><a href="https://help.ubuntu.com/community/PostfixVirtualMailBoxClamSmtpHowto">https://help.ubuntu.com/community/PostfixVirtualMailBoxClamSmtpHowto</a> on SASL auth integration between Dovecot and Postfix</li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-configure-a-mail-server-using-postfix-dovecot-mysql-and-spamassassin">https://www.digitalocean.com/community/tutorials/how-to-set-up-a-postfix-email-server-with-dovecot-dynamic-maildirs-and-lmtp</a> and<a href="https://www.digitalocean.com/community/tutorials/how-to-configure-a-mail-server-using-postfix-dovecot-mysql-and-spamassassin"> https://www.digitalocean.com/community/tutorials/how-to-configure-a-mail-server-using-postfix-dovecot-mysql-and-spamassassin</a> on SQL integration in Dovecot</li>
+<li><a href="https://scaron.info/blog/debian-mail-spf-dkim.html">https://scaron.info/blog/debian-mail-spf-dkim.html</a> for setting up SPF, DKIM, and rDNS</li>
+</ul>
+<p>Takeaways</p>
+<ul>
+<li>You can set up store-and-forward mail servers, so if your mail server goes down, you don’t lose all the email for that period. It’s generally a free thing.</li>
+<li>Postfix’s configuration files were badly designed and crufty, so you might pick a different SMTP server.</li>
+<li>Email was REALLY not designed to do authentication, which is why proving you’re not a spammer is so difficult. This would all be trivial with decent crypto baked in (or really, almost any backwards-incompatible change)</li>
+<li>The option to specify a SQL query as a configuration file option is wonderful. Thanks, Dovecot.</li>
+<li>Overall, although it was a lot of work, I do feel like it was worth it to run my own email server.</li>
+</ul>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/debian/" rel="tag">debian</a>, <a href="https://blog.za3k.com/tag/dovecot/" rel="tag">dovecot</a>, <a href="https://blog.za3k.com/tag/email/" rel="tag">email</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/postfix/" rel="tag">postfix</a>, <a href="https://blog.za3k.com/tag/system-administration/" rel="tag">system administration</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/" rel="bookmark" title="Permalink to Installing email with Postfix and Dovecot (with Postgres)"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->
+<ol class="commentlist">
+<li class="post pingback">
+<p>Pingback: <a class="url" href="https://blog.za3k.com/mail-filtering-with-dovecot/" rel="ugc">Mail filtering with Dovecot - Optimal Prime</a></p>
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-2842">
+<div id="comment-2842">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/3a4733166894a30fe613838ecaaa1e95?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/3a4733166894a30fe613838ecaaa1e95?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">eduardz</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/#comment-2842">
+			November 23, 2016 at 12:18 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Hello,</p>
+<p>Can you implement quota support from postgressql?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to eduardz" class="comment-reply-link" data-belowelement="comment-2842" data-commentid="2842" data-postid="358" data-replyto="Reply to eduardz" data-respondelement="respond" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/?replytocom=2842#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-2873">
+<div id="comment-2873">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/#comment-2873">
+			April 5, 2017 at 7:05 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Not sure if this is “will you do” or “is it possible”. I will not do anything to set up quota–I have one user (me) so it doesn’t make sense. I encourage you to link if you do.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-2873" data-commentid="2873" data-postid="358" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/?replytocom=2873#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-2852">
+<div id="comment-2852">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/04f9049f74277e447eee4569ac61563c?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/04f9049f74277e447eee4569ac61563c?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Tudor</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/#comment-2852">
+			February 23, 2017 at 2:45 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>In the “useradd -d -M -d /var/mail/vmail –shell=/usr/bin/nologin -u 5000 -g vmail vmail“ I think the first “-d“ shouldn’t be there</p>
+<p>Thanks for the post</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Tudor" class="comment-reply-link" data-belowelement="comment-2852" data-commentid="2852" data-postid="358" data-replyto="Reply to Tudor" data-respondelement="respond" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/?replytocom=2852#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-2874">
+<div id="comment-2874">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/#comment-2874">
+			April 5, 2017 at 7:06 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Thanks for the corrections, glad you found it useful.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-2874" data-commentid="2874" data-postid="358" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/?replytocom=2874#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-2853">
+<div id="comment-2853">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/04f9049f74277e447eee4569ac61563c?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/04f9049f74277e447eee4569ac61563c?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Tudor</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/#comment-2853">
+			February 23, 2017 at 2:54 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Also, for Postgresql the correct commands to create users are:<br/>
+CREATE USER postfix PASSWORD ‘XXX’;<br/>
+CREATE USER dovecot PASSWORD ‘XXX’;</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Tudor" class="comment-reply-link" data-belowelement="comment-2853" data-commentid="2853" data-postid="358" data-replyto="Reply to Tudor" data-respondelement="respond" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/?replytocom=2853#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-2854">
+<div id="comment-2854">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/04f9049f74277e447eee4569ac61563c?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/04f9049f74277e447eee4569ac61563c?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Tudor</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/#comment-2854">
+			February 23, 2017 at 3:22 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Also, there shouldn’t be any comma after the VALUES (<br/>
+    ‘za3k’,<br/>
+    ‘za3k.com’,<br/>
+    ‘{SHA512}…………………………………………………….==’ part</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Tudor" class="comment-reply-link" data-belowelement="comment-2854" data-commentid="2854" data-postid="358" data-replyto="Reply to Tudor" data-respondelement="respond" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/?replytocom=2854#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-3135">
+<div id="comment-3135">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/9fe7e715cb7615380e65ebecc7c703b6?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/9fe7e715cb7615380e65ebecc7c703b6?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">S</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/#comment-3135">
+			May 12, 2018 at 9:36 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>A little sloppy – you should have simply shown the entire contents of each file one by one, with descriptions in comments or whatever, instead of breaking them up into snippets – and there are a few errors and omissions (I can’t recall which ones now)<br/>
+However, using this guide and some googling, I was able to get a mailserver working – which is more than I can say for any other guide; so, thanks.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to S" class="comment-reply-link" data-belowelement="comment-3135" data-commentid="3135" data-postid="358" data-replyto="Reply to S" data-respondelement="respond" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/?replytocom=3135#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-4730">
+<div id="comment-4730">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/0f57bc0e6352458280cb89f50df560eb?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/0f57bc0e6352458280cb89f50df560eb?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Korilius</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/#comment-4730">
+			July 17, 2021 at 3:56 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>A guide that could have been great but tripped at the finish line.  A lot of errors in SQL and elsewhere along with step reorganization.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Korilius" class="comment-reply-link" data-belowelement="comment-4730" data-commentid="4730" data-postid="358" data-replyto="Reply to Korilius" data-respondelement="respond" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/?replytocom=4730#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-4731">
+<div id="comment-4731">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/#comment-4731">
+			July 17, 2021 at 4:52 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>If you have any specific errors you can mention, I’d be happy to fix stuff.</p>
+<p>But yeah, that’s the problem with writing a guide after you do something instead of during/before.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-4731" data-commentid="4731" data-postid="358" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/?replytocom=4731#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol>

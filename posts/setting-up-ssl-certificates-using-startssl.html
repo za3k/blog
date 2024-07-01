@@ -1,0 +1,60 @@
+---
+author: admin
+categories:
+- Technical
+date: 2014-10-29 04:41:31-07:00
+markup: html
+source: wordpress
+tags:
+- http
+- ssl
+- system administration
+- tls
+title: Setting up SSL certificates using StartSSL
+updated: 2016-02-10 18:48:39-07:00
+wordpress_id: 28
+wordpress_slug: setting-up-ssl-certificates-using-startssl
+---
+<!-- blogpost -->
+<article class="post-28 post type-post status-publish format-standard hentry category-technical tag-http tag-ssl tag-system-administration tag-tls" id="post-28">
+<h1 class="entry-title">Setting up SSL certificates using StartSSL</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2014-10-29T04:41:31-07:00"> <a href="https://blog.za3k.com/setting-up-ssl-certificates-using-startssl/" rel="bookmark" title="4:41 am"><span class="entry-date">October 29, 2014</span> <span class="entry-time"> - 4:41 am</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2016-02-10T18:48:39-07:00">February 10, 2016</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<ol>
+<ol>
+<li>Generate an SSL/TLS key, which will be used to actually encrypt traffic.
+<pre>DOMAIN=nntp.za3k.com
+openssl genrsa -out ${DOMAIN}.key 4096
+chmod 700 ${DOMAIN}.key</pre>
+</li>
+<li>Generate a Certificate Signing Request, which is sent to your authentication provider. The details here will have to match the details they have on file (for StartSSL, just the domain name).
+<pre># -subj "/C=US/ST=/L=/O=/CN=${DOMAIN}" can be omitted to fill in custom identification details
+# -sha512 is the hash of your key used for identification. This was the reasonable option in Oct 2014. It isn't supported by IE6
+openssl req -new -key ${DOMAIN}.key -out ${DOMAIN}.csr -subj "/C=US/ST=/L=/O=/CN=${DOMAIN}" -sha512
+</pre>
+</li>
+<li>Submit your Certificate Signing Request to your authentication provider. Assuming the signing request details match whatever they know about you, they’ll return you a certificate. You should also make sure to grab any intermediate and root certificates here.
+<pre>echo "Saved certificate" &gt; ${DOMAIN}.crt
+wget https://www.startssl.com/certs/sca.server1.crt https://www.startssl.com/certs/ca.crt # Intermediate and root certificate for StartSSL
+</pre>
+</li>
+<li>Combine the chain of trust (key, CSR, certificate, intermediate certificates(s), root certificate) into a single file with concatenation. Leaving out the key will give you a combined certificate of trust for the key, which you may need for other applications.
+<pre>cat ${DOMAIN}.crt sca.server1.crt &gt;${DOMAIN}.pem # Main cert
+cat ${DOMAIN}.key ${DOMAIN}.crt sca.server1.crt ca.crt &gt;${DOMAIN}.full.pem
+chmod 700 ${DOMAIN}.full.pem</pre>
+</li>
+</ol>
+</ol>
+<p>See also: <a href="https://github.com/Gordin/StartSSL_API">https://github.com/Gordin/StartSSL_API</a></p>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/http/" rel="tag">http</a>, <a href="https://blog.za3k.com/tag/ssl/" rel="tag">ssl</a>, <a href="https://blog.za3k.com/tag/system-administration/" rel="tag">system administration</a>, <a href="https://blog.za3k.com/tag/tls/" rel="tag">tls</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/setting-up-ssl-certificates-using-startssl/" rel="bookmark" title="Permalink to Setting up SSL certificates using StartSSL"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->
+<ol class="commentlist">
+<li class="post pingback">
+<p>Pingback: <a class="url" href="https://blog.za3k.com/installing-email-with-postfix-and-dovecot/" rel="ugc">Installing email with Postfix and Dovecot (with Postgres) - Optimal Prime</a></p>
+</li><!-- #comment-## -->
+</ol>

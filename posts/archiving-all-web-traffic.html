@@ -1,0 +1,66 @@
+---
+author: admin
+categories:
+- Technical
+date: 2015-12-05 19:18:13-07:00
+markup: html
+source: wordpress
+tags:
+- backup
+- http
+- https
+- mitm
+- proxy
+title: Archiving all web traffic
+updated: 2015-12-06 01:06:20-07:00
+wordpress_id: 388
+wordpress_slug: archiving-all-web-traffic
+---
+<!-- blogpost -->
+<article class="post-388 post type-post status-publish format-standard hentry category-technical tag-backup tag-http tag-https tag-mitm tag-proxy" id="post-388">
+<h1 class="entry-title">Archiving all web traffic</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-12-05T19:18:13-07:00"> <a href="https://blog.za3k.com/archiving-all-web-traffic/" rel="bookmark" title="7:18 pm"><span class="entry-date">December 5, 2015</span> <span class="entry-time"> - 7:18 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-12-06T01:06:20-07:00">December 6, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>Today I’m going to walk through a setup on how to archive all web (HTTP/S) traffic passing over your Linux desktop. The basic approach is going to be to install a proxy which records traffic. It will record the traffic to WARC files. You can’t proxy non-HTTP traffic (for example, chat or email) because we’re using an HTTP proxy approach.</p>
+<p>The end result is pretty slow for reasons I’m not totally sure of yet. It’s possible warcproxy isn’t streaming results.</p>
+<ol>
+<li>Install the server
+<pre># pip install warcproxy</pre>
+</li>
+<li>Make a warcprox user to run the proxy as.
+<pre># useradd -M --shell=/bin/false warcprox</pre>
+</li>
+<li>Make a root certificate. You’re going to intercept HTTPS traffic by pretending to be the website, so if anyone gets ahold of this, they can fake being every website to you. Don’t give it out.
+<pre lang="bash"># mkdir /etc/warcprox
+# cd /etc/warcprox
+# sudo openssl genrsa -out ca.key 409
+# sudo openssl req -new -x509 -key ca.key -out ca.crt
+# cat ca.crt ca.key &gt;ca.pem
+# chown root:warcprox ca.pem ca.key
+# chmod 640 ca.pem ca.key
+</pre>
+</li>
+<li>Set up a directory where you’re going to store the WARC files. You’re saving all web traffic, so this will get pretty big.
+<pre># mkdir /var/warcprox
+# chown -R warcprox:warcprox /var/warcprox
+</pre>
+</li>
+<li>Set up a boot script for warcproxy. Here’s mine. I’m using supervisorctl rather than systemd.
+<pre>#/etc/supervisor.d/warcprox.ini
+[program:warcprox]
+command=/usr/bin/warcprox -p 18000 -c /etc/warcprox/ca.pem --certs-dir ./generated-certs -g sha1
+directory=/var/warcprox
+user=warcprox
+autostart=true
+autorestart=unexpected
+</pre>
+</li>
+<li>Set up any browers, etc to use localhost:18000 as your proxy. You could also do some kind of global firewall config. Chromium in particular was pretty irritating on Arch Linux. It doesn’t respect $http_proxy, so you have to pass it separate options. This is also a good point to make sure anything you don’t want recorded BYPASSES the proxy (for example, maybe large things like youtube, etc).</li>
+</ol>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/backup/" rel="tag">backup</a>, <a href="https://blog.za3k.com/tag/http/" rel="tag">http</a>, <a href="https://blog.za3k.com/tag/https/" rel="tag">https</a>, <a href="https://blog.za3k.com/tag/mitm/" rel="tag">mitm</a>, <a href="https://blog.za3k.com/tag/proxy/" rel="tag">proxy</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/archiving-all-web-traffic/" rel="bookmark" title="Permalink to Archiving all web traffic"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->

@@ -1,0 +1,191 @@
+---
+author: admin
+categories:
+- Technical
+date: 2020-04-18 16:47:39-07:00
+markup: html
+source: wordpress
+tags:
+- linux
+- printer
+- raspberry pi
+title: Printing on the Brother HL-2270DW printer using a Raspberry Pi
+updated: 2020-12-12 13:29:42-07:00
+wordpress_id: 517
+wordpress_slug: printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi
+---
+<!-- blogpost -->
+<article class="post-517 post type-post status-publish format-standard hentry category-technical tag-linux tag-printer tag-raspberry-pi" id="post-517">
+<h1 class="entry-title">Printing on the Brother HL-2270DW printer using a Raspberry Pi</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2020-04-18T16:47:39-07:00"> <a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/" rel="bookmark" title="4:47 pm"><span class="entry-date">April 18, 2020</span> <span class="entry-time"> - 4:47 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2020-12-12T13:29:42-07:00">December 12, 2020</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>Although the below directions work on Raspberry Pi, they should also work on any other system. The brother-provided driver does not run on arm processors[1] like the raspberry pi, so we will instead use the open-source <a href="https://github.com/pdewacht/brlaser">brlaser</a>[2].</p>
+<p>Edit: This setup should also work on the following Brother monochrome printers, just substitute the name where needed: </p>
+<ul><li>brlaser 4, just install from package manager: DCP-1510, DCP-1600 series, DCP-7030, DCP-7040, DCP-7055, DCP-7055W, DCP-7060D, DCP-7065DN, DCP-7080, DCP-L2500D series, HL-1110 series, HL-1200 series, HL-L2300D series, HL-L2320D series, HL-L2340D series, HL-L2360D series, HL-L2375DW series, HL-L2390DW, MFC-1910W, MFC-7240, MFC-7360N, MFC-7365DN, MFC-7420, MFC-7460DN, MFC-7840W, MFC-L2710DW series</li><li>brlaser 6, follow full steps below: DCP-L2520D series, DCP-L2520DW series, DCP-L2540DW series (unclear, may only need 4), HL-2030 series, HL-2140 series, HL-2220 series, HL-2270DW series, HL-5030 series</li></ul>
+<p>Also, all these steps are command-line based, and you can do the whole setup headless (no monitor or keyboard) using SSH.</p>
+<ol><li>Get the latest raspbian image up and running on your pi, with working networking. At the time of writing the latest version is 10 (buster)–once 11+ is released this will be much easier. I have written a <a href="https://github.com/za3k/rpi-setup">convenience tool</a>[3] for this step, but you can also find any number of standard guides. Log into your raspberry pi to run the following steps</li><li>(Option 1, not recommended) Upgrade to Debian 11 bullseye (current testing release). This is because we need brlaser 6, not brlaser 4 from debian 10 buster (current stable release). Then, install the print system and driver[2]:<br/><code>sudo apt-get update &amp;&amp; sudo apt-get install lpr cups ghostscript printer-driver-brlaser</code></li><li>(Option 2, recommended) Install ‘brlaser’ from source.<ol><li>Install print system and build tools<br/><code>sudo apt-get update &amp;&amp; sudo apt-get install lpr cups ghostscript git cmake libcups2-dev libcupsimage2-dev</code></li><li>Download the source<br/><code>wget https://github.com/pdewacht/brlaser/archive/v6.tar.gz &amp;&amp; tar xf v6.tar.gz</code></li><li>Build the source and install<br/><code>cd brlaser-6 &amp;&amp; cmake . &amp;&amp; make</code> &amp;&amp; <code>sudo make install</code></li></ol></li><li>Plug in the printer, verify that it shows up using <code style="font-size: 16px;">sudo lsusb</code> or <code style="font-size: 16px;">sudo dmesg</code>. (author’s shameful note: if you’re not looking, I find it surprisingly easy to plug USB B into the ethernet jack)</li><li>Install the printer.<ol><li>Run <code>sudo lpinfo -v | grep usb</code> to get the device name of your printer. It will be something like <code>usb://Brother/HL-2270DW%20series?serial=D4N207646</code><br/>If you’re following this in the hopes that it will work on another printer, run <code>sudo lpinfo -m | grep HL-2270DW</code> to get the PPD file for your printer.</li><li>Install and enable the printer<br/><code>sudo lpadmin -p HL-2270DW -E -v usb://Brother/HL-2270DW%20series?serial=D4N207646 -m drv:///brlaser.drv/br2270dw.ppd</code><br/>Note, <code>-p HL-2270DW</code> is just the name I’m using for the printer, feel free to name the printer whatever you like.</li><li>Enable the printer (did not work for me)<br/><code>sudo lpadmin -p HL-2270DW -E</code></li><li>(Optional) Set the printer as the default destination<br/><code>sudo lpoptions -d HL-2270DW</code></li><li>(Optional) Set any default options you want for the printer<br/><code>sudo lpoptions -p HL-2270DW -o media=letter</code></li></ol></li><li>Test the printer (I’m in the USA so we use ‘letter’ size paper, you can substitute whichever paper you have such as ‘a4’).<ol><li><code>echo "Hello World" | PRINTER=HL-2270DW lp -o media=letter</code> (Make sure anything prints)</li><li><code>cat &lt;test document&gt; | PRINTER=HL-2270DW lp -o media=letter</code> (Print an actual test page to test alignment, etc)</li><li><code>cat &lt;test document&gt; | PRINTER=HL-2270DW lp -o media=letter -o sides=two-sided-short-edge</code> (Make sure duplex works if you plan to use that)</li></ol></li><li>(Optional) Set up an <a href="https://blog.za3k.com/linux-print-server/">scp print server</a>, so any file you copy to a <code>/printme</code> directory gets printed. For the 2270DW, I also have a <code>/printme.duplex</code> directory.</li></ol>
+<p>Links<br/>[1] brother driver <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=15526">does not work</a> on arm (also verified myself)<br/>[2] <a href="https://github.com/pdewacht/brlaser">brlaser</a>, the open-source Brother printer driver<br/>[3] <a href="https://github.com/za3k/rpi-setup">rpi-setup</a>, my convenience command-line script for headless raspberry pi setup<br/>[4] <a href="https://serverfault.com/questions/22414/how-can-i-run-debian-stable-but-install-some-packages-from-testing">stack overflow answer</a> on how to install one package from testing in debian</p>
+<p></p>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/printer/" rel="tag">printer</a>, <a href="https://blog.za3k.com/tag/raspberry-pi/" rel="tag">raspberry pi</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/" rel="bookmark" title="Permalink to Printing on the Brother HL-2270DW printer using a Raspberry Pi"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-4165">
+<div id="comment-4165">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/bc00b207944738af582a91c5352ef163?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/bc00b207944738af582a91c5352ef163?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Joel</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-4165">
+			August 2, 2020 at 12:52 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>There appears to be a typo in step 5A. The page currently reads “lpinfo -m” but I believe should be “lpinfo -v”. Per the man page, the m flag lists drivers and the v flag lists devices. </p>
+<p>The USB device can be found in the -v output for step 5A but the driver can be found in the -m output for step 5B.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Joel" class="comment-reply-link" data-belowelement="comment-4165" data-commentid="4165" data-postid="517" data-replyto="Reply to Joel" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=4165#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-4213">
+<div id="comment-4213">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/b99febd9d3367d3306947a8e159c6445?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/b99febd9d3367d3306947a8e159c6445?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Scott</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-4213">
+			October 19, 2020 at 5:10 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Thank you so very much for this. Worked like a charm.</p>
+<p>Any tips on how to print over the network?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Scott" class="comment-reply-link" data-belowelement="comment-4213" data-commentid="4213" data-postid="517" data-replyto="Reply to Scott" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=4213#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-4277">
+<div id="comment-4277">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/dffffda5bcb146c22d8be3ef6b4f6554?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/dffffda5bcb146c22d8be3ef6b4f6554?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">rathesun01</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-4277">
+			December 8, 2020 at 6:44 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Awesome post. Joel is supposedly correct. It should have been “lpinfo -v” in the step 5A.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to rathesun01" class="comment-reply-link" data-belowelement="comment-4277" data-commentid="4277" data-postid="517" data-replyto="Reply to rathesun01" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=4277#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-4279">
+<div id="comment-4279">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-4279">
+			December 12, 2020 at 1:31 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Corrected ‘lpinfo -v’, thanks.<br>
+No clue how to print over the network, sorry. That’s actually why I set up a raspberry pi to connect to the printer instead–it’s my wifi interface.</br></p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-4279" data-commentid="4279" data-postid="517" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=4279#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-4319">
+<div id="comment-4319">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/b851d521102349bbfd71e7d7df8bef44?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/b851d521102349bbfd71e7d7df8bef44?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">steve</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-4319">
+			December 30, 2020 at 9:05 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>I have the Brother HL-2270DW, and I had to install from source to get it to work. I’m not using USB, but port forwarding across via NAT to another internal network. </p>
+<p>I just used the cups admin pages to complete setting things up. Before using this package, I picked some other closely related printer. It was printing the page, sucking it back in, then finally printing. Not terrible, but I was annoyed. Now it’s perfect!</p>
+<p>For printing over the network, I used the socket::9100 setting. No idea the command line knobs or dials, just did it through the cups web page.</p>
+<p>Another reason for me to do this is now my little rasperry pi zero w shows my printer as an AirPrint printer, so now I can print from my iDevices. Brother has their own app for this printer, but I was annoyed having to install a special app for this.  My HL2270DW was made without AirPrint. It’s a fine little machine and don’t want to throw it out.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to steve" class="comment-reply-link" data-belowelement="comment-4319" data-commentid="4319" data-postid="517" data-replyto="Reply to steve" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=4319#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-4380">
+<div id="comment-4380">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/1edcef9b0ab9150a7e2d22cd18371609?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/1edcef9b0ab9150a7e2d22cd18371609?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Jaye Horn</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-4380">
+			February 18, 2021 at 3:19 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>How did you install from source? and how did you do the port forwarding across via NAT to another internal network? I’m new to this so any help would be very much appreciated.</p>
+<p>Thank you.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Jaye Horn" class="comment-reply-link" data-belowelement="comment-4380" data-commentid="4380" data-postid="517" data-replyto="Reply to Jaye Horn" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=4380#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-4341">
+<div id="comment-4341">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/173de507afbda1d5933757bb66e863eb?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/173de507afbda1d5933757bb66e863eb?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Job</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-4341">
+			January 20, 2021 at 8:09 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Would this work for brother hl-l2395dw scanner?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Job" class="comment-reply-link" data-belowelement="comment-4341" data-commentid="4341" data-postid="517" data-replyto="Reply to Job" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=4341#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="li-comment-5178">
+<div id="comment-5178">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/285bae3dce12d6c20103a5ff2a4bcddb?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/285bae3dce12d6c20103a5ff2a4bcddb?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Adam Trask</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-5178">
+			October 22, 2021 at 5:00 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Thanks so much for posting this.  This helped get my HL-L2300D working properly.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Adam Trask" class="comment-reply-link" data-belowelement="comment-5178" data-commentid="5178" data-postid="517" data-replyto="Reply to Adam Trask" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=5178#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-5438">
+<div id="comment-5438">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/76652e498c8089550fa09056625d5899?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/76652e498c8089550fa09056625d5899?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Danial Foster</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-5438">
+			December 24, 2021 at 1:39 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>&gt;&gt;&gt; (author’s shameful note: if you’re not looking, I find it<br>
+&gt;&gt;&gt;surprisingly easy to plug USB B into the ethernet jack)</br></p>
+<p>I smiled when I saw this because you are clearly a ding dong; that sounds like a rookie mistake.</p>
+<p>I couldn’t get your instructions to work, so I tried troubleshooting through Google. Couldn’t figure it out. sudo lpinfo -v | grep usb wasn’t showing jack.</p>
+<p>It was because I had my USB B plugged into the ethernet jack of my BR-2270DW.</p>
+<p>Everything works now. Thank you so much.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Danial Foster" class="comment-reply-link" data-belowelement="comment-5438" data-commentid="5438" data-postid="517" data-replyto="Reply to Danial Foster" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=5438#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="li-comment-9429">
+<div id="comment-9429">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/fe520de38df86000b2d31661c96cd28a?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/fe520de38df86000b2d31661c96cd28a?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">J Bot</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/#comment-9429">
+			January 3, 2023 at 4:03 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Any steps to do this with a wifi connected HL-2270DW? Thanks!</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to J Bot" class="comment-reply-link" data-belowelement="comment-9429" data-commentid="9429" data-postid="517" data-replyto="Reply to J Bot" data-respondelement="respond" href="https://blog.za3k.com/printing-on-the-brother-hl-2270dw-printer-using-a-raspberry-pi/?replytocom=9429#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ol>

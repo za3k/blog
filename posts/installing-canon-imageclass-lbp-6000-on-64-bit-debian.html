@@ -1,0 +1,64 @@
+---
+author: admin
+categories:
+- Technical
+date: 2015-10-05 01:44:36-07:00
+markup: html
+source: wordpress
+tags:
+- command-line
+- install
+- linux
+- printer
+title: Installing Canon imageClass LBP-6000 on 64-bit Debian
+updated: 2015-10-17 19:27:12-07:00
+wordpress_id: 263
+wordpress_slug: installing-canon-imageclass-lbp-6000-on-64-bit-debian
+---
+<!-- blogpost -->
+<article class="post-263 post type-post status-publish format-standard has-post-thumbnail hentry category-technical tag-command-line tag-install tag-linux tag-printer" id="post-263">
+<h1 class="entry-title">Installing Canon imageClass LBP-6000 on 64-bit Debian</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-10-05T01:44:36-07:00"> <a href="https://blog.za3k.com/installing-canon-imageclass-lbp-6000-on-64-bit-debian/" rel="bookmark" title="1:44 am"><span class="entry-date">October 5, 2015</span> <span class="entry-time"> - 1:44 am</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-10-17T19:27:12-07:00">October 17, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p><span id="more-263"></span>(From <a href="http://askubuntu.com/questions/463289/cant-get-my-canon-lbp-printer-to-run-under-ubuntu-14-04/464334">Stack Overflow</a>)</p>
+<ol>
+<li>64 bit requirements for pre-made binaries:
+<pre lang="shell">sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libstdc++6:i386 libxml2:i386 zlib1g:i386 libpopt0:i386</pre>
+</li>
+<li>Install CUPS
+<pre lang="shell">sudo apt-get update
+sudo apt-get install cups</pre>
+</li>
+<li>Download DriverGo to <a href="http://support-au.canon.com.au/contents/AU/EN/0100459602.html">http://support-au.canon.com.au/contents/AU/EN/0100459602.html</a> and download driver
+<pre lang="shell">64e2d00f0c8764d4032687d29e88f06727d88825 Linux_CAPT_PrinterDriver_V270_uk_EN.tar.gz</pre>
+</li>
+<li>Extract and enter extracted folder
+<pre lang="shell">tar xf Linux_CAPT_PrinterDriver_V270_uk_EN.tar.gz
+cd Linux_CAPT_PrinterDriver_V270_uk_EN</pre>
+</li>
+<li>Install the custom drivers and ccpd
+<pre lang="shell">sudo dpkg -i 64-bit_Driver/Debian/*.deb
+</pre>
+</li>
+<li>Add the printer to CUPS and ccpd
+<pre lang="shell">sudo lpadmin -p CANON_LBP6000 -m CNCUPSLBP6018CAPTS.ppd -v ccp://localhost:59687
+sudo lpadmin -p CANON_LBP6000 -E
+
+sudo ccpdadmin -p CANON_LBP6000 -o /dev/usb/lp0</pre>
+</li>
+<li>Set the default printer
+<pre lang="shell">sudo lpoptions -d CANON_LBP6000</pre>
+</li>
+<li>Set ccpd to start on boot
+<pre lang="shell">sudo update-rc.d ccpd defaults</pre>
+</li>
+</ol>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/command-line/" rel="tag">command-line</a>, <a href="https://blog.za3k.com/tag/install/" rel="tag">install</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/printer/" rel="tag">printer</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/installing-canon-imageclass-lbp-6000-on-64-bit-debian/" rel="bookmark" title="Permalink to Installing Canon imageClass LBP-6000 on 64-bit Debian"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->

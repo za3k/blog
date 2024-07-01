@@ -1,0 +1,40 @@
+---
+author: admin
+categories:
+- Technical
+date: 2020-05-18 22:13:02-07:00
+markup: html
+source: wordpress
+tags:
+- cron
+- email
+- linux
+- system administration
+title: Cron email, and sending email to only one address
+updated: 2020-05-18 22:16:46-07:00
+wordpress_id: 535
+wordpress_slug: cron-email-and-sending-email-to-only-one-address
+---
+<!-- blogpost -->
+<article class="post-535 post type-post status-publish format-standard hentry category-technical tag-cron tag-email tag-linux tag-system-administration" id="post-535">
+<h1 class="entry-title">Cron email, and sending email to only one address</h1>
+<div class="entry-meta">
+<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2020-05-18T22:13:02-07:00"> <a href="https://blog.za3k.com/cron-email-and-sending-email-to-only-one-address/" rel="bookmark" title="10:13 pm"><span class="entry-date">May 18, 2020</span> <span class="entry-time"> - 10:13 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2020-05-18T22:16:46-07:00">May 18, 2020</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
+<div class="entry-content">
+<p>So you want to know when your monitoring system fails, or your cron jobs don’t run? Add this to your crontab:</p>
+<pre class="wp-block-code"><code>MAILTO=me@me.com</code></pre>
+<p>Now install a mail-sending agent. I like ‘<a href="http://untroubled.org/nullmailer/">nullmailer</a>‘, which is much smaller than most mail-sending agents. It can’t receive or forward mail, only send it, which is what I like about it. No chance of a spammer using my server for something nasty.</p>
+<p>The way I have it set up, I’ll have a server (avalanche) sending all email from one address (nullmailer@avalanche.za3k.com) to one email (admin@za3k.com), and that’s it. Here’s my setup on debian:</p>
+<pre class="wp-block-code"><code>sudo apt-get install nullmailer
+echo "admin@za3k.com" | sudo tee /etc/nullmailer/adminaddr # all mail is sent to here, except for certain patterns
+echo "nullmailer@`hostname`.za3k.com" | sudo tee /etc/nullmailer/allmailfrom # all mail is sent from here
+echo "`hostname`.za3k.com" | sudo tee /etc/nullmailer/defaultdomain # superceded by 'allmailfrom' and not used
+echo "`hostname`.za3k.com" | sudo tee /etc/nullmailer/helohost # required to connect to my server. otherwise default to 'me'
+echo "smtp.za3k.com smtp --port=587 --starttls" | sudo tee /etc/nullmailer/remotes &amp;&amp; sudo chmod 600 /etc/nullmailer/remotes</code></pre>
+<p>Now just run <code>echo "Subject: sendmail test" | /usr/lib/sendmail -v admin@za3k.com</code> to test and you’re done!</p>
+</div><!-- .entry-content -->
+<div class="entry-utility">
+<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/cron/" rel="tag">cron</a>, <a href="https://blog.za3k.com/tag/email/" rel="tag">email</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/system-administration/" rel="tag">system administration</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/cron-email-and-sending-email-to-only-one-address/" rel="bookmark" title="Permalink to Cron email, and sending email to only one address"> permalink</a>.</span> </div><!-- .entry-utility -->
+</article>
+
+<!-- comments -->
