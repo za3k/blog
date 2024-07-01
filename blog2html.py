@@ -23,7 +23,7 @@ def parse_date(s):
 def scrape_post(post):
     html = bs4.BeautifulSoup(post, 'html.parser')
     article = html.find('article')
-    comments = html.find('ol', id="commentlist")
+    comments = html.find('ol', class_="commentlist")
 
     result = {}
     result["html_content"] = str(article)
@@ -59,4 +59,3 @@ if __name__ == "__main__":
         output = output_post(parse)
         with open(output_path, "w") as f:
             f.write(output)
-
