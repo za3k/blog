@@ -15,13 +15,15 @@ Other than that I think it's pretty nice!
 """
 
 import argparse
-import yaml
 import chevron as mustache
 import collections
-from pathlib import Path
+import math
 import collections
 import os, os.path
 import sys
+import yaml
+
+from pathlib import Path
 
 import frontmatter
 import monitor
@@ -55,6 +57,7 @@ def calc_range(l):
 
 def scale(i1, range1, range2):
     frac1 = (i1 - range1.start) / (range1.stop - range1.start)
+    assert 0 <= frac1 <= 1
     frac2 = frac1
     i2 = frac2 * (range2.stop - range2.start) + range2.start
     return i2
@@ -95,7 +98,7 @@ class Templatable(PseudoMap):
         template_path = blog["{}_template".format(name)]
         with open(template_path, "r") as f:
             template = f.read()
-        return mustache.render(template, context)
+        return mustache.render(template, context, warn=True)
 
     def content(self):
         return self.render_template(self.blog, self.type, self.context).encode("utf8")
@@ -142,10 +145,15 @@ class Tag(Templatable):
     def __init__(self, tag, blog):
         super().__init__(blog)
         self.tag = tag
-        self.posts = set()
+        self._posts = set()
+        self.slug = url_slug(tag)
 
     def add_post(self, post):
-        self.posts.add(post)
+        self._posts.add(post)
+
+    @property
+    def posts(self):
+        return sorted(self._posts, key=lambda post: post.date, reverse=True)
 
     @property
     def num_posts(self):
@@ -253,9 +261,10 @@ class Blog(PseudoMap):
         self.top_tags = sorted(top_tags, key=lambda x: x.tag.lower())
 
         # Calculate the size for each tag in the cloud, storing it on the tag itself
-        post_count_range = calc_range(x.num_posts for x in top_tags)
+        tag_scaling = lambda count: round(math.log(count+1, 10) * 100 )
+        post_count_range = calc_range(tag_scaling(tag.num_posts) for tag in top_tags)
         for tag in top_tags:
-            tag.font_size = scale(tag.num_posts, post_count_range, font_sizes)
+            tag.font_size = scale(tag_scaling(tag.num_posts), post_count_range, font_sizes)
         
         return Templatable.render_template(blog, "tagcloud", self)
 
@@ -266,7 +275,7 @@ class Blog(PseudoMap):
             self.config,
         ]
         templates = [
-            x for x in self.__dict__.keys() if x.endswith("_template")
+            self[x] for x in self.__dict__.keys() if x.endswith("_template")
         ]
         global_update = templates + [
             Path(self.static_dir) / "wp-includes", 
@@ -291,6 +300,10 @@ class Blog(PseudoMap):
             #print(path, "updated, ignoring...", file=sys.stderr)
             pass
 
+    def clean(self):
+        assert self.destination
+        os.system("rm -rf \"{}\"/*".format(self.destination))
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         prog="blog",
@@ -310,6 +323,7 @@ if __name__ == "__main__":
     if args.local:
         blog.web_root = ".."
     if args.all:
+        blog.clean()
         blog.generate_all()
     else:
         blog.updates_happened(args.changed_files)
