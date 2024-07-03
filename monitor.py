@@ -40,13 +40,19 @@ class Monitor():
         return (self.discard_rapid is not None and 
                 elapsed < self.discard_rapid)
 
+    ignore_events = [
+        watchdog.events.FileOpenedEvent,
+        watchdog.events.FileClosedEvent,
+        watchdog.events.DirModifiedEvent,
+    ]
     def _iter(self):
         try:
             while True:
                 event = self.updates.get()
-                yield event.src_path
-                if hasattr(event, "dest_path"):
-                    yield event.dest_path
+                if not any(isinstance(event, t) for t in self.ignore_events):
+                    yield event.src_path
+                    if hasattr(event, "dest_path"):
+                        yield event.dest_path
                 self.updates.task_done()
         except KeyboardInterrupt:
             self.observer.stop()
