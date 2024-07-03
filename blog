@@ -14,6 +14,8 @@ not documented.
 Other than that I think it's pretty nice!
 """
 
+# TODO: Pagination for main blog, categories, tag
+
 import sys
 sys.dont_write_bytecode = True
 
@@ -315,6 +317,9 @@ class Blog(PseudoMap):
         assert self.destination
         os.system("rm -rf \"{}\"/*".format(self.destination))
 
+    def publish(self):
+        os.system("rsync -r --delete {destination}/ germinate:/var/www/blog".format(destination=self.destination))
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         prog="blog",
@@ -336,6 +341,7 @@ if __name__ == "__main__":
     if args.all:
         blog.clean()
         blog.generate_all()
+        blog.publish()
     else:
         blog.updates_happened(args.changed_files)
 
