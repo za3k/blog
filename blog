@@ -14,13 +14,15 @@ not documented.
 Other than that I think it's pretty nice!
 """
 
+import sys
+sys.dont_write_bytecode = True
+
 import argparse
 import chevron as mustache
 import collections
 import math
 import collections
 import os, os.path
-import sys
 import yaml
 
 from pathlib import Path
