@@ -191,7 +191,7 @@ class Blog(PseudoMap):
         for k in {"source", "destination"}:
             self[k] = os.path.expanduser(config.pop(k))
         for k, v in config.items():
-            if k.endswith("_dir") or k.endswith("_template"):
+            if k.endswith("_dir") or k.endswith("_template") or k.endswith("_path"):
                 v = os.path.join(self.source, os.path.expanduser(v))
             self[k] = v
 
@@ -255,10 +255,10 @@ class Blog(PseudoMap):
         os.execl(sys.argv[0], *sys.argv)
 
     @property
-    def tag_cloud(self, font_sizes=range(8, 22), limit=45):
+    def tagcloud(self, font_sizes=range(8, 22), limit=45):
         top_tags = self.tags.values()
         # Top 45 most popular tags
-        top_tags = sorted(top_tags, key=lambda x: x.num_posts, reverse=True)[:limit]
+        top_tags = sorted(top_tags, key=lambda x: (x.num_posts, x.tag.lower()), reverse=True)[:limit]
         # in alphabetical order
         self.top_tags = sorted(top_tags, key=lambda x: x.tag.lower())
 

@@ -13,7 +13,7 @@ post_template: "templates/post.mustache.html"
 tagcloud_template: "templates/tagcloud.mustache.html"
 
 post_destination: "{{destination}}/posts/{{id}}.html"
-tag_destination: "{{destination}}/tag/{{tag}}.html"
+tag_destination: "{{destination}}/tag/{{slug}}.html"
 category_destination: "{{destination}}/category/{{category}}.html"
 page_destination: "{{destination}}/{{page}}"
 image_destination: "{{destination}}/images/{{image}}"
