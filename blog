@@ -4,7 +4,7 @@ import yaml
 import chevron as mustache
 from pathlib import Path
 import collections
-import os.path
+import os, os.path
 import sys
 
 import frontmatter
@@ -26,7 +26,24 @@ def url_slug(title):
     title = "".join(x for x in title if x in allowable)
     return title
 
-RELOAD_HTML = b"""<script>window.setTimeout(function () { location.reload(false);}, 5000);</script>"""
+RELOAD_HTML = b"""
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+    setTimeout(function() {
+    var scrollpos = sessionStorage.getItem('scrollpos');
+    if (scrollpos) {
+        window.scrollTo(0, scrollpos);
+        console.log(scrollpos);
+        sessionStorage.removeItem('scrollpos');
+    }
+    }, 10)
+});
+setTimeout(function() {
+    sessionStorage.setItem('scrollpos', window.scrollY);
+    document.location.reload(true); 
+}, 10000);
+</script>
+"""
 
 class Templatable(PseudoMap):
     def __init__(self, blog):
@@ -111,6 +128,7 @@ class Blog(PseudoMap):
         self.posts = []
         self.reload = reload
 
+        self.config = os.path.abspath(config)
         self.load_config(config)
         self.load_posts()
 
@@ -178,8 +196,16 @@ class Blog(PseudoMap):
         for path in paths:
             self._update_happened(path)
 
+    @staticmethod
+    def reboot():
+        os.execl(sys.argv[0], *sys.argv)
+
     def _update_happened(self, path):
         path = Path(path)
+        reload_update = [
+            os.path.abspath(__file__),
+            self.config,
+        ]
         global_update = [
             self.tag_template, self.category_template, self.post_template,
             Path(self.static_dir) / "wp-includes", 
@@ -191,17 +217,18 @@ class Blog(PseudoMap):
             self.static_dir, # aside from those two subdirs
             self.image_dir,
         ]
+        if str(path) in reload_update:
+            print(path, "updated, restarting 'blog'...")
+            self.reboot()
         if any(path.is_relative_to(top) for top in global_update):
-            print(path, "updated, generating all...", file=sys.stderr)
+            print(path, "updated, generating all", file=sys.stderr)
             self.generate_all()
         elif any(path.is_relative_to(top) for top in local_update):
-            print(path, "updated, generating all (needlessly)...", file=sys.stderr)
+            print(path, "updated, generating all (needlessly)", file=sys.stderr)
             self.generate_all() # TODO: Don't generate everything
         else:
             #print(path, "updated, ignoring...", file=sys.stderr)
             pass
-            
-        # TODO: Reload when 'blog' executable or config file is changed?
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -220,7 +247,7 @@ if __name__ == "__main__":
     if args.all:
         blog.generate_all()
     else:
-        blog.updates_happened(changed_files)
+        blog.updates_happened(args.changed_files)
 
     if args.follow:
         print("monitoring for changes...", file=sys.stderr)
