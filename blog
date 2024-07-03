@@ -83,6 +83,7 @@ setTimeout(function() {
 """
 
 class Templatable(PseudoMap):
+    use_layout = True
     def __init__(self, blog):
         self.blog = blog
     
@@ -103,7 +104,13 @@ class Templatable(PseudoMap):
         return mustache.render(template, context, warn=True)
 
     def content(self):
-        return self.render_template(self.blog, self.type, self.context).encode("utf8")
+        content = self.render_template(self.blog, self.type, self.context)
+        if self.use_layout:
+            return self.render_template(self.blog, "layout", collections.ChainMap({
+                "content": content,
+            }, self, self.blog)).encode("utf8")
+        else:
+            return
 
     def output(self):
         output = self.content()
@@ -118,6 +125,7 @@ class Templatable(PseudoMap):
         return collections.ChainMap(self, self.blog)
 
 class Static(Templatable):
+    use_layout = False
     def __init__(self, path, blog):
         super().__init__(blog)
         self.path = path
@@ -171,6 +179,7 @@ class Page(Templatable):
     pass # TODO
 
 class Image(Templatable):
+    use_layout = False
     pass # TODO
 
 class Blog(PseudoMap):

@@ -2,6 +2,7 @@
 source: "/home/zachary/blog"
 destination: "/home/zachary/blog/public"
 web_root: "https://blog2.za3k.com"
+title: 'blog of zachary "za3k" vance'
 
 post_dir: "posts"
 page_dir: "pages"
@@ -11,10 +12,11 @@ tag_template: "templates/tag.mustache.html"
 category_template: "templates/tag.mustache.html"
 post_template: "templates/post.mustache.html"
 tagcloud_template: "templates/tagcloud.mustache.html"
+layout_template: "templates/layout.mustache.html"
 
 post_destination: "{{destination}}/posts/{{id}}.html"
 tag_destination: "{{destination}}/tag/{{slug}}.html"
-category_destination: "{{destination}}/category/{{category}}.html"
+category_destination: "{{destination}}/category/{{slug}}.html"
 page_destination: "{{destination}}/{{page}}"
 image_destination: "{{destination}}/images/{{image}}"
 static_destination: "{{destination}}/{{relative_path}}"
