@@ -1,6 +1,7 @@
 # These two properties are always first, and always absolute paths
 source: "/home/zachary/blog_converter"
 destination: "/home/zachary/blog_converter/public"
+web_root: "https://blog2.za3k.com"
 
 post_dir: "posts"
 page_dir: "pages"
@@ -9,6 +10,7 @@ static_dir: "static"
 tag_template: "templates/tag.mustache.html"
 category_template: "templates/tag.mustache.html"
 post_template: "templates/post.mustache.html"
+tagcloud_template: "templates/tagcloud.mustache.html"
 
 post_destination: "{{destination}}/posts/{{id}}.html"
 tag_destination: "{{destination}}/tag/{{tag}}.html"

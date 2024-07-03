@@ -1,7 +1,23 @@
 #!/bin/python3
+"""
+Generates blog.za3k.com from source files.
+Source files consist of a YAML "front material", and markdown or HTML body.
+Mostly they have been exported from wordpress by wordpress2frontmaterial.py.
+
+This is one big honking violation of:
+
+  > Explicit is better than implicit.
+
+There is magic. Templates read directly off objects. Objects' fields are
+not documented.
+
+Other than that I think it's pretty nice!
+"""
+
 import argparse
 import yaml
 import chevron as mustache
+import collections
 from pathlib import Path
 import collections
 import os, os.path
@@ -26,6 +42,23 @@ def url_slug(title):
     title = "".join(x for x in title if x in allowable)
     return title
 
+def calc_range(l):
+    it = iter(l)
+    min = next(it)
+    max = min
+    for x in it:
+        if x < min:
+            min = x
+        if x > max:
+            max = x
+    return range(min, max)
+
+def scale(i1, range1, range2):
+    frac1 = (i1 - range1.start) / (range1.stop - range1.start)
+    frac2 = frac1
+    i2 = frac2 * (range2.stop - range2.start) + range2.start
+    return i2
+
 RELOAD_HTML = b"""
 <script>
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -33,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var scrollpos = sessionStorage.getItem('scrollpos');
     if (scrollpos) {
         window.scrollTo(0, scrollpos);
-        console.log(scrollpos);
         sessionStorage.removeItem('scrollpos');
     }
     }, 10)
@@ -58,14 +90,15 @@ class Templatable(PseudoMap):
         output_path_template = self.blog["{}_destination".format(self.type)]
         return Path(mustache.render(output_path_template, self.context))
 
-    @property
-    def template_path(self):
-        return self.blog["{}_template".format(self.type)]
+    @staticmethod
+    def render_template(blog, name, context):
+        template_path = blog["{}_template".format(name)]
+        with open(template_path, "r") as f:
+            template = f.read()
+        return mustache.render(template, context)
 
     def content(self):
-        with open(self.template_path, "r") as f:
-            template = f.read()
-        return mustache.render(template, self.context).encode("utf8")
+        return self.render_template(self.blog, self.type, self.context).encode("utf8")
 
     def output(self):
         output = self.content()
@@ -110,16 +143,25 @@ class Tag(Templatable):
         super().__init__(blog)
         self.tag = tag
         self.posts = set()
+
     def add_post(self, post):
         self.posts.add(post)
+
+    @property
+    def num_posts(self):
+        return len(self.posts)
+
     def __hash__(self):
         return hash(self.tag)
+
 class Category(Tag):
     pass
+
 class Page(Templatable):
-    pass
+    pass # TODO
+
 class Image(Templatable):
-    pass
+    pass # TODO
 
 class Blog(PseudoMap):
     def __init__(self, config="config.yaml", reload=False):
@@ -166,16 +208,18 @@ class Blog(PseudoMap):
         return self.tags[tag]
 
     @property
-    def images(self):
-        return [] # TODO
-    @property
     def static(self):
         for dirpath, dirnames, filenames in Path(self.static_dir).walk():
             for name in filenames:
                 path = dirpath / name
                 yield Static(path, self)
+
     @property
     def pages(self):
+        return [] # TODO
+
+    @property
+    def images(self):
         return [] # TODO
 
     def generate_all(blog):
@@ -200,14 +244,31 @@ class Blog(PseudoMap):
     def reboot():
         os.execl(sys.argv[0], *sys.argv)
 
+    @property
+    def tag_cloud(self, font_sizes=range(8, 22), limit=45):
+        top_tags = self.tags.values()
+        # Top 45 most popular tags
+        top_tags = sorted(top_tags, key=lambda x: x.num_posts, reverse=True)[:limit]
+        # in alphabetical order
+        self.top_tags = sorted(top_tags, key=lambda x: x.tag.lower())
+
+        # Calculate the size for each tag in the cloud, storing it on the tag itself
+        post_count_range = calc_range(x.num_posts for x in top_tags)
+        for tag in top_tags:
+            tag.font_size = scale(tag.num_posts, post_count_range, font_sizes)
+        
+        return Templatable.render_template(blog, "tagcloud", self)
+
     def _update_happened(self, path):
         path = Path(path)
         reload_update = [
             os.path.abspath(__file__),
             self.config,
         ]
-        global_update = [
-            self.tag_template, self.category_template, self.post_template,
+        templates = [
+            x for x in self.__dict__.keys() if x.endswith("_template")
+        ]
+        global_update = templates + [
             Path(self.static_dir) / "wp-includes", 
             Path(self.static_dir) / "wp-content/themes",
             self.page_dir,
@@ -238,12 +299,16 @@ if __name__ == "__main__":
     parser.add_argument("-a", "--all", action='store_true')
     parser.add_argument('changed_files', metavar="FILE", type=argparse.FileType('r'), nargs="*", help='blog posts to re-generate (source paths)')
     parser.add_argument("-f", "--follow", action='store_true', help="continue running and monitoring for file changes")
+    parser.add_argument("-l", "--local", action='store_true', help="use relative paths for links")
+    parser.add_argument("-r", "--reload", action='store_true', help="reload the page automatically")
     args = parser.parse_args()
 
     if len(args.changed_files) == 0:
         args.all = True
 
-    blog = Blog(reload=args.follow)
+    blog = Blog(reload=args.reload)
+    if args.local:
+        blog.web_root = ".."
     if args.all:
         blog.generate_all()
     else:
