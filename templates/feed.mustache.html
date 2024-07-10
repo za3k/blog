@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+<channel>
+	<title>{{title}}</title>
+	<atom:link href="https://blog.za3k.com/pages/feed.xml" rel="self" type="application/rss+xml" />
+	<link>{{web_root}}</link>
+	<description>{{title}}</description>
+	<lastBuildDate>{{now_rfc822}}</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+    {{# posts.first10 }}
+	<item>
+		<title>{{title}}</title>
+		<link>{{web_root}}/post/{{id}}.html</link>
+		<dc:creator><![CDATA[{{author}}]]></dc:creator>
+		<pubDate>{{date_rfc822}}</pubDate>
+        {{# categories }}
+        <category><![CDATA[{{.}}]]></category>
+        {{/ categories }}
+        {{# tags }}
+        <category><![CDATA[{{.}}]]></category>
+        {{/ tags }}
+		<guid isPermaLink="false">{{id}}</guid>
+        <!--<description><![CDATA[SHORT_DESCRIPTION]]></description>-->
+        <content:encoded><![CDATA[{{post}}]]></content:encoded>
+    </item>
+    {{/ posts.first10 }}
+</channel>
+</rss>

@@ -14,23 +14,29 @@ not documented.
 Other than that I think it's pretty nice!
 """
 
-# TODO: Pagination for main blog, categories, tag
-
 import sys
 sys.dont_write_bytecode = True
 
 import argparse
 import chevron as mustache
 import collections
+import datetime
 import math
 import collections
 import os, os.path
+import re
+import subprocess
 import yaml
 
 from pathlib import Path
 
 import frontmatter
 import monitor
+
+NO_RESTART_EXIT_CODE = 27
+RESTART_EXIT_CODE = 28
+RFC822="%a, %d %b %Y %H:%M:%S %Z"
+FRONTMATTER_DT="%Y-%m-%d %H:%M:%S%:z"
 
 class PseudoMap():
     def __getitem__(self, key):
@@ -42,11 +48,40 @@ class PseudoMap():
         setattr(self, key, value)
 
 # I have verified wordpress slugs match this format too
-allowable="abcdefghijklmnopqrstuvwxyz0123456789-" 
+allowable="abcdefghijklmnopqrstuvwxyz0123456789-"
 def url_slug(title):
-    title = title.lower().replace(" ", "-")
+    title = title.lower().replace(" ", "-").replace(".", "-")
     title = "".join(x for x in title if x in allowable)
     return title
+
+def paginated_property(f):
+    # Add <PROPERTY>.pages and <PROPERTY>.first10 with deep python magic
+    class Paginated():
+        def __init__(self, lst):
+            self.lst = sorted(lst, key=lambda x: x.date, reverse=True)
+        def __iter__(self):
+            return iter(self.lst)
+        def __len__(self):
+            return len(self.lst)
+        @property
+        def pages(self, per_page=10):
+            for start in range(0, len(self.lst), per_page):
+                yield self.lst[start:start+per_page]
+        @property
+        def first10(self):
+            return self.lst[:10]
+        @property
+        def length(self):
+            return len(self.lst)
+    class AnonProperty():
+        def __init__(self, fget):
+            self.fget = fget
+        def __set_name__(self, owner, name):
+            self._name = "_" + name
+        def __get__(self, obj, objtype=None):
+            return Paginated(self.fget(obj))
+
+    return AnonProperty(f)
 
 def calc_range(l):
     it = iter(l)
@@ -84,6 +119,43 @@ setTimeout(function() {
 </script>
 """
 
+class Link():
+    def __init__(self, original, blog, source):
+        self.original = original
+        self.partial = original.replace("https://blog.za3k.com/","")
+        if self.partial.endswith("/"):
+            self.partial = self.partial.removesuffix("/")
+            if "/" not in self.partial:
+                self.partial = "posts/" + self.partial
+            self.partial += ".html"
+        self.blog = blog
+        self.source = source
+
+    @property
+    def wordpress(self):
+        return "https://blog.za3k.com/" + self.partial
+
+    @property
+    def static(self):
+        return "../" + self.partial
+
+    @property
+    def file(self):
+        return self.blog.destination + "/" + self.partial
+    
+    @property
+    def is_dead(self):
+        return not os.path.exists(self.file)
+
+    def __hash__(self):
+        return hash(self.partial)
+
+    def __lt__(self, other):
+        return self.partial < other.partial
+
+    def __eq__(self, other):
+        return self.partial == other.partial
+
 class Templatable(PseudoMap):
     use_layout = True
     def __init__(self, blog):
@@ -98,12 +170,17 @@ class Templatable(PseudoMap):
         output_path_template = self.blog["{}_destination".format(self.type)]
         return Path(mustache.render(output_path_template, self.context))
 
-    @staticmethod
-    def render_template(blog, name, context):
+    @property
+    def url(self):
+        return self.blog.web_root + "/" + self.output_path
+
+    def render_template(source, blog, name, context):
         template_path = blog["{}_template".format(name)]
         with open(template_path, "r") as f:
             template = f.read()
-        return mustache.render(template, context, warn=True)
+        html = mustache.render(template, context, warn=True)
+        blog.replace_links(source, html)
+        return html
 
     def content(self):
         content = self.render_template(self.blog, self.type, self.context)
@@ -112,7 +189,7 @@ class Templatable(PseudoMap):
                 "content": content,
             }, self, self.blog)).encode("utf8")
         else:
-            return
+            return content.encode("utf8")
 
     def output(self):
         output = self.content()
@@ -144,12 +221,17 @@ class Post(Templatable):
         self.post, self.comments = parsed.pop("content").split("<!-- comments -->\n")
         for k, v in parsed.items():
             self[k] = v
+
+    @property
+    def date_rfc822(self):
+        return self.date.strftime(RFC822)
+
     @property
     def id(self):
         if hasattr(self, "wordpress_slug"): return self.wordpress_slug
         if hasattr(self, "slug"): return self.slug
         return url_slug(self.title)
-
+        
     def __hash__(self):
         return hash(self.id)
 
@@ -158,14 +240,14 @@ class Tag(Templatable):
         super().__init__(blog)
         self.tag = tag
         self._posts = set()
-        self.slug = url_slug(tag)
+        self.slug = {"minecraft": "minecraft-2"}.get(tag, url_slug(tag))
 
     def add_post(self, post):
         self._posts.add(post)
 
-    @property
+    @paginated_property
     def posts(self):
-        return sorted(self._posts, key=lambda post: post.date, reverse=True)
+        return self._posts
 
     @property
     def num_posts(self):
@@ -178,7 +260,18 @@ class Category(Tag):
     pass
 
 class Page(Templatable):
-    pass # TODO
+    def __init__(self, page_name, blog, use_layout=None):
+        super().__init__(blog)
+        self.page_name = page_name
+        if use_layout is not None:
+            self.use_layout = use_layout
+
+    @property
+    def type(self):
+        return self.page_name
+
+class Author(Tag):
+    pass
 
 class Image(Templatable):
     use_layout = False
@@ -188,8 +281,12 @@ class Blog(PseudoMap):
     def __init__(self, config="config.yaml", reload=False):
         self.tags = {}
         self.categories = {}
-        self.posts = []
+        self.authors = {}
+        self._posts = []
         self.reload = reload
+        self.links = set()
+        self.now = datetime.datetime.now(datetime.timezone.utc)
+        self.now_rfc822 = self.now.strftime(RFC822)
 
         self.config = os.path.abspath(config)
         self.load_config(config)
@@ -206,17 +303,35 @@ class Blog(PseudoMap):
                 v = os.path.join(self.source, os.path.expanduser(v))
             self[k] = v
 
+    @property
+    def deadlinks(self):
+        return sorted(link for link in self.links if link.is_dead and all(x not in link.partial for x in ("?replytocom", "#comment")))
+
+    @paginated_property
+    def posts(self):
+        return self._posts
+
+    def replace_links(self, source, html):
+        link_regex = '(?<!srcset=")(?<=")https://blog.za3k.com/([^"]*)(?=")'
+        return re.sub(link_regex, lambda m: self.rewrite_link(source, m), html)
+
+    def rewrite_link(self, source, match):
+        link = Link(match.group(0), self, source.output_path)
+        self.links.add(link)
+        return link.static
+
     def load_posts(self):
         for post_input_path in Path(self.post_dir).iterdir():
             self.add_post(Post(frontmatter.load(post_input_path), self))
 
     def add_post(self, post):
-        self.posts.append(post)
+        self._posts.append(post)
 
         for tag in post.tags:
             self.tag_for(tag).add_post(post)
         for category in post.categories:
             self.category_for(category).add_post(post)
+        self.author_for(post.author).add_post(post)
 
     def category_for(self, category):
         if category not in self.categories:
@@ -228,6 +343,11 @@ class Blog(PseudoMap):
             self.tags[tag] = Tag(tag, self)
         return self.tags[tag]
 
+    def author_for(self, author):
+        if author not in self.authors:
+            self.authors[author] = Author(author, self)
+        return self.authors[author]
+
     @property
     def static(self):
         for dirpath, dirnames, filenames in Path(self.static_dir).walk():
@@ -237,7 +357,10 @@ class Blog(PseudoMap):
 
     @property
     def pages(self):
-        return [] # TODO
+        return [
+            Page("feed", self, use_layout=False),
+            Page("deadlinks", self), # Must be last to avoid dead links
+        ]
 
     @property
     def images(self):
@@ -254,6 +377,8 @@ class Blog(PseudoMap):
             tag.output()
         for category in blog.categories.values():
             category.output()
+        for author in blog.authors.values():
+            author.output()
         for page in blog.pages:
             page.output()
 
@@ -263,7 +388,9 @@ class Blog(PseudoMap):
 
     @staticmethod
     def reboot():
-        os.execl(sys.argv[0], *sys.argv)
+        #os.execl(sys.argv[0], *sys.argv)
+        sys.exit(RESTART_EXIT_CODE)
+     
 
     @property
     def tagcloud(self, font_sizes=range(8, 22), limit=45):
@@ -279,7 +406,7 @@ class Blog(PseudoMap):
         for tag in top_tags:
             tag.font_size = scale(tag_scaling(tag.num_posts), post_count_range, font_sizes)
         
-        return Templatable.render_template(blog, "tagcloud", self)
+        return Templatable.render_template(Templatable, blog, "tagcloud", self)
 
     def _update_happened(self, path):
         path = Path(path)
@@ -320,7 +447,17 @@ class Blog(PseudoMap):
     def publish(self):
         os.system("rsync -r --delete {destination}/ germinate:/var/www/blog".format(destination=self.destination))
 
+
+def supervisor():
+    while True:
+        result = subprocess.run([sys.argv[0], "--supervised"] + sys.argv[1:])
+        if result.returncode == NO_RESTART_EXIT_CODE:
+            break
+
 if __name__ == "__main__":
+    if "--supervised" not in sys.argv:
+        supervisor()
+
     parser = argparse.ArgumentParser(
         prog="blog",
         description="Generate za3k's blog from HTML/markdown files with YAML frontmatter and some templates",
@@ -330,8 +467,10 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--follow", action='store_true', help="continue running and monitoring for file changes")
     parser.add_argument("-l", "--local", action='store_true', help="use relative paths for links")
     parser.add_argument("-r", "--reload", action='store_true', help="reload the page automatically")
+    parser.add_argument("--supervised", action='store_true')
     args = parser.parse_args()
 
+    assert args.supervised
     if len(args.changed_files) == 0:
         args.all = True
 
@@ -348,5 +487,9 @@ if __name__ == "__main__":
     if args.follow:
         print("monitoring for changes...", file=sys.stderr)
         # Discard updates within 5s of one another
-        for changed_file in monitor.Monitor(blog.source, discard_rapid=5): 
-            blog.updates_happened([changed_file])
+        try:
+            for changed_file in monitor.Monitor(blog.source, discard_rapid=5): 
+                blog.updates_happened([changed_file])
+        except KeyboardInterrupt:
+            pass
+    sys.exit(NO_RESTART_EXIT_CODE)
