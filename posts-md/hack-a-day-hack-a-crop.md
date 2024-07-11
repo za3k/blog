@@ -1,0 +1,34 @@
+---
+author: admin
+categories:
+- Non-Technical
+- Technical
+date: 2022-11-18 18:25:42-07:00
+markup: html
+source: wordpress
+tags:
+- hack-a-day
+- image
+- november
+- throwaway
+- tools
+title: 'Hack-A-Day: Hack-A-Crop'
+updated: 2022-11-18 18:25:46-07:00
+wordpress_id: 910
+wordpress_slug: hack-a-day-hack-a-crop
+---
+It’s november, and I’ve decided this month that I’m going to do 30 projects in 30 days. It’s an all-month hack-a-thon!
+
+Today’s project is [Hack-A-Crop][1] ([demo][2], [source][3]). It crops an image to a fixed size.
+
+[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-16.png)][4]
+
+I got help from several people on the CSS, thanks to instantly sharing my work via [ngrok][5] from my laptop. Thanks people! Thanks ngrok!
+
+Today’s project was in anticipation of showing off what I did at the end of the month. I want a small thumbnail for each project.
+
+[1]: https://tilde.za3k.com/hackaday/crop/
+[2]: https://tilde.za3k.com/hackaday/crop/
+[3]: https://github.com/za3k/day18_crop
+[4]: https://tilde.za3k.com/hackaday/crop/
+[5]: https://ngrok.com/

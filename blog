@@ -22,7 +22,7 @@ import chevron as mustache
 import collections
 import datetime
 import math
-import collections
+import markdown2
 import os, os.path
 import re
 import subprocess
@@ -106,6 +106,8 @@ def scale(i1, range1, range2):
     frac2 = frac1
     i2 = frac2 * (range2.stop - range2.start) + range2.start
     return i2
+
+md2html = markdown2.markdown
 
 RELOAD_HTML = b"""
 <script>
@@ -204,6 +206,7 @@ class Templatable(PseudoMap):
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
         with open(self.output_path, "wb") as f:
             f.write(output)
+        # TODO: Add a 'paginated' property that Tag, Category, Author, and index.html can all use
 
     @property
     def context(self):
@@ -222,14 +225,72 @@ class Static(Templatable):
         return self.path.relative_to(self.blog.static_dir)
 
 class Post(Templatable):
-    def __init__(self, parsed, blog):
+    def __init__(self, parsed, blog, parsed_md):
         super().__init__(blog)
         self.post, self.comments = parsed.pop("content").split("<!-- comments -->\n")
         self.main_display = True
+        self.md = parsed_md["content"]
         for k, v in parsed.items():
             if k in {"tags", "author", "categories"}:
                 k = "_" + k
             self[k] = v
+
+    # TODO: Add an 'above the fold' part, maybe
+
+    @property
+    def md_html(self):
+        return md2html(self.md)
+
+    @property
+    def output_path_html(self):
+        output_path_template = self.blog["post_html_destination"]
+        return Path(mustache.render(output_path_template, self.context))
+
+    @property
+    def output_path_md(self):
+        output_path_template = self.blog["post_md_destination"]
+        return Path(mustache.render(output_path_template, self.context))
+
+    @property
+    def url_md(self):
+        return self.blog.web_root + "/" + str(self.output_path_md.relative_to(self.blog.destination))
+
+    @property
+    def url_html(self):
+        return self.blog.web_root + "/" + str(self.output_path_html.relative_to(self.blog.destination))
+
+    def content_combined(self):
+        return self.render_template(self.blog, "postcombined", self.context).encode("utf8")
+
+    def content_md(self):
+        content = self.render_template(self.blog, self.type, collections.ChainMap({
+            "post": self.md_html
+        }, self.context))
+        return self.render_template(self.blog, "layout", collections.ChainMap({
+            "content": content,
+        }, self, self.blog)).encode("utf8")
+
+    def output(self):
+        output = self.content()
+        if self.blog.reload:
+            output += RELOAD_HTML
+        self.output_path_html.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.output_path_html, "wb") as f:
+            f.write(output)
+
+        output = self.content_md()
+        if self.blog.reload:
+            output += RELOAD_HTML
+        self.output_path_md.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.output_path_md, "wb") as f:
+            f.write(output)
+
+        output = self.content_combined()
+        if self.blog.reload:
+            output += RELOAD_HTML
+        self.output_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(self.output_path, "wb") as f:
+            f.write(output)
 
     @property
     def date_rfc822(self):
@@ -377,7 +438,8 @@ class Blog(PseudoMap):
 
     def load_posts(self):
         for post_input_path in Path(self.post_dir).iterdir():
-            self.add_post(Post(frontmatter.load(post_input_path), self))
+            post_md_input_path = Path(self.post_md_dir) / post_input_path.relative_to(self.post_dir).with_suffix(".md")
+            self.add_post(Post(frontmatter.load(post_input_path), self, frontmatter.load(post_md_input_path)))
 
     def add_post(self, post):
         self._posts.append(post)
@@ -516,6 +578,7 @@ def supervisor():
         result = subprocess.run([sys.argv[0], "--supervised"] + sys.argv[1:])
         if result.returncode == NO_RESTART_EXIT_CODE:
             break
+    sys.exit(0)
 
 if __name__ == "__main__":
     if "--supervised" not in sys.argv:

@@ -7,6 +7,7 @@ def loads(s):
     front = yaml.safe_load(parts[1])
     front["content"] = parts[2]
     return front
+
 def load(path):
     try: 
         with open(path) as f:
@@ -14,3 +15,17 @@ def load(path):
     except:
         print(path)
         raise
+
+def dump(matter):
+    content = matter.pop("content")
+    out = "---\n"
+    out += yaml.dump(matter)
+    out += "---\n"
+    out += content
+    if not out.endswith("\n"):
+        out += "\n"
+    return out
+
+def save(path, matter):
+    with open(path, "w") as f:
+        f.write(dump(matter))

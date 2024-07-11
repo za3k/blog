@@ -1,0 +1,18 @@
+---
+author: admin
+categories:
+- Technical
+date: 2023-06-24 09:20:14-07:00
+markup: html
+source: wordpress
+tags:
+- programming
+- software
+title: Scheme Interpreter
+updated: 2023-06-24 09:20:14-07:00
+wordpress_id: 1087
+wordpress_slug: scheme-interpreter
+---
+I wrote a [small scheme interpreter][1] in C.
+
+[1]: https://github.com/za3k/sscheme
