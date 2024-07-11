@@ -15,10 +15,6 @@ wordpress_id: 598
 wordpress_slug: making-a-hardware-random-number-generator
 ---
 <!-- blogpost -->
-<article class="post-598 post type-post status-publish format-standard hentry category-technical tag-hardware tag-linux tag-randomness" id="post-598">
-<h1 class="entry-title">Making a hardware random number generator</h1>
-<div class="entry-meta">
-<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2021-06-06T17:23:06-07:00"> <a href="https://blog.za3k.com/making-a-hardware-random-number-generator/" rel="bookmark" title="5:23 pm"><span class="entry-date">June 6, 2021</span> <span class="entry-time"> - 5:23 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2021-06-06T17:28:29-07:00">June 6, 2021</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
 <div class="entry-content">
 <p>If you want a really good source of random numbers, you should get a hardware generator. But there’s not a lot of great options out there, and most people looking into this get (understandably) paranoid about backdoors. But, there’s a nice trick: if you combine multiple random sources together with <a href="https://github.com/za3k/short-programs#xor">xor</a>, it doesn’t matter if one is backdoored, as long as they aren’t all backdoored. There are some exceptions–if the backdoor is actively looking at the output, it can still break your system. But as long as you’re just generating some random pads, instead of making a kernel entropy pool, you’re fine with this trick.</p>
 <p>So! We just need a bunch of sources of randomness. Here’s the options I’ve tried:</p>
@@ -33,10 +29,7 @@ while true; do
 done</code></pre>
 <p>Great, now you have a good one-time-pad and can join <a href="https://za3k.com/ok-mixnet.md">ok-mixnet</a> 🙂</p>
 <p>P.S. If you <em>really</em> know what you’re doing and like shooting yourself in the foot, you could try combining and whitening entropy sources with a randomness sponge like keccak instead.</p>
-</div><!-- .entry-content -->
-<div class="entry-utility">
-<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/hardware/" rel="tag">hardware</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/randomness/" rel="tag">randomness</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/making-a-hardware-random-number-generator/" rel="bookmark" title="Permalink to Making a hardware random number generator"> permalink</a>.</span> </div><!-- .entry-utility -->
-</article>
+</div>
 
 <!-- comments -->
 <ol class="commentlist">

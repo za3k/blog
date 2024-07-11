@@ -16,10 +16,6 @@ wordpress_id: 177
 wordpress_slug: backup-android-on-plugin
 ---
 <!-- blogpost -->
-<article class="post-177 post type-post status-publish format-standard hentry category-technical tag-android tag-arch-linux tag-backup tag-linux" id="post-177">
-<h1 class="entry-title">Backup android on plugin</h1>
-<div class="entry-meta">
-<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-04-23T23:03:49-07:00"> <a href="https://blog.za3k.com/backup-android-on-plugin/" rel="bookmark" title="11:03 pm"><span class="entry-date">April 23, 2015</span> <span class="entry-time"> - 11:03 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-04-24T02:29:05-07:00">April 24, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
 <div class="entry-content">
 <p>In a <a href="https://blog.za3k.com/android-backup-on-arch-linux/" title="Android backup on arch linux">previous post</a> I discussed how to backup android with rsync. In this post, I’ll improve on that solution so it happens when you plug the phone in, rather than manually. My solution happens to know I have only one phone; you should adjust accordingly.</p>
 <p>The process is</p>
@@ -77,10 +73,7 @@ done
 fusermount -u /media/android
 </pre>
 <p>The contents of  /usr/local/bin/phone-backup are pretty me-specific so I’ll omit it, but it copies /media/android over to a server. (fun detail: MTP doesn’t show all information even on a rooted phone, so there’s more work to do)</p>
-</div><!-- .entry-content -->
-<div class="entry-utility">
-<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/android/" rel="tag">android</a>, <a href="https://blog.za3k.com/tag/arch-linux/" rel="tag">arch linux</a>, <a href="https://blog.za3k.com/tag/backup/" rel="tag">backup</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/backup-android-on-plugin/" rel="bookmark" title="Permalink to Backup android on plugin"> permalink</a>.</span> </div><!-- .entry-utility -->
-</article>
+</div>
 
 <!-- comments -->
 <ol class="commentlist">

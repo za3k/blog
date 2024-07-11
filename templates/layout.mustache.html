@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <meta name="robots" content="max-image-preview:large">
-    <link rel="alternate" type="application/rss+xml" title=" » Feed" href="https://blog.za3k.com/pages/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title=" » Feed" href="{{feed_url}}">
     <style id="wp-emoji-styles-inline-css" type="text/css">
         img.wp-smiley, img.emoji {
             display: inline !important;
@@ -19,7 +19,7 @@
             padding: 0 !important;
         }
     </style>
-    <link rel="stylesheet" id="wp-block-library-css" href="../wp-includes/css/dist/block-library/style.min.css?ver=6.5.5" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="{{web_root}}/wp-includes/css/dist/block-library/style.min.css?ver=6.5.5" type="text/css" media="all">
     <style id="classic-theme-styles-inline-css" type="text/css">
         .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
     </style>
@@ -30,12 +30,12 @@
     :where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
     .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
     </style>
-    <link rel="stylesheet" id="mantra-style-css" href="../wp-content/themes/mantra/style.css?ver=3.3.2" type="text/css" media="all">
+    <link rel="stylesheet" id="mantra-style-css" href="{{web_root}}/wp-content/themes/mantra/style.css?ver=3.3.2" type="text/css" media="all">
     <style id="mantra-style-inline-css" type="text/css">
-    #wrapper { max-width: 1050px; } #content { width: 100%; max-width:810px; max-width: calc( 100% - 240px ); } #primary, #secondary { width:240px; } #primary .widget-title, #secondary .widget-title { margin-right: -2em; text-align: left; } html { font-size:14px; } body, input, textarea {font-family:Segoe UI, Arial, sans-serif; } #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title, #content h2.entry-title, #front-text1 h2, #front-text2 h2 {font-family:Georgia, Times New Roman, Times, serif; } .widget-area {font-family:Helvetica, sans-serif; } .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {font-family:Georgia, Times New Roman, Times, serif; } .nocomments, .nocomments2 {display:none;} #header-container > div { margin-top:20px; } #header-container > div { margin-left:40px; } body { background-color:#444444 !important; } #header { background-color:#333333; } #footer { background-color:#222222; } #footer2 { background-color:#171717; } #site-title span a { color:#0D85CC; } #site-description { color:#999999; } #content, .column-text, #front-text3, #front-text4 { color:#333333 ;} .widget-area a:link, .widget-area a:visited, a:link, a:visited ,#searchform #s:hover, #container #s:hover, #access a:hover, #wp-calendar tbody td a, #site-info a, #site-copyright a, #access li:hover > a, #access ul ul:hover > a { color:#0D85CC; } a:hover, .entry-meta a:hover, .entry-utility a:hover, .widget-area a:hover { color:#12a7ff; } #content .entry-title a, #content .entry-title, #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { color:#444444; } #content .entry-title a:hover { color:#000000; } .widget-title { background-color:#444444; } .widget-title { color:#2EA5FD; } #footer-widget-area .widget-title { color:#0C85CD; } #footer-widget-area a { color:#666666; } #footer-widget-area a:hover { color:#888888; } body .wp-caption { background-image:url(https://blog.za3k.com/wp-content/themes/mantra/resources/images/pins/Pin2.png); } .entry-content p:not(:last-child), .entry-content ul, .entry-summary ul, .entry-content ol, .entry-summary ol { margin-bottom:1.5em;} .entry-meta .entry-time { display:none; } #branding { height:75px ;}
+    #wrapper { max-width: 1050px; } #content { width: 100%; max-width:810px; max-width: calc( 100% - 240px ); } #primary, #secondary { width:240px; } #primary .widget-title, #secondary .widget-title { margin-right: -2em; text-align: left; } html { font-size:14px; } body, input, textarea {font-family:Segoe UI, Arial, sans-serif; } #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title, #content h2.entry-title, #front-text1 h2, #front-text2 h2 {font-family:Georgia, Times New Roman, Times, serif; } .widget-area {font-family:Helvetica, sans-serif; } .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {font-family:Georgia, Times New Roman, Times, serif; } .nocomments, .nocomments2 {display:none;} #header-container > div { margin-top:20px; } #header-container > div { margin-left:40px; } body { background-color:#444444 !important; } #header { background-color:#333333; } #footer { background-color:#222222; } #footer2 { background-color:#171717; } #site-title span a { color:#0D85CC; } #site-description { color:#999999; } #content, .column-text, #front-text3, #front-text4 { color:#333333 ;} .widget-area a:link, .widget-area a:visited, a:link, a:visited ,#searchform #s:hover, #container #s:hover, #access a:hover, #wp-calendar tbody td a, #site-info a, #site-copyright a, #access li:hover > a, #access ul ul:hover > a { color:#0D85CC; } a:hover, .entry-meta a:hover, .entry-utility a:hover, .widget-area a:hover { color:#12a7ff; } #content .entry-title a, #content .entry-title, #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 { color:#444444; } #content .entry-title a:hover { color:#000000; } .widget-title { background-color:#444444; } .widget-title { color:#2EA5FD; } #footer-widget-area .widget-title { color:#0C85CD; } #footer-widget-area a { color:#666666; } #footer-widget-area a:hover { color:#888888; } body .wp-caption { background-image:url({{web_root}}/wp-content/themes/mantra/resources/images/pins/Pin2.png); } .entry-content p:not(:last-child), .entry-content ul, .entry-summary ul, .entry-content ol, .entry-summary ol { margin-bottom:1.5em;} .entry-meta .entry-time { display:none; } #branding { height:75px ;}
     /* Mantra Custom CSS */
     </style>
-    <link rel="stylesheet" id="mantra-mobile-css" href="../wp-content/themes/mantra/resources/css/style-mobile.css?ver=3.3.2" type="text/css" media="all">
+    <link rel="stylesheet" id="mantra-mobile-css" href="{{web_root}}/wp-content/themes/mantra/resources/css/style-mobile.css?ver=3.3.2" type="text/css" media="all">
 </head>
 
 <body>
@@ -51,16 +51,16 @@
             <div id="header-container">
                 <div>
                     <div id="site-title">
-                        <span> <a href="https://blog.za3k.com/" title="" rel="home"></a> </span>
+                        <span> <a href="{{web_root}}/" title="" rel="home"></a> </span>
                     </div>
                     <div id="site-description">blog of zachary "za3k" vance</div>
                 </div>
                 <div class="socials" id="sheader">
-                    <a target="_blank" rel="nofollow" href="https://blog.za3k.com/pages/feed.xml" class="socialicons social-RSS" title="RSS">
-                        <img alt="RSS" src="../wp-content/themes/mantra/resources/images/socials/RSS.png">
+                    <a target="_blank" rel="nofollow" href="{{feed_url}}" class="socialicons social-RSS" title="RSS">
+                        <img alt="RSS" src="{{web_root}}/wp-content/themes/mantra/resources/images/socials/RSS.png">
                     </a>
                     <a target="_blank" rel="nofollow" href="https://twitter.com/unchoke" class="socialicons social-Twitter" title="Twitter">
-                        <img alt="Twitter" src="../wp-content/themes/mantra/resources/images/socials/Twitter.png">
+                        <img alt="Twitter" src="{{web_root}}/wp-content/themes/mantra/resources/images/socials/Twitter.png">
                     </a>
                 </div>
             </div> <!-- #header-container -->
@@ -70,8 +70,8 @@
         <nav id="access" class="" role="navigation">
             <div class="menu">
                 <ul id="prime_nav" class="menu">
-                    <li id="menu-item-255" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-255"><a href="https://blog.za3k.com/category/non-technical/">Non-Technical</a></li>
-                    <li id="menu-item-256" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-256"><a href="https://blog.za3k.com/category/technical/">Technical</a></li>
+                    <li id="menu-item-255" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-255"><a href="{{web_root}}/category/non-technical.html">Non-Technical</a></li>
+                    <li id="menu-item-256" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-256"><a href="{{web_root}}/category/technical.html">Technical</a></li>
                 </ul>
             </div>
         </nav><!-- #access -->
@@ -92,7 +92,7 @@
                     <p><a href="https://za3k.com/blog">archive</a><br><a href="https://za3k.com">za3k.com</a></p>
                 </li>
                 <li id="block-2" class="widget-container widget_block widget_search">
-                    <form role="search" method="get" action="https://blog.za3k.com/" class="wp-block-search__no-button wp-block-search"><label class="wp-block-search__label screen-reader-text" for="wp-block-search__input-2">Search</label><div class="wp-block-search__inside-wrapper "><input class="wp-block-search__input" id="wp-block-search__input-2" placeholder="Search" value="" type="search" name="s" required=""></div></form>
+                    <iframe src="https://duckduckgo.com/search.html?width=250&site=blog.za3k.com&prefill=Search%20blog&focus=yes" style="overflow:hidden,margin:0;padding:0;width:308px;height:40xpx;" frameborder="0"></iframe>
                 </li>
                 <li id="block-14" class="widget-container widget_block widget_tag_cloud">
                     {{& tagcloud }}

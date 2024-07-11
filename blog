@@ -83,6 +83,12 @@ def paginated_property(f):
 
     return AnonProperty(f)
 
+def flag_last(l):
+    l = list(l)
+    for x in l[:-1]:
+        yield {"thing": x, "last": False}
+    yield {"thing": l[-1], "last": True}
+
 def calc_range(l):
     it = iter(l)
     min = next(it)
@@ -137,7 +143,7 @@ class Link():
 
     @property
     def static(self):
-        return "../" + self.partial
+        return self.blog.web_root + "/" + self.partial
 
     @property
     def file(self):
@@ -172,14 +178,14 @@ class Templatable(PseudoMap):
 
     @property
     def url(self):
-        return self.blog.web_root + "/" + self.output_path
+        return self.blog.web_root + "/" + str(self.output_path.relative_to(Path(self.blog.destination)))
 
     def render_template(source, blog, name, context):
         template_path = blog["{}_template".format(name)]
         with open(template_path, "r") as f:
             template = f.read()
         html = mustache.render(template, context, warn=True)
-        blog.replace_links(source, html)
+        html = blog.replace_links(source, html)
         return html
 
     def content(self):
@@ -219,12 +225,23 @@ class Post(Templatable):
     def __init__(self, parsed, blog):
         super().__init__(blog)
         self.post, self.comments = parsed.pop("content").split("<!-- comments -->\n")
+        self.main_display = True
         for k, v in parsed.items():
+            if k in {"tags", "author", "categories"}:
+                k = "_" + k
             self[k] = v
 
     @property
     def date_rfc822(self):
         return self.date.strftime(RFC822)
+
+    @property
+    def day(self):
+        return self.date.strftime("%B %d, %Y").replace(" 0", " ")
+
+    @property
+    def time(self):
+        return self.date.strftime("%I:%M %P")
 
     @property
     def id(self):
@@ -234,6 +251,40 @@ class Post(Templatable):
         
     def __hash__(self):
         return hash(self.id)
+
+    @property
+    def author(self):
+        return self.blog.author_for(self._author)
+
+    @property
+    def tags(self):
+        return [self.blog.tag_for(tag) for tag in self._tags]
+
+    @property
+    def tags_list(self):
+        return flag_last(self.tags)
+
+    @property
+    def categories(self):
+        return [self.blog.category_for(category) for category in self._categories]
+
+    @property
+    def categories_list(self):
+        return flag_last(self.categories)
+
+    @property
+    def has_tags(self):
+        return len(self.tags) > 0
+
+    @property
+    def has_categories(self):
+        return len(self.categories) > 0
+
+    @property
+    def html(self):
+        return self.render_template(self.blog, self.type, collections.ChainMap({
+            "main_display": False,
+        }, self.context))
 
 class Tag(Templatable):
     def __init__(self, tag, blog):
@@ -307,6 +358,10 @@ class Blog(PseudoMap):
     def deadlinks(self):
         return sorted(link for link in self.links if link.is_dead and all(x not in link.partial for x in ("?replytocom", "#comment")))
 
+    @property
+    def alllinks(self):
+        return sorted(self.links)
+
     @paginated_property
     def posts(self):
         return self._posts
@@ -328,10 +383,12 @@ class Blog(PseudoMap):
         self._posts.append(post)
 
         for tag in post.tags:
-            self.tag_for(tag).add_post(post)
+            tag.add_post(post)
+
         for category in post.categories:
-            self.category_for(category).add_post(post)
-        self.author_for(post.author).add_post(post)
+            category.add_post(post)
+
+        post.author.add_post(post)
 
     def category_for(self, category):
         if category not in self.categories:
@@ -358,7 +415,9 @@ class Blog(PseudoMap):
     @property
     def pages(self):
         return [
+            Page("index", self),
             Page("feed", self, use_layout=False),
+            Page("links", self),
             Page("deadlinks", self), # Must be last to avoid dead links
         ]
 
@@ -407,6 +466,10 @@ class Blog(PseudoMap):
             tag.font_size = scale(tag_scaling(tag.num_posts), post_count_range, font_sizes)
         
         return Templatable.render_template(Templatable, blog, "tagcloud", self)
+
+    @property
+    def feed_url(self):
+        return Page("feed", self, use_layout=False).url
 
     def _update_happened(self, path):
         path = Path(path)
@@ -476,7 +539,7 @@ if __name__ == "__main__":
 
     blog = Blog(reload=args.reload)
     if args.local:
-        blog.web_root = ".."
+        blog.web_root = "file://" + blog.destination
     if args.all:
         blog.clean()
         blog.generate_all()

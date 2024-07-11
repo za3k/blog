@@ -18,10 +18,6 @@ wordpress_id: 187
 wordpress_slug: paper-archival
 ---
 <!-- blogpost -->
-<article class="post-187 post type-post status-publish format-standard hentry category-non-technical category-technical tag-armchair tag-backup tag-barcodes tag-information-theory tag-qr-codes" id="post-187">
-<h1 class="entry-title">Paper archival</h1>
-<div class="entry-meta">
-<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-04-24T16:58:38-07:00"> <a href="https://blog.za3k.com/paper-archival/" rel="bookmark" title="4:58 pm"><span class="entry-date">April 24, 2015</span> <span class="entry-time"> - 4:58 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-04-24T17:04:06-07:00">April 24, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/non-technical/" rel="tag">Non-Technical</a>, <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
 <div class="entry-content">
 <p>Previous work:</p>
 <ul>
@@ -43,9 +39,6 @@ wordpress_slug: paper-archival
 <p>QR codes and PDF417 look like our contenders. PDF417 turns out to not scan well (at all, but especially at large symbol sizes), so despite some nice features let’s pick QR codes. Back when I worked on a <a href="https://blog.za3k.com/the-double-lives-of-books/" title="The Double Lives of Books">digital library</a> I made a component to generate QR codes on the fly, and I know how to scan them on my phone and webcam already from that, so it would be pretty easy to use them.</p>
 <p>What density can we get on a sheet of A4 paper (8.25 in × 11.00 in, or 7.75in x 10.50in with half-inch margins)? I trust optar’s estimate (600 dpi = 200 pixels per inch) for printed/scanned pages since they seemed to test things. A max-size QR code is 144×144 pixels, or 0.72 x 0.72 inches at maximum density. We can fit 10 x 14 = 140 QR codes with maximum density on the page, less if we want decent spacing. That’s 140 QR codes x (2,953 bytes per QR code) = 413420 bytes = 413K per page before error correction.</p>
 <p>That’s totally comparable to the other approaches above, and you can read the results with off-the-shelf software.  Bam.</p>
-</div><!-- .entry-content -->
-<div class="entry-utility">
-<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/armchair/" rel="tag">armchair</a>, <a href="https://blog.za3k.com/tag/backup/" rel="tag">backup</a>, <a href="https://blog.za3k.com/tag/barcodes/" rel="tag">barcodes</a>, <a href="https://blog.za3k.com/tag/information-theory/" rel="tag">information theory</a>, <a href="https://blog.za3k.com/tag/qr-codes/" rel="tag">qr codes</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/paper-archival/" rel="bookmark" title="Permalink to Paper archival"> permalink</a>.</span> </div><!-- .entry-utility -->
-</article>
+</div>
 
 <!-- comments -->

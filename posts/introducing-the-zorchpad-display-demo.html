@@ -16,10 +16,6 @@ wordpress_id: 1043
 wordpress_slug: introducing-the-zorchpad-display-demo
 ---
 <!-- blogpost -->
-<article class="post-1043 post type-post status-publish format-standard hentry category-technical tag-computers tag-hardware tag-microcontroller tag-zorchpad" id="post-1043">
-<h1 class="entry-title">Introducing the Zorchpad (+ display demo)</h1>
-<div class="entry-meta">
-<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2023-06-07T16:42:28-07:00"> <a href="https://blog.za3k.com/introducing-the-zorchpad-display-demo/" rel="bookmark" title="4:42 pm"><span class="entry-date">June 7, 2023</span> <span class="entry-time"> - 4:42 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2023-06-07T17:00:00-07:00">June 7, 2023</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
 <div class="entry-content">
 <p>A friend of mine, <a href="http://canonical.org/~kragen/">Kragen Javier Sitaker</a> has been designing something he calls the zorzpad (see link below). I can never remember the name, so as a joke my version became the “zorch pad”. We live on opposite sides of the globe, but we’ve picked up the same or similar hardware, and have been having fun developing the hardware and software together.</p>
 <p>The basic idea of the Zorchpad is to have one computer, indefinitely. It should keep working until you die. That means no battery that runs out, and no parts that go bad (and of course, no requirements to “phone home” for the latest update via wifi!). This is not your standard computer, and we’ve been trying a lot of experimental things. One of the main requirements is that everything be very low-power.  He picked out the excellent <a href="https://www.sparkfun.com/categories/tags/apollo3">apollo3</a> processor, which theoretically runs at around 1mW. In general, the zorchpad is made of closed-source hardware.</p>
@@ -39,10 +35,7 @@ wordpress_slug: introducing-the-zorchpad-display-demo
 <p>According to the datasheet, the screen consumes 0.05-0.25mW without an update, and perhaps 0.175-0.35mW updating once per second. We haven’t yet measured the real power consumption for any of the components.</p>
 <p>The most obvious alternative is e-ink. E-ink has a muuuch slower refresh rate (maybe 1Hz if you hack it), and uses no power when not updating. Unfortunately it uses orders of magnitude more power for an update. Also, you can get much larger e-ink screens. The final zorchpad might have one, both or something else entirely! We’re in an experimentation phase.</p>
 <p>Datasheets, a bill of materials, and all source code can be found in my <a href="https://github.com/za3k/zorchpad">zorchpad</a> repo. Also check out Kragen’s <a href="http://canonical.org/~kragen/sw/zorzpad/">zorzpad</a> repo.</p>
-</div><!-- .entry-content -->
-<div class="entry-utility">
-<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/computers/" rel="tag">computers</a>, <a href="https://blog.za3k.com/tag/hardware/" rel="tag">hardware</a>, <a href="https://blog.za3k.com/tag/microcontroller/" rel="tag">microcontroller</a>, <a href="https://blog.za3k.com/tag/zorchpad/" rel="tag">zorchpad</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/introducing-the-zorchpad-display-demo/" rel="bookmark" title="Permalink to Introducing the Zorchpad (+ display demo)"> permalink</a>.</span> </div><!-- .entry-utility -->
-</article>
+</div>
 
 <!-- comments -->
 <ol class="commentlist">

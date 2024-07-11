@@ -15,10 +15,6 @@ wordpress_id: 630
 wordpress_slug: encrypted-root-on-debian-part-2-unattended-boot
 ---
 <!-- blogpost -->
-<article class="post-630 post type-post status-publish format-standard hentry category-technical tag-debian tag-linux tag-system-administration" id="post-630">
-<h1 class="entry-title">Encrypted root on debian part 2: unattended boot</h1>
-<div class="entry-meta">
-<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2021-06-11T17:50:31-07:00"> <a href="https://blog.za3k.com/encrypted-root-on-debian-part-2-unattended-boot/" rel="bookmark" title="5:50 pm"><span class="entry-date">June 11, 2021</span> <span class="entry-time"> - 5:50 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2021-06-11T18:12:38-07:00">June 11, 2021</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
 <div class="entry-content">
 <p>I want my debian boot to work as follows:</p>
 <ol><li>If it’s in my house, it can boot without my being there. To make that happen, I’ll put the root disk key on a USB stick, which I keep in the computer.</li><li>If it’s not in my house, it needs a password to boot. This is the normal boot process.</li></ol>
@@ -55,9 +51,6 @@ sudo /usr/local/sbin/unlockusbkey.sh | cmp /mnt/root-disk.key</code></pre>
 <p>Finally, re-generate your initramfs. I recommend either having a live USB or keeping a backup initramfs.</p>
 <pre class="wp-block-code"><code>sudo update-initramfs -u</code></pre>
 <p>[1] This post is loosely based on a chain of tutorials based on each other, including <a href="https://www.oxygenimpaired.com/ubuntu-with-grub2-luks-encrypted-lvm-root-hidden-usb-keyfile">this</a><br/>[2] However, those collectively looked both out of date and like they were written without true understanding, and I wanted to clean up the mess. More definitive information was sourced from the actual <a href="https://cryptsetup-team.pages.debian.net/cryptsetup/README.initramfs.html">cryptsetup</a> documentation.</p>
-</div><!-- .entry-content -->
-<div class="entry-utility">
-<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/debian/" rel="tag">debian</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/system-administration/" rel="tag">system administration</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/encrypted-root-on-debian-part-2-unattended-boot/" rel="bookmark" title="Permalink to Encrypted root on debian part 2: unattended boot"> permalink</a>.</span> </div><!-- .entry-utility -->
-</article>
+</div>
 
 <!-- comments -->

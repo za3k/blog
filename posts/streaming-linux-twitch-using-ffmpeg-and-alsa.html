@@ -17,10 +17,6 @@ wordpress_id: 509
 wordpress_slug: streaming-linux-twitch-using-ffmpeg-and-alsa
 ---
 <!-- blogpost -->
-<article class="post-509 post type-post status-publish format-standard hentry category-technical tag-alsa tag-ffmpeg tag-linux tag-streaming tag-twitch" id="post-509">
-<h1 class="entry-title">Streaming Linux-&gt;Twitch using ffmpeg and ALSA</h1>
-<div class="entry-meta">
-<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2020-03-21T21:26:52-07:00"> <a href="https://blog.za3k.com/streaming-linux-twitch-using-ffmpeg-and-alsa/" rel="bookmark" title="9:26 pm"><span class="entry-date">March 21, 2020</span> <span class="entry-time"> - 9:26 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2020-05-17T12:53:43-07:00">May 17, 2020</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
 <div class="entry-content">
 <p>I stopped using OBS a while ago for a couple reasons–the main one was that it didn’t support my video capture card, but I also had issues with it crashing or lagging behind with no clear indication of what it was doing. I ended up switching to <code>ffmpeg</code> for live streaming, because it’s very easy to tell when ffmpeg is lagging behind. OBS uses ffmpeg internally for video. I don’t especially recommend this setup, but I thought I’d document it in case someone can’t use a nice GUI setup like OBS or similar.</p>
 <p>I’m prefer less layers, so I’m still on ALSA. My setup is:</p>
@@ -71,10 +67,7 @@ pcm.!default {
 <p>Sources:</p>
 <ul><li>jrayhawk on IRC (alsa)</li><li>ffmpeg wiki and docs (pretty good)</li><li>ALSA docs (not that good)</li><li>Twitch documentation, which is pretty good once you can find it</li><li><a href="http://www.pogo.org.uk/~mark/trx/streaming-desktop-audio.html">mark hills</a> on how to set up snd-aloop</li></ul>
 <p></p>
-</div><!-- .entry-content -->
-<div class="entry-utility">
-<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/alsa/" rel="tag">alsa</a>, <a href="https://blog.za3k.com/tag/ffmpeg/" rel="tag">ffmpeg</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/streaming/" rel="tag">streaming</a>, <a href="https://blog.za3k.com/tag/twitch/" rel="tag">twitch</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/streaming-linux-twitch-using-ffmpeg-and-alsa/" rel="bookmark" title="Permalink to Streaming Linux-&gt;Twitch using ffmpeg and ALSA"> permalink</a>.</span> </div><!-- .entry-utility -->
-</article>
+</div>
 
 <!-- comments -->
 <ol class="commentlist">

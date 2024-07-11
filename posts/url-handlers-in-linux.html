@@ -13,10 +13,6 @@ wordpress_id: 1398
 wordpress_slug: url-handlers-in-linux
 ---
 <!-- blogpost -->
-<article class="post-1398 post type-post status-publish format-standard hentry category-technical tag-linux" id="post-1398">
-<h1 class="entry-title">URI handlers in Linux</h1>
-<div class="entry-meta">
-<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2024-06-08T19:46:00-07:00"> <a href="https://blog.za3k.com/url-handlers-in-linux/" rel="bookmark" title="7:46 pm"><span class="entry-date">June 8, 2024</span> <span class="entry-time"> - 7:46 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2024-06-09T08:22:47-07:00">June 9, 2024</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
 <div class="entry-content">
 <p>When you click an email address, it automatically opens in your email client. But I don’t have an email client, I use webmail. I wrote a custom handler for Linux.<br/><br/>First write a program to open <a href="https://en.wikipedia.org/wiki/Mailto">mailto</a> links. Mailto links look like “<strong>mailto:me@mail.com</strong>” or maybe even “<strong>mailto:me@mail.com?subject=mysubject&amp;body=mybody</strong>“. Test it by hand on a few links. Mine (<a href="https://github.com/za3k/short-programs?tab=readme-ov-file#mailto-opener">mailto-opener</a>) composes a new message using my webmail.</p>
 <p>Next, write a desktop file for the opener. Here’s one:</p>
@@ -39,9 +35,6 @@ Type=Application
 Name=transmission-remote magnet link opener
 Exec=transmission-remote &lt;TRANSMISSION INSTANCE&gt; -a</code></pre>
 <p><code>transmission-remote</code> is the name of a command-line Linux program. It connects to an instance of Tranmission (a popular torrent client) running on another machine.</p>
-</div><!-- .entry-content -->
-<div class="entry-utility">
-<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/url-handlers-in-linux/" rel="bookmark" title="Permalink to URI handlers in Linux"> permalink</a>.</span> </div><!-- .entry-utility -->
-</article>
+</div>
 
 <!-- comments -->

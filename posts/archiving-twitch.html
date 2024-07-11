@@ -16,10 +16,6 @@ wordpress_id: 327
 wordpress_slug: archiving-twitch
 ---
 <!-- blogpost -->
-<article class="post-327 post type-post status-publish format-standard hentry category-technical tag-backup tag-linux tag-osx tag-twitch" id="post-327">
-<h1 class="entry-title">Archiving Twitch</h1>
-<div class="entry-meta">
-<span class="author vcard"> By  <a class="url fn n" href="https://blog.za3k.com/author/admin/" rel="author" title="View all posts by admin">admin</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="2015-10-19T22:33:34-07:00"> <a href="https://blog.za3k.com/archiving-twitch/" rel="bookmark" title="10:33 pm"><span class="entry-date">October 19, 2015</span> <span class="entry-time"> - 10:33 pm</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="2015-10-19T23:12:30-07:00">October 19, 2015</time> <span class="bl_categ"> <a href="https://blog.za3k.com/category/technical/" rel="tag">Technical</a> </span> </div><!-- .entry-meta -->
 <div class="entry-content">
 <p>Install jq and youtube-dl</p>
 <p>Get a list of the last 100 URLs:</p>
@@ -29,9 +25,6 @@ wordpress_slug: archiving-twitch
 <pre>youtube-dl -a past_broadcasts.txt -o "%(upload_date)s.%(title)s.%(id)s.%(ext)s"</pre>
 <p>Did it. youtube-dl is smart enough to avoid re-downloading videos it already has, so as long as you run this often enough (I do daily), you should avoid losing videos before they’re deleted.</p>
 <p>Thanks <a href="http://www.omgwallhack.org/home/jrayhawk/">jrayhawk</a> for the API info.</p>
-</div><!-- .entry-content -->
-<div class="entry-utility">
-<span class="bl_posted">Tagged <a href="https://blog.za3k.com/tag/backup/" rel="tag">backup</a>, <a href="https://blog.za3k.com/tag/linux/" rel="tag">linux</a>, <a href="https://blog.za3k.com/tag/osx/" rel="tag">osx</a>, <a href="https://blog.za3k.com/tag/twitch/" rel="tag">twitch</a>.</span><span class="bl_bookmark"> Bookmark the  <a href="https://blog.za3k.com/archiving-twitch/" rel="bookmark" title="Permalink to Archiving Twitch"> permalink</a>.</span> </div><!-- .entry-utility -->
-</article>
+</div>
 
 <!-- comments -->

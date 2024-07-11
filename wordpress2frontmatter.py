@@ -5,7 +5,7 @@ import yaml
 from pathlib import Path
 
 INPUT_DIR = Path("/home/zachary/blog.za3k.com")
-OUTPUT_DIR = Path("/home/zachary/blog_converter/posts")
+OUTPUT_DIR = Path("/home/zachary/blog/posts")
 IMAGES = OUTPUT_DIR / 'images'
 
 BLACKLIST={"wp-json", "feed"}
@@ -24,9 +24,10 @@ def scrape_post(post):
     html = bs4.BeautifulSoup(post, 'html.parser')
     article = html.find('article')
     comments = html.find('ol', class_="commentlist")
+    post = article.find('div', class_="entry-content")
 
     result = {}
-    result["html_content"] = str(article)
+    result["html_content"] = str(post)
     result["html_comments"] = (str(comments) if comments else "")
     result["title"] = article.find('h1', class_="entry-title").get_text()
     assert result["title"] == html.find('title').get_text()
