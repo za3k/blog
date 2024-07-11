@@ -543,7 +543,8 @@ if __name__ == "__main__":
     if args.all:
         blog.clean()
         blog.generate_all()
-        blog.publish()
+        if not args.local:
+            blog.publish()
     else:
         blog.updates_happened(args.changed_files)
 

@@ -2,6 +2,7 @@
 source: "/home/zachary/blog"
 destination: "/home/zachary/blog/public"
 web_root: "https://blog2.za3k.com"
+domain: "blog2.za3k.com"
 title: 'blog of zachary "za3k" vance'
 
 post_dir: "posts"
