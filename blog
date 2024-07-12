@@ -182,12 +182,13 @@ class Templatable(PseudoMap):
     def url(self):
         return self.blog.web_root + "/" + str(self.output_path.relative_to(Path(self.blog.destination)))
 
-    def render_template(source, blog, name, context):
+    def render_template(source, blog, name, context, replace_links=True):
         template_path = blog["{}_template".format(name)]
         with open(template_path, "r") as f:
             template = f.read()
         html = mustache.render(template, context, warn=True)
-        html = blog.replace_links(source, html)
+        if replace_links:
+            html = blog.replace_links(source, html)
         return html
 
     def content(self):
@@ -260,7 +261,7 @@ class Post(Templatable):
         return self.blog.web_root + "/" + str(self.output_path_html.relative_to(self.blog.destination))
 
     def content_combined(self):
-        return self.render_template(self.blog, "postcombined", self.context).encode("utf8")
+        return self.render_template(self.blog, "postcombined", self.context, replace_links=False).encode("utf8")
 
     def content_md(self):
         content = self.render_template(self.blog, self.type, collections.ChainMap({

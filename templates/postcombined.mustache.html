@@ -7,7 +7,16 @@ html, body {
     padding: 0;
     border: 0;
 }
-body {
+#links {
+    margin: 0;
+    padding: 5px 0;
+    display: flex;
+}
+#links > * {
+    flex: 1 1;
+    text-align: center;
+}
+#iframes {
     display: flex;
 }
 iframe {
@@ -28,5 +37,11 @@ iframe::-webkit-scrollbar {
 
 </style>
 </head>
-<body><iframe src="{{url_html}}"></iframe><iframe src="{{url_md}}"></iframe></body>
+<body>
+<ul id="links">
+    <a href="https://blog.za3k.com/{{id}}/">original blog</a>
+    <a href="https://git.za3k.com/?p=blog.git;a=blob_plain;f=posts-html/{{id}}.html;hb=HEAD">html source</a>
+    <a href="https://git.za3k.com/?p=blog.git;a=blob_plain;f=posts-md/{{id}}.md;hb=HEAD">markdown source</a>
+</ul>
+<div id="iframes"><iframe src="{{url_html}}" id="html"></iframe><iframe src="{{url_md}}" id="markdown"></iframe></body></div>
 </html>
