@@ -17,6 +17,4 @@ Sometimes Linux wants to open files. I mostly use the command line, so I wrote s
 -   `open-text-file` opens your default text editor in a terminal. I set it as my program to open all text files.
 -   `open-directory` opens a terminal with that working directory. I set it as my program to open all directories.
 
-They’re both available in [short-programs][1]. Both default to xterm.
-
-[1]: https://github.com/za3k/short-programs?tab=readme-ov-file#open-directorytext-file
+They’re both available in [short-programs](https://github.com/za3k/short-programs?tab=readme-ov-file#open-directorytext-file). Both default to xterm.

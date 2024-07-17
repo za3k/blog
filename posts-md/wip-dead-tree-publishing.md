@@ -23,21 +23,14 @@ I use a “back end” publisher who does all the actual printing, and the one I
 
 First you upload a PDF:
 
-[![2](https://blog.za3k.com/wp-content/uploads/2015/03/2-300x90.jpg)][1]
+[![2](https://blog.za3k.com/wp-content/uploads/2015/03/2-300x90.jpg)](https://blog.za3k.com/wp-content/uploads/2015/03/1.jpg)
 
 Uploading a book
 
 Then I tell you what your ordering options are (hardcover, softcover, color), and what they cost. I’m also supposed to ask you your address to ship the book, and for you to pay for it,  but those aren’t done yet.
 
-[![1](https://blog.za3k.com/wp-content/uploads/2015/03/1-300x254.jpg)][2]
+[![1](https://blog.za3k.com/wp-content/uploads/2015/03/1-300x254.jpg)](https://blog.za3k.com/wp-content/uploads/2015/03/1.jpg)
 
 Book-buying options
 
 Hopefully in the next day or two I’ll have something up and running so people can order books, and then make it gradually nicer! I’m very excited about this website existing.
-
-1.  Pingback: [WIP: Dead Tree Publishing 2 | Optimal Prime][3]
-    
-
-[1]: https://blog.za3k.com/wp-content/uploads/2015/03/1.jpg
-[2]: https://blog.za3k.com/wp-content/uploads/2015/03/1.jpg
-[3]: https://blog.za3k.com/wip-dead-tree-publishing-2/

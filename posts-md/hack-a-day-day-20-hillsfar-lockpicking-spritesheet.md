@@ -18,24 +18,18 @@ updated: 2023-12-31 16:24:44-07:00
 wordpress_id: 1203
 wordpress_slug: hack-a-day-day-20-hillsfar-lockpicking-spritesheet
 ---
-For today’s hack-a-day, I meant to clone the [Hillsfar][1] lockpicking minigame. Instead, I spent all day just extracting the sprites. But I had a nice chill time, so it was great.
+For today’s hack-a-day, I meant to clone the [Hillsfar](https://en.wikipedia.org/wiki/Hillsfar) lockpicking minigame. Instead, I spent all day just extracting the sprites. But I had a nice chill time, so it was great.
 
-Edit: See the [updated post][2] for the finished game.
+Edit: See the [updated post](https://blog.za3k.com/hillsfar-lockpicking-20-complete/) for the finished game.
 
 Here’s the original minigame:
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/11/2023-11-20-223209_640x400_scrot.png)][3]
+[![](https://blog.za3k.com/wp-content/uploads/2023/11/2023-11-20-223209_640x400_scrot.png)](https://blog.za3k.com/wp-content/uploads/2023/11/2023-11-20-223209_640x400_scrot.png)
 
 Here’s my spritesheet:
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/11/out-1024x597.png)][4]
+[![](https://blog.za3k.com/wp-content/uploads/2023/11/out-1024x597.png)](https://blog.za3k.com/wp-content/uploads/2023/11/out.png)
 
 I made it by splitting up screenshots:
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/11/hillsfar-lockpick-parts.png)][5]
-
-[1]: https://en.wikipedia.org/wiki/Hillsfar
-[2]: https://blog.za3k.com/hillsfar-lockpicking-20-complete/
-[3]: https://blog.za3k.com/wp-content/uploads/2023/11/2023-11-20-223209_640x400_scrot.png
-[4]: https://blog.za3k.com/wp-content/uploads/2023/11/out.png
-[5]: https://blog.za3k.com/wp-content/uploads/2023/11/hillsfar-lockpick-parts.png
+[![](https://blog.za3k.com/wp-content/uploads/2023/11/hillsfar-lockpick-parts.png)](https://blog.za3k.com/wp-content/uploads/2023/11/hillsfar-lockpick-parts.png)

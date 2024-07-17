@@ -15,8 +15,8 @@ updated: 2022-03-10 09:22:34-07:00
 wordpress_id: 726
 wordpress_slug: usb-flash-longevity-testing-year-2
 ---
-[Year 0][1] – I filled 10 32-GB Kingston flash drives with random data.  
-[Year 1][2] – Tested drive 1, zero bit rot. Re-wrote the drive with the same data.  
+[Year 0](https://www.reddit.com/r/DataHoarder/comments/e3nb2r/longterm_reliability_testing/) – I filled 10 32-GB Kingston flash drives with random data.  
+[Year 1](https://www.reddit.com/r/DataHoarder/comments/lwgsdr/research_flash_media_longevity_testing_1_year/) – Tested drive 1, zero bit rot. Re-wrote the drive with the same data.  
 Year 2 – Re-tested drive 1, zero bit rot. Tested drive 2, zero bit rot. Re-wrote both with the same data.
 
 They have been stored in a box on my shelf, with a 1-month period in a moving van (probably below freezing) this year.
@@ -34,10 +34,6 @@ FAQs:
 -   Q: Which flash type is this model?  
     A: We don’t know. If you do know, please tell me.
 -   Q: What data are you testing with?  
-    A: ([Repeatable][3]) randomly generated bits
+    A: ([Repeatable](https://github.com/za3k/short-programs#prng)) randomly generated bits
 -   Q: What filesystem are you using? / Doesn’t the filesystem do error correction?  
     A: I’m writing data directly to the drive using Linux’s block devices.
-
-[1]: https://www.reddit.com/r/DataHoarder/comments/e3nb2r/longterm_reliability_testing/
-[2]: https://www.reddit.com/r/DataHoarder/comments/lwgsdr/research_flash_media_longevity_testing_1_year/
-[3]: https://github.com/za3k/short-programs#prng

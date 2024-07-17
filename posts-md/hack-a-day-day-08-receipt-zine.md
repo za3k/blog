@@ -19,6 +19,4 @@ I’ve wanted to make a receipt-printer zine for a while. Here’s the next best
 
 Click the image for a silly little zine.
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/11/zine.png)][1]
-
-[1]: https://za3k.github.io/ha3k-08-receipt/
+[![](https://blog.za3k.com/wp-content/uploads/2023/11/zine.png)](https://za3k.github.io/ha3k-08-receipt/)

@@ -30,14 +30,14 @@ The sensical mold-killing strategies I’ve found boil down to “Remove moistur
 *My attempt:* I tried it on my basement (dilute to about 0.15%, then pour or spray, scrub afterwards).  
 *My attempt:* I also added a little to laundry while I washed the couch cushions and my sheets.
 
-**Vinegar (acid)**: I would suspect vinegar is not very effective (several people claim mold can tolerate low pH better than high pH, and [Drew Frye][1] who does a lot of actual testing on boats claims that vinegar acts as food for the mold, helping it come back). OTOH I have anecdotal evidence that it works.  
+**Vinegar (acid)**: I would suspect vinegar is not very effective (several people claim mold can tolerate low pH better than high pH, and [Drew Frye](https://sail-delmarva.blogspot.com/) who does a lot of actual testing on boats claims that vinegar acts as food for the mold, helping it come back). OTOH I have anecdotal evidence that it works.  
 *My attempt*: None.
 
 **Concrobium (a base)**: This is a mix of trisodium phosphate (pH 12), sodium carbonate or “washing soda” (pH 11) and sodium bicarbonate or “baking soda” (pH 9). I suspect it works really well, because there’s a good explanation as to why it should. Store-bought concrobium is also quite expensive, so I’d make your own. I suspect you don’t need all three ingredients, because I think they’re doing the same thing.  
-*My attempt*: I sprayed spray-can concrobium on my couch, which covered maybe 1/6 of the couch with a $13 can. Plan to make some [homemade][2] to finish the job.  
+*My attempt*: I sprayed spray-can concrobium on my couch, which covered maybe 1/6 of the couch with a $13 can. Plan to make some [homemade](https://sail-delmarva.blogspot.com/2016/12/mildew-treatment-for-pennies.html) to finish the job.  
 Edit: Muurkha advises that you can make sodium carbonate by boiling sodium bicarbonate for about an hour.
 
-**Clove oil (anti-microbial)**: Most people who recommend it have a bit of an anti-science attitude, which means they tend to give… silly specific advice. But there’s [published][3] research that it works, I just don’t know the best way to apply it, how long it works, or how it works. It seems possible that clove oil is a bit more species-specific than the other methods.  
+**Clove oil (anti-microbial)**: Most people who recommend it have a bit of an anti-science attitude, which means they tend to give… silly specific advice. But there’s [published](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3763181/) research that it works, I just don’t know the best way to apply it, how long it works, or how it works. It seems possible that clove oil is a bit more species-specific than the other methods.  
 *My attempt*: None.
 
 Mechanisms, as I understand them:
@@ -49,7 +49,3 @@ Mechanisms, as I understand them:
 I do not think high or low temperatures will work to kill molds generally, from my research.
 
 The hardest part of this research is that I *don’t* have a large, visible mold patch. I’m just itchy. So don’t expect a report back about whether this stuff worked, honestly.
-
-[1]: https://sail-delmarva.blogspot.com/
-[2]: https://sail-delmarva.blogspot.com/2016/12/mildew-treatment-for-pennies.html
-[3]: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3763181/

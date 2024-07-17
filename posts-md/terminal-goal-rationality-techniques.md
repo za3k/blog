@@ -25,7 +25,7 @@ New terminal goal technique:
 3.  Periodically re-evaluate to make sure it’s the best goal and you’re gathering information.
 
 Original Technique: [Murphy-jitsu  
-][1]
+](https://docs.google.com/document/d/1oEyvXQXdPDzu72Wv2j5bRfJbB7hV3zrjLMVR_T428oc/edit)
 
 1.  Come up with a plan to achieve your goal.
 2.  Use pre-hindsight to ask “How did this go wrong?”.
@@ -63,21 +63,4 @@ Technique: Do the Obvious Thing
 4.  Decide whether or not to do it.
 5.  If you don’t want to, contradiction. Debug steps 1,2,3,4 and see where you went wrong until they’re in accord.
 
-Theory on how to avoid lost purposes (mostly from Eliezer): Use [Litany of Tarski][2] a lot until you get the magic effect where you don’t start rationalizing to begin with (and generally don’t flinch away from learning about things/mistakes). Then, develop an aversion to lost purposes. The naive failure mode is to avoid noticing lost purposes if you have an aversion. (The simpler technique is [Alien in a Body][3])
-
-1.  ![](https://secure.gravatar.com/avatar/111a7d8b594d7707bc1f5e3085c069ef?s=40&d=mm&r=g)JSevilla says:
-    
-    [July 18, 2015 at 9:42 pm][4]
-    
-    Cool stuff. I liked exactboxing and DTOT.  
-    Murphy jitsu has potential.  
-    The modified goal factor has a suspicious component of leaving things to future me that I don’t like a bit though.
-    
-    [Reply][5]
-    
-
-[1]: https://docs.google.com/document/d/1oEyvXQXdPDzu72Wv2j5bRfJbB7hV3zrjLMVR_T428oc/edit
-[2]: http://wiki.lesswrong.com/wiki/Litany_of_Tarski
-[3]: http://lesswrong.com/lw/5x8/teachable_rationality_skills/49d7
-[4]: https://blog.za3k.com/terminal-goal-rationality-techniques/#comment-631
-[5]: https://blog.za3k.com/terminal-goal-rationality-techniques/?replytocom=631#respond
+Theory on how to avoid lost purposes (mostly from Eliezer): Use [Litany of Tarski](http://wiki.lesswrong.com/wiki/Litany_of_Tarski) a lot until you get the magic effect where you don’t start rationalizing to begin with (and generally don’t flinch away from learning about things/mistakes). Then, develop an aversion to lost purposes. The naive failure mode is to avoid noticing lost purposes if you have an aversion. (The simpler technique is [Alien in a Body](http://lesswrong.com/lw/5x8/teachable_rationality_skills/49d7))

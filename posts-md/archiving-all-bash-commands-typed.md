@@ -19,6 +19,7 @@ This one’s a quickie. Just a second of my config to record all bash commands t
 
 I do this in addition:
 
+```
 #~/.bash.d/eternal-history
 # don't put duplicate lines in the history
 HISTCONTROL=ignoredups
@@ -30,5 +31,6 @@ HISTFILESIZE=infinite
 # PID USER INDEX TIMESTAMP COMMAND
 export HISTTIMEFORMAT="%s "
 
-PROMPT\_COMMAND="${PROMPT\_COMMAND:+$PROMPT\_COMMAND ; }"'echo $$ $USER \\
-"$(history 1)" >> ~/.bash\_eternal\_history'
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \
+"$(history 1)" >> ~/.bash_eternal_history'
+```

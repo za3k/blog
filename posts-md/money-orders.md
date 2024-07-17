@@ -13,7 +13,7 @@ updated: 2014-12-02 13:51:00-07:00
 wordpress_id: 84
 wordpress_slug: money-orders
 ---
-[![A postal money order](https://blog.za3k.com/wp-content/uploads/2014/12/Figure6-300x237.jpg)][1]
+[![A postal money order](https://blog.za3k.com/wp-content/uploads/2014/12/Figure6-300x237.jpg)](https://blog.za3k.com/wp-content/uploads/2014/12/Figure6.jpg)
 
 A postal money order
 
@@ -24,5 +24,3 @@ I was tired of checks bouncing. I can’t be bothered to make sure my account re
 I went down to the bank and got out $2750, and headed to the post office. I asked for 9 money orders, each for $303. The postal worker really only made a couple funny faces about me being weird, although my friend said she was pretty loud about my walking out with that much cash-equivalent, it went pretty well. And I immediately endorsed all the money orders so now they can lie around the hose safely.
 
 Also, they come with attachable receipts (shown in the picture) in case you lose the check and need a replacement, so that’s nice.
-
-[1]: https://blog.za3k.com/wp-content/uploads/2014/12/Figure6.jpg

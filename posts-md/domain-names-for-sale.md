@@ -13,11 +13,6 @@ updated: 2015-04-29 00:43:52-07:00
 wordpress_id: 109
 wordpress_slug: domain-names-for-sale
 ---
-For sale: [hotw.ink][1], [dripbrew.coffee][2], [brewed.coffee][3], [forget.io][4]
+For sale: [hotw.ink](http://hotw.ink/), [dripbrew.coffee](http://dripbrew.coffee/), [brewed.coffee](http://brewed.coffee/), [forget.io](http://forget.io)
 
 Contact me (make a comment or email) with offers.
-
-[1]: http://hotw.ink/
-[2]: http://dripbrew.coffee/
-[3]: http://brewed.coffee/
-[4]: http://forget.io

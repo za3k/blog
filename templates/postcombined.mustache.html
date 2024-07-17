@@ -19,20 +19,42 @@ html, body {
 #iframes {
     display: flex;
 }
-iframe {
+#iframes > * {
     flex: 1 1;
-    height: 10000px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#iframes > *:first-child {
+    border-right: 3px dashed lightgray
+}
+#iframes > *::before {
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    width: 7rem;
+    margin-left: -3.5rem;
+    left: 50%;
+    font-variant: small-caps;
+    font-size: 18pt;
+    text-align: center;
+}
+#html::before {
+    content: "Html";
+}
+#markdown::before {
+    content: "Markdown";
+}
+#iframes * {
+    height: 35000px;
+}
+iframe {
     padding: 0;
     margin: 0;
     border: 0;
-    scrollbar-width: none;
     display:block;
-}
-iframe:first-child {
-    border-right: 3px dashed lightgray
-}
-iframe::-webkit-scrollbar {
-    display: none;
+    flex: 1 1;
 }
 
 </style>
@@ -43,5 +65,11 @@ iframe::-webkit-scrollbar {
     <a href="https://git.za3k.com/?p=blog.git;a=blob_plain;f=posts-html/{{id}}.html;hb=HEAD">html source</a>
     <a href="https://git.za3k.com/?p=blog.git;a=blob_plain;f=posts-md/{{id}}.md;hb=HEAD">markdown source</a>
 </ul>
-<div id="iframes"><iframe src="{{url_html}}" id="html"></iframe><iframe src="{{url_md}}" id="markdown"></iframe></body></div>
+<div id="iframes">
+    <div id="html">
+        <iframe src="{{url_html}}"></iframe>
+    </div>
+    <div id="markdown">
+        <iframe src="{{url_md}}"></iframe></body></div>
+    </div>
 </html>

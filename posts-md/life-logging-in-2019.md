@@ -38,33 +38,18 @@ I keep a written (pen and paper) time log which I normally just call my “log b
 
 Today’s page starts like this (italics are censorship or words added for clarity):
 
-Date: 2019-12-17, Tue  
-
-12:02pm
-
-Woke up on my own slightly before alarm. Dream about \[…\]. (7h12m *sleep*)
-
-\[100ml *yellow* rockstar recovery. *(33mg caffein, 400mg taurine–from front material)*\]
-
-Morning data log *(see below)*
-
-Brushed teeth
-
-12:55pm
-
-Cancelled torrent verification–I already know this will fail
-
-Responded to *gnu coreutils* ‘date’ thread
-
-*health stuff*
-
-2:02pm
-
-Trying qutebrowser. Feels very productive.
-
-2:04pm
-
-\[Coke Zero Vanilla*, 1 can*\]
+|     |     |
+| --- | --- |
+| Date: 2019-12-17, Tue |     |
+| 12:02pm | Woke up on my own slightly before alarm. Dream about \[…\]. (7h12m *sleep*) |
+|     | \[100ml *yellow* rockstar recovery. *(33mg caffein, 400mg taurine–from front material)*\] |
+|     | Morning data log *(see below)* |
+|     | Brushed teeth |
+| 12:55pm | Cancelled torrent verification–I already know this will fail |
+|     | Responded to *gnu coreutils* ‘date’ thread |
+|     | *health stuff* |
+| 2:02pm | Trying qutebrowser. Feels very productive. |
+| 2:04pm | \[Coke Zero Vanilla*, 1 can*\] |
 
 I’m not fastidious about what the time represents. The questions I most often ask are “when did this happen roughly” and “do I have any big portions of my day I’m not time-logging”. I’m less concerned with exactly how long I spent doing each particular activity.
 
@@ -97,7 +82,7 @@ One a week, I type up my time log up to the last page. I’m working on my backl
 
 Fun fact: b-oo-kk-ee-ping is the only word in the English language with three consecutive double letters. Bookkeeping is keeping a record of what you earn and spend, or what you buy and sell.
 
-For the most part, I pay for everything using a credit or debit card, which I’ve been doing since 16 so that I have a financial record for my own benefit. Most banks offer an easy export. I get paper copies, then once I download the PDFs from my bank, throw out the originals (I’ve checked one or two match the PDFs by hand). I use [mint.com][1] for the purpose of having a CSV export from my bak statements. I used to put this export [online][2] (currently broken, check back soon).
+For the most part, I pay for everything using a credit or debit card, which I’ve been doing since 16 so that I have a financial record for my own benefit. Most banks offer an easy export. I get paper copies, then once I download the PDFs from my bank, throw out the originals (I’ve checked one or two match the PDFs by hand). I use [mint.com](https://www.mint.com/) for the purpose of having a CSV export from my bak statements. I used to put this export [online](https://za3k.com/money.html) (currently broken, check back soon).
 
 Starting a few months ago, I started keeping a weekly record by hand. Every time I spend money, I’ll put a `$` symbol in my time log,
 
@@ -178,7 +163,7 @@ I put all my computer logs in a single combined format, and sync them to a singl
 
 ### Sleep Log (2019-) / Keystoke Activity Log (2013-)
 
-I log which hours I was asleep. I live alone and tend to fall asleep first thing after closing my laptop in bed, or at least with a video playing in the background, which makes this relatively easy. I keep a computer log of whether I’m using my keyboard (I almost never do anything with just the mouse) for each minute using a [custom-built keylogger][3] (it records activity but not passwords).
+I log which hours I was asleep. I live alone and tend to fall asleep first thing after closing my laptop in bed, or at least with a video playing in the background, which makes this relatively easy. I keep a computer log of whether I’m using my keyboard (I almost never do anything with just the mouse) for each minute using a [custom-built keylogger](https://github.com/za3k/keystroked) (it records activity but not passwords).
 
 Then I run it through a custom script (included in link) which says which broad periods I was active. The biggest inactive period in a day is when I was asleep.
 
@@ -192,13 +177,13 @@ If you don’t fall asleep at a computer, I have some ideas around using a motio
 
 ### Chromium History Log (2013-)
 
-I use Chromium as my only web browser. I export the [history][4] and [bookmarks][5] every time I do a backup, and put it all in a standard log format (basically time + URL). Currently I only record each history entry once.
+I use Chromium as my only web browser. I export the [history](https://github.com/za3k/rip-chrome-history) and [bookmarks](https://github.com/za3k/export-chrome-bookmarks) every time I do a backup, and put it all in a standard log format (basically time + URL). Currently I only record each history entry once.
 
 For futureproofing, I archive every webpage I go to on an irregular basis (about once a year). Archiving pages doesn’t work super well but it’s better than nothing.
 
 ### Video/TV Log (2019-)
 
-I watch my movies using [noice][6], either directly on my television, or streamed from my media server to my laptop. When I start watching something, it automatically gets logged (including what the movie is, the path, how long it is etc). Same for when I stop, so I know if I quit early.
+I watch my movies using [noice](https://github.com/za3k/noice), either directly on my television, or streamed from my media server to my laptop. When I start watching something, it automatically gets logged (including what the movie is, the path, how long it is etc). Same for when I stop, so I know if I quit early.
 
 Youtube is included in my chromium history (see above). Sadly I’m not sure I can get ‘how much of this video did I watch’ from my format–only that I visited the video.
 
@@ -206,37 +191,21 @@ For futureproofing, I automatically archive every youtube video I watch.
 
 ### Bash History (2011-)
 
-This one is pretty simple. My Linux shell history (everything I run from the command line, which is basically everything I do outside a browser) is saved, [forever][7]. This one goes back to 2011 for my laptops.
+This one is pretty simple. My Linux shell history (everything I run from the command line, which is basically everything I do outside a browser) is saved, [forever](https://debian-administration.org/article/543/Bash_eternal_history). This one goes back to 2011 for my laptops.
 
 ## Scanning (2014-)
 
 I scan all documents I write, mail I get, etc. and generally throw out the originals. I organize everything by hand, and keep everything as image files.
 
-I use a flat folder structure, which is to say I have a “scans” folder and then a bunch of folders in it like “taxes – 2019”. No nesting. This was my main takeaway from [GTD for Hackers][8] and I use flat folders for most digital organization.
+I use a flat folder structure, which is to say I have a “scans” folder and then a bunch of folders in it like “taxes – 2019”. No nesting. This was my main takeaway from [GTD for Hackers](https://gtdfh.branchable.com/) and I use flat folders for most digital organization.
 
-I use the [Doxie Go][9] feed-through scanner (doesn’t need a computer, writes directly to SD which I love). I recently got a [Canon Lide 400][10] flatbed scanner (works on linux) which I use to scan bound books like my time log.
+I use the [Doxie Go](https://www.getdoxie.com/product/doxie-go-original/) feed-through scanner (doesn’t need a computer, writes directly to SD which I love). I recently got a [Canon Lide 400](https://www.amazon.com/gp/product/B07G5YBS1W) flatbed scanner (works on linux) which I use to scan bound books like my time log.
 
 ## Who else does this stuff?
 
 As far as I know I came up with this stuff independently. I’ve read plenty of time-management resources (which tend to be good) and experimental journaling resources (which tend to be… scarce?).
 
--   [Lion Kimbro][11]: “Make a complete map of every thought you think”. General journaling. [Inteview][12].
--   [Fenn Lipowitz][13] (my roommate): Time log, with an emphasis on being completely machine-readable. Being machine-readable means click for pretty graphs. I took inspiration from how machine-parsable this was recently, but I want to keep my freehand sections too.
--   [Bryan Bishop][14] (acquaintance): meetlog, a system for recording conversations and topics of conversation. Overall I didn’t find this useful because I don’t know hundreds of people. The format is so-so, largely because the author can type very fast, including real-time transcripts. I got the inspiration to write topics of conversation while talking from this. I do something similar if I spend a long time thinking or researching, too.
--   [Bullet Journaling][15]: I dunno, if you’re super lost and don’t know how to write a journal/TODO list, some guy figured it out for you! It’s just the basics that you’d figure out on your own, but it may save time. The site is better than the book. I independently invented most of their notation for TODO lists, I don’t find it too useful for a journal. Other peoples’ bullet journal pages are also useful, not just the original author’s.
-
-[1]: https://www.mint.com/
-[2]: https://za3k.com/money.html
-[3]: https://github.com/za3k/keystroked
-[4]: https://github.com/za3k/rip-chrome-history
-[5]: https://github.com/za3k/export-chrome-bookmarks
-[6]: https://github.com/za3k/noice
-[7]: https://debian-administration.org/article/543/Bash_eternal_history
-[8]: https://gtdfh.branchable.com/
-[9]: https://www.getdoxie.com/product/doxie-go-original/
-[10]: https://www.amazon.com/gp/product/B07G5YBS1W
-[11]: https://users.speakeasy.net/~lion/nb/
-[12]: https://gilest.org/lion-kimbro.html
-[13]: http://www.fennetic.net/sleep/
-[14]: https://quantifiedself.com/blog/bryan-bishop-on-meetlog/
-[15]: https://bulletjournal.com/pages/learn
+-   [Lion Kimbro](https://users.speakeasy.net/~lion/nb/): “Make a complete map of every thought you think”. General journaling. [Inteview](https://gilest.org/lion-kimbro.html).
+-   [Fenn Lipowitz](http://www.fennetic.net/sleep/) (my roommate): Time log, with an emphasis on being completely machine-readable. Being machine-readable means click for pretty graphs. I took inspiration from how machine-parsable this was recently, but I want to keep my freehand sections too.
+-   [Bryan Bishop](https://quantifiedself.com/blog/bryan-bishop-on-meetlog/) (acquaintance): meetlog, a system for recording conversations and topics of conversation. Overall I didn’t find this useful because I don’t know hundreds of people. The format is so-so, largely because the author can type very fast, including real-time transcripts. I got the inspiration to write topics of conversation while talking from this. I do something similar if I spend a long time thinking or researching, too.
+-   [Bullet Journaling](https://bulletjournal.com/pages/learn): I dunno, if you’re super lost and don’t know how to write a journal/TODO list, some guy figured it out for you! It’s just the basics that you’d figure out on your own, but it may save time. The site is better than the book. I independently invented most of their notation for TODO lists, I don’t find it too useful for a journal. Other peoples’ bullet journal pages are also useful, not just the original author’s.

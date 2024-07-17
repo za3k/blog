@@ -20,13 +20,8 @@ wordpress_slug: hack-a-day-hack-a-dictionary
 ---
 It’s november, and I’ve decided this month that I’m going to do 30 projects in 30 days. It’s an all-month hack-a-thon!
 
-Today’s project is [Hack-A-Dictionary][1] ([demo][2], [source][3]). It looks up words.
+Today’s project is [Hack-A-Dictionary](https://tilde.za3k.com/hackaday/dictionary/) ([demo](https://tilde.za3k.com/hackaday/dictionary/), [source](https://github.com/za3k/day08_dictionary)). It looks up words.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-7.png)][4]
+[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-7.png)](https://tilde.za3k.com/hackaday/dictionary/)
 
 OK, I’ll be honest. I’m phoning this one in. I needed a break.
-
-[1]: https://tilde.za3k.com/hackaday/dictionary/
-[2]: https://tilde.za3k.com/hackaday/dictionary/
-[3]: https://github.com/za3k/day08_dictionary
-[4]: https://tilde.za3k.com/hackaday/dictionary/

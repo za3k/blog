@@ -19,14 +19,10 @@ wordpress_slug: hack-a-day-2023-2
 
 Hack-A-Day is challenge to make complete one new project, from scratch, every day in November 2023.
 
-Last year (2022), I set myself the challenge to make a software project every day, and met it. I had a ton of fun, and make a lot of [cool video games and projects][1] I can show off. This year I’m inviting the rest of the world to join me!
+Last year (2022), I set myself the challenge to make a software project every day, and met it. I had a ton of fun, and make a lot of [cool video games and projects](https://za3k.com/hackaday) I can show off. This year I’m inviting the rest of the world to join me!
 
 I’m a programmer, so I’m doing a new computer programming project every day. But you can do any kind of project, whatever you pick is great.
 
-[READ MORE][2]
+[READ MORE](https://za3k.com/hack-a-day-rules)
 
-I encourage you to join. I would guess this takes 2-4 hours a day (similar to NaNoWriMo). But if you don’t have that kind of time, please do still join for as many days as you can! And if you want to collaborate with me, set aside a free day and message me by email. My calendar is at [zachary.youcanbook.me][3]. Feel free to grab any day starting the 4th!
-
-[1]: https://za3k.com/hackaday
-[2]: https://za3k.com/hack-a-day-rules
-[3]: https://zachary.youcanbook.me/
+I encourage you to join. I would guess this takes 2-4 hours a day (similar to NaNoWriMo). But if you don’t have that kind of time, please do still join for as many days as you can! And if you want to collaborate with me, set aside a free day and message me by email. My calendar is at [zachary.youcanbook.me](https://zachary.youcanbook.me/). Feel free to grab any day starting the 4th!

@@ -14,7 +14,4 @@ updated: 2021-10-22 14:41:32-07:00
 wordpress_id: 715
 wordpress_slug: ogs2021-27-million-go-games
 ---
-I downloaded all 27 million Go games from online-go.com, aka OGS, with permission. They are available [on Internet Archive][1] or [here][2] as SGF files or JSON. You can use them for whatever you like.
-
-[1]: https://archive.org/details/ogs2021
-[2]: https://za3k.com/ogs/
+I downloaded all 27 million Go games from online-go.com, aka OGS, with permission. They are available [on Internet Archive](https://archive.org/details/ogs2021) or [here](https://za3k.com/ogs/) as SGF files or JSON. You can use them for whatever you like.

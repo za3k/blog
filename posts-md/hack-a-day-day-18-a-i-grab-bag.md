@@ -13,7 +13,7 @@ updated: 2023-11-20 10:10:28-07:00
 wordpress_id: 1199
 wordpress_slug: hack-a-day-day-18-a-i-grab-bag
 ---
-Today I got a variety of modern A.I. tools to work in [a python library][1]. This one is mostly install instructions, but it was useful for me, at least.
+Today I got a variety of modern A.I. tools to work in [a python library](https://github.com/za3k/ha3k-18-ai-grabbag). This one is mostly install instructions, but it was useful for me, at least.
 
 I took a day off after.
 
@@ -24,5 +24,3 @@ My conclusions were:
 -   Generating chat at 0.05x – 0.5x realtime (3-30 wpm) on GPU.
 
 I didn’t get image generation working on my allotted time.
-
-[1]: https://github.com/za3k/ha3k-18-ai-grabbag

@@ -16,6 +16,7 @@ wordpress_slug: configuring-mailxs-mailrc-with-gmail
 ---
 Here’s how I added gmail to .mailrc for the BSD program mailx, provided by the *s-nail* package in arch.
 
+```
 account gmail {
   set folder=imaps://example@gmail.com@imap.gmail.com
   set password-example@gmail.com@imap.gmail.com="PASS"
@@ -26,6 +27,7 @@ account gmail {
   set smtp-auth-password="PASS"
   set from="John Smith <example@gmail.com>"
 }
+```
 
 Replace **PASS** with your actual password, and **example@gmail.com** with your actual email. Read the documentation if you want to avoid plaintext passwords.
 

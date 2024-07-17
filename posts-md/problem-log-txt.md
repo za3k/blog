@@ -17,11 +17,13 @@ wordpress_slug: problem-log-txt
 ---
 One of the more useful things I did was to start logging all my technical problems. Whenever I hit a problem, I write an entry in problem-log.txt. Here’s an example
 
-    2022-08-02
-    Q: Why isn't the printer working? [ SOLVED ]
-    A: sudo cupsenable HL-2270DW
-    
-    // This isn't in the problem log, but the issue is that CUPS will silently disable the printer if it thinks there's an issue. This can happen if you pull a USB cord mid-print.
+```
+2022-08-02
+Q: Why isn't the printer working? [ SOLVED ]
+A: sudo cupsenable HL-2270DW
+
+// This isn't in the problem log, but the issue is that CUPS will silently disable the printer if it thinks there's an issue. This can happen if you pull a USB cord mid-print.
+```
 
 I write the date, the question, and the answer. Later, when I have a tough or annoying problem, I try to grep problem-log.txt. I’ll add a note if I solve a problem using the log, too.
 
@@ -29,7 +31,9 @@ This was an interesting project to look at 5 years later. I didn’t see benefit
 
 Here’s another example:
 
-    2018-10-21
-    Q: How do I connect to the small yellow router?
+```
+2018-10-21
+Q: How do I connect to the small yellow router?
+```
 
 Not every problem gets solved. Oh well.

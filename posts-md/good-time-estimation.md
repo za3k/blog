@@ -41,13 +41,13 @@ Assume there’s only one multiplication factor for one kind of work (one kind o
 
 You can measure other peoples’ multiplication factor to figure out when they’ll actually be done with tasks, but I suggest doing it quietly and not mentioning it.
 
-Credit: Folk, but credit to [Joel on Software][1] for the idea of estimating it for each team member
+Credit: Folk, but credit to [Joel on Software](https://www.joelonsoftware.com/2007/10/26/evidence-based-scheduling/) for the idea of estimating it for each team member
 
 ## To estimate a long task, break it up into pieces, and add up the pieces.
 
 Do this if your task takes 2 days or more. Because of the multiplication factor, carefully budget time for added tasks, things you forgot, problems, etc. Or you can skip it. Just consistently pick one.
 
-Credit: [Joel on Software][2], including FogBugz which did this as a statistical method displayed with [Gantt Charts][3].
+Credit: [Joel on Software](https://www.joelonsoftware.com/2007/10/26/evidence-based-scheduling/), including FogBugz which did this as a statistical method displayed with [Gantt Charts](https://en.wikipedia.org/wiki/Gantt_chart).
 
 ## Train your credible intervals.
 
@@ -58,7 +58,3 @@ Train your credible intervals. I trained mine using bug fixing, something which 
 I trained on bugfixes using 50%, 90%, and 99% intervals. There are specific mathematical scoring rules, but basically if something is in your 50% interval more than half the time, narrow it; if your interval is correct less than half the time, widen it.
 
 Credit: Eliezer Yudkowsky (personal website, no longer up)
-
-[1]: https://www.joelonsoftware.com/2007/10/26/evidence-based-scheduling/
-[2]: https://www.joelonsoftware.com/2007/10/26/evidence-based-scheduling/
-[3]: https://en.wikipedia.org/wiki/Gantt_chart

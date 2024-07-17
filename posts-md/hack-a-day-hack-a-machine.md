@@ -20,11 +20,11 @@ wordpress_slug: hack-a-day-hack-a-machine
 ---
 It’s november, and I’ve decided this month that I’m going to do 30 projects in 30 days. It’s an all-month hack-a-thon!
 
-Today’s project is [Hack-A-Machine][1] ([demo][2], [source][3]). It’s a whimsical VM you can play around with.
+Today’s project is [Hack-A-Machine](https://tilde.za3k.com/hackaday/machine/) ([demo](https://tilde.za3k.com/hackaday/machine/), [source](https://github.com/za3k/day10_machine)). It’s a whimsical VM you can play around with.
 
 I liked this one, but it really didn’t fit into a day too well.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-9.png)][4]
+[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-9.png)](https://tilde.za3k.com/hackaday/machine/)
 
 Features include:
 
@@ -46,8 +46,3 @@ Sadly not in the “one day” category are
 -   syntax highlighting
 -   the entire machine 100% working (I tested a little!)
 -   fixing all the bugs (there’s a particularly nasty one where you have to save before you run)
-
-[1]: https://tilde.za3k.com/hackaday/machine/
-[2]: https://tilde.za3k.com/hackaday/machine/
-[3]: https://github.com/za3k/day10_machine
-[4]: https://tilde.za3k.com/hackaday/machine/

@@ -32,8 +32,3 @@ I’m a little embarrassed at having done all this, since it was obvious as soon
 ![whiteboard 5](https://blog.za3k.com/wp-content/uploads/2015/04/whiteboard-5.jpg)
 
 and I never saw it again
-
-1.  Pingback: [Year in Review | Optimal Prime][1]
-    
-
-[1]: https://blog.za3k.com/year-in-review/

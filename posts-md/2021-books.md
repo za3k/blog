@@ -65,7 +65,7 @@ Malazan (Malazan 1) by Steven Erikson
 **Mistress of the Empire by Raymond Feist and Janny Wurts  
 Servant of the Empire by Raymond Feist and Janny Wurts  
 Dragon’s Egg (Cheela 1) by Robert L Forward  
-**[Mother of Learning][1] by Domagoj Kurmaic/nobody103**  
+**[Mother of Learning](https://www.royalroad.com/fiction/21220/mother-of-learning) by Domagoj Kurmaic/nobody103**  
 Books of Magic by Neil Gaiman  
 The Midnight Library by Matt Haig  
 The Warehouse by Rob Hart  
@@ -140,11 +140,11 @@ Thousand Li 3 by Tao Wong
 Thousand Li 4 by Tao Wong  
 Thousand Li 5 by Tao Wong  
 Sorcerer’s Legacy by Janny Wurts (see also Feist)  
-[Heretical Edge][2] by ceruleuanscrawling  
-[Mark of the Fool][3] by UnstoppableJuggernaut  
-[there is no antimemetics division][4] by qntm  
-[Only Villains Do That][5] by Webbonomicon  
-[Worm][6] by wildbow
+[Heretical Edge](https://ceruleanscrawling.wordpress.com/table-of-contents/) by ceruleuanscrawling  
+[Mark of the Fool](https://www.royalroad.com/fiction/41618/mark-of-the-fool-a-progression-fantasy) by UnstoppableJuggernaut  
+[there is no antimemetics division](https://scp-wiki.wikidot.com/antimemetics-division-hub) by qntm  
+[Only Villains Do That](https://www.royalroad.com/fiction/40182/only-villains-do-that) by Webbonomicon  
+[Worm](https://parahumans.wordpress.com/) by wildbow
 
 **Nonfiction:**
 
@@ -161,10 +161,3 @@ Primitive Technology by John Plant
 Monero whitepaper by Nicolas van Saberhagen  
 Secrets and Lies by Bruce Schneier  
 The Cuckoo’s Egg by Clifford Stoll
-
-[1]: https://www.royalroad.com/fiction/21220/mother-of-learning
-[2]: https://ceruleanscrawling.wordpress.com/table-of-contents/
-[3]: https://www.royalroad.com/fiction/41618/mark-of-the-fool-a-progression-fantasy
-[4]: https://scp-wiki.wikidot.com/antimemetics-division-hub
-[5]: https://www.royalroad.com/fiction/40182/only-villains-do-that
-[6]: https://parahumans.wordpress.com/

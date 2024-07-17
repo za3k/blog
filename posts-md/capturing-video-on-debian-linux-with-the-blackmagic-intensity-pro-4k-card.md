@@ -16,7 +16,7 @@ wordpress_slug: capturing-video-on-debian-linux-with-the-blackmagic-intensity-pr
 ---
 Most of this should apply for any linux system, other than the driver install step. Also, I believe most of it applies to DeckLink and Intensity cards as well.
 
-My main source is [https://gist.github.com/afriza/879fed4ede539a5a6501e0f046f71463][1]. I’ve re-written for clarity and Debian.
+My main source is [https://gist.github.com/afriza/879fed4ede539a5a6501e0f046f71463](https://gist.github.com/afriza/879fed4ede539a5a6501e0f046f71463). I’ve re-written for clarity and Debian.
 
 1.  Set up hardware. On the Intensity Pro 4K, I see a black screen on my TV when things are set up correctly (a clear rectangle, not just nothing).
 2.  From the Blackmagic site, download “Desktop Video SDK” version 10.11.4 (not the latest). Get the matching “Desktop Video” software for Linux.
@@ -41,30 +41,31 @@ My main source is [https://gist.github.com/afriza/879fed4ede539a5a6501e0f046f714
       
     `ffmpeg -f decklink -list_formats 1 -i 'Intensity Pro 4K'` shows supported formats. Here’s what I see for the Intensity Pro 4K:
 
-    [decklink @ 0x561bd9881800] Supported formats for 'Intensity Pro 4K':
-            format_code     description
-            ntsc            720x486 at 30000/1001 fps (interlaced, lower field first)
-            pal             720x576 at 25000/1000 fps (interlaced, upper field first)
-            23ps            1920x1080 at 24000/1001 fps
-            24ps            1920x1080 at 24000/1000 fps
-            Hp25            1920x1080 at 25000/1000 fps
-            Hp29            1920x1080 at 30000/1001 fps
-            Hp30            1920x1080 at 30000/1000 fps
-            Hp50            1920x1080 at 50000/1000 fps
-            Hp59            1920x1080 at 60000/1001 fps
-            Hp60            1920x1080 at 60000/1000 fps
-            Hi50            1920x1080 at 25000/1000 fps (interlaced, upper field first)
-            Hi59            1920x1080 at 30000/1001 fps (interlaced, upper field first)
-            Hi60            1920x1080 at 30000/1000 fps (interlaced, upper field first)
-            hp50            1280x720 at 50000/1000 fps
-            hp59            1280x720 at 60000/1001 fps
-            hp60            1280x720 at 60000/1000 fps
-            4k23            3840x2160 at 24000/1001 fps
-            4k24            3840x2160 at 24000/1000 fps
-            4k25            3840x2160 at 25000/1000 fps
-            4k29            3840x2160 at 30000/1001 fps
-            4k30            3840x2160 at 30000/1000 fps
-    
+```
+[decklink @ 0x561bd9881800] Supported formats for 'Intensity Pro 4K':
+        format_code     description
+        ntsc            720x486 at 30000/1001 fps (interlaced, lower field first)
+        pal             720x576 at 25000/1000 fps (interlaced, upper field first)
+        23ps            1920x1080 at 24000/1001 fps
+        24ps            1920x1080 at 24000/1000 fps
+        Hp25            1920x1080 at 25000/1000 fps
+        Hp29            1920x1080 at 30000/1001 fps
+        Hp30            1920x1080 at 30000/1000 fps
+        Hp50            1920x1080 at 50000/1000 fps
+        Hp59            1920x1080 at 60000/1001 fps
+        Hp60            1920x1080 at 60000/1000 fps
+        Hi50            1920x1080 at 25000/1000 fps (interlaced, upper field first)
+        Hi59            1920x1080 at 30000/1001 fps (interlaced, upper field first)
+        Hi60            1920x1080 at 30000/1000 fps (interlaced, upper field first)
+        hp50            1280x720 at 50000/1000 fps
+        hp59            1280x720 at 60000/1001 fps
+        hp60            1280x720 at 60000/1000 fps
+        4k23            3840x2160 at 24000/1001 fps
+        4k24            3840x2160 at 24000/1000 fps
+        4k25            3840x2160 at 25000/1000 fps
+        4k29            3840x2160 at 30000/1001 fps
+        4k30            3840x2160 at 30000/1000 fps
+```
 
 Capture some video: `ffmpeg -raw_format argb -format_code Hp60 -f decklink -i 'Intensity Pro 4K' test.avi`
 
@@ -79,9 +80,5 @@ Troubleshooting
 
 Sources:
 
--   [https://gist.github.com/afriza/879fed4ede539a5a6501e0f046f71463][2]
--   [https://ffmpeg.org/ffmpeg-devices.html#decklink][3]
-
-[1]: https://gist.github.com/afriza/879fed4ede539a5a6501e0f046f71463
-[2]: https://gist.github.com/afriza/879fed4ede539a5a6501e0f046f71463
-[3]: https://ffmpeg.org/ffmpeg-devices.html#decklink
+-   [https://gist.github.com/afriza/879fed4ede539a5a6501e0f046f71463](https://gist.github.com/afriza/879fed4ede539a5a6501e0f046f71463)
+-   [https://ffmpeg.org/ffmpeg-devices.html#decklink](https://ffmpeg.org/ffmpeg-devices.html#decklink)

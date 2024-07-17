@@ -17,9 +17,8 @@ wordpress_slug: hack-a-day-day-28-90s-sitcom
 ---
 Two friends and I wrote the intro to “Pint-Sized”, a 90s sitcom that never existed.
 
-We used DALL-E and stable diffusion for images, [Photopea][1] to add captions, and Google’s [AI Test Kitchen][2] for the backing music. Cheers were added with audacity. The video was edited together with ffmpeg.
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/6sW5rQTj1cE?si=VrMohP8qPSYOnt9-" title="YouTube video player" width="560"></iframe>
+
+We used DALL-E and stable diffusion for images, [Photopea](https://www.photopea.com/) to add captions, and Google’s [AI Test Kitchen](https://aitestkitchen.withgoogle.com/experiments/music-lm) for the backing music. Cheers were added with audacity. The video was edited together with ffmpeg.
 
 Credits: za3k, stetson blake, jeremy mcintyre
-
-[1]: https://www.photopea.com/
-[2]: https://aitestkitchen.withgoogle.com/experiments/music-lm

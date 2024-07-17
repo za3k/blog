@@ -18,9 +18,9 @@ I’ve had a couple people ask how my TODO list works, so here’s what I’ve b
 
 The calendar has anything that needs to be done on a specific day. Birthday reminders, doctor’s appointments, and weekly activities like board game night or trash day. You’ve seen calendars. This is nothing interesting.
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/07/weekly-crop-246x300.jpg)][1]
+[![](https://blog.za3k.com/wp-content/uploads/2023/07/weekly-crop-246x300.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/weekly-crop.jpg)
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/07/cal-crop-300x255.jpg)][2]
+[![](https://blog.za3k.com/wp-content/uploads/2023/07/cal-crop-300x255.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/cal-crop.jpg)
 
 **A yearly goals list**
 
@@ -34,13 +34,13 @@ You can ignore this one.
 
 A daily TODO list, written on paper. I throw it out at the end of each day, without copying anything off it. (I actually scan it, but I never look at the scans). This one I find very helpful.
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/07/todo-daily-crop-748x1024.jpg)][3]
+[![](https://blog.za3k.com/wp-content/uploads/2023/07/todo-daily-crop-748x1024.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/todo-daily-crop.jpg)
 
 **Master TODO list**
 
 A “master” TODO list, consisting of everything I want to get done long term. I store this as a text file.
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/07/todo-crop-894x1024.png)][4]
+[![](https://blog.za3k.com/wp-content/uploads/2023/07/todo-crop-894x1024.png)](https://blog.za3k.com/wp-content/uploads/2023/07/todo-crop.png)
 
 Each task is a one-line description.
 
@@ -71,8 +71,3 @@ In addition, I have a few special categories:
 I try to minimize subtasks, in general. If I have a big task (clean the house), I’ll try to list it as “clean the bedroom”, etc as seperate tasks. If I have to, I’ll have a big task that references separate small tasks, but it’s the exception, and usually in the “more than a week” category.
 
 And that’s about all I have to say.
-
-[1]: https://blog.za3k.com/wp-content/uploads/2023/07/weekly-crop.jpg
-[2]: https://blog.za3k.com/wp-content/uploads/2023/07/cal-crop.jpg
-[3]: https://blog.za3k.com/wp-content/uploads/2023/07/todo-daily-crop.jpg
-[4]: https://blog.za3k.com/wp-content/uploads/2023/07/todo-crop.png

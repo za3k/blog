@@ -12,9 +12,6 @@ updated: 2021-06-06 00:28:01-07:00
 wordpress_id: 596
 wordpress_slug: software-section
 ---
-I added a [software section][1] to my website. It lists all the software I’ve made over the years (well not all of it, but what I think is most useful to others).
+I added a [software section](https://za3k.com/software.md) to my website. It lists all the software I’ve made over the years (well not all of it, but what I think is most useful to others).
 
-I updated the [archive][2] page as well, mostly to remove the software that was there. As usual, I try to make sure all links to my website are good forever.
-
-[1]: https://za3k.com/software.md
-[2]: https://za3k.com/archived.html
+I updated the [archive](https://za3k.com/archived.html) page as well, mostly to remove the software that was there. As usual, I try to make sure all links to my website are good forever.

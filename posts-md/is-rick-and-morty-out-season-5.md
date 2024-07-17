@@ -14,6 +14,4 @@ updated: 2021-06-05 15:41:58-07:00
 wordpress_id: 591
 wordpress_slug: is-rick-and-morty-out-season-5
 ---
-I made a site for your constant refresh needs: [http://isrickandmortyout.com/][1]
-
-[1]: http://isrickandmortyout.com/
+I made a site for your constant refresh needs: [http://isrickandmortyout.com/](http://isrickandmortyout.com/)

@@ -18,13 +18,8 @@ wordpress_slug: hack-a-day-hack-a-paste
 ---
 It’s november, and I’ve decided this month that I’m going to do 30 projects in 30 days. It’s an all-month hack-a-thon!
 
-Today’s project is [Hack-A-Paste][1] ([demo][2], [source][3]). You can upload text and share it with others.
+Today’s project is [Hack-A-Paste](https://tilde.za3k.com/hackaday/paste) ([demo](https://tilde.za3k.com/hackaday/paste), [source](https://github.com/za3k/day05_paste)). You can upload text and share it with others.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-1.png)][4]
+[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-1.png)](https://tilde.za3k.com/hackaday/paste)
 
 Today’s project was an easy one, because I was busy. Took an hour or two.
-
-[1]: https://tilde.za3k.com/hackaday/paste
-[2]: https://tilde.za3k.com/hackaday/paste
-[3]: https://github.com/za3k/day05_paste
-[4]: https://tilde.za3k.com/hackaday/paste

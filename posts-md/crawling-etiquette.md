@@ -31,7 +31,7 @@ Here are a couple reasons people want to ban automated scraping:
 1.  It costs them money (*bandwidth*). Or, it makes the site unusable because too many “people” (all you) are trying to access it at once (*congestion*). Usually, it costs them money because the scaper is *stupid*–it’s something like a badly written search engine, which opens up every comment in a blog as a separate page, or opens up an infinite series of pages. For example, I host a bunch of large binaries (linux installers–big!), and I’ve had a search engine try to download every single one, once an hour. As a scraper, you can can avoid causing these problems by
     -   rate-limiting your bot (ex. only scraping one page every 5-10 seconds, so you don’t overload their server). This is a good safety net–no matter what you do, you can’t break things too badly. If you’re downloading big files, you can also rate-limit your bandwidth or limit your total bandwidth quota.
     -   examining what your scraper is doing as it runs (so you don’t download a bunch of unncessessary garbage, like computer-generated pages or a nearly-identical page for every blog comment)
-    -   obeying [robots.txt][1], which you can probably get a scraping framework to do for you. you can choose to ignore robots.txt if you think you have a good reason to, but make sure you understand why robots.txt exists before you decide.
+    -   obeying [robots.txt](https://www.cloudflare.com/learning/bots/what-is-robots.txt/), which you can probably get a scraping framework to do for you. you can choose to ignore robots.txt if you think you have a good reason to, but make sure you understand why robots.txt exists before you decide.
     -   testing the site while you’re scraping by hand or with a computerized timer. If you see the site do something like load slower (even a little) because of what you’re doing, stop your scraper, and adjust your rate limit to be 10X smaller.
     -   make your scraper smart. download only the pages you need. if you frequently stop and restart the scraper, have it remember the pages you downloaded–use some form of local cache to avoid re-downloading things. if you need to re-crawl (for example to maintain a mirror) pass if-modified-since HTTP headers.
     -   declare an HTTP user-agent, which explains what you’re doing and how to contact you (email or phone) in case there is a problem. i’ve never had anyone actually contact me but as a site admin I have looked at user agents.
@@ -56,7 +56,7 @@ These are the things that may happen if you annoy a person or company on the int
 -   They may yell at you, send you an angry email, or send you a polite email asking you to stop and/or informing you that you’re banned and who to contact if you’d like to change that
 -   You may be sent a letter telling you to stop by a lawyer (a cease-and-desist letter), often with a threat of legal action if you do not
 -   You may be sued. This could be either a legitimate attempt to sue you, or a sort of extra-intimidating cease-and-desist letter. The attempt could be successful, unsuccessful but need you to show up in court, or could be something you can ignore althogether.
--   You may be charged with some criminal charge such as computer, wire, or mail fraud. The only case I’m aware of offhand is [Aaron Swartz][2]
+-   You may be charged with some criminal charge such as computer, wire, or mail fraud. The only case I’m aware of offhand is [Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz)
 -   You may be brought up on some charge by the FBI, which will result in your computers being taken away and not returned, and possibly jailtime. This one will only happen if you are crawling a government site (and is not supposed to happen ever, but that’s the world we live in).
 
 For what it’s worth, so far I have gotten up to the “polite email” section in my personal life. I do a reasonable amount of scraping, mostly of smaller sites.
@@ -67,10 +67,6 @@ Craigslist, government sites, and traditional publishers (print, audio, and acad
 
 What a company will do once you publicly post all the information on their site is another matter, and I have less advice there. There are several sites that offer information about historical Amazon prices, for what that’s worth.
 
-You may find [this article][3] interesting (but unhelpful) if you are concerned about being sued. Jason Scott is one of the main technical people at the Internet Archive, and people sometimes object to things he posts online.
+You may find [this article](https://privacy-pc.com/articles/that-awesome-time-i-was-sued-for-two-billion-dollars-jason-scotts-extraordinary-experience.html) interesting (but unhelpful) if you are concerned about being sued. Jason Scott is one of the main technical people at the Internet Archive, and people sometimes object to things he posts online.
 
 In my personal opinion, suing people or bringing criminal charges does not work in general, because most people scraping do not live in the USA, and may use technical means to disguise who they are. Scrapers may be impossible to sue or charge with anything. In short, a policy of trying to sue people who scape your site, will result in your site still being scraped. Also, most people running a site don’t have the resources to sue anyone in any case. So you shouldn’t expect this to be a common outcome, but basically a small percentage of people (mostly crackpots) and companies (RIAA and publishers) may.
-
-[1]: https://www.cloudflare.com/learning/bots/what-is-robots.txt/
-[2]: https://en.wikipedia.org/wiki/Aaron_Swartz
-[3]: https://privacy-pc.com/articles/that-awesome-time-i-was-sued-for-two-billion-dollars-jason-scotts-extraordinary-experience.html

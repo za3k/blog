@@ -18,11 +18,6 @@ wordpress_slug: hack-a-day-hack-a-mandelbrot
 ---
 It’s november, and I’ve decided this month that I’m going to do 30 projects in 30 days. It’s an all-month hack-a-thon!
 
-Today’s project is [Hack-A-Mandelbrot][1] ([demo][2], [source][3]). Interactively explore the fractal world of the Mandelbrot set.
+Today’s project is [Hack-A-Mandelbrot](https://tilde.za3k.com/hackaday/mandelbrot/) ([demo](https://tilde.za3k.com/hackaday/mandelbrot/), [source](https://github.com/za3k/day09_mandelbrot)). Interactively explore the fractal world of the Mandelbrot set.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-8.png)][4]
-
-[1]: https://tilde.za3k.com/hackaday/mandelbrot/
-[2]: https://tilde.za3k.com/hackaday/mandelbrot/
-[3]: https://github.com/za3k/day09_mandelbrot
-[4]: https://tilde.za3k.com/hackaday/mandelbrot/
+[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-8.png)](https://tilde.za3k.com/hackaday/mandelbrot/)

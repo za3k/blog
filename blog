@@ -22,11 +22,11 @@ import chevron as mustache
 import collections
 import datetime
 import math
-import markdown2
 import os, os.path
 import re
 import subprocess
 import yaml
+from markdown2html import markdown2html
 
 from pathlib import Path
 
@@ -107,7 +107,6 @@ def scale(i1, range1, range2):
     i2 = frac2 * (range2.stop - range2.start) + range2.start
     return i2
 
-md2html = markdown2.markdown
 
 RELOAD_HTML = b"""
 <script>
@@ -229,6 +228,7 @@ class Post(Templatable):
     def __init__(self, parsed, blog, parsed_md):
         super().__init__(blog)
         self.post, self.comments = parsed.pop("content").split("<!-- comments -->\n")
+        self.post = self.post.replace("<!-- blogpost -->","")
         self.main_display = True
         self.md = parsed_md["content"]
         for k, v in parsed.items():
@@ -240,7 +240,7 @@ class Post(Templatable):
 
     @property
     def md_html(self):
-        return md2html(self.md)
+        return '<div class="entry-content">{}</div>'.format(markdown2html(self.md))
 
     @property
     def output_path_html(self):

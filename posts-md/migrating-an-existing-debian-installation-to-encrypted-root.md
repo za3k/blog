@@ -16,14 +16,14 @@ wordpress_slug: migrating-an-existing-debian-installation-to-encrypted-root
 ---
 In this article, I migrate an existing debian 10 buster release, from an unencrypted root drive, to an encrypted root. I used a second hard drive because it’s safer–this is NOT an in-place migration guide. We will be encrypting / (root) only, not /boot. My computer uses UEFI. This guide **is specific to debian**–I happen to know these steps would be different on Arch Linux, for example. They probably work great on a different debian version, and might even work on something debian-based like Ubuntu.
 
-In [part 2][1], I add an optional extra where root decrypts using a special USB stick rather than a keyboard passphrase, for unattended boot.
+In [part 2](https://blog.za3k.com/encrypted-root-on-debian-part-2-unattended-boot/), I add an optional extra where root decrypts using a special USB stick rather than a keyboard passphrase, for unattended boot.
 
 Apologies if I forget any steps–I wrote this after I did the migration, and not during, so it’s not copy-paste.
 
 Q: Why aren’t we encrypting /boot too?
 
-1.  Encrypting /boot doesn’t add much security. Anyone can guess what’s on my /boot–it’s the same as on everyone debian distro. And encrypting /boot doesn’t prevent tampering–someone can easily replace my encrypted partition by an unencrypted one without my noticing. Something like [Secure Boot][2] would resist tampering, but still doesn’t require an encrypted /boot.
-2.  I pull a special trick in [part 2][3]. Grub2’s has new built-in encryption support, which is what would allow encrypting /boot. But grub2 can’t handle keyfiles or keyscripts as of writing, which I use.
+1.  Encrypting /boot doesn’t add much security. Anyone can guess what’s on my /boot–it’s the same as on everyone debian distro. And encrypting /boot doesn’t prevent tampering–someone can easily replace my encrypted partition by an unencrypted one without my noticing. Something like [Secure Boot](https://www.rodsbooks.com/efi-bootloaders/secureboot.html) would resist tampering, but still doesn’t require an encrypted /boot.
+2.  I pull a special trick in [part 2](https://blog.za3k.com/encrypted-root-on-debian-part-2-unattended-boot/). Grub2’s has new built-in encryption support, which is what would allow encrypting /boot. But grub2 can’t handle keyfiles or keyscripts as of writing, which I use.
 
 **How boot works**
 
@@ -44,18 +44,22 @@ First off, I used TWO hard drives–this is not an in-place migration, and that 
 
 Here’s the output of `gdisk -l` on my original disk:
 
-    Number  Start (sector)    End (sector)  Size       Code  Name
-       1            2048         1050623   512.0 MiB   EF00  # EFI, mounted at /boot/efi
-       2         1050624       354803711   168.7 GiB   8300  # ext4, mounted at /
-       3       354803712       488396799   63.7 GiB    8200  # swap
+```
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048         1050623   512.0 MiB   EF00  # EFI, mounted at /boot/efi
+   2         1050624       354803711   168.7 GiB   8300  # ext4, mounted at /
+   3       354803712       488396799   63.7 GiB    8200  # swap
+```
 
 Here will be the final output of `gdisk -l` on the new disk:
 
-    Number  Start (sector)    End (sector)  Size       Code  Name
-       1            2048          526335   256.0 MiB   EF00  efi # EFI, mounted at /boot/efi
-       2         1050624       135268351   64.0 GiB    8200  swap # swap
-       3       135268352       937703054   382.6 GiB   8300  root_cipher # ext4-on-LUKS. ext4 mounted at /
-       4          526336         1050623   256.0 MiB   8300  boot # ext4, mounted at /boot
+```
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048          526335   256.0 MiB   EF00  efi # EFI, mounted at /boot/efi
+   2         1050624       135268351   64.0 GiB    8200  swap # swap
+   3       135268352       937703054   382.6 GiB   8300  root_cipher # ext4-on-LUKS. ext4 mounted at /
+   4          526336         1050623   256.0 MiB   8300  boot # ext4, mounted at /boot
+```
 
 1.  Stop anything else running. We’re going to do a “live” copy from the running system, so at least stop doing anything else. Also most of the commands in this guide need root (`sudo`).
 2.  Format the new disk. I used `gdisk` and you must select a gpt partition table. Basically I just made everything match the original. The one change I need is to add a /boot partition, so grub2 will be able to do the second stage. I also added partition labels with the `c` gdisk command to all partitions: boot, root\_cipher, efi, and swap. I decided I’d like to be able to migrate to a larger disk later without updating a bunch of GUIDs, and filesystem or partition labels are a good method.
@@ -93,7 +97,3 @@ Here will be the final output of `gdisk -l` on the new disk:
 16.  Shut down your computer. Remove your root disk and boot from the new one. It should work now, asking for your password during boot.
 17.  Once you boot successfully and verify everything mounted, you can remove the `nofail` from /etc/fstab if you want.
 18.  (In my case, I also set up the swap partition after successful boot.) Edit: Oh, also don’t use unencrypted swap with encrypted root. That was dumb.
-
-[1]: https://blog.za3k.com/encrypted-root-on-debian-part-2-unattended-boot/
-[2]: https://www.rodsbooks.com/efi-bootloaders/secureboot.html
-[3]: https://blog.za3k.com/encrypted-root-on-debian-part-2-unattended-boot/

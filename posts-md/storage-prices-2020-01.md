@@ -16,11 +16,11 @@ wordpress_slug: storage-prices-2020-01
 ---
 I did a survey of the cost of buying hard drives (of all sorts), CDs, DVDs, Blue-rays, and tape media (for tape drives).
 
-Here are the **2020-01 results**: [https://za3k.com/archive/storage-2020-01.sc.txt][1]  
-2019-07: [https://za3k.com/archive/storage-2019-07.sc.txt][2]  
-2018-10: [https://za3k.com/archive/storage-2018-10.sc.txt][3]  
-2018-06: [https://za3k.com/archive/storage-2017-06.sc.txt][4]  
-2018-01: [https://za3k.com/archive/storage-2017-01.sc.txt][5]
+Here are the **2020-01 results**: [https://za3k.com/archive/storage-2020-01.sc.txt](https://za3k.com/archive/storage-2020-01.sc.txt)  
+2019-07: [https://za3k.com/archive/storage-2019-07.sc.txt](https://za3k.com/archive/storage-2019-07.sc.txt)  
+2018-10: [https://za3k.com/archive/storage-2018-10.sc.txt](https://za3k.com/archive/storage-2018-10.sc.txt)  
+2018-06: [https://za3k.com/archive/storage-2017-06.sc.txt](https://za3k.com/archive/storage-2017-06.sc.txt)  
+2018-01: [https://za3k.com/archive/storage-2017-01.sc.txt](https://za3k.com/archive/storage-2017-01.sc.txt)
 
 Changes this year
 
@@ -35,9 +35,3 @@ Some conclusions that are useful to know
 -   The cheapest option is tape media, but tape reader/writers for LTO 6, 7, and 8 are very expensive.
 -   The second-cheapest option is to buy external hard drives, and then open the cases and take out the hard drives. This gives you reliable drives with no warrantee.
 -   Blu-ray and DVD are more expensive than buying hard drives
-
-[1]: https://za3k.com/archive/storage-2020-01.sc.txt
-[2]: https://za3k.com/archive/storage-2019-07.sc.txt
-[3]: https://za3k.com/archive/storage-2018-10.sc.txt
-[4]: https://za3k.com/archive/storage-2017-06.sc.txt
-[5]: https://za3k.com/archive/storage-2017-01.sc.txt

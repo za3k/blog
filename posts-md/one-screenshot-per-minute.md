@@ -21,29 +21,33 @@ I’ll go over my exact setup below in case anyone is interested in doing the sa
 
 **/bin/screenlog**
 
-GPG\_KEY=Zachary
+```
+GPG_KEY=Zachary
 TEMPLATE=/var/screenlog/%Y-%m-%d/%Y-%m-%d.%H:%M:%S.jpg
 export DISPLAY=:0
 export XAUTHORITY=/tmp/XAuthority
 
-IMG=$(\\date +$TEMPLATE)
+IMG=$(\date +$TEMPLATE)
 mkdir -p $(dirname "$IMG")
 scrot "$IMG"
-gpg --encrypt -r "$GPG\_KEY" "$IMG"
+gpg --encrypt -r "$GPG_KEY" "$IMG"
 shred -zu "$IMG"
+```
 
 The script
 
 -   Prints everything to stderr if you run it manually
 -   Makes a per-day directory. We store everything in /var/screenlog/2022-07-10/ for the day
 -   Takes a screenshot. By default, crontab doesn’t have X Windows (graphics) access. To allow it, the XAuthority file which allows access needs to be somewhere my crontab can reliably access. I picked `/tmp/XAuthority`. It doesn’t need any unusual permissions, but the default location has some random characters in it.
--   [GPG][1]\-encrypts the screenshot with a public key and deletes the original. This is extra protection in case my backups somehow get shared, so I don’t literally leak all my habits, passwords, etc. I just use my standard key so I don’t lose it. It’s [public-key crypto][2], so put the public key on your laptop. Put the private key on neither, one, or both, depending on which you want to be able to read the photos.
+-   [GPG](https://www.gnupg.org/)\-encrypts the screenshot with a public key and deletes the original. This is extra protection in case my backups somehow get shared, so I don’t literally leak all my habits, passwords, etc. I just use my standard key so I don’t lose it. It’s [public-key crypto](https://en.wikipedia.org/wiki/Public-key_cryptography), so put the public key on your laptop. Put the private key on neither, one, or both, depending on which you want to be able to read the photos.
 
 **/etc/cron.d/screenlog**
 
-\* \* \* \* \* zachary  /bin/screenlog
-20  \* \* \* \* zachary  rsync --remove-source-files -r /var/screenlog/ backup-machine:/data/screenlog/laptop
-30  \* \* \* \* zachary  rmdir /var/screenlog/\*
+```
+* * * * * zachary  /bin/screenlog
+20  * * * * zachary  rsync --remove-source-files -r /var/screenlog/ backup-machine:/data/screenlog/laptop
+30  * * * * zachary  rmdir /var/screenlog/*
+```
 
 That’s
 
@@ -53,9 +57,8 @@ That’s
 
 **~/.profile**
 
+```
 export XAUTHORITY=/tmp/XAuthority
+```
 
 I mentioned /bin/screenlog needs to know where XAuthority is. In Arch Linux this is all I need to do.
-
-[1]: https://www.gnupg.org/
-[2]: https://en.wikipedia.org/wiki/Public-key_cryptography

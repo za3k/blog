@@ -19,12 +19,6 @@ wordpress_slug: hack-a-day-hack-a-snake
 ---
 It’s november, and I’ve decided this month that I’m going to do 30 projects in 30 days. It’s an all-month hack-a-thon!
 
-Today’s project is [Hack-A-Snake][1] ([demo][2], [source][3]). Yesterday I wrote a [game where an AI plays snake][4]. Today I thought, hey, I should release that with keyboard controls so people can just play Snake.
+Today’s project is [Hack-A-Snake](https://tilde.za3k.com/hackaday/snake/) ([demo](https://tilde.za3k.com/hackaday/snake/), [source](https://github.com/za3k/day12_snake)). Yesterday I wrote a [game where an AI plays snake](https://blog.za3k.com/hack-a-day-hack-a-minigame/). Today I thought, hey, I should release that with keyboard controls so people can just play Snake.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-24.png)][5]
-
-[1]: https://tilde.za3k.com/hackaday/snake/
-[2]: https://tilde.za3k.com/hackaday/snake/
-[3]: https://github.com/za3k/day12_snake
-[4]: https://blog.za3k.com/hack-a-day-hack-a-minigame/
-[5]: https://tilde.za3k.com/hackaday/snake/
+[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-24.png)](https://tilde.za3k.com/hackaday/snake/)

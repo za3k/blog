@@ -18,35 +18,37 @@ Recently I wrote a scraper. First, I downloaded all the HTML files. Next, I want
 
 To make testing faster, I added a scaffold. Whenever my parser hit an error, it would print the filename (for me, the tester) and record the filename to an error log. Then, it would immediately exit. When I re-ran the parser, it would test all the files where it had hit a problem **first**. That way, I didn’t have to wait 20 minutes until it got to the failure case.
 
-    if __name__ == "__main__":
-        if os.path.exists("failures.log"):
-            # Quicker failures 
-            with open("failures.log", "r") as f:
-                failures = set([x.strip() for x in f])
-            for path in tqdm.tqdm(failures, desc="re-checking known tricky files"):
+```
+if __name__ == "__main__":
+    if os.path.exists("failures.log"):
+        # Quicker failures 
+        with open("failures.log", "r") as f:
+            failures = set([x.strip() for x in f])
+        for path in tqdm.tqdm(failures, desc="re-checking known tricky files"):
+            try:
+                with open(path) as input:
+                    parse_file(input)
+            except Exception:
+                print(path, "failed again (already failed once")
+                raise
+
+    paths = []
+    for root, dirs, files in os.walk("html"):
+        for file in sorted(files):
+            path = os.path.join(root, file)
+            paths.append(path)
+    paths.sort()
+
+    with open("output.json", "w") as out:
+        for path in tqdm.tqdm(paths, desc="parse files"): # tqdm is just a progress bar. you can also use 'for path in paths:
+            with open(input, "r") as input:
                 try:
-                    with open(path) as input:
-                        parse_file(input)
+                    result = parse_file(input)
                 except Exception:
-                    print(path, "failed again (already failed once")
+                    print(path, "failed, adding to quick-fail test list")
+                    with open("failures.log", "a") as fatal:
+                        print(path, file=fatal)
                     raise
-    
-        paths = []
-        for root, dirs, files in os.walk("html"):
-            for file in sorted(files):
-                path = os.path.join(root, file)
-                paths.append(path)
-        paths.sort()
-    
-        with open("output.json", "w") as out:
-            for path in tqdm.tqdm(paths, desc="parse files"): # tqdm is just a progress bar. you can also use 'for path in paths:
-                with open(input, "r") as input:
-                    try:
-                        result = parse_file(input)
-                    except Exception:
-                        print(path, "failed, adding to quick-fail test list")
-                        with open("failures.log", "a") as fatal:
-                            print(path, file=fatal)
-                        raise
-                    json.dump(result, out, sort_keys=True) # my desired output is one JSON dict per line
-                    out.write("\n")
+                json.dump(result, out, sort_keys=True) # my desired output is one JSON dict per line
+                out.write("\n")
+```

@@ -16,10 +16,8 @@ wordpress_slug: ircpuzzles-2024
 ---
 I’m one of the designers for the yearly April Fools Puzzle Contest on IRC.
 
-Please feel free to join at [https://blog.ircpuzzles.org/][1]. The idea is that you solve puzzles in a chatroom, and get the password to the next chatroom, and so on. If you’re not familiar with IRC, don’t worry–a link is provided to connect in your browser, too.
+Please feel free to join at [https://blog.ircpuzzles.org/](https://blog.ircpuzzles.org/). The idea is that you solve puzzles in a chatroom, and get the password to the next chatroom, and so on. If you’re not familiar with IRC, don’t worry–a link is provided to connect in your browser, too.
 
 It’s a lot of fun, and I hope you enjoy!
 
 P.S. The contest should be up for a while, so don’t worry about being late to the party!
-
-[1]: https://blog.ircpuzzles.org/

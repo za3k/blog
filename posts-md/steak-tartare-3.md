@@ -14,8 +14,8 @@ updated: 2015-10-03 18:17:30-07:00
 wordpress_id: 193
 wordpress_slug: steak-tartare-3
 ---
-[![steak tartare](https://blog.za3k.com/wp-content/uploads/2015/04/steak-tartare.jpg)][1]  
-Recipe is mostly from [Tricia][2].
+[![steak tartare](https://blog.za3k.com/wp-content/uploads/2015/04/steak-tartare.jpg)](https://blog.za3k.com/wp-content/uploads/2015/04/steak-tartare.jpg)  
+Recipe is mostly from [Tricia](http://triciaroxanne.wordpress.com).
 
 Ingredients:
 
@@ -32,18 +32,3 @@ Ingredients:
 3.  Separate whites and yolks (carefully removing all the white since we’re using raw yolks). Pour one egg yolk into each divot.
 
 Read about raw beef and egg safety first to be well informed.
-
-1.  ![](https://secure.gravatar.com/avatar/aa5d8a139b96dc7b082a50ca2446deff?s=40&d=mm&r=g)[Tricia][3] says:
-    
-    [May 21, 2015 at 8:14 pm][4]
-    
-    So tasty! Enjoyed our month of obsessing over the recipe ^u^
-    
-    [Reply][5]
-    
-
-[1]: https://blog.za3k.com/wp-content/uploads/2015/04/steak-tartare.jpg
-[2]: http://triciaroxanne.wordpress.com
-[3]: http://sometimesicook.net
-[4]: https://blog.za3k.com/steak-tartare-3/#comment-255
-[5]: https://blog.za3k.com/steak-tartare-3/?replytocom=255#respond

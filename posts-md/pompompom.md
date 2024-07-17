@@ -16,12 +16,8 @@ wordpress_slug: pompompom
 ---
 I hacked up a little to-do app in an hour. The emphasis is on focus.
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/05/pompompom.png)][1]
+[![](https://blog.za3k.com/wp-content/uploads/2024/05/pompompom.png)](https://github.com/za3k/short-programs#pompompom)
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/05/pompompom2.png)][2]
+[![](https://blog.za3k.com/wp-content/uploads/2024/05/pompompom2.png)](https://github.com/za3k/short-programs#pompompom)
 
-It’s linux only. You can find it in my [short-programs][3] repo on github.
-
-[1]: https://github.com/za3k/short-programs#pompompom
-[2]: https://github.com/za3k/short-programs#pompompom
-[3]: https://github.com/za3k/short-programs#pompompom
+It’s linux only. You can find it in my [short-programs](https://github.com/za3k/short-programs#pompompom) repo on github.

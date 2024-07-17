@@ -17,13 +17,8 @@ wordpress_slug: hack-a-day-hack-a-link-2
 ---
 It’s november, and I’ve decided this month that I’m going to do 30 projects in 30 days. It’s an all-month hack-a-thon!
 
-Wednesday’s project was [Hack-A-Link 2][1] ([demo][2], [source][3]). It’s an open link directory.
+Wednesday’s project was [Hack-A-Link 2](https://tilde.za3k.com/hackaday/link/) ([demo](https://tilde.za3k.com/hackaday/link/), [source](https://github.com/za3k/day02_link)). It’s an open link directory.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-20.png)][4]
+[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-20.png)](https://tilde.za3k.com/hackaday/link/)
 
 This was very much a “phone it in” project. I do think it could have been better if I had added descriptions, too.
-
-[1]: https://tilde.za3k.com/hackaday/link/
-[2]: https://tilde.za3k.com/hackaday/link/
-[3]: https://github.com/za3k/day02_link
-[4]: https://tilde.za3k.com/hackaday/link/

@@ -14,7 +14,7 @@ wordpress_slug: zorchpad-update-cardboard-mockup-mk1
 ---
 I’ve gotten to the point in Zorchpad development where I’d like to see how the whole thing fits together and if there will be any insurmountable problems. We’re still trying to figure out some things like–will it have one screen or two? What form factor will it be? Will the keyboard fold in half? So I put together a cardboard model.
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/05/v0_cardboard_zorchpad-1024x576.jpg)][1]
+[![](https://blog.za3k.com/wp-content/uploads/2024/05/v0_cardboard_zorchpad-1024x576.jpg)](https://blog.za3k.com/wp-content/uploads/2024/05/v0_cardboard_zorchpad.jpg)
 
 This model has:
 
@@ -29,7 +29,7 @@ This model has:
 -   A custom keyboard (total power usage: variable/unknown)  
     The keyboard is closely modeled off a standard one, for now.
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/05/v0_keyboard.jpg)][2]
+[![](https://blog.za3k.com/wp-content/uploads/2024/05/v0_keyboard.jpg)](https://blog.za3k.com/wp-content/uploads/2024/05/v0_keyboard.jpg)
 
 Immediately, a few problems pop out:
 
@@ -38,6 +38,3 @@ Immediately, a few problems pop out:
 -   It’s hard to get the screen to stay propped up on my cardboard model. I’d like a solution that doesn’t use hinges, since those tend to loosen over time.
 
 My next step will probably be to make a custom working keyboard. Then, I’ll make an entire working zorchpad. Both will be either cardboard or 3d-printed (whichever is easier).
-
-[1]: https://blog.za3k.com/wp-content/uploads/2024/05/v0_cardboard_zorchpad.jpg
-[2]: https://blog.za3k.com/wp-content/uploads/2024/05/v0_keyboard.jpg

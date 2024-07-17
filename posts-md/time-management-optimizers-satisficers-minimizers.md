@@ -47,16 +47,3 @@ Failure modes:
 
 -   Bad at goals: Minimization deals with recurring activities, but can fail to offer any positive motivation for one-time end goals
 -   Negative mindset: Heavy focus on mistakes and resource use
-
-1.  ![](https://secure.gravatar.com/avatar/aa5d8a139b96dc7b082a50ca2446deff?s=40&d=mm&r=g)[Tricia][1] says:
-    
-    [November 5, 2015 at 9:13 pm][2]
-    
-    Very nice! I often find myself automatically optimizing – the easiest place to see this is in Animal Crossing where I’ll keep a large cash of items for when villagers might ask for one. The idea is to always be prepared (I blame girl scouts). I suppose the negative to this behavior is that it could lead to hording if left unchecked.
-    
-    [Reply][3]
-    
-
-[1]: http://sometimesicook.net
-[2]: https://blog.za3k.com/time-management-optimizers-satisficers-minimizers/#comment-2451
-[3]: https://blog.za3k.com/time-management-optimizers-satisficers-minimizers/?replytocom=2451#respond

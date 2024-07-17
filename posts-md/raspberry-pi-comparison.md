@@ -14,6 +14,4 @@ updated: 2021-08-07 18:00:05-07:00
 wordpress_id: 709
 wordpress_slug: raspberry-pi-comparison
 ---
-I was looking into building a raspberry pi based supercomputer lately. [Here’s the background research][1] I did comparing pi models. Most of this information is sourced from raspberrypi.org. I was especially interested in which boot methods worked for which models, which is very scattered, as well as prices.
-
-[1]: https://za3k.com/archive/pi
+I was looking into building a raspberry pi based supercomputer lately. [Here’s the background research](https://za3k.com/archive/pi) I did comparing pi models. Most of this information is sourced from raspberrypi.org. I was especially interested in which boot methods worked for which models, which is very scattered, as well as prices.

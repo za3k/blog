@@ -64,7 +64,7 @@ Here’s some information about dotfiles:
     -   ‘Blob’ objects represent file content (just content). Rarely, blobs can store content other than files, like GPG signatures.
     -   ‘Tree’ objects represent directory listings. These are where filenames and permissions are stored.
     -   ‘Commit’ and ‘Tag’ objects are for git commits and tags. Makes sense. I think only annotated tags get stored in the object database.
--   Internally, git both stores diffs (for example, a 1 line file change is represented as close to 1 line of actual disk storage), and compresses the files and diffs. Below, I list a “virtual” size, representing the size of the uncompressed object, and a “disk” size representing the actual size as used by git.For more information on git internals, I recommend the excellent “[Pro Git][1]” (available for free online and as a book), and then if you want compression and bit-packing details the [fine internals documentation][2] has some information about objects, deltas, and packfile formats.
+-   Internally, git both stores diffs (for example, a 1 line file change is represented as close to 1 line of actual disk storage), and compresses the files and diffs. Below, I list a “virtual” size, representing the size of the uncompressed object, and a “disk” size representing the actual size as used by git.For more information on git internals, I recommend the excellent “[Pro Git](https://git-scm.com/book/en/v2/)” (available for free online and as a book), and then if you want compression and bit-packing details the [fine internals documentation](https://github.com/git/git/tree/master/Documentation/technical) has some information about objects, deltas, and packfile formats.
 -   Git object counts and sizes:
     -   Blob
         -   41031250 blobs (401 per repo)
@@ -157,6 +157,3 @@ Let’s try a few compression strategies and see how they fare:
 -   125GB. Same, with ‘git repack -adk’)
 
 Throwing out everything but the objects allows other fun options, but there aren’t any standard tools and I’m out of time. Maybe next time. Ta for now.
-
-[1]: https://git-scm.com/book/en/v2/
-[2]: https://github.com/git/git/tree/master/Documentation/technical

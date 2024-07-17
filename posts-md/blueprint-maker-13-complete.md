@@ -16,7 +16,7 @@ wordpress_slug: blueprint-maker-13-complete
 ---
 More followup for my house blueprint maker. The project is now done.
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/12/2023-12-18-194312_1920x1080_scrot-crop.png)][1]
+[![](https://blog.za3k.com/wp-content/uploads/2023/12/2023-12-18-194312_1920x1080_scrot-crop.png)](https://za3k.github.io/ha3k-13-blueprint/)
 
 New features include:
 
@@ -26,8 +26,4 @@ New features include:
 -   Move and Delete text and icons
 -   Share your finished project with a link
 
-See the demo [here][2]. The source code is [on github][3].
-
-[1]: https://za3k.github.io/ha3k-13-blueprint/
-[2]: https://za3k.github.io/ha3k-13-blueprint/
-[3]: https://github.com/za3k/ha3k-13-blueprint
+See the demo [here](https://za3k.github.io/ha3k-13-blueprint/). The source code is [on github](https://github.com/za3k/ha3k-13-blueprint).

@@ -24,11 +24,11 @@ A Crucible of Souls by Mitchell Hogan
 Alcatraz and the Evil Librarians by Brandon Sanderson  
 A Memory Called Empire, by Arkady Martine  
 Apex (Nexus 3) by Ramez Naam  
-[A Practical Guide to Evil][1], to end of book 5  
+[A Practical Guide to Evil](https://practicalguidetoevil.wordpress.com/table-of-contents/), to end of book 5  
 Arena by Holly Jennings  
 Ariel by Steven Barnett  
 Ascend Online by Luke Chmilenko  
-[Bastard Operator from Hell][2]  
+[Bastard Operator from Hell](http://bofh.bjash.com/)  
 Circe, by Madeline Miller  
 City of Brass by S A Chakrabarty p1-460  
 Cold Comfort Farm by Stella Gibbons  
@@ -54,7 +54,7 @@ House of Earth and Blood by Sarah Maas
 Ithenalin’s Restoration by Lawrence Watt-Evans  
 Lament by Maggie Stiefvater  
 Legacy of the Fallen by Luke Chmilenko p1-316  
-**[Lone Wolf][3] / Kai adventure series 1-5, magnakai 1, by Joe Dever  
+**[Lone Wolf](https://www.projectaon.org/en/Main/Books) / Kai adventure series 1-5, magnakai 1, by Joe Dever  
 **Magic for Liars by Sarah Gailey  
 Magician by Raymond Feist  
 Magicians by Lev Grossman  
@@ -77,7 +77,7 @@ Relics of War by Lawrence Watt-Evans
 Starfish (Rifters 1) by Peter Watts  
 Shades of Milk and Honey by Mary Robinette Kowal (all)  
 Shift (Silo 6-8) by Hugh Howey  
-[Shining Path][4] by Matthew Skala  
+[Shining Path](https://shiningpathbook.com/) by Matthew Skala  
 Shouldn’t You Be In School? by Lemony Snicket  
 Sister Sable, by T Mountebank, p1-378  
 Skysworn by Will Wight  
@@ -115,7 +115,7 @@ The Wiz Biz by Rick Cook
 The Woven Ring by MD Presley, p1-28  
 Three-Body Problem by Cixin Liu  
 Three Men in a Boat by Jerome K. Jerome  
-[Twig][5] by wildbow (arc 1-18)  
+[Twig](https://twigserial.wordpress.com/) by wildbow (arc 1-18)  
 Uncrowned by Will Wight  
 Underlord by Will Wight  
 **Unsong by Scott Alexander**  
@@ -130,7 +130,7 @@ Wool by Hugh Howey (v1-5)
 507 Mechanical Movements by Henry T Brown  
 Advanced Magick for Beginners by Alan Chapman  
 Broadcast Channels with Confidential Messages  
-[Busy Beaver Frontier][6] by Scott Aaronson. I did some [work][7] based on it.  
+[Busy Beaver Frontier](https://www.scottaaronson.com/blog/?p=4916) by Scott Aaronson. I did some [work](https://github.com/za3k/busy_beaver) based on it.  
 Computational Geometry by Mark de Berg  
 Craeft by Alexander Langlands  
 D&D 5e Player’s Handbook  
@@ -140,24 +140,13 @@ Forrest Mim’s Engineer’s Notebook
 Forrest Mim’s Mini Notebook  
 Intel’s x86-64 manual  
 Introduction to Analysis by Maxwell Rosenlicht  
-**[Kademelia][8] by Peter Maymounkov  
-**[kleiman v wright][9] australian tax document  
+**[Kademelia](https://www.researchgate.net/publication/2492563_Kademlia_A_Peer-to-peer_Information_System_Based_on_the_XOR_Metric) by Peter Maymounkov  
+**[kleiman v wright](https://library.za3k.com/law%20documents/kleiman%20v%20wright%20-%20austrialian%20taxation%20office%20findings.pdf) australian tax document  
 Incremental String Searching by Bertrand Meyer (KNP algorithm)  
 Rules to One Night Ultimate Werewolf  
 The Art of Computer Programming, v1, v3 by Donald Knuth (parts)  
 The Pragmatic Programmer  
 The Rust Programming Language  
-**[There’s Plenty of Room at the Bottom][10] by Richard Feynman  
+**[There’s Plenty of Room at the Bottom](https://web.pa.msu.edu/people/yang/RFeynman_plentySpace.pdf) by Richard Feynman  
 **Total Money Makeover by Dave Ramsey  
 W65025 manual (6502 clone)
-
-[1]: https://practicalguidetoevil.wordpress.com/table-of-contents/
-[2]: http://bofh.bjash.com/
-[3]: https://www.projectaon.org/en/Main/Books
-[4]: https://shiningpathbook.com/
-[5]: https://twigserial.wordpress.com/
-[6]: https://www.scottaaronson.com/blog/?p=4916
-[7]: https://github.com/za3k/busy_beaver
-[8]: https://www.researchgate.net/publication/2492563_Kademlia_A_Peer-to-peer_Information_System_Based_on_the_XOR_Metric
-[9]: https://library.za3k.com/law%20documents/kleiman%20v%20wright%20-%20austrialian%20taxation%20office%20findings.pdf
-[10]: https://web.pa.msu.edu/people/yang/RFeynman_plentySpace.pdf

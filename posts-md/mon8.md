@@ -15,24 +15,24 @@ updated: 2020-05-20 15:56:19-07:00
 wordpress_id: 539
 wordpress_slug: mon8
 ---
-I had previously hand-rolled a status monitor, [status.za3k.com][1], which I am in the process of replacing ([new version][2]). I am replacing it with a linux monitoring daemon, [mon][3], which I recommend. It is targeted at working system administrators. ‘mon’ adds many features over my own system, but still has a very bare-bones feeling.
+I had previously hand-rolled a status monitor, [status.za3k.com](http://status.za3k.com/), which I am in the process of replacing ([new version](https://germinate.za3k.com/pub/status/mon.txt)). I am replacing it with a linux monitoring daemon, [mon](https://mirrors.edge.kernel.org/pub/software/admin/mon/html/man/mon.html), which I recommend. It is targeted at working system administrators. ‘mon’ adds many features over my own system, but still has a very bare-bones feeling.
 
-The old service, ‘[simple-status][4]‘ worked as follows:
+The old service, ‘[simple-status](https://github.com/za3k/za3k.com/blob/master/cgi-bin/status-simple)‘ worked as follows:
 
 -   You visited the URL. Then, the status page would (live) kick of about 30 parallel jobs, to check the status of 30 services
 -   The list of services is one-per-file in a the services.d directory.
 -   For each service, it ran a short script, with no command line arguments.
 -   All output is displayed in a simple html table, with the name of the service, the status (with color coding), and a short output line.
 -   The script could return with a success (0) or non-success status code. If it returned success, that status line would display in green for success. If it failed, the line would be highlighted red for failure.
--   Scripts can be anything, but I wrote several utility functions to be called from scripts. For example, “[ping?][5]” checks whether a host is pingable.
--   Each script was wrapped in [timeout][6]. If the script took too long to run, it would be highlighted yellow.
+-   Scripts can be anything, but I wrote several utility functions to be called from scripts. For example, “[ping?](https://github.com/za3k/za3k.com/blob/master/cgi-bin/ping%3F)” checks whether a host is pingable.
+-   Each script was wrapped in [timeout](https://www.gnu.org/software/coreutils/manual/html_node/timeout-invocation.html#timeout-invocation). If the script took too long to run, it would be highlighted yellow.
 -   The reason all scripts ran every time, is to prevent a failure mode where the information could ever be stale without me noticing.
 
 Mon works as follows
 
 -   The list of 30 services is defined in /etc/mon/con.cf.
 -   For each service, it runs a single-line command (monitor) with arguments. The hostname(s) are added to the command line automatically.
--   All output can be displayed in a simple html table, with the name of the service, the status (with color coding), the time of last and next run, and a short output line. Or, I use ‘[monshow][7]‘, which is similar but in a text format.
+-   All output can be displayed in a simple html table, with the name of the service, the status (with color coding), the time of last and next run, and a short output line. Or, I use ‘[monshow](https://mirrors.edge.kernel.org/pub/software/admin/mon/html/man/monshow.html)‘, which is similar but in a text format.
 -   Monitors can be anything, but several useful ones are provided in /usr/lib/mon/mon.d (on debian). For example the monitor “ping” checks whether a host is pingable.
 -   The script could return with a success (0) or non-success status code. If it returned success, the status line would display in green for success (on the web interface), or red for failure.
 -   All scripts run periodically. A script have many states, not just “success” or “failure”. For example “untested” (not yet run) or “dependency failing” (I assume, not yet seen).
@@ -59,11 +59,3 @@ As you can see, the two have a very similar approach to the component scripts, w
 Overall I think that ‘mon’ is much more complex, but only to add features, and it doesn’t have a lot of features I wouldn’t use. It still is pretty simple with a simple interface. I recommend it as both good, and overall better than my system.
 
 My only complaint is that it’s basically impossible to Google, which is why I’m writing a recommendation for it here.
-
-[1]: http://status.za3k.com/
-[2]: https://germinate.za3k.com/pub/status/mon.txt
-[3]: https://mirrors.edge.kernel.org/pub/software/admin/mon/html/man/mon.html
-[4]: https://github.com/za3k/za3k.com/blob/master/cgi-bin/status-simple
-[5]: https://github.com/za3k/za3k.com/blob/master/cgi-bin/ping%3F
-[6]: https://www.gnu.org/software/coreutils/manual/html_node/timeout-invocation.html#timeout-invocation
-[7]: https://mirrors.edge.kernel.org/pub/software/admin/mon/html/man/monshow.html

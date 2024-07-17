@@ -22,31 +22,30 @@ I don’t usually like IDEs. They’re hard to switch off of, they do too much. 
 
 But we’re programmers, so obviously we’re not going to use a literal checklist. Instead, we’re going to write a little script to auto-start things in a new screen session:
 
+```
 #!/usr/bin/screen -c
-# game\_development.screen.conf
-# Run stand-alone or with screen -c game\_devel.screen.conf
-screen -t "Vim" 2 bash -c "vim -p \*.t"
+# game_development.screen.conf
+# Run stand-alone or with screen -c game_devel.screen.conf
+screen -t "Vim" 2 bash -c "vim -p *.t"
 bind "r" screen -t "Game" 2 bash run.sh
+```
 
 Or if you prefer tmux:
 
-\# game\_development.tmux.conf
-# Run with tmux -f game\_development.tmux.conf attach
-new-session -s game\_development
-new-window -n "Vim" "bash -c 'vim -p \*.t'"
+```
+# game_development.tmux.conf
+# Run with tmux -f game_development.tmux.conf attach
+new-session -s game_development
+new-window -n "Vim" "bash -c 'vim -p *.t'"
 bind r new-window -n "Game" "bash run.sh"
+```
 
 Note the main features being used: a shebang line hack for screen, to let this file be self-contained and executable. Opening files in vim in place of a text editor. Binding keys for unit tests, running the program, restarting the server, etc. Now, a similar approach is to add new key bindings to the text editor, but I feel like text editors should edit text, and I like being able to document all the additions with help menus (which screen and tmux both support).
 
-Note: [ratpoison][1] is similar to screen/tmux so you can do similar things in X.
+Note: [ratpoison](http://www.nongnu.org/ratpoison/) is similar to screen/tmux so you can do similar things in X.
 
 One thing I’d love is if this kind of file was easy to dump from the current state, especially for things like positioning windows, etc. A little assistance is available, but not too much. Ratpoison and tmux let you dump sizing information. Nothing outputs keybindings or a list of running programs with their windows.
 
-There **is** a program called [tmuxinator][2] to let you write the same config in nested [YAML][3] of sessions, panes, and windows, which might appeal to some users.
+There **is** a program called [tmuxinator](https://github.com/tmuxinator/tmuxinator) to let you write the same config in nested [YAML](http://yaml.org/) of sessions, panes, and windows, which might appeal to some users.
 
-Also, check out [dtach][4] if you don’t need panes and windows, and just want a detachable process.
-
-[1]: http://www.nongnu.org/ratpoison/
-[2]: https://github.com/tmuxinator/tmuxinator
-[3]: http://yaml.org/
-[4]: http://dtach.sourceforge.net/
+Also, check out [dtach](http://dtach.sourceforge.net/) if you don’t need panes and windows, and just want a detachable process.

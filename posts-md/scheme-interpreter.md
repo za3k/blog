@@ -13,6 +13,4 @@ updated: 2023-06-24 09:20:14-07:00
 wordpress_id: 1087
 wordpress_slug: scheme-interpreter
 ---
-I wrote a [small scheme interpreter][1] in C.
-
-[1]: https://github.com/za3k/sscheme
+I wrote a [small scheme interpreter](https://github.com/za3k/sscheme) in C.

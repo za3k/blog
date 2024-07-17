@@ -14,7 +14,7 @@ updated: 2015-04-30 03:28:05-07:00
 wordpress_id: 210
 wordpress_slug: multi-universe-rpg-toy
 ---
-[https://www.rpgsolo.com/][1] has a table for resolving yes/no questions, in turn taken from [FU RPG][2]. Roll a die:
+[https://www.rpgsolo.com/](https://www.rpgsolo.com/) has a table for resolving yes/no questions, in turn taken from [FU RPG](http://perilplanet.com/fu/). Roll a die:
 
 -   Yes, and…
 -   Yes…
@@ -23,7 +23,7 @@ wordpress_slug: multi-universe-rpg-toy
 -   No…
 -   No, and…
 
-[![cube](https://blog.za3k.com/wp-content/uploads/2015/04/cube-300x298.jpg)][3]
+[![cube](https://blog.za3k.com/wp-content/uploads/2015/04/cube-300x298.jpg)](https://blog.za3k.com/wp-content/uploads/2015/04/cube.jpg)
 
 Their example:
 
@@ -47,7 +47,3 @@ So we’ve gotten a base system for telling stories. We then added the following
 2.  (addendum) Actually, roll two dice: only split the universe if the second die comes up “1” or “2”. Otherwise, answer the question normally. This speeds things up a bit.
 
 It was pretty fun in practice. I recommend using a text file over paper, since you’re going to do a lot of copy-paste. We had more fun with no GM than with a GM. No firm result yet on sandbox-worldbuilding vs players in scenarios; both seemed all right.
-
-[1]: https://www.rpgsolo.com/
-[2]: http://perilplanet.com/fu/
-[3]: https://blog.za3k.com/wp-content/uploads/2015/04/cube.jpg

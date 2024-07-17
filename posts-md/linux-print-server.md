@@ -24,7 +24,9 @@ I have a computer physically connected to the printer. Let’s call it ‘prints
 
 Suppose I downloaded cutecats.pdf and I want to print it. Then I run:
 
+```
 scp cutecats.pdf printserver:/printme
+```
 
 And voila, the cute cats get printed.
 
@@ -36,12 +38,16 @@ Here’s the setup for the server:
 2.  Make a directory /printme. Add any missing users, add a new group called ‘print’ and add everyone who needs to print to that, etc.
 3.  Set up /printme to be a tmpfs with the sticky bit set. (So we don’t fill up the hard drive)
     
+    ```
     /etc/fstab
     tmpfs           /printme        tmpfs   rw,nodev,nosuid,noexec,uid=nobody,gid=print,mode=1770,size=1G  0       0
+    ```
     
 4.  Install incron and add this to the incrontab (of user ‘print’ or ‘sudo’):
     
-    \# incrontab -l
-    /printme IN\_CLOSE\_WRITE,IN\_MOVED\_TO lp $@/$#
+    ```
+    # incrontab -l
+    /printme IN_CLOSE_WRITE,IN_MOVED_TO lp $@/$#
+    ```
     
     Note that this will preserve files after they’re printed, because my server is low-volume enough I don’t need to care.

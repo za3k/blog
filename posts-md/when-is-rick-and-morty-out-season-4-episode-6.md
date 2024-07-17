@@ -14,6 +14,4 @@ updated: 2020-05-17 12:53:27-07:00
 wordpress_id: 513
 wordpress_slug: when-is-rick-and-morty-out-season-4-episode-6
 ---
-I made a website to give you countdowns and let you know whether an episode is out: [http://isrickandmortyout.com/][1]. Been up since before season 4, but I forgot to post it until now.
-
-[1]: http://isrickandmortyout.com/
+I made a website to give you countdowns and let you know whether an episode is out: [http://isrickandmortyout.com/](http://isrickandmortyout.com/). Been up since before season 4, but I forgot to post it until now.

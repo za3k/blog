@@ -19,16 +19,10 @@ wordpress_slug: hack-a-day-hack-a-crop
 ---
 It’s november, and I’ve decided this month that I’m going to do 30 projects in 30 days. It’s an all-month hack-a-thon!
 
-Today’s project is [Hack-A-Crop][1] ([demo][2], [source][3]). It crops an image to a fixed size.
+Today’s project is [Hack-A-Crop](https://tilde.za3k.com/hackaday/crop/) ([demo](https://tilde.za3k.com/hackaday/crop/), [source](https://github.com/za3k/day18_crop)). It crops an image to a fixed size.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-16.png)][4]
+[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-16.png)](https://tilde.za3k.com/hackaday/crop/)
 
-I got help from several people on the CSS, thanks to instantly sharing my work via [ngrok][5] from my laptop. Thanks people! Thanks ngrok!
+I got help from several people on the CSS, thanks to instantly sharing my work via [ngrok](https://ngrok.com/) from my laptop. Thanks people! Thanks ngrok!
 
 Today’s project was in anticipation of showing off what I did at the end of the month. I want a small thumbnail for each project.
-
-[1]: https://tilde.za3k.com/hackaday/crop/
-[2]: https://tilde.za3k.com/hackaday/crop/
-[3]: https://github.com/za3k/day18_crop
-[4]: https://tilde.za3k.com/hackaday/crop/
-[5]: https://ngrok.com/

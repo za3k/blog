@@ -15,15 +15,15 @@ wordpress_slug: banh-chung
 ---
 A few friends and I first experienced this traditional Vietnamese Tết (Lunar New Year) food while visiting years ago. We loved it, and recently I looked up how to make it myself. It’s not a well known food in the US, so I thought it would still be fun to share.
 
-I followed the recipe from “[Enjoy a simple life][1]“, but made a homemade cardboard mold as suggested by “[Takes Two Eggs][2]“.
+I followed the recipe from “[Enjoy a simple life](https://enjoyasimplelife.blogspot.com/2012/01/vegetarian-sticky-rice-banh-chung-chay.html)“, but made a homemade cardboard mold as suggested by “[Takes Two Eggs](https://takestwoeggs.com/banh-chung/)“.
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/02/fork-crop-1024x808.jpg)][3]
+[![](https://blog.za3k.com/wp-content/uploads/2024/02/fork-crop-1024x808.jpg)](https://blog.za3k.com/wp-content/uploads/2024/02/fork-crop.jpg)
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/02/foil-crop-1024x826.jpg)][4]
+[![](https://blog.za3k.com/wp-content/uploads/2024/02/foil-crop-1024x826.jpg)](https://blog.za3k.com/wp-content/uploads/2024/02/foil-crop.jpg)
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/02/leaves-crop-1004x1024.jpg)][5]
+[![](https://blog.za3k.com/wp-content/uploads/2024/02/leaves-crop-1004x1024.jpg)](https://blog.za3k.com/wp-content/uploads/2024/02/leaves-crop.jpg)
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/02/unwrapped-crop-1024x851.jpg)][6]
+[![](https://blog.za3k.com/wp-content/uploads/2024/02/unwrapped-crop-1024x851.jpg)](https://blog.za3k.com/wp-content/uploads/2024/02/unwrapped-crop.jpg)
 
 Like a bread, this recipe takes a fair bit of time. I would start in the morning.
 
@@ -77,14 +77,5 @@ They last weeks and stay pretty tasty. You can freeze them if you want them to l
 
 Sources:
 
-1.  [https://enjoyasimplelife.blogspot.com/2012/01/vegetarian-sticky-rice-banh-chung-chay.html][7]
-2.  [https://takestwoeggs.com/banh-chung/][8]
-
-[1]: https://enjoyasimplelife.blogspot.com/2012/01/vegetarian-sticky-rice-banh-chung-chay.html
-[2]: https://takestwoeggs.com/banh-chung/
-[3]: https://blog.za3k.com/wp-content/uploads/2024/02/fork-crop.jpg
-[4]: https://blog.za3k.com/wp-content/uploads/2024/02/foil-crop.jpg
-[5]: https://blog.za3k.com/wp-content/uploads/2024/02/leaves-crop.jpg
-[6]: https://blog.za3k.com/wp-content/uploads/2024/02/unwrapped-crop.jpg
-[7]: https://enjoyasimplelife.blogspot.com/2012/01/vegetarian-sticky-rice-banh-chung-chay.html
-[8]: https://takestwoeggs.com/banh-chung/
+1.  [https://enjoyasimplelife.blogspot.com/2012/01/vegetarian-sticky-rice-banh-chung-chay.html](https://enjoyasimplelife.blogspot.com/2012/01/vegetarian-sticky-rice-banh-chung-chay.html)
+2.  [https://takestwoeggs.com/banh-chung/](https://takestwoeggs.com/banh-chung/)

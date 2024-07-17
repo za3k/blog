@@ -20,17 +20,17 @@
 	<item>
 		<title>{{title}}</title>
 		<link>{{web_root}}/post/{{id}}.html</link>
-		<dc:creator><![CDATA[{{author}}]]></dc:creator>
+		<dc:creator><![CDATA[{{author.tag}}]]></dc:creator>
 		<pubDate>{{date_rfc822}}</pubDate>
         {{# categories }}
-        <category><![CDATA[{{.}}]]></category>
+        <category><![CDATA[{{tag}}]]></category>
         {{/ categories }}
         {{# tags }}
-        <category><![CDATA[{{.}}]]></category>
+        <category><![CDATA[{{tag}}]]></category>
         {{/ tags }}
 		<guid isPermaLink="false">{{id}}</guid>
         <!--<description><![CDATA[SHORT_DESCRIPTION]]></description>-->
-        <content:encoded><![CDATA[{{post}}]]></content:encoded>
+        <content:encoded><![CDATA[{{& post}}]]></content:encoded>
     </item>
     {{/ posts.first10 }}
 </channel>

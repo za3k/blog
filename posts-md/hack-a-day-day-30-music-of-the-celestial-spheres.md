@@ -15,10 +15,6 @@ wordpress_slug: hack-a-day-day-30-music-of-the-celestial-spheres
 ---
 Hack-a-Day is a challenge to complete ~30 fun new projects in 30 days. In my case, I aimed for 20, because I knew I was getting a job and moving. I just barely made it with this last entry, a collaboration with nsh.
 
-Music of the Spheres lets you hear songs on different tonal scales. Listen to the warped melodies. Watch the pretty planets orbit. Surely their sizes and orbits are significant and connected to the tonal scales? Go mad with afterimages of… okay, well it’s kinda fun, anyway. Demo is [here][1], code is [on github][2].
+Music of the Spheres lets you hear songs on different tonal scales. Listen to the warped melodies. Watch the pretty planets orbit. Surely their sizes and orbits are significant and connected to the tonal scales? Go mad with afterimages of… okay, well it’s kinda fun, anyway. Demo is [here](https://za3k.github.io/ha3k-30-musicofspheres/), code is [on github](https://github.com/za3k/ha3k-30-musicofspheres).
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/11/screenshot-5.png)][3]
-
-[1]: https://za3k.github.io/ha3k-30-musicofspheres/
-[2]: https://github.com/za3k/ha3k-30-musicofspheres
-[3]: https://za3k.github.io/ha3k-30-musicofspheres/
+[![](https://blog.za3k.com/wp-content/uploads/2023/11/screenshot-5.png)](https://za3k.github.io/ha3k-30-musicofspheres/)

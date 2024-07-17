@@ -18,7 +18,7 @@ wordpress_slug: qr-backup-2
 ---
 qr-backup is a program to back up digital documents to physical paper. Restore is done with a webcam, video camera, or scanner. Someday smart phone cameras will work.
 
-I’ve been making some progress on [qr-backup][1] v1.1. So far I’ve added:
+I’ve been making some progress on [qr-backup](https://github.com/za3k/qr-backup) v1.1. So far I’ve added:
 
 -   `--restore`, which does a one-step restore for you, instead of needing a bash one-line restore process
 -   `--encrypt` provides password-based encryption
@@ -36,5 +36,3 @@ v1.1 will be released when I make qr-backup feature complete:
 -   Improve webcam restore slightly.
 
 v1.2 will focus on adding a GUI and support for Windows, Mac, and Android. Switching off zbar is a requirement to allow multi-platform support, and will likely improve storage density.
-
-[1]: https://github.com/za3k/qr-backup

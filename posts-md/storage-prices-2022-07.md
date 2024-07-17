@@ -16,13 +16,13 @@ wordpress_slug: storage-prices-2022-07
 ---
 I did a survey of the cost of buying hard drives (of all sorts), microsd/sd, USB sticks, CDs, DVDs, Blu-rays, and tape media (for tape drives).
 
-Here are the **2022-07 results**: [https://za3k.com/archive/storage-2022-07.sc.txt][1]
+Here are the **2022-07 results**: [https://za3k.com/archive/storage-2022-07.sc.txt](https://za3k.com/archive/storage-2022-07.sc.txt)
 
-2020-01: [https://za3k.com/archive/storage-2020-01.sc.txt][2]  
-2019-07: [https://za3k.com/archive/storage-2019-07.sc.txt][3]  
-2018-10: [https://za3k.com/archive/storage-2018-10.sc.txt][4]  
-2018-06: [https://za3k.com/archive/storage-2017-06.sc.txt][5]  
-2018-01: [https://za3k.com/archive/storage-2017-01.sc.txt][6]
+2020-01: [https://za3k.com/archive/storage-2020-01.sc.txt](https://za3k.com/archive/storage-2020-01.sc.txt)  
+2019-07: [https://za3k.com/archive/storage-2019-07.sc.txt](https://za3k.com/archive/storage-2019-07.sc.txt)  
+2018-10: [https://za3k.com/archive/storage-2018-10.sc.txt](https://za3k.com/archive/storage-2018-10.sc.txt)  
+2018-06: [https://za3k.com/archive/storage-2017-06.sc.txt](https://za3k.com/archive/storage-2017-06.sc.txt)  
+2018-01: [https://za3k.com/archive/storage-2017-01.sc.txt](https://za3k.com/archive/storage-2017-01.sc.txt)
 
 Useful conclusions:
 
@@ -56,10 +56,3 @@ Changes since the last survey 2 years ago:
 -   **Tape**: LTO-9 is available.
 -   **Tape**: The cost of LTO-8 tape dropped 50%, which makes it the cheapest option.
 -   **Tape:** This is not new, but there is still only one tape drive manufacturer (HP) since around the introduction of LTO-8.
-
-[1]: https://za3k.com/archive/storage-2022-07.sc.txt
-[2]: https://za3k.com/archive/storage-2020-01.sc.txt
-[3]: https://za3k.com/archive/storage-2019-07.sc.txt
-[4]: https://za3k.com/archive/storage-2018-10.sc.txt
-[5]: https://za3k.com/archive/storage-2017-06.sc.txt
-[6]: https://za3k.com/archive/storage-2017-01.sc.txt

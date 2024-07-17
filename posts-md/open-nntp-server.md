@@ -16,7 +16,7 @@ wordpress_slug: open-nntp-server
 ---
 I’m opening the NNTP server at nttp.za3k.com (TLS or unencrypted) to the public. These are the newsgroups currently on it. It is virtually zero-traffic (no users, but also users post little).
 
-If you don’t have a news reader, Thunderbird can do the job, or take a look at the list [here][1].
+If you don’t have a news reader, Thunderbird can do the job, or take a look at the list [here](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders).
 
 art.agency.applied  
 art.autonomy  
@@ -42,5 +42,3 @@ talk.science
 talk.writing  
 talk.writing.collaborative  
 test.posts
-
-[1]: https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders

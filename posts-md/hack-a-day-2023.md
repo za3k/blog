@@ -22,13 +22,10 @@ wordpress_slug: hack-a-day-2023
 
 Hack-A-Day is challenge to make complete one new project, from scratch, every day in November 2023.
 
-Last year (2022), I set myself the challenge to make a software project every day, and met it. I had a ton of fun, and make a lot of [cool video games and projects][1] I can show off. This year I’m inviting the rest of the world to join me!
+Last year (2022), I set myself the challenge to make a software project every day, and met it. I had a ton of fun, and make a lot of [cool video games and projects](https://za3k.com/hackaday) I can show off. This year I’m inviting the rest of the world to join me!
 
 I’m a programmer, so I’m doing a new computer programming project every day. But you can do any kind of project, whatever you pick is great.
 
-[READ MORE][2]
+[READ MORE](https://za3k.com/hack-a-day-rules)
 
 I will post again nearer to November! Just giving blog readers an advance heads-up.
-
-[1]: https://za3k.com/hackaday
-[2]: https://za3k.com/hack-a-day-rules

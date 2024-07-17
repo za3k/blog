@@ -20,7 +20,7 @@ wordpress_slug: hack-a-day-hack-a-sound
 ---
 It’s november, and I’ve decided this month that I’m going to do 30 projects in 30 days. It’s an all-month hack-a-thon!
 
-Today’s project is [Hack-A-Sound][1] ([demo][2], [source][3]). It’s a small soundboard.
+Today’s project is [Hack-A-Sound](https://tilde.za3k.com/hackaday/sound/) ([demo](https://tilde.za3k.com/hackaday/sound/), [source](https://github.com/za3k/day15_sound)). It’s a small soundboard.
 
 You can:
 
@@ -32,11 +32,6 @@ You can:
 -   Use a keyboard or mouse
 -   (Mobile not supported)
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-13.png)][4]
+[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-13.png)](https://tilde.za3k.com/hackaday/sound/)
 
 Have fun. I think this was a pretty good toy.
-
-[1]: https://tilde.za3k.com/hackaday/sound/
-[2]: https://tilde.za3k.com/hackaday/sound/
-[3]: https://github.com/za3k/day15_sound
-[4]: https://tilde.za3k.com/hackaday/sound/

@@ -61,7 +61,7 @@ In Other Lands by Sarah Rees
 Insane City by Dave Barry  
 Iron Prince by Bryce O’Conner and Luke Chmilenko  
 Isolate (Grand Illusion 1) by L E Modesitt Jr  
-**[The Kevin Jenkins Experience][1] by Hambone  
+**[The Kevin Jenkins Experience](https://deathworlders.com/books/deathworlders/chapter-00-kevin-jenkins-experience/) by Hambone  
 **Kusuriya no Hitorigoto / Alchemist’s Journal by Natsu Hyuuga et al  
 The Left-handed Booksellers of London by Garth Nix  
 Lock In by John Scalzi  
@@ -145,5 +145,3 @@ Sigbovik 2021
 Spymistress by William Stevenson  
 What If? by Randall Munroe  
 What If? 2 by Randall Munroe
-
-[1]: https://deathworlders.com/books/deathworlders/chapter-00-kevin-jenkins-experience/

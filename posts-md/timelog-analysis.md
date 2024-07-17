@@ -14,9 +14,9 @@ updated: 2022-09-23 15:07:32-07:00
 wordpress_id: 796
 wordpress_slug: timelog-analysis
 ---
-I [write down][1] everything I do. Yesterday, I wrote a quick-and-dirty analysis program to get some stats on common habits.
+I [write down](https://blog.za3k.com/life-logging-in-2019/) everything I do. Yesterday, I wrote a quick-and-dirty analysis program to get some stats on common habits.
 
-The full results are here: [d][2][r][3][ive][4] [floss][5] [food][6] [read][7] [sleep][8] [teeth][9] [tv][10] [wake][11] [walk][12] [youtube][13]. Of course, what I write down doesn’t perfectly match what I do, so most of the absolute stats are vastly wrong. Comparative ones are still interesting.
+The full results are here: [d](https://za3k.com/archive/timelog-analysis/drive.txt)[r](https://za3k.com/archive/timelog-analysis/drive.txt)[ive](https://za3k.com/archive/timelog-analysis/drive.txt) [floss](https://za3k.com/archive/timelog-analysis/floss.txt) [food](https://za3k.com/archive/timelog-analysis/food.txt) [read](https://za3k.com/archive/timelog-analysis/read.txt) [sleep](https://za3k.com/archive/timelog-analysis/sleep.txt) [teeth](https://za3k.com/archive/timelog-analysis/teeth.txt) [tv](https://za3k.com/archive/timelog-analysis/tv.txt) [wake](https://za3k.com/archive/timelog-analysis/wake.txt) [walk](https://za3k.com/archive/timelog-analysis/walk.txt) [youtube](https://za3k.com/archive/timelog-analysis/youtube.txt). Of course, what I write down doesn’t perfectly match what I do, so most of the absolute stats are vastly wrong. Comparative ones are still interesting.
 
 Here’s some results:
 
@@ -28,74 +28,62 @@ Here’s some results:
 
 I’ll leave you with this poor man’s graph of driving frequency over time. See the pandemic hit?
 
-    {'2018-01': 'x',
-     '2018-02': '',
-     '2018-03': 'x',
-     '2018-04': 'xxx',
-     '2018-05': '',
-     '2018-06': '',
-     '2018-07': 'x',
-     '2018-08': '',
-     '2018-09': '',
-     '2018-10': 'x',
-     '2018-11': 'xx',
-     '2018-12': 'xx',
-     '2019-01': 'x',
-     '2019-02': '',
-     '2019-03': 'xxxxxxx',
-     '2019-04': 'x',
-     '2019-05': '',
-     '2019-06': 'x',
-     '2019-07': 'x',
-     '2019-08': 'xx',
-     '2019-09': '',
-     '2019-10': 'xxxxx',
-     '2019-11': 'xxxxxxxxx',
-     '2019-12': 'xxxxxx',
-     '2020-01': 'xxxxxxxxx',
-     '2020-02': 'xxxxxxxxxxx',
-     '2020-03': 'xxxxxxx',
-     '2020-04': 'xxxxx',
-     '2020-05': 'xx',
-     '2020-06': '',
-     '2020-07': '',
-     '2020-08': '',
-     '2020-09': '',
-     '2020-10': 'x',
-     '2020-11': 'xxxxxx',
-     '2020-12': 'x',
-     '2021-01': 'xx',
-     '2021-02': 'xxx',
-     '2021-03': 'xxxxxxxxx',
-     '2021-04': '',
-     '2021-05': 'xxxxxxxx',
-     '2021-06': 'xxxxxxxxxxxxxxx',
-     '2021-07': 'xxxxxxxxxxxxxxxxx',
-     '2021-08': 'xxxxx',
-     '2021-09': 'xxxxxxx',
-     '2021-10': 'xxxx',
-     '2021-11': 'xxxxxx',
-     '2021-12': 'xxxxxxxx',
-     '2022-01': 'xxxxxxxxx',
-     '2022-02': 'xxxxxxxxxx',
-     '2022-03': 'xxxxxxxxxxxx',
-     '2022-04': 'xxxxxxxxxxxxxxxxxxxxxxx',
-     '2022-05': 'xxxxxxxxxxxxxxxxxxxxxxx',
-     '2022-06': 'xxxxxxxxxxxxxxxxx',
-     '2022-07': 'xxxxxxxxxxxxxxxxxxxxxxx',
-     '2022-08': 'xxxxxxxxxxxxxxxxxxxxxxx',
-     '2022-09': 'xxxxxxx'}
-
-[1]: https://blog.za3k.com/life-logging-in-2019/
-[2]: https://za3k.com/archive/timelog-analysis/drive.txt
-[3]: https://za3k.com/archive/timelog-analysis/drive.txt
-[4]: https://za3k.com/archive/timelog-analysis/drive.txt
-[5]: https://za3k.com/archive/timelog-analysis/floss.txt
-[6]: https://za3k.com/archive/timelog-analysis/food.txt
-[7]: https://za3k.com/archive/timelog-analysis/read.txt
-[8]: https://za3k.com/archive/timelog-analysis/sleep.txt
-[9]: https://za3k.com/archive/timelog-analysis/teeth.txt
-[10]: https://za3k.com/archive/timelog-analysis/tv.txt
-[11]: https://za3k.com/archive/timelog-analysis/wake.txt
-[12]: https://za3k.com/archive/timelog-analysis/walk.txt
-[13]: https://za3k.com/archive/timelog-analysis/youtube.txt
+```
+{'2018-01': 'x',
+ '2018-02': '',
+ '2018-03': 'x',
+ '2018-04': 'xxx',
+ '2018-05': '',
+ '2018-06': '',
+ '2018-07': 'x',
+ '2018-08': '',
+ '2018-09': '',
+ '2018-10': 'x',
+ '2018-11': 'xx',
+ '2018-12': 'xx',
+ '2019-01': 'x',
+ '2019-02': '',
+ '2019-03': 'xxxxxxx',
+ '2019-04': 'x',
+ '2019-05': '',
+ '2019-06': 'x',
+ '2019-07': 'x',
+ '2019-08': 'xx',
+ '2019-09': '',
+ '2019-10': 'xxxxx',
+ '2019-11': 'xxxxxxxxx',
+ '2019-12': 'xxxxxx',
+ '2020-01': 'xxxxxxxxx',
+ '2020-02': 'xxxxxxxxxxx',
+ '2020-03': 'xxxxxxx',
+ '2020-04': 'xxxxx',
+ '2020-05': 'xx',
+ '2020-06': '',
+ '2020-07': '',
+ '2020-08': '',
+ '2020-09': '',
+ '2020-10': 'x',
+ '2020-11': 'xxxxxx',
+ '2020-12': 'x',
+ '2021-01': 'xx',
+ '2021-02': 'xxx',
+ '2021-03': 'xxxxxxxxx',
+ '2021-04': '',
+ '2021-05': 'xxxxxxxx',
+ '2021-06': 'xxxxxxxxxxxxxxx',
+ '2021-07': 'xxxxxxxxxxxxxxxxx',
+ '2021-08': 'xxxxx',
+ '2021-09': 'xxxxxxx',
+ '2021-10': 'xxxx',
+ '2021-11': 'xxxxxx',
+ '2021-12': 'xxxxxxxx',
+ '2022-01': 'xxxxxxxxx',
+ '2022-02': 'xxxxxxxxxx',
+ '2022-03': 'xxxxxxxxxxxx',
+ '2022-04': 'xxxxxxxxxxxxxxxxxxxxxxx',
+ '2022-05': 'xxxxxxxxxxxxxxxxxxxxxxx',
+ '2022-06': 'xxxxxxxxxxxxxxxxx',
+ '2022-07': 'xxxxxxxxxxxxxxxxxxxxxxx',
+ '2022-08': 'xxxxxxxxxxxxxxxxxxxxxxx',
+ '2022-09': 'xxxxxxx'}
+```

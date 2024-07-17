@@ -14,11 +14,17 @@ class Post():
 
     @staticmethod
     def html2markdown(html):
-        result = subprocess.run(CMD, input=html.encode("utf8"), capture_output=True, check=True)
+        result = subprocess.run(CMD, input=html.encode("utf8"), capture_output=True)
+        try:
+            result.check_returncode()
+        except subprocess.CalledProcessError:
+            print(result.stdout.decode('utf8'))
+            print(result.stderr.decode('utf8'))
+            raise
         return result.stdout.decode("utf8")
 
     def convert(self):
-        self.data["content"] = self.html2markdown(self.data["content"])
+        self.data["content"] = self.html2markdown(self.data["content"].split("<!-- comments -->")[0])
 
     def save(self, target_dir):
         target_dir.mkdir(parents=True, exist_ok=True)

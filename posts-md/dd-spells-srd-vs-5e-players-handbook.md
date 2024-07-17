@@ -14,7 +14,7 @@ updated: 2023-04-04 11:34:34-07:00
 wordpress_id: 997
 wordpress_slug: dd-spells-srd-vs-5e-players-handbook
 ---
-I’ve been working on a spell guide for D&D games. During the process, I researched the differences between the Dungeons and Dragons [5e Player’s Handbook][1] (PHB) and the [5e System Reference Document][2] (SRD).
+I’ve been working on a spell guide for D&D games. During the process, I researched the differences between the Dungeons and Dragons [5e Player’s Handbook](https://www.amazon.com/Players-Handbook-Dungeons-Dragons-Wizards/dp/0786965606) (PHB) and the [5e System Reference Document](https://dnd.wizards.com/resources/systems-reference-document) (SRD).
 
 For those that don’t know, in 3e Wizards of the Coast released the core rules of the game for free. They’ve continued to do so for 3.5, 4, and 5e. The 5e rules were released under Creative Commons recently (thanks!), in response to some community backlash over proposed licensing changes (eek!).
 
@@ -80,6 +80,3 @@ The following are renamed but present in the SRD, presumably for trademark reaso
 -   *bigby’s hand* becomes *arcane hand*
 -   *mordenkainen’s sword* becomes *arcane sword*
 -   *nystul’s magic aura* becomes *arcanist’s magic aura*
-
-[1]: https://www.amazon.com/Players-Handbook-Dungeons-Dragons-Wizards/dp/0786965606
-[2]: https://dnd.wizards.com/resources/systems-reference-document
