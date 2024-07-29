@@ -46,6 +46,7 @@ var turndownService = new TurndownService({
 turndownService.use(turndownPluginGfm.tables)
 turndownService.use(myPlugin.pre)
 turndownService.keep('iframe')
+turndownService.keep('video')
 //turndownService.use(myPlugin.preserveHTMLMatching)
 
 const html = fs.readFileSync(0, "utf-8");

@@ -5,7 +5,7 @@ import yaml
 from pathlib import Path
 
 INPUT_DIR = Path("/home/zachary/blog.za3k.com")
-OUTPUT_DIR = Path("/home/zachary/blog/posts")
+OUTPUT_DIR = Path("/home/zachary/blog/posts-html")
 IMAGES = OUTPUT_DIR / 'images'
 
 BLACKLIST={"wp-json", "feed"}
@@ -23,8 +23,13 @@ def parse_date(s):
 def scrape_post(post):
     html = bs4.BeautifulSoup(post, 'html.parser')
     article = html.find('article')
-    comments = html.find('ol', class_="commentlist")
     post = article.find('div', class_="entry-content")
+
+    for x in html.select('ol.commentlist > li.pingback'):
+        x.extract()
+    comments = html.find('ol', class_="commentlist")
+    if comments and len(comments.find_all('li')) == 0:
+        comments = None
 
     result = {}
     result["html_content"] = str(post)

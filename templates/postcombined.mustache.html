@@ -62,8 +62,14 @@ iframe {
 <body>
 <ul id="links">
     <a href="https://blog.za3k.com/{{id}}/">original blog</a>
-    <a href="https://git.za3k.com/?p=blog.git;a=blob_plain;f=posts-html/{{id}}.html;hb=HEAD">html source</a>
-    <a href="https://git.za3k.com/?p=blog.git;a=blob_plain;f=posts-md/{{id}}.md;hb=HEAD">markdown source</a>
+    <span><a href="https://git.za3k.com/?p=blog.git;a=blob_plain;f=posts-html/{{id}}.html;hb=HEAD">html source</a> <a href="file:///home/zachary/blog/posts-html/{{id}}.html">(local)</a></span>
+    <span><a href="https://git.za3k.com/?p=blog.git;a=blob_plain;f=posts-md/{{id}}.md;hb=HEAD">markdown source</a> <a href="file:///home/zachary/blog/posts-md/{{id}}.md">(local)</a></span>
+    <span>
+        Images:
+        <a href="file:///home/zachary/blog/screenshots/{{id}}.diff.png">diff</a> / 
+        <a href="file:///home/zachary/blog/screenshots/{{id}}.html.png">html</a> / 
+        <a href="file:///home/zachary/blog/screenshots/{{id}}.md.png">md</a>
+    </span>
 </ul>
 <div id="iframes">
     <div id="html">

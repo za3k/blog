@@ -188,6 +188,7 @@ class Templatable(PseudoMap):
         html = mustache.render(template, context, warn=True)
         if replace_links:
             html = blog.replace_links(source, html)
+        html = blog.small_corrections(html)
         return html
 
     def content(self):
@@ -235,6 +236,7 @@ class Post(Templatable):
             if k in {"tags", "author", "categories"}:
                 k = "_" + k
             self[k] = v
+        self.post_title = self.title # Avoids a dumb thing with str.title in a template
 
     # TODO: Add an 'above the fold' part, maybe
 
@@ -431,6 +433,12 @@ class Blog(PseudoMap):
     def replace_links(self, source, html):
         link_regex = '(?<!srcset=")(?<=")https://blog.za3k.com/([^"]*)(?=")'
         return re.sub(link_regex, lambda m: self.rewrite_link(source, m), html)
+
+    def small_corrections(self, html):
+        # This helps the visual diff tool work for pages with many images
+        html = html.replace('decoding="async"', '') 
+        html = html.replace('loading="lazy"', '')
+        return html
 
     def rewrite_link(self, source, match):
         link = Link(match.group(0), self, source.output_path)
