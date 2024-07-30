@@ -23,17 +23,19 @@ I wanted to make a 3D game. In my game, you live in a geodesic dome, and can’t
 
 A geodesic dome, I learned, is related to the *icosahedron*, or d20 from RPGs.
 
+<figure class="wp-block-gallery has-nested-images columns-default wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
+
 [![](https://blog.za3k.com/wp-content/uploads/2024/06/image-150x150.png)](https://blog.za3k.com/wp-content/uploads/2024/06/image.png)
 
 [![](https://blog.za3k.com/wp-content/uploads/2024/06/image-1-150x150.png)](https://blog.za3k.com/wp-content/uploads/2024/06/image-1.png)
 
 [![](https://blog.za3k.com/wp-content/uploads/2024/06/image-3-150x150.png)](https://blog.za3k.com/wp-content/uploads/2024/06/image-3.png)
 
+</figure>
+
 A simple dome is the top half of the icosahedron. As they get more complex, you divide each triangle into more and more smaller triangles.
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/06/sphere-crop.jpg)](https://blog.za3k.com/wp-content/uploads/2024/06/sphere-crop.jpg)
-
-Icosahedron getting more and more detailed. Geodesic domes are the top half of each sphere.
+[![caption:Icosahedron getting more and more detailed. Geodesic domes are the top half of each sphere.](https://blog.za3k.com/wp-content/uploads/2024/06/sphere-crop.jpg)](https://blog.za3k.com/wp-content/uploads/2024/06/sphere-crop.jpg)
 
 So to make a nice geodesic dome, we could find one (I failed), make one in Blender (too hard), or use some math to generate one in Godot. And to do that math, we need to know the list of 20 icosahedron faces. Which basically just needs the list of the 12 vertices!
 

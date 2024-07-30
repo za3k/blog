@@ -23,7 +23,7 @@ PCB from HacKeyboard
 
 Or how to attach headers to the inside of an existing keyboard, which looks like this–:
 
-![Mapping the Innards of a Keyboard : 7 Steps (with Pictures) - Instructables](https://content.instructables.com/FOM/VMTN/HZN0VZGV/FOMVMTNHZN0VZGV.jpg?auto=webp&frame=1&width=2100)
+![alt:Mapping the Innards of a Keyboard : 7 Steps (with Pictures) - Instructables](https://content.instructables.com/FOM/VMTN/HZN0VZGV/FOMVMTNHZN0VZGV.jpg?auto=webp&frame=1&width=2100)
 
 But I found a project called [GOLEM](https://golem.hu/guide/keyboard-build-logs/) with an excellent guide to making your own keyboard. Here is their wiring:
 

@@ -24,7 +24,7 @@ I scan each and every piece of paper that passes through my hands. All my old to
 
 The input is some raw scans. They could be handwritten notes, printed computer documents, photos, or whatever.
 
-[![A movie ticket stub](https://github.com/za3k/scan-organizer/raw/master/screenshots/sample_image.jpg)](https://github.com/za3k/scan-organizer/blob/master/screenshots/sample_image.jpg)
+[![alt:A movie ticket stub](https://github.com/za3k/scan-organizer/raw/master/screenshots/sample_image.jpg)](https://github.com/za3k/scan-organizer/blob/master/screenshots/sample_image.jpg)
 
 The final product is that for each file like `ticket.jpg`, we end up with `ticket.txt`. This has metadata about the file (tags, category, notes) and a transcription of any text in the image, to make it searchable with `grep` & co.
 
@@ -58,25 +58,25 @@ At any point I can exit the program, and all progress is saved. I have 6000 phot
 
 ### [](https://github.com/za3k/scan-organizer#phase-1-rotating-and-cropping)Phase 1: Rotating and Cropping
 
-[![Phase 1: Rotating and Cropping](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase1.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase1.png)
+[![alt:Phase 1: Rotating and Cropping](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase1.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase1.png)
 
 First, I clean up the images. Crop them, rotate them if they’re not facing the right way. I can rotate images with keyboard shortcuts, although there are also buttons at the bottom. Once I’m done, I press a button, and *scan-organizer* advanced to the next un-cleaned photo.
 
 ### [](https://github.com/za3k/scan-organizer#phase-2-sorting-into-folders)Phase 2: Sorting into folders
 
-[![Phase 2: Sorting into folders](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase2.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase2.png)
+[![alt:Phase 2: Sorting into folders](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase2.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase2.png)
 
 Next, I sort things into folders, or “categories”. As I browse folders, I can preview what’s already in that folder.
 
 ### [](https://github.com/za3k/scan-organizer#phase-3-renaming-images)Phase 3: Renaming Images
 
-[![Phase 3: Renaming images](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase3.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase3.png)
+[![alt:Phase 3: Renaming images](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase3.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase3.png)
 
 Renaming images comes next. For convenience, I can browse existing images in the folder, to help name everything in a standard way.
 
 ### [](https://github.com/za3k/scan-organizer#phase-4-tagging-images)Phase 4: Tagging images
 
-[![Phase 4: Tagging images](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase4.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase4.png)
+[![alt:Phase 4: Tagging images](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase4.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase4.png)
 
 I tag my images with the type of text. They might be handwritten. Or they might be printed computer documents. You can imagine extending the process with other types of tagging for your use case.
 
@@ -86,7 +86,7 @@ Printed documents are run through OCR. This isn’t actually done yet, but it wi
 
 ### [](https://github.com/za3k/scan-organizer#phase-5-transcribing-by-hand)Phase 5: Transcribing by hand
 
-[![Phase 5a: Transcribing by Hand](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase5.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase5.png)
+[![alt:Phase 5a: Transcribing by Hand](https://github.com/za3k/scan-organizer/raw/master/screenshots/phase5.png)](https://github.com/za3k/scan-organizer/blob/master/screenshots/phase5.png)
 
 I write up all my handwritten documents. I have not found any useful handwriting recognition software. I just do it all by hand.
 

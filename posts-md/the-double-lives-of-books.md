@@ -18,19 +18,19 @@ So that’s where we start. Here’s where I went.
 
 I thought, if these books are just a local convenience for an online version, it’s more artistically satisfying to have some representation of that. So I printed up a card catalog of all my books, both the ones I have digital copies of and not:
 
-[![An example catalog card](https://blog.za3k.com/wp-content/uploads/2014/11/sample_card-300x186.png)](https://blog.za3k.com/wp-content/uploads/2014/11/sample_card.png)
+[![alt:An example catalog card](https://blog.za3k.com/wp-content/uploads/2014/11/sample_card-300x186.png)](https://blog.za3k.com/wp-content/uploads/2014/11/sample_card.png)
 
 An example catalog card
 
 That’s what a card looks like. There’s information about the book up top, and a link in the form of a [QR code](http://en.wikipedia.org/wiki/QR_code "QR code") in the middle. The link downloads a PDF version of that book. Obviously being a programmer, the cards all all automatically generated.
 
-[![Book with a card inside](https://blog.za3k.com/wp-content/uploads/2014/11/book-186x300.jpg)](https://blog.za3k.com/wp-content/uploads/2014/11/book.jpg)
+[![alt:Book with a card inside](https://blog.za3k.com/wp-content/uploads/2014/11/book-186x300.jpg)](https://blog.za3k.com/wp-content/uploads/2014/11/book.jpg)
 
 Book with a card inside
 
 For the books where I have a physical copy, I put the card in the book, and it feels like I’m touching the digital copy. My friends can pirate their own personal version of the book (saving me the sadness of lost lent-out books I’m sure we’ve all felt at times). And I just thing it looks darn neat. Some physical books I don’t have a digital version of, since the world is not yet perfect. But at least I can identify them at a glance (and consider sending them off to a service like [http://1dollarscan.com/](http://1dollarscan.com/))
 
-[![Card catalog of digital books](https://blog.za3k.com/wp-content/uploads/2014/11/catalog-225x300.jpg)](https://blog.za3k.com/wp-content/uploads/2014/11/catalog.jpg)
+[![alt:Card catalog of digital books](https://blog.za3k.com/wp-content/uploads/2014/11/catalog-225x300.jpg)](https://blog.za3k.com/wp-content/uploads/2014/11/catalog.jpg)
 
 Card catalog of digital books
 

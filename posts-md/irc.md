@@ -16,7 +16,7 @@ updated: 2015-06-28 02:24:09-07:00
 wordpress_id: 225
 wordpress_slug: irc
 ---
-[![2015-06-28-021223_683x381](https://blog.za3k.com/wp-content/uploads/2015/06/2015-06-28-021223_683x381.jpg)](https://blog.za3k.com/wp-content/uploads/2015/06/2015-06-28-021223_683x381.jpg)I added an IRC server to my growing list of services. You can access it at:
+[![alt:2015-06-28-021223_683x381](https://blog.za3k.com/wp-content/uploads/2015/06/2015-06-28-021223_683x381.jpg)](https://blog.za3k.com/wp-content/uploads/2015/06/2015-06-28-021223_683x381.jpg)I added an IRC server to my growing list of services. You can access it at:
 
 -   irc.za3k.com
 -   Port 6667

@@ -23,7 +23,7 @@ wordpress_slug: multi-universe-rpg-toy
 -   No…
 -   No, and…
 
-[![cube](https://blog.za3k.com/wp-content/uploads/2015/04/cube-300x298.jpg)](https://blog.za3k.com/wp-content/uploads/2015/04/cube.jpg)
+[![alt:cube](https://blog.za3k.com/wp-content/uploads/2015/04/cube-300x298.jpg)](https://blog.za3k.com/wp-content/uploads/2015/04/cube.jpg)
 
 Their example:
 

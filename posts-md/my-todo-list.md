@@ -18,9 +18,13 @@ I’ve had a couple people ask how my TODO list works, so here’s what I’ve b
 
 The calendar has anything that needs to be done on a specific day. Birthday reminders, doctor’s appointments, and weekly activities like board game night or trash day. You’ve seen calendars. This is nothing interesting.
 
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
+
 [![](https://blog.za3k.com/wp-content/uploads/2023/07/weekly-crop-246x300.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/weekly-crop.jpg)
 
 [![](https://blog.za3k.com/wp-content/uploads/2023/07/cal-crop-300x255.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/cal-crop.jpg)
+
+</figure>
 
 **A yearly goals list**
 

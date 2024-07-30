@@ -16,7 +16,7 @@ wordpress_slug: wip-dead-tree-publishing-4
 ---
 I consider Dead Tree Publishing to be **G**ood **E**nough at this point. It’s launched.
 
-[![2015-04-30-180400_1366x768](https://blog.za3k.com/wp-content/uploads/2015/04/2015-04-30-180400_1366x768.jpg)](https://blog.za3k.com/wp-content/uploads/2015/04/2015-04-30-180400_1366x768.jpg)
+[![alt:2015-04-30-180400_1366x768](https://blog.za3k.com/wp-content/uploads/2015/04/2015-04-30-180400_1366x768.jpg)](https://blog.za3k.com/wp-content/uploads/2015/04/2015-04-30-180400_1366x768.jpg)
 
 New site style, FAQ page
 

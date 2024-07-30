@@ -18,9 +18,13 @@ Today’s update is a short one. I ported my raytracer from [day 02](https://blo
 
 The visuals are pretty much the same. Incidentally I discovered the striations on the ground disappear if we increase the floating point precision.
 
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
+
 [![](https://blog.za3k.com/wp-content/uploads/2023/11/v15b-300x225.png)](https://blog.za3k.com/wp-content/uploads/2023/11/v15b.png)
 
 [![](https://blog.za3k.com/wp-content/uploads/2023/11/v16-300x225.png)](https://blog.za3k.com/wp-content/uploads/2023/11/v16.png)
+
+</figure>
 
 Render on the GPU is 30x faster (0.05 fps -> 3 fps). That’s still not very fast.
 

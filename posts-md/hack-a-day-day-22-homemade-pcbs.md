@@ -31,7 +31,11 @@ Next, I made the actual PCB layout.
 
 To my surprise, after a little jiggling I got it down to a one-layer design.
 
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
+
 [![](https://blog.za3k.com/wp-content/uploads/2023/11/kicad-pcb2.png)](https://blog.za3k.com/wp-content/uploads/2023/11/kicad-pcb2.png)
+
+</figure>
 
 That means home-printing would be much easier. No having to line up the two sides carefully.
 
@@ -43,11 +47,15 @@ I printed out the image on paper (backwards) on my toner printer, and taped it t
 
 First, I tried laminating it. Almost no ink transferred, and the paper came off easily. Then I tried ironing it, but the paper stick to the iron and not to the PCB. The tape melted on the iron. For both, I dunked them in water after, which is supposed to help loosen the paper.
 
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
+
 [![](https://blog.za3k.com/wp-content/uploads/2023/11/image-169x300.png)](https://blog.za3k.com/wp-content/uploads/2023/11/image.png)
 
 [![](https://blog.za3k.com/wp-content/uploads/2023/11/image-2-169x300.png)](https://blog.za3k.com/wp-content/uploads/2023/11/image-2.png)
 
 [![](https://blog.za3k.com/wp-content/uploads/2023/11/image-4-169x300.png)](https://blog.za3k.com/wp-content/uploads/2023/11/image-4.png)
+
+</figure>
 
 Next, I tried the standard advice–sand the PCBs (I used 320 grit) and use glossy paper. This time, both pieces of paper stuck very well. I was wary about the iron coming off again, so I just left it on place on the highest heat–this worked fine for adhesion, but I had to iron out wrinkles at the end. The laminated piece had lose edges, while the ironed piece was on there totally flat.
 

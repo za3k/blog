@@ -14,7 +14,7 @@ updated: 2015-11-29 23:04:07-07:00
 wordpress_id: 313
 wordpress_slug: controlling-a-computercraft-turtle-remotely
 ---
-[![Screen Shot 2015-10-18 at 7.16.59 PM](https://blog.za3k.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-18-at-7.16.59-PM-1024x582.png)](https://blog.za3k.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-18-at-7.16.59-PM.png)[![Screen Shot 2015-10-18 at 7.17.30 PM](https://blog.za3k.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-18-at-7.17.30-PM-300x197.png)](https://blog.za3k.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-18-at-7.17.30-PM.png)
+[![alt:Screen Shot 2015-10-18 at 7.16.59 PM](https://blog.za3k.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-18-at-7.16.59-PM-1024x582.png)](https://blog.za3k.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-18-at-7.16.59-PM.png)[![alt:Screen Shot 2015-10-18 at 7.17.30 PM](https://blog.za3k.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-18-at-7.17.30-PM-300x197.png)](https://blog.za3k.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-18-at-7.17.30-PM.png)
 
 1.  Install Redis: [https://www.digitalocean.com/community/tutorials/how-to-install-and-use-redis](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-redis)
 2.  Install [Webdis  

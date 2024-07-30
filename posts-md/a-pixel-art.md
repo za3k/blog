@@ -15,4 +15,4 @@ updated: 2015-01-18 17:13:15-07:00
 wordpress_id: 101
 wordpress_slug: a-pixel-art
 ---
-[![A ninja turtle](https://blog.za3k.com/wp-content/uploads/2015/01/Screen-Shot-2015-01-13-at-11.12.20-AM.png)](https://blog.za3k.com/wp-content/uploads/2015/01/Screen-Shot-2015-01-13-at-11.12.20-AM.png)
+[![alt:A ninja turtle](https://blog.za3k.com/wp-content/uploads/2015/01/Screen-Shot-2015-01-13-at-11.12.20-AM.png)](https://blog.za3k.com/wp-content/uploads/2015/01/Screen-Shot-2015-01-13-at-11.12.20-AM.png)

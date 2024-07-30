@@ -13,7 +13,7 @@ updated: 2014-12-02 13:51:00-07:00
 wordpress_id: 84
 wordpress_slug: money-orders
 ---
-[![A postal money order](https://blog.za3k.com/wp-content/uploads/2014/12/Figure6-300x237.jpg)](https://blog.za3k.com/wp-content/uploads/2014/12/Figure6.jpg)
+[![alt:A postal money order](https://blog.za3k.com/wp-content/uploads/2014/12/Figure6-300x237.jpg)](https://blog.za3k.com/wp-content/uploads/2014/12/Figure6.jpg)
 
 A postal money order
 

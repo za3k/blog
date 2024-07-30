@@ -61,8 +61,8 @@ Queen of Blood by Sarah Beth Durst
 Vita Nostra by Maryna and Serhiy Dyachenko  
 How Rory Thorne Destroyed the Multiverse by K. Eason  
 Malazan (Malazan 1) by Steven Erikson  
-**Daughter of the Empire by Raymond Feist and Janny Wurts  
-**Mistress of the Empire by Raymond Feist and Janny Wurts  
+**Daughter of the Empire by Raymond Feist and Janny Wurts**  
+Mistress of the Empire by Raymond Feist and Janny Wurts  
 Servant of the Empire by Raymond Feist and Janny Wurts  
 Dragon’s Egg (Cheela 1) by Robert L Forward  
 **[Mother of Learning](https://www.royalroad.com/fiction/21220/mother-of-learning) by Domagoj Kurmaic/nobody103**  
@@ -132,8 +132,8 @@ Wintersteel (Cradle 8) by Will Wight
 Bloodlines (Cradle 9) by Will Wight  
 Reaper (Cradle 10) by Will Wight  
 The Crimson Vault (Travelers Gate 2) by Will Wight  
-\***Dinosaurs by Walter Jon Williams  
-**Blind Lake by Robert Charles Wilson  
+\***Dinosaurs by Walter Jon Williams**  
+Blind Lake by Robert Charles Wilson  
 Thousand Li by Tao Wong  
 Thousand Li 2 by Tao Wong  
 Thousand Li 3 by Tao Wong  

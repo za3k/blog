@@ -36,8 +36,8 @@ Art of the Adept 3: Scholar of Magic by Michael G Manning
 Aspects by John M Ford  
 Aurora by Kim Stanley Robinson  
 Aurora Rising by Amie Kaufman  
-**Bastion (Immortal Great Souls 1) by Phil Tucker  
-**Children of Time by Adrian Tchaikovsky  
+**Bastion (Immortal Great Souls 1) by Phil Tucker**  
+Children of Time by Adrian Tchaikovsky  
 Citadel: Training in Necessity by Unillustrated  
 City of Broken Magic by Mirah Bolender  
 Cradle 11: Dreadgod by Will Wight  
@@ -49,8 +49,8 @@ Genius by Leopoldo Gout
 Good Omens by Neil Gaiman and Terry Pratchett  
 Grand Game by Tom Elliot (LitRPG)  
 **Project Hail Mary by Andy Weir  
-Head-on by John Scalzi  
-**He Who Fights with Monsters 1 by Shirtaloon  
+Head-on by John Scalzi**  
+He Who Fights with Monsters 1 by Shirtaloon  
 He Who Fights with Monsters 2 by Shirtaloon  
 He Who Fights with Monsters 3 by Shirtaloon  
 He Who Fights with Monsters 4 by Shirtaloon  
@@ -61,8 +61,8 @@ In Other Lands by Sarah Rees
 Insane City by Dave Barry  
 Iron Prince by Bryce O’Conner and Luke Chmilenko  
 Isolate (Grand Illusion 1) by L E Modesitt Jr  
-**[The Kevin Jenkins Experience](https://deathworlders.com/books/deathworlders/chapter-00-kevin-jenkins-experience/) by Hambone  
-**Kusuriya no Hitorigoto / Alchemist’s Journal by Natsu Hyuuga et al  
+**[The Kevin Jenkins Experience](https://deathworlders.com/books/deathworlders/chapter-00-kevin-jenkins-experience/) by Hambone**  
+Kusuriya no Hitorigoto / Alchemist’s Journal by Natsu Hyuuga et al  
 The Left-handed Booksellers of London by Garth Nix  
 Lock In by John Scalzi  
 Mage’s Blood by David Hair  
@@ -74,8 +74,8 @@ Master Li and Number Ten Ox 3: Eight Skilled Gentlemen by Barry Hughart
 Mazer in Prison by Orson Scot Card  
 Memory of Earth by Orson Scott Card  
 Memory of Earth 2: Call of Earth by Orson Scott Card  
-**Millenial Mage by J L Mullins  
-**Neverworld Wake by Marisha Pessl  
+**Millenial Mage by J L Mullins**  
+Neverworld Wake by Marisha Pessl  
 Orc on the Wild Side by Tom Holt  
 Pact by wildbow  
 Penric’s Progress by Louis McMaster Bujold  
@@ -107,8 +107,8 @@ Soulmage by meowcats734
 Starsight by Brandon Sanderson  
 Story of My Life by Hellen Keller  
 Strange and Stubborn Endurance by Foz Meadows  
-A **Succession of Bad Days by Graydon Saunders  
-**The Starless Sea by Eric Morgenstern  
+A **Succession of Bad Days by Graydon Saunders**  
+The Starless Sea by Eric Morgenstern  
 Termination Shock by Neal Stephenson  
 The Consuming Fire by John Scalzi  
 The Every by Dave Eggers  

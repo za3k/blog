@@ -54,8 +54,8 @@ House of Earth and Blood by Sarah Maas
 Ithenalin’s Restoration by Lawrence Watt-Evans  
 Lament by Maggie Stiefvater  
 Legacy of the Fallen by Luke Chmilenko p1-316  
-**[Lone Wolf](https://www.projectaon.org/en/Main/Books) / Kai adventure series 1-5, magnakai 1, by Joe Dever  
-**Magic for Liars by Sarah Gailey  
+**[Lone Wolf](https://www.projectaon.org/en/Main/Books) / Kai adventure series 1-5, magnakai 1, by Joe Dever**  
+Magic for Liars by Sarah Gailey  
 Magician by Raymond Feist  
 Magicians by Lev Grossman  
 Making Money by Terry Pratchett  
@@ -85,10 +85,10 @@ Skyward by Brandon Sanderson
 Snowspelled by Stephanie Burges  
 Spellmonger by Terry Mancour, p1-165  
 Starfish by Peter Watts  
-**Stone Unturned by Lawrence Watt-Evans  
-**Storm Glass by Jeff Wheeler  
-**Sufficiently Advanced Magic by Andrew Rowe  
-**The Alien’s Lover by Zoey Draven  
+**Stone Unturned by Lawrence Watt-Evans**  
+Storm Glass by Jeff Wheeler  
+**Sufficiently Advanced Magic by Andrew Rowe**  
+The Alien’s Lover by Zoey Draven  
 The Archived by Victoria Schwab  
 The Atrocity Archive by Charles Stross  
 The Blood of a Dragon by Lawrence Watt-Evans  
@@ -97,8 +97,8 @@ The Collapsing Empire by John Scalzi
 The Diamond Age by Neal Stephenson  
 The Fractured World by David Aries  
 The Goblin Emperor by Katherine Addison  
-**The Library at Mount Char by Scott Hawkins  
-**The Magic Goes Away by Larry Niven  
+**The Library at Mount Char by Scott Hawkins**  
+The Magic Goes Away by Larry Niven  
 The Maker of Universes by Philip Jose Farmer  
 The Misenchanted Sword by Lawrence Watt-Evans  
 The Mysterious Study of Doctor Sex by Tamsyn Muir  
@@ -140,13 +140,13 @@ Forrest Mim’s Engineer’s Notebook
 Forrest Mim’s Mini Notebook  
 Intel’s x86-64 manual  
 Introduction to Analysis by Maxwell Rosenlicht  
-**[Kademelia](https://www.researchgate.net/publication/2492563_Kademlia_A_Peer-to-peer_Information_System_Based_on_the_XOR_Metric) by Peter Maymounkov  
-**[kleiman v wright](https://library.za3k.com/law%20documents/kleiman%20v%20wright%20-%20austrialian%20taxation%20office%20findings.pdf) australian tax document  
+**[Kademelia](https://www.researchgate.net/publication/2492563_Kademlia_A_Peer-to-peer_Information_System_Based_on_the_XOR_Metric) by Peter Maymounkov**  
+[kleiman v wright](https://library.za3k.com/law%20documents/kleiman%20v%20wright%20-%20austrialian%20taxation%20office%20findings.pdf) australian tax document  
 Incremental String Searching by Bertrand Meyer (KNP algorithm)  
 Rules to One Night Ultimate Werewolf  
 The Art of Computer Programming, v1, v3 by Donald Knuth (parts)  
 The Pragmatic Programmer  
 The Rust Programming Language  
-**[There’s Plenty of Room at the Bottom](https://web.pa.msu.edu/people/yang/RFeynman_plentySpace.pdf) by Richard Feynman  
-**Total Money Makeover by Dave Ramsey  
+**[There’s Plenty of Room at the Bottom](https://web.pa.msu.edu/people/yang/RFeynman_plentySpace.pdf) by Richard Feynman**  
+Total Money Makeover by Dave Ramsey  
 W65025 manual (6502 clone)

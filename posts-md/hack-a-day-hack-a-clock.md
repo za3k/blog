@@ -18,8 +18,6 @@ wordpress_slug: hack-a-day-hack-a-clock
 ---
 Thursday’s project was [Hack-A-Clock](https://tilde.za3k.com/hackaday/clock/) ([demo](https://tilde.za3k.com/hackaday/clock/), [source](https://github.com/za3k/day24_clock)). It is a decimal time clock, displaying the time in revolutionary french time (minus their weird calendar).
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-21.png)](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-21.png)
-
-[https://tilde.za3k.com/hackaday/clock/](https://tilde.za3k.com/hackaday/clock/)
+[![caption:https://tilde.za3k.com/hackaday/clock/](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-21.png)](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-21.png)
 
 This is another “phone it in” project but I think it would have been okay with more accompanying explanation and better styling.

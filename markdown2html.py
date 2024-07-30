@@ -6,7 +6,25 @@ def post_process(soup):
     for img in soup.find_all("img"):
         figure = soup.new_tag("figure")
         figure['class'] = "wp-block-image"
+
+        caption = None
+        if img['alt'] == "": # No alt-text or caption
+            del img['alt']
+        elif img['alt'] and img['alt'].startswith('alt:'): # Alt-text
+            img['alt'] = img['alt'].removeprefix('alt:')
+        else: # Caption
+            if img['alt'] and img['alt'].startswith('caption:'):
+                img['alt'] = img['alt'].removeprefix('caption:')
+            caption = img['alt']
+
+        if img.parent.name == "a":
+            img = img.parent
         img.wrap(figure)
+        if caption is not None:
+            captionE = soup.new_tag("figcaption")
+            captionE.string = caption
+            figure.append(captionE)
+
 
     for pre in soup.find_all("pre"):
         pre['class'] = "wp-block-code"
@@ -47,7 +65,7 @@ def post_process(soup):
     return soup
 
 def markdown2html(html):
-    html = markdown2.markdown(html, extras=['tables', 'header-ids', 'fenced-code-blocks'])
+    html = markdown2.markdown(html, extras=['tables', 'header-ids', 'fenced-code-blocks', 'markdown-in-html'])
     soup = BeautifulSoup(html, 'html.parser')
     soup = post_process(soup)
     return str(soup) #.prettify()

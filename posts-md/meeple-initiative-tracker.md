@@ -17,9 +17,7 @@ I play D&D. There are a thousand initiative trackers out there. Here’s one I i
 
 First, each player picks a Meeple to be their character’s mini.
 
-[![Four meeples on an index card, representing a wagon.](https://blog.za3k.com/wp-content/uploads/2023/07/board-crop-1024x387.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/board-crop.jpg)
-
-Four PCs on a wagon move over swampy terrain.
+[![caption:Four PCs on a wagon move over swampy terrain.](https://blog.za3k.com/wp-content/uploads/2023/07/board-crop-1024x387.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/board-crop.jpg)
 
 Quick, roll initiative! The players all roll, and so do the enemies. We grab a second meeple for each player, as well as second token for each enemy. This becomes the initiative tracker.
 

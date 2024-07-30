@@ -19,11 +19,15 @@ I followed the recipe from “[Enjoy a simple life](https://enjoyasimplelife.blo
 
 [![](https://blog.za3k.com/wp-content/uploads/2024/02/fork-crop-1024x808.jpg)](https://blog.za3k.com/wp-content/uploads/2024/02/fork-crop.jpg)
 
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
+
 [![](https://blog.za3k.com/wp-content/uploads/2024/02/foil-crop-1024x826.jpg)](https://blog.za3k.com/wp-content/uploads/2024/02/foil-crop.jpg)
 
 [![](https://blog.za3k.com/wp-content/uploads/2024/02/leaves-crop-1004x1024.jpg)](https://blog.za3k.com/wp-content/uploads/2024/02/leaves-crop.jpg)
 
 [![](https://blog.za3k.com/wp-content/uploads/2024/02/unwrapped-crop-1024x851.jpg)](https://blog.za3k.com/wp-content/uploads/2024/02/unwrapped-crop.jpg)
+
+</figure>
 
 Like a bread, this recipe takes a fair bit of time. I would start in the morning.
 
