@@ -5,8 +5,8 @@ web_root: "https://blog2.za3k.com"
 domain: "blog2.za3k.com"
 title: 'blog of zachary "za3k" vance'
 
-post_md_dir: "posts-md"
-post_dir: "posts-html"
+post_dir: "posts"
+comments_dir: "comments"
 page_dir: "page"
 image_dir: "images"
 static_dir: "static"

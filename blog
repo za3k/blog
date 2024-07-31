@@ -188,7 +188,6 @@ class Templatable(PseudoMap):
         html = mustache.render(template, context, warn=True)
         if replace_links:
             html = blog.replace_links(source, html)
-        html = blog.small_corrections(html)
         return html
 
     def content(self):
@@ -226,12 +225,10 @@ class Static(Templatable):
         return self.path.relative_to(self.blog.static_dir)
 
 class Post(Templatable):
-    def __init__(self, parsed, blog, parsed_md):
+    def __init__(self, parsed, blog, comments):
         super().__init__(blog)
-        self.post, self.comments = parsed.pop("content").split("<!-- comments -->\n")
-        self.post = self.post.replace("<!-- blogpost -->","")
+        self.md, self.comments = parsed.pop("content"), comments
         self.main_display = True
-        self.md = parsed_md["content"]
         for k, v in parsed.items():
             if k in {"tags", "author", "categories"}:
                 k = "_" + k
@@ -241,59 +238,11 @@ class Post(Templatable):
     # TODO: Add an 'above the fold' part, maybe
 
     @property
-    def md_html(self):
+    def post(self):
         return '<div class="entry-content">{}</div>'.format(markdown2html(self.md))
 
-    @property
-    def output_path_html(self):
-        output_path_template = self.blog["post_html_destination"]
-        return Path(mustache.render(output_path_template, self.context))
-
-    @property
-    def output_path_md(self):
-        output_path_template = self.blog["post_md_destination"]
-        return Path(mustache.render(output_path_template, self.context))
-
-    @property
-    def url_md(self):
-        return self.blog.web_root + "/" + str(self.output_path_md.relative_to(self.blog.destination))
-
-    @property
-    def url_html(self):
-        return self.blog.web_root + "/" + str(self.output_path_html.relative_to(self.blog.destination))
-
     def content_combined(self):
-        return self.render_template(self.blog, "postcombined", self.context, replace_links=False).encode("utf8")
-
-    def content_md(self):
-        content = self.render_template(self.blog, self.type, collections.ChainMap({
-            "post": self.md_html
-        }, self.context))
-        return self.render_template(self.blog, "layout", collections.ChainMap({
-            "content": content,
-        }, self, self.blog)).encode("utf8")
-
-    def output(self):
-        output = self.content()
-        if self.blog.reload:
-            output += RELOAD_HTML
-        self.output_path_html.parent.mkdir(parents=True, exist_ok=True)
-        with open(self.output_path_html, "wb") as f:
-            f.write(output)
-
-        output = self.content_md()
-        if self.blog.reload:
-            output += RELOAD_HTML
-        self.output_path_md.parent.mkdir(parents=True, exist_ok=True)
-        with open(self.output_path_md, "wb") as f:
-            f.write(output)
-
-        output = self.content_combined()
-        if self.blog.reload:
-            output += RELOAD_HTML
-        self.output_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(self.output_path, "wb") as f:
-            f.write(output)
+        return self.render_template(self.blog, "post", self.context, replace_links=False).encode("utf8")
 
     @property
     def date_rfc822(self):
@@ -434,24 +383,23 @@ class Blog(PseudoMap):
         link_regex = '(?<!srcset=")(?<=")https://blog.za3k.com/([^"]*)(?=")'
         return re.sub(link_regex, lambda m: self.rewrite_link(source, m), html)
 
-    def small_corrections(self, html):
-        # This helps the visual diff tool work for pages with many images
-        html = html.replace('decoding="async"', '') 
-        html = html.replace('loading="lazy"', '')
-        return html
-
     def rewrite_link(self, source, match):
         link = Link(match.group(0), self, source.output_path)
         self.links.add(link)
         return link.static
 
+    def load_comments(self, stem):
+        comments_path = Path(self.comments_dir) / (stem + ".html")
+        if comments_path.exists():
+            with open(comments_path, "r") as f:
+                return f.read()
+
     def load_posts(self):
         for post_input_path in Path(self.post_dir).iterdir():
-            post_md_input_path = Path(self.post_md_dir) / "known-good" / post_input_path.relative_to(self.post_dir).with_suffix(".md")
-            if not post_md_input_path.exists():
-                post_md_input_path = Path(self.post_md_dir) / post_input_path.relative_to(self.post_dir).with_suffix(".md")
-
-            self.add_post(Post(frontmatter.load(post_input_path), self, frontmatter.load(post_md_input_path)))
+            fm = frontmatter.load(post_input_path)
+            comments = self.load_comments(post_input_path.stem)
+            assert fm["has-comments"] == (comments is not None)
+            self.add_post(Post(fm, self, comments))
 
     def add_post(self, post):
         self._posts.append(post)
