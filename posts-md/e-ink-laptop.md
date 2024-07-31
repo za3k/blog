@@ -4,7 +4,8 @@ categories:
 - Non-Technical
 - Technical
 date: 2022-10-12 15:45:27-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - eink

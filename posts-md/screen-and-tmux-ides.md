@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2015-03-12 19:09:37-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - command-line

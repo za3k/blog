@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2020-05-12 14:00:28-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - immutable

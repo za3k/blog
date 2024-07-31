@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2021-05-26 13:02:35-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - crypto

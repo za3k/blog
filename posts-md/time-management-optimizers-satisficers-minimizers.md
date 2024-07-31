@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2015-11-02 18:26:22-07:00
-markup: html
+has-comments: true
+markup: markdown
 source: wordpress
 tags:
 - rationality

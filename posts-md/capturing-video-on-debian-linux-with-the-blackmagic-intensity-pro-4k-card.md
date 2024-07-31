@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2019-08-09 00:49:39-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - blackmagic

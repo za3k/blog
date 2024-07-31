@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2023-11-04 15:58:18-07:00
-markup: html
+has-comments: true
+markup: markdown
 source: wordpress
 tags:
 - furniture

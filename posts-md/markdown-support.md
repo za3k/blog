@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2015-03-13 11:15:07-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - git

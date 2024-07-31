@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2023-11-22 21:15:14-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - circuits

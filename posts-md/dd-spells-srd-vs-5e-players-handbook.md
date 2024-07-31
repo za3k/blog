@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2023-03-18 15:23:11-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - dungeons and dragons

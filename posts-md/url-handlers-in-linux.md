@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2024-06-08 19:46:00-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - linux

@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2022-08-10 10:03:17-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - self-improvement

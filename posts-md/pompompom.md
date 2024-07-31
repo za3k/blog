@@ -4,7 +4,8 @@ categories:
 - Non-Technical
 - Technical
 date: 2024-05-11 11:49:13-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - programming

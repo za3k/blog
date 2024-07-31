@@ -4,7 +4,8 @@ categories:
 - Non-Technical
 - Technical
 date: 2022-11-30 16:44:44-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - art

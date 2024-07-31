@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2020-05-15 16:31:18-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - announcements

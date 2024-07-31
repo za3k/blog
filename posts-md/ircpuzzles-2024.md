@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2024-04-01 06:21:20-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - irc

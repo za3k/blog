@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2023-11-10 19:24:36-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - hack-a-day

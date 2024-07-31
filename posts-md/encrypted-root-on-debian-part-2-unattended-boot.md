@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2021-06-11 17:50:31-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - debian

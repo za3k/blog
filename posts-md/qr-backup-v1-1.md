@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2022-09-22 16:38:08-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - announcements

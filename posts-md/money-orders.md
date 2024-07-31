@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2014-12-01 12:19:47-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - finance

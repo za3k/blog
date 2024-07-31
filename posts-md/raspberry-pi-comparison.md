@@ -4,7 +4,8 @@ categories:
 - Non-Technical
 - Technical
 date: 2021-08-07 17:59:35-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - raspberry pi

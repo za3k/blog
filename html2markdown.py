@@ -24,17 +24,29 @@ class Post():
         return result.stdout.decode("utf8")
 
     def convert(self):
-        self.data["content"] = self.html2markdown(self.data["content"].split("<!-- comments -->")[0])
+        parts = self.data["content"].split("<!-- comments -->")
+        self.data["content"] = self.html2markdown(parts[0])
+        self.data["markup"] = "markdown"
+        self.comments = ""
+        if len(parts) >= 1:
+            self.comments = parts[1]
+        self.data["has-comments"] = (self.comments.strip() != "")
 
-    def save(self, target_dir):
+    def save(self, target_dir, comment_dir):
         target_dir.mkdir(parents=True, exist_ok=True)
         target_path = target_dir / (self.stem + ".md")
         frontmatter.save(target_path, self.data)
 
+        if self.data["has-comments"]:
+            comment_path = comment_dir / (self.stem + ".html")
+            with open(comment_path, "w") as f:
+                f.write(self.comments)
+
 class Converter():
-    def __init__(self, from_, to):
+    def __init__(self, from_, to, comment_dir):
         self.from_ = from_
         self.to = to
+        self.comment_dir = comment_dir
 
     def posts(self):
         for post in Path(self.from_).iterdir():
@@ -43,8 +55,8 @@ class Converter():
     def convert_all(self):
         for post in self.posts():
             post.convert()
-            post.save(Path(self.to))
+            post.save(Path(self.to), Path(self.comment_dir))
 
 if __name__ == "__main__":
-    converter = Converter("posts-html", "posts-md")
+    converter = Converter("posts-html", "posts-md", "posts-comments")
     converter.convert_all()

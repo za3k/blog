@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2021-06-06 00:27:03-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - za3k.com

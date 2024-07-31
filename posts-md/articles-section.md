@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2022-07-06 11:26:32-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - blog

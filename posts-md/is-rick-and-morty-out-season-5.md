@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2021-05-31 20:20:37-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - isitoutyet

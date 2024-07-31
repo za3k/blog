@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2024-06-05 10:36:45-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - zorchpad

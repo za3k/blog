@@ -4,7 +4,8 @@ categories:
 - Non-Technical
 - Technical
 date: 2023-01-09 11:30:38-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - archiving

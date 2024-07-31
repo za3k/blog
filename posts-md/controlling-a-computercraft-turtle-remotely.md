@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2015-10-18 18:27:48-07:00
-markup: html
+has-comments: true
+markup: markdown
 source: wordpress
 tags:
 - computercraft

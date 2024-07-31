@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2023-04-27 14:50:28-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - first aid

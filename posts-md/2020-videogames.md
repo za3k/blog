@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2021-02-05 00:30:43-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - games

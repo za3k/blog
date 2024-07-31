@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2020-11-20 17:41:32-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - timelog

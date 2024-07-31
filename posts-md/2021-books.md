@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2022-01-31 14:13:12-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - book review

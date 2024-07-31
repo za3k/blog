@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2015-06-28 17:07:34-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - review

@@ -4,7 +4,8 @@ categories:
 - Non-Technical
 - Technical
 date: 2024-05-20 21:09:34-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - electronics

@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2023-05-08 17:41:01-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags: []
 title: Good Time Estimation

@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2022-07-02 23:01:41-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - finances

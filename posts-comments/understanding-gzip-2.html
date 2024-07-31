@@ -1,0 +1,610 @@
+
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-4739">
+<div id="comment-4739">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4739">
+			July 23, 2021 at 1:47 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>“Now we assign a binary codewords of length N, to each length N in the list.<br>
+1:1100,2:0,4:1101,16:1110,17:1111,18:10”</br></p>
+<p>There’s no explanation  as to where you pulled these bits from, I understand the number of bits comes from the aforementioned 414442 pulled out prior to this but I’ve seen nothing that explains how you pulled out the bit values for each of these code words</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4739" data-commentid="4739" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4739#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-4740">
+<div id="comment-4740">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4740">
+			July 23, 2021 at 2:04 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>This is what “Aside: Storing Prefix-Free Codewords as a List of Lengths” is about. The algorithm is given in full in RFC 1952 if you’re interested. Basically, the code words are assigned starting from 0 (or 00, 000, etc) and counting up. As each code is assigned, anything with that code as a prefix becomes unavailable. They are assigned first from shortest to longest, and in the case of ties from leftmost in the list to rightmost in the list.</p>
+<p>So first we assign 0 to the length-1 codeword (0 is lower than 1), then we assign the length-2 codeword 10 (the lowest length-2 code that doesn’t have a prefix 0), and finally we assign the length-4 codewords from left to right (1100, 1101, 1110, 1111 don’t have a prefix of 0 or 10 — they are the lowest and only codewords without one of those prefixes).</p>
+<p>Thanks for the comment, it makes me happy to know anyone is reading this, and it’s very helpful to know what’s unclear in my writeup. I’d love to make it as good as possible.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-4740" data-commentid="4740" data-postid="668" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4740#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment even depth-3" id="li-comment-4741">
+<div id="comment-4741">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4741">
+			July 23, 2021 at 3:23 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>I think I get it now, as soon as I resolve some compile errors I’m gonna try this:</p>
+<p>“`<br>
+			while ( cur_leng &lt; max_leng )<br>
+			{<br>
+				for ( uint j = 0; j leng &gt; cur_leng )<br>
+						continue;</br></br></br></br></p>
+<p>					word-&gt;code = code;</p>
+<p>					code++;<br>
+				}</br></p>
+<p>				while ( !(code &gt;&gt; cur_leng) )<br>
+					++code;</br></p>
+<p>				++cur_leng;<br>
+			}<br>
+“`</br></br></p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4741" data-commentid="4741" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4741#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-4742">
+<div id="comment-4742">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4742">
+			July 25, 2021 at 12:06 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Took me a while to understand that I was supposed to be building the tree at this point (although this method compared to what I though of and implemented prior to this is inefficient both in space and speed, also terribly um-intuitive). I’m having trouble understanding exactly how to extract some literals you’ve mentioned:</p>
+<p>“Byte 18-19: 0000001 10 0110101. Copy “0” code length 11-138 times<br>
+0b1010110=86, plus 11 is 97. Literals 0-96 are not present.<br>
+Byte 20: 1100 0101: Literal 1. Literal 97 (‘a’) has a codeword of length 1.<br>
+Byte 20: 1100 0 101: Literal 2. Number 98 (‘b’) has a codeword of length 2.”</br></br></br></p>
+<p>At first I though to get the literals I was supposed to add the code list position to the copy count but then I saw this after:</p>
+<p>“Byte 20-21: 11000 10 1111111 10. Copy “0” code length 11-138 times. 0b1111111=127, plus 11 is 138. Literals 99-236 are not present.<br/>
+Byte 21-22: 111111 10 0001000 1. Copy “0” code length 11-138 times. 0b0001000=8, plus 11 is 19. Literals 237-255 are not present”</p>
+<p>Which doesn’t follow that pattern, how do you determine the literals range?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4742" data-commentid="4742" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4742#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-4743">
+<div id="comment-4743">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4743">
+			July 25, 2021 at 12:27 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>I’m glad this was helpful, but you should really go read RFC 1951 if you’re going to build a decoder. This isn’t meant to be a stand-alone guide.</p>
+<p>I’m pretty lost trying to follow this comment, sorry. To clarify, for the “dynamic” compression, you first extract the CODING TABLE for the literals (the step you’re talking about). Then, you use the coding table to decompress the actual stream of content. It’s a two-step process, which is why it’s so complex.</p>
+<p>The key point I suspect you’re missed was: “Let’s read 267 numbers: the lengths of the codeword for each row.” These numbers are the length of the code for each literal in order (all of them, not just some of them). A length of 0 means “not present”.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-4743" data-commentid="4743" data-postid="668" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4743#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment odd alt depth-3" id="li-comment-4744">
+<div id="comment-4744">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4744">
+			July 25, 2021 at 1:41 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Was gonna say I already had the code table but when it printed it seems the codes got corrupted, I’ll have to get back to you after fixing it. Anyways I find “guides” that don’t use real examples as this one does to be confusing sometimes, usually where it matters, that’s why I was consulting you who provided those key examples, I got a heck of a lot further with your guide than any other I’ve tried following which didn’t give the byte by byte, bit by bit example.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4744" data-commentid="4744" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4744#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment even depth-4" id="li-comment-4745">
+<div id="comment-4745">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4745">
+			July 25, 2021 at 1:50 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Turned out I was just printing the wrong value, here’s my current output:</p>
+<p>`<br/>
+./a.out aba.gz<br/>
+path = ‘aba.gz’<br/>
+PrintStreamDetails( 0x7ffd2cf70d80 ): ptr = 0x556653fbc480, pos = 0, num = 0, max = 328, fed = 0<br/>
+PrintBytes( 0x556653fbc480, 41, 16 )<br/>
+1F 8B  0  0  0  0  0  0  0  3 1D C6 49  1  0  0<br/>
+40 C0 AC A3 7F 88 3D 3C 20 2A 97 9D 37 5E 1D  C<br/>
+29 34 94 23  0  0  0<br/>
+PrintStreamDetails( 0x7ffd2cf70d80 ): ptr = 0x556653fbc480, pos = 136, num = 80, max = 328, fed = 56<br/>
+gzip.magic = 1F8B, gzip.format =  0, gzip.flags =  0, gzip.mtime =        0, zlib.xflags =        0, zlib.system =        3<br/>
+gzip.flag_TEXT = false, gzip.flag_HCRC = false, gzip.flag_MORE = false, gzip.flag_NAME = false, gzip.flag_NOTE = false, gzip.flag_RESERVED = 0<br/>
+PrintStreamDetails( 0x7ffd2cf70d80 ): ptr = 0x556653fbc480, pos = 136, num = 80, max = 328, fed = 56<br/>
+last = true, type = 2<br/>
+lengc = 260, distc = 7, codec = 18, left = 60<br/>
+pos = 212, max = 328, count = 267<br/>
+left = 61, byte = 18, bit = 7<br/>
+Code Table:<br/>
+_list[ 0]: from =  1, more = 0, leng = 4, copy =   0, code = 1100<br/>
+_list[ 1]: from =  2, more = 0, leng = 1, copy =   0, code = 0<br/>
+_list[ 2]: from =  4, more = 0, leng = 4, copy =   0, code = 1101<br/>
+_list[ 3]: from = 16, more = 2, leng = 4, copy =   3, code = 1110<br/>
+_list[ 4]: from = 17, more = 3, leng = 4, copy =   3, code = 1111<br/>
+_list[ 5]: from = 18, more = 7, leng = 2, copy =  11, code = 10<br/>
+i = 0010 j = 5, from = 18, copy = 97<br/>
+Expecting character ‘a’<br/>
+Expecting character ‘b’<br/>
+i = 0010 j = 5, from = 18, copy = 138<br/>
+i = 0010 j = 5, from = 18, copy = 19<br/>
+Expecting character ”<br/>
+i = 1110 j = 3, from = 16, copy = 3<br/>
+Expecting character ”<br/>
+i = 1111 j = 4, from = 17, copy = 3<br/>
+Expecting character ”<br/>
+Expecting character ”<br/>
+Expecting character ”<br/>
+PrintBytes( 0x556653fbf4a0, 0, 16 )<br/>
+`</p>
+<p>And here’s the currently unfixed loop producing the bottom part of the output (also where the interpretation ends atm)</p>
+<p>`<br/>
+/* Should be building a tree here. */<br/>
+			while ( num &lt; count &amp;&amp; stream.num &lt; stream.max )<br/>
+			{<br/>
+				CODEWORD *word = NULL;<br/>
+				uint j = 0;</p>
+<p>				for ( cur_leng = 1; cur_leng &lt;= max_leng; ++cur_leng )<br/>
+				{<br/>
+					i = RevBits( CopyStreamBits( &amp;stream, cur_leng, false ), cur_leng );</p>
+<p>					for ( j = 0; j leng == cur_leng &amp;&amp; word-&gt;code == i )<br/>
+						{<br/>
+							IncStreamCount( &amp;stream, cur_leng );<br/>
+							break;<br/>
+						}<br/>
+					}</p>
+<p>					if ( j  max_leng )<br/>
+				{<br/>
+					printf<br/>
+					(<br/>
+						“i = %u, j = %u, list.used = %u, cur_leng = %u\n”,<br/>
+						i, j, list.used, cur_leng<br/>
+					);<br/>
+					return Return( ret, EINVAL );<br/>
+				}</p>
+<p>				size = CopyStreamBits( &amp;stream, word-&gt;more, true );</p>
+<p>				if ( word-&gt;from &gt;= 16 )<br/>
+				{<br/>
+					printf( “i = ” );<br/>
+					SeeBits( &amp;i, max_leng );<br/>
+					printf<br/>
+					(<br/>
+						” j = %u, from = %2u, copy = %u\n”,<br/>
+						j, word-&gt;from, (uint)(size + word-&gt;copy)<br/>
+					);<br/>
+					num += min_literal_code = size + word-&gt;copy;<br/>
+				}<br/>
+				else<br/>
+				{<br/>
+					int c = (int)(min_literal_code + j);<br/>
+					printf( “Expecting character ‘%c’\n”, c );<br/>
+					symbol = symbols + num;<br/>
+					symbol-&gt;sym = (char)c;<br/>
+					symbol-&gt;len = j;<br/>
+					++num;<br/>
+				}<br/>
+			}<br/>
+`</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4745" data-commentid="4745" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4745#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment odd alt depth-5" id="li-comment-4747">
+<div id="comment-4747">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4747">
+			July 25, 2021 at 3:32 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Never min, I think I know where the literals are coming from now, I did this:</p>
+<p><code><br/>
+printf( "Expecting character '%c', ", c );<br/>
+printf( "num as a character = '%c'\n", num );<br/>
+</code></p>
+<p>To see if num lined up, since it did I’m guessing those ranges where all the wasted leaves/branches of the huffman tree.</p>
+</div>
+<div class="reply">
+</div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-4756">
+<div id="comment-4756">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4756">
+			July 26, 2021 at 7:46 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>I think I still misunderstood something somewhere, I’ve done a detailed post on the section I think I’ve mis-interpreted here:</p>
+<p><a href="https://cboard.cprogramming.com/c-programming/180462-increment-gone-wrong.html#post1302477" rel="nofollow ugc">https://cboard.cprogramming.com/c-programming/180462-increment-gone-wrong.html#post1302477</a></p>
+<p>The forum there is better able to handle pre-formatted code than this comment system so please take a look and tell me if you think I’ve mis-interpreted something also, and if so what you think is being mis-interpreted, in mean time I’m going to try and clean up my code so I can upload to gitlab so that you can a clearer idea of where I’m at and perhaps help me get to the last part, converting huffman codes to original values</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4756" data-commentid="4756" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4756#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-4757">
+<div id="comment-4757">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4757">
+			July 26, 2021 at 8:54 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Sorry, I don’t really want to help someone else debug code or output. I’d suggest following the links at the start of the blog article. Check out ‘infgen’ in particular.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-4757" data-commentid="4757" data-postid="668" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4757#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment even depth-3" id="li-comment-4758">
+<div id="comment-4758">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4758">
+			July 26, 2021 at 9:34 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>I originally gave up on infgen due to an access rights error when I tried installing via the package manager, the server refused to let me download it, then after your last comment I though to look for it’s github page, that one worked out fine, judging by it’s output the only thing I’ve got wrong are the length values for the distance symbols/codes/whatever you want to call them, where do you get that 2 from? same applies to the bit code along side them, where does that come from, is it just an iterated number for each valid symbol?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4758" data-commentid="4758" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4758#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-4" id="li-comment-4759">
+<div id="comment-4759">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4759">
+			July 26, 2021 at 10:56 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>You read 267=260+7 codeword-lengths (the numbers 260 and 7 are given by bytes 10-12 in this example).</p>
+<p>The first 260 codeword-lengths are used for one huffman table: 256 literals (always 256), then 1 “end of block” (always 2), then the remaining 3 are lengths.</p>
+<p>The next 7 codeword-lengths are used to generate a second huffman table, for distances. The code generation works exactly the same as for the first table.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-4759" data-commentid="4759" data-postid="668" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4759#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment even depth-5" id="li-comment-4760">
+<div id="comment-4760">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4760">
+			July 26, 2021 at 11:50 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Even if I use the same method of code generation as before I stiil would need to know where you got those “2”s from in the table immediately following this:</p>
+<p>“We read 7 numbers, that’s the whole distances table. Assign the “standard” binary codewords to generate the following table:”</p>
+<p>Because the previous method used that to determine what symbols to ignore until the code length increases, more specifically I had a “while ( cur_leng &lt; max_leng )" loop and a sub loop that went looking for symbols expecting cur_leng codes and assigning them that way before using those same codes  in another sub loop to decide if the next code should be increased further. Without knowing where those code lengths for the distance came from I can't progress.</p>
+<p>Thinking about it now I don't even have the codes for the length symbols, I just have the symbols. If it was supposed to be auto generated then I could understand the codes for the length symbols but I then don't understand the codes for the distance codes as they don't follow the huffman principle of no codes that can be misinterpreted.</p>
+</div>
+<div class="reply">
+</div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-5" id="li-comment-4762">
+<div id="comment-4762">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4762">
+			July 26, 2021 at 12:23 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Re-read above the table. The “bits” column is from bytes 24-25.</p>
+</div>
+<div class="reply">
+</div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-4763">
+<div id="comment-4763">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4763">
+			July 26, 2021 at 12:43 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>No option to reply so I’ll do it here instead, I still don’t see where the 2 came from, is that a minimum length or from another hard code table? So far I can only see the bits given as a set/unset symbol &amp; code flag, there’s no clear source for the length &amp; extra bits values</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4763" data-commentid="4763" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4763#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-4764">
+<div id="comment-4764">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4764">
+			July 26, 2021 at 5:54 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Finally found where you got the 2 from:</p>
+<p><a href="https://www.w3.org/Graphics/PNG/RFC-1951" rel="nofollow ugc">https://www.w3.org/Graphics/PNG/RFC-1951</a></p>
+<p>” HDIST + 1 code lengths for the distance alphabet,</p>
+<p>      encoded using the code length Huffman code<br/>
+”</p>
+<p>That was far too easily over looked, now I at least can generate the codes, though I think I will add a specialised handler and object to minimize code now that it’s getting more complicated than need be.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4764" data-commentid="4764" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4764#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-4773">
+<div id="comment-4773">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4773">
+			July 31, 2021 at 11:29 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>I’ve clearly misunderstood something somewhere, could you take a look at the code I outlined in the below post please and see if you can spot what I’m misunderstanding, up until the point I have to lookup previously deflated values I’ve read the bits correctly but I’ve obviously not understood all the implied information correctly, I would post the code here but as you’ve seen these comments don’t support maintaining the code formatting resulting in a more confusing than necessary code.</p>
+<p><a href="https://cboard.cprogramming.com/c-programming/180462-increment-gone-wrong-post1302541.html#post1302541" rel="nofollow ugc">https://cboard.cprogramming.com/c-programming/180462-increment-gone-wrong-post1302541.html#post1302541</a></p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4773" data-commentid="4773" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4773#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-4786">
+<div id="comment-4786">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4786">
+			August 2, 2021 at 5:36 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>You’ll be glad to know I finally got the algorithm right, have not looked at any source code from zlib or other projects so I’m free to slap MIT License on it the whole way through once I convert it to a cleaner version of itself. The unclean version is here for anyone’s reference.</p>
+<p><a href="https://gitlab.com/awsdert/uc-evidence/-/tree/9441a73e59834456c41c1049036fc60925b705a0" rel="nofollow ugc">https://gitlab.com/awsdert/uc-evidence/-/tree/9441a73e59834456c41c1049036fc60925b705a0</a></p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Lee" class="comment-reply-link" data-belowelement="comment-4786" data-commentid="4786" data-postid="668" data-replyto="Reply to Lee" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=4786#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-5413">
+<div id="comment-5413">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5413">
+			December 21, 2021 at 1:00 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>From the Fixed huffman coding section:</p>
+<p>“Byte 10-11: 110 10011000 10010: A literal. 10011000 (152) minus 00110000 (48) is 104. 104 in ASCII is ‘h’.”</p>
+<p>Why are you subtracting 48?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to neubert" class="comment-reply-link" data-belowelement="comment-5413" data-commentid="5413" data-postid="668" data-replyto="Reply to neubert" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=5413#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-5414">
+<div id="comment-5414">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5414">
+			December 21, 2021 at 1:11 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>The binary range (given above) is 00110000-10111111. Rather than decoding the binary value, we decode the offset within that range.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-5414" data-commentid="5414" data-postid="668" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=5414#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-5432">
+<div id="comment-5432">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5432">
+			December 22, 2021 at 7:27 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>“Now we assign a binary codewords of length N, to each length N in the list.<br/>
+1:1100,2:0,4:1101,16:1110,17:1111,18:10”</p>
+<p>Could you elaborate on this? I thought I could get the same thing by using huffman encoding, using the code length as the frequency, but when I do that I get this:</p>
+<p>1:111,2:1100,4:00,16:10,17:01,18:1101</p>
+<p>Thanks!</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to neubert" class="comment-reply-link" data-belowelement="comment-5432" data-commentid="5432" data-postid="668" data-replyto="Reply to neubert" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=5432#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment odd alt depth-2" id="li-comment-5435">
+<div id="comment-5435">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5435">
+			December 22, 2021 at 10:49 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>I figured it out. It’s this bit from RFC1951:</p>
+<p><code><br/>
+         1)  Count the number of codes for each code length.  Let<br/>
+             bl_count[N] be the number of codes of length N, N &gt;= 1.</code></p>
+<p>         2)  Find the numerical value of the smallest code for each<br/>
+             code length:</p>
+<p>                code = 0;<br/>
+                bl_count[0] = 0;<br/>
+                for (bits = 1; bits &lt;= MAX_BITS; bits++) {<br/>
+                    code = (code + bl_count[bits-1]) &lt;&lt; 1;<br/>
+                    next_code[bits] = code;<br/>
+                }</p>
+<p>         3)  Assign numerical values to all codes, using consecutive<br/>
+             values for all codes of the same length with the base<br/>
+             values determined at step 2. Codes that are never used<br/>
+             (which have a bit length of zero) must not be assigned a<br/>
+             value.</p>
+<p>                for (n = 0;  n &lt;= max_code; n++) {<br/>
+                    len = tree[n].Len;<br/>
+                    if (len != 0) {<br/>
+                        tree[n].Code = next_code[len];<br/>
+                        next_code[len]++;<br/>
+                    }<br/>
+</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to neubert" class="comment-reply-link" data-belowelement="comment-5435" data-commentid="5435" data-postid="668" data-replyto="Reply to neubert" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=5435#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-5441">
+<div id="comment-5441">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5441">
+			December 24, 2021 at 10:38 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>““Literals” 257-259 (all lengths) have codewords of length 4” Is this a hard and fast rule that’s always true regardless of the data or is this true _just_ for the compressed string in this example?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to neubert" class="comment-reply-link" data-belowelement="comment-5441" data-commentid="5441" data-postid="668" data-replyto="Reply to neubert" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=5441#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-5444">
+<div id="comment-5444">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5444">
+			December 25, 2021 at 2:25 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Just for the example. If it was always true, we wouldn’t have to encode it.</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-5444" data-commentid="5444" data-postid="668" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=5444#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment even thread-even depth-1" id="li-comment-5449">
+<div id="comment-5449">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5449">
+			December 27, 2021 at 12:54 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>“Byte 27: 1110 10 0 1. Length 4. Whenever we read a length, we read a distance. The distance is a range, 7-8. The extra bit we read is 0b0=0, plus 7 is Distance 7. So we look back 7 bytes and copy 4. The new output is: baabbbabaab”</p>
+<p>I think there should be an extra a before the baabbbabaab</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to neubert" class="comment-reply-link" data-belowelement="comment-5449" data-commentid="5449" data-postid="668" data-replyto="Reply to neubert" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=5449#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-8298">
+<div id="comment-8298">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/83113fa84f7bb884648d75b769d23a6c?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/83113fa84f7bb884648d75b769d23a6c?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">inco</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-8298">
+			June 22, 2022 at 1:56 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>I’ve been reading quite a bit on DEFLATE in png files and I think this is the exact level of depth i needed to crack this whole mess. Thanks so much for writing this, sources like RFC1951 talk more about abstraction and general rules but to have a few examples lined out here its  EXTREMELY useful. Thanks again</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to inco" class="comment-reply-link" data-belowelement="comment-8298" data-commentid="8298" data-postid="668" data-replyto="Reply to inco" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=8298#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment even depth-2" id="li-comment-8300">
+<div id="comment-8300">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/83113fa84f7bb884648d75b769d23a6c?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/83113fa84f7bb884648d75b769d23a6c?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">inco</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-8300">
+			June 22, 2022 at 3:38 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Small question about reading bits: for Huffman codes of  the code itself defines a length range and then the extra bits are reversed so that they can be interpreted. But should I reverse the distance or the distance extra bits as well?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to inco" class="comment-reply-link" data-belowelement="comment-8300" data-commentid="8300" data-postid="668" data-replyto="Reply to inco" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=8300#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+<li class="comment odd alt thread-even depth-1" id="li-comment-11528">
+<div id="comment-11528">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7b25d5e576e752e12d04d663247f0989?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7b25d5e576e752e12d04d663247f0989?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Ricardo</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-11528">
+			May 31, 2024 at 4:32 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Byte 31: 10 111000: Literal ‘b’<br/>
+Byte 31: 10 1110 00: Length 4, Distance 1. We look back 1 byte and copy 4. The new output is: bbbbb</p>
+<p>How can I understand the distance 1 and copy 4 symbols?<br/>
+Should I repeat the ‘b’ four times?</p>
+<p>What if the distance was 2 and copying 4 symbols?</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to Ricardo" class="comment-reply-link" data-belowelement="comment-11528" data-commentid="11528" data-postid="668" data-replyto="Reply to Ricardo" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=11528#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+<ul class="children">
+<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-11531">
+<div id="comment-11531">
+<div class="comment-author vcard">
+<img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
+</div><!-- .comment-author .vcard -->
+<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-11531">
+			May 31, 2024 at 5:23 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-body">
+<p>Distance is how far back you start. Copy is how many symbols you copy.<br/>
+You just blindly copy characters starting DISTANCE back, but since you’re appending to the string, you never run out of symbols to copy.</p>
+<p>If your string so far was “Wow, copying is really neat”, with distance 3 and copy 10 you would add: eateateate</p>
+</div>
+<div class="reply">
+<a aria-label="Reply to admin" class="comment-reply-link" data-belowelement="comment-11531" data-commentid="11531" data-postid="668" data-replyto="Reply to admin" data-respondelement="respond" href="https://blog.za3k.com/understanding-gzip-2/?replytocom=11531#respond" rel="nofollow">Reply</a> </div><!-- .reply -->
+</div><!-- #comment-##  -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol>

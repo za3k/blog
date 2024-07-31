@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2024-01-19 14:30:16-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - organization

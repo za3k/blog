@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2021-02-09 18:22:54-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - game design

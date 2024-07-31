@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2019-12-17 18:19:15-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - bash history

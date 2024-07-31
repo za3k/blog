@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2022-11-25 21:10:50-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - algorithms

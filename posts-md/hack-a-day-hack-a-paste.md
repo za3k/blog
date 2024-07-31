@@ -4,7 +4,8 @@ categories:
 - Non-Technical
 - Technical
 date: 2022-11-05 15:42:40-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - hack-a-day

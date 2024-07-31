@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2017-07-02 20:41:58-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - arch linux

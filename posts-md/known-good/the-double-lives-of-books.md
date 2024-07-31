@@ -4,7 +4,8 @@ categories:
 - Non-Technical
 - Technical
 date: 2014-11-21 19:20:29-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags: []
 title: The Double Lives of Books

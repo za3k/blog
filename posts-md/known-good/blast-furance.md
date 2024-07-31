@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2017-07-24 12:58:32-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - blast furnace

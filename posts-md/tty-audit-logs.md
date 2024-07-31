@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2022-08-18 20:14:48-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - archiving

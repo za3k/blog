@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2023-06-09 13:28:55-07:00
-markup: html
+has-comments: true
+markup: markdown
 source: wordpress
 tags:
 - hacks

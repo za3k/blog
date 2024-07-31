@@ -3,7 +3,8 @@ author: admin
 categories:
 - Technical
 date: 2015-04-13 17:46:31-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - boot

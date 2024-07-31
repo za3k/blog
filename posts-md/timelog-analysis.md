@@ -3,7 +3,8 @@ author: admin
 categories:
 - Non-Technical
 date: 2022-09-23 15:05:15-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - lifelogging

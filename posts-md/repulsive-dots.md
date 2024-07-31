@@ -4,7 +4,8 @@ categories:
 - Non-Technical
 - Technical
 date: 2024-06-25 13:33:31-07:00
-markup: html
+has-comments: false
+markup: markdown
 source: wordpress
 tags:
 - godot
