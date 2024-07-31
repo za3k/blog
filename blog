@@ -447,7 +447,10 @@ class Blog(PseudoMap):
 
     def load_posts(self):
         for post_input_path in Path(self.post_dir).iterdir():
-            post_md_input_path = Path(self.post_md_dir) / post_input_path.relative_to(self.post_dir).with_suffix(".md")
+            post_md_input_path = Path(self.post_md_dir) / "known-good" / post_input_path.relative_to(self.post_dir).with_suffix(".md")
+            if not post_md_input_path.exists():
+                post_md_input_path = Path(self.post_md_dir) / post_input_path.relative_to(self.post_dir).with_suffix(".md")
+
             self.add_post(Post(frontmatter.load(post_input_path), self, frontmatter.load(post_md_input_path)))
 
     def add_post(self, post):

@@ -1,5 +1,5 @@
 import markdown2
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString, Tag
 
 
 def post_process(soup):
@@ -35,7 +35,15 @@ def post_process(soup):
     for table in soup.find_all("table"):
         figure = soup.new_tag("figure")
         figure['class'] = "wp-block-table"
-        table.wrap(figure)
+        figure = table.wrap(figure)
+
+        # Look for a figcaption
+        n = figure.next_sibling
+        while isinstance(n, NavigableString):
+            n = n.next_sibling
+        if isinstance(n, Tag) and n.name == "figcaption":
+            n.extract()
+            figure.append(n)
 
     for video in soup.find_all("video"):
         figure = soup.new_tag("figure")
@@ -57,11 +65,6 @@ def post_process(soup):
         if parent.name == "p" and len(list(parent.children)) == 1:
             parent.unwrap()
 
-    #for p in soup.select("blockquote > p"):
-    #    if len(p.find_previous_siblings("p")) > 0: continue
-    #    p['style'] = "color:#222222;"
-    #for p in soup.select("li > p"):
-    #    p.unwrap()
     return soup
 
 def markdown2html(html):
