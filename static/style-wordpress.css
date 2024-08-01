@@ -4695,7 +4695,7 @@ hr {
 }
 
 .entry-content ul > li {
-	background: url(resources/images/bullet.png) left 10px no-repeat;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMi8wNy8xMXqJzycAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABTUlEQVQokXWSTW4aQRCFv+meaegZhl+JrbN2llaO4Ozj+BqOc7wg5BNEvgMSmtkhAdMDI5ruyoIEKRJ+Ui3qqV7p1U8iIgIgIogISikAQgicz2cAsiy78omISIyRqqp4f/9N27YAFEXBw8MXptMpMUastaRpShJjlNVqxWLxi1t4fPzKcDik1+sxGAxQIsJyucC55ma8vS2x1rLb7fDekyqlqKr6ZneApnFYa1mv10wmE9IL2Xwo+IfT6UQIgTTGiDE9NpvNzcLZbMbxeLzmynvP8/P3D2d4evpGXdcYY9BaowDu7z/z+voTa3Oaxv31nfPy8oO7u0845yjLEmMMSQhBDocDXdeR5zn9fh8Roes66rpmv98zHo+Zz+cURXE5XAiBtm3Zbrc45/DeA2CMoSxLRqMReZ6jtb4IAGKMeO+v20iSBK01WZb99xp/AFsZw9KxTe1UAAAAAElFTkSuQmCC') left 10px no-repeat;
 	padding-left: 20px;
 }
 
