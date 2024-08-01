@@ -439,8 +439,6 @@ class Blog(PseudoMap):
         return [
             Page("index", self),
             Page("feed", self, use_layout=False),
-            Page("links", self),
-            Page("deadlinks", self), # Must be last to avoid dead links
         ]
 
     @property
