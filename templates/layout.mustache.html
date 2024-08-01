@@ -21,12 +21,7 @@
     <div id="masthead">
         <div id="branding" role="banner">
             <div id="header-container">
-                <div>
-                    <div id="site-title">
-                        <span> <a href="{{web_root}}/" title="" rel="home"></a> </span>
-                    </div>
-                    <div id="site-description">blog of zachary "za3k" vance</div>
-                </div>
+                <div id="site-description">blog of zachary "za3k" vance</div>
                 <div class="socials" id="sheader">
                     <a target="_blank" rel="nofollow" href="{{feed_url}}" class="socialicons social-RSS" title="RSS">
                         <img alt="RSS" src="{{web_root}}/resources/images/RSS.png">
@@ -35,9 +30,9 @@
                         <img alt="Twitter" src="{{web_root}}/resources/images/Twitter.png">
                     </a>
                 </div>
-            </div> <!-- #header-container -->
+            </div>
             <div style="clear:both;"></div>
-        </div><!-- #branding -->
+        </div>
         <a id="nav-toggle"><span>&nbsp; Menu</span></a>
         <nav id="access" class="" role="navigation">
             <div class="menu">
@@ -46,10 +41,10 @@
                     <li id="menu-item-256" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-256"><a href="{{web_root}}/category/technical.html">Technical</a></li>
                 </ul>
             </div>
-        </nav><!-- #access -->
-    </div><!-- #masthead -->
+        </nav>
+    </div>
 	<div style="clear:both;"> </div>
-</header><!-- #header -->
+</header>
 
 <div id="main" class="main">
 	<div id="forbottom">
@@ -57,31 +52,29 @@
 		<section id="container">
 			<div id="content" role="main">
                 {{& content }}
-            </div><!-- #content -->
+            </div>
 			<div id="primary" class="widget-area" role="complementary">
-			<ul class="xoxo">
-				<li id="block-15" class="widget-container widget_block widget_text">
-                    <p><a href="https://za3k.com/blog">archive</a><br><a href="https://za3k.com">za3k.com</a></p>
-                </li>
-                <li id="block-2" class="widget-container widget_block widget_search">
-                    <iframe src="https://duckduckgo.com/search.html?width=142&site={{domain}}&prefill=Search%20blog" style="overflow:hidden;margin:0;padding:0;width:200px;height:40px;" frameborder="0"></iframe>
-                </li>
-                <li id="block-14" class="widget-container widget_block widget_tag_cloud">
-                    {{& tagcloud }}
-                </li>
-            </ul>
-            <ul class="xoxo"></ul>
-            </div><!-- #primary .widget-area -->
-        </section><!-- #container -->
+                <ul class="xoxo">
+                    <li id="block-15" class="widget-container widget_block widget_text">
+                        <p>
+                            <a href="https://za3k.com/blog">archive</a><br>
+                            <a href="https://za3k.com">za3k.com</a>
+                        </p>
+                    </li>
+                    <li id="block-2" class="widget-container widget_block widget_search">
+                        <iframe src="https://duckduckgo.com/search.html?width=142&site={{domain}}&prefill=Search%20blog" style="overflow:hidden;margin:0;padding:0;width:200px;height:40px;" frameborder="0"></iframe>
+                    </li>
+                    <li id="block-14" class="widget-container widget_block widget_tag_cloud">
+                        {{& tagcloud }}
+                    </li>
+                </ul>
+                <ul class="xoxo"></ul>
+            </div>
+        </section>
         <div style="clear:both;"></div>
-	</div> <!-- #forbottom -->
-</div><!-- #main -->
+	</div>
+</div>
 
 </div><!-- #wrapper -->
-
-<style id="core-block-supports-inline-css" type="text/css">
-.wp-block-gallery.wp-block-gallery-1{--wp--style--unstable-gallery-gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );gap:var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}
-</style>
-
 </body>
 </html>
