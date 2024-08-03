@@ -180,7 +180,7 @@ class Templatable(PseudoMap):
     @property
     def url(self):
         url_template = self.blog["{}_url".format(self.type)]
-        if url_template is None:
+        if url_template is None or self.blog.local:
             return self.blog.web_root + "/" + str(self.output_path.relative_to(Path(self.blog.destination)))
         else:
             return mustache.render(url_template, self.context)
@@ -308,7 +308,7 @@ class Tag(Templatable):
         super().__init__(blog)
         self.tag = tag
         self._posts = set()
-        self.slug = {"minecraft": "minecraft-2"}.get(tag, url_slug(tag))
+        self.slug = url_slug(tag)
 
     def add_post(self, post):
         self._posts.add(post)
@@ -560,6 +560,7 @@ if __name__ == "__main__":
         args.all = True
 
     blog = Blog(reload=args.reload)
+    blog.local = args.local
     if args.local:
         blog.web_root = "file://" + blog.destination
     if args.all:
