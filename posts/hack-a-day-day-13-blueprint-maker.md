@@ -18,7 +18,7 @@ Hack-A-Day is a challenge to try and finish 30 projects in 30 days in November.
 
 Today I tried to write a tool to make a floorplan. You can try it [here](https://za3k.github.io/ha3k-13-blueprint/). As usual the source code is [on github](https://github.com/za3k/ha3k-13-blueprint).
 
-[![](../wp-content/uploads/2023/11/screenshot-3.png)](https://za3k.github.io/ha3k-13-blueprint/)
+[![](/wp-content/uploads/2023/11/screenshot-3.png)](https://za3k.github.io/ha3k-13-blueprint/)
 
 This was an ambitious project for one day, and I didn’t finish everything I wanted. My original goal was to support
 

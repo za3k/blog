@@ -19,12 +19,12 @@ I made a small game called Doodlemoji Alchemy, together with my friend Jennifer,
 
 You can play it [here](https://za3k.github.io/ha3k-07-doodle-alchemy/).
 
-[![](../wp-content/uploads/2023/11/equation.png)](https://za3k.github.io/ha3k-07-doodle-alchemy/)
+[![](/wp-content/uploads/2023/11/equation.png)](https://za3k.github.io/ha3k-07-doodle-alchemy/)
 
 You combine elements to make something new. Sometimes you get an old element:
 
-[![](../wp-content/uploads/2023/11/choice.png)](https://za3k.github.io/ha3k-07-doodle-alchemy/)
+[![](/wp-content/uploads/2023/11/choice.png)](https://za3k.github.io/ha3k-07-doodle-alchemy/)
 
 Sometimes you discover a new one!
 
-[![](../wp-content/uploads/2023/11/main.png)](https://za3k.github.io/ha3k-07-doodle-alchemy/)
+[![](/wp-content/uploads/2023/11/main.png)](https://za3k.github.io/ha3k-07-doodle-alchemy/)

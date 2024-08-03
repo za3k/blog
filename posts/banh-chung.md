@@ -17,15 +17,15 @@ A few friends and I first experienced this traditional Vietnamese Tết (Lunar N
 
 I followed the recipe from “[Enjoy a simple life](https://enjoyasimplelife.blogspot.com/2012/01/vegetarian-sticky-rice-banh-chung-chay.html)“, but made a homemade cardboard mold as suggested by “[Takes Two Eggs](https://takestwoeggs.com/banh-chung/)“.
 
-[![](../wp-content/uploads/2024/02/fork-crop-1024x808.jpg)](../wp-content/uploads/2024/02/fork-crop.jpg)
+[![](/wp-content/uploads/2024/02/fork-crop-1024x808.jpg)](/wp-content/uploads/2024/02/fork-crop.jpg)
 
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
 
-[![](../wp-content/uploads/2024/02/foil-crop-1024x826.jpg)](../wp-content/uploads/2024/02/foil-crop.jpg)
+[![](/wp-content/uploads/2024/02/foil-crop-1024x826.jpg)](/wp-content/uploads/2024/02/foil-crop.jpg)
 
-[![](../wp-content/uploads/2024/02/leaves-crop-1004x1024.jpg)](../wp-content/uploads/2024/02/leaves-crop.jpg)
+[![](/wp-content/uploads/2024/02/leaves-crop-1004x1024.jpg)](/wp-content/uploads/2024/02/leaves-crop.jpg)
 
-[![](../wp-content/uploads/2024/02/unwrapped-crop-1024x851.jpg)](../wp-content/uploads/2024/02/unwrapped-crop.jpg)
+[![](/wp-content/uploads/2024/02/unwrapped-crop-1024x851.jpg)](/wp-content/uploads/2024/02/unwrapped-crop.jpg)
 
 </figure>
 

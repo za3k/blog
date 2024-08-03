@@ -18,6 +18,6 @@ It’s no longer november, but I’m still doing a project a day. It’s an all-
 
 Today’s project is [Hack-An-Uptime](https://tilde.za3k.com/hackaday/uptime/) ([demo](https://tilde.za3k.com/hackaday/uptime/), [source](https://github.com/za3k/day34_uptime)). It’s a simple experiment where you press a button every day.
 
-[![](../wp-content/uploads/2022/12/screenshot-2.png)](https://tilde.za3k.com/hackaday/uptime/)
+[![](/wp-content/uploads/2022/12/screenshot-2.png)](https://tilde.za3k.com/hackaday/uptime/)
 
 This was a very simple project. I’m curious what will happen with it.

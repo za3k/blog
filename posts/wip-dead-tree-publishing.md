@@ -23,10 +23,10 @@ I use a “back end” publisher who does all the actual printing, and the one I
 
 First you upload a PDF:
 
-[![caption:Uploading a book](../wp-content/uploads/2015/03/2-300x90.jpg)](../wp-content/uploads/2015/03/1.jpg)
+[![caption:Uploading a book](/wp-content/uploads/2015/03/2-300x90.jpg)](/wp-content/uploads/2015/03/1.jpg)
 
 Then I tell you what your ordering options are (hardcover, softcover, color), and what they cost. I’m also supposed to ask you your address to ship the book, and for you to pay for it,  but those aren’t done yet.
 
-[![caption:Book-buying options](../wp-content/uploads/2015/03/1-300x254.jpg)](../wp-content/uploads/2015/03/1.jpg)
+[![caption:Book-buying options](/wp-content/uploads/2015/03/1-300x254.jpg)](/wp-content/uploads/2015/03/1.jpg)
 
 Hopefully in the next day or two I’ll have something up and running so people can order books, and then make it gradually nicer! I’m very excited about this website existing.

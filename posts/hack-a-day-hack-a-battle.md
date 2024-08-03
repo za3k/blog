@@ -23,7 +23,7 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Yesterday’s project was [Hack-A-Battle](https://tilde.za3k.com/hackaday/battle/) ([demo](https://tilde.za3k.com/hackaday/battle/), [source](https://github.com/za3k/day21_battle)). It’s two dueling music visualizers (sound warning!). Red vs blue. As each hits the other with bullets, they lose heath. As a band takes damage, it gets dimmer and quieter. Eventually one band will win out and be the only one playing.
 
-[![](../wp-content/uploads/2022/11/screenshot-18-1024x222.png)](https://tilde.za3k.com/hackaday/battle/)
+[![](/wp-content/uploads/2022/11/screenshot-18-1024x222.png)](https://tilde.za3k.com/hackaday/battle/)
 
 I thought this was a cool idea, but I’m not really happy with the implementation
 

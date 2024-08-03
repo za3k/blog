@@ -15,15 +15,15 @@ wordpress_slug: a-mystery-in-the-text-editor
 ---
 Hello, Linux terminal users! Let me present you a simple feature you’ve all seen, but might not have noticed.
 
-[![](../wp-content/uploads/2024/05/01-mystery.png)](../wp-content/uploads/2024/05/01-mystery.png)
+[![](/wp-content/uploads/2024/05/01-mystery.png)](/wp-content/uploads/2024/05/01-mystery.png)
 
 You’re on the terminal, and you open a text editor of chice–nano, vim, emacs, acme etc.
 
-[![](../wp-content/uploads/2024/05/02-mystery.png)](../wp-content/uploads/2024/05/02-mystery.png)
+[![](/wp-content/uploads/2024/05/02-mystery.png)](/wp-content/uploads/2024/05/02-mystery.png)
 
 After you edit for a bit, you close the editor.
 
-[![](../wp-content/uploads/2024/05/03-mystery.png)](../wp-content/uploads/2024/05/03-mystery.png)
+[![](/wp-content/uploads/2024/05/03-mystery.png)](/wp-content/uploads/2024/05/03-mystery.png)
 
 Now you’re back where you left off. My question is, *how?* How does nano remember what used to be on screen? How does it get restored? Is nano doing this, or bash?
 

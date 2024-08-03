@@ -36,7 +36,7 @@ A little travel. I went to Missouri to visit friends. I got to go to my friends�
 
 I read “The Art of Computer Programming” volumes 1 and 2. Donald Knuth sent me a check for finding a 0x1.2 bugs.
 
-[![](../wp-content/uploads/2023/04/san_serriffe-1024x375.jpg)](../wp-content/uploads/2023/04/san_serriffe-scaled.jpg)
+[![](/wp-content/uploads/2023/04/san_serriffe-1024x375.jpg)](/wp-content/uploads/2023/04/san_serriffe-scaled.jpg)
 
 I got a snakebite lip piercing.
 

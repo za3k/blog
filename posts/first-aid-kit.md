@@ -12,11 +12,11 @@ updated: 2023-05-02 14:28:51-07:00
 wordpress_id: 1016
 wordpress_slug: first-aid-kit
 ---
-[![](../wp-content/uploads/2023/04/PXL_20221014_050139562-crop-1024x713.jpg)](../wp-content/uploads/2023/04/PXL_20221014_050139562-crop-scaled.jpg)
+[![](/wp-content/uploads/2023/04/PXL_20221014_050139562-crop-1024x713.jpg)](/wp-content/uploads/2023/04/PXL_20221014_050139562-crop-scaled.jpg)
 
-[![](../wp-content/uploads/2023/04/PXL_20221014_050159341-crop-1024x720.jpg)](../wp-content/uploads/2023/04/PXL_20221014_050159341-crop-scaled.jpg)
+[![](/wp-content/uploads/2023/04/PXL_20221014_050159341-crop-1024x720.jpg)](/wp-content/uploads/2023/04/PXL_20221014_050159341-crop-scaled.jpg)
 
-[![](../wp-content/uploads/2023/04/PXL_20221014_050204922.MP-crop-1024x796.jpg)](../wp-content/uploads/2023/04/PXL_20221014_050204922.MP-crop.jpg)
+[![](/wp-content/uploads/2023/04/PXL_20221014_050204922.MP-crop-1024x796.jpg)](/wp-content/uploads/2023/04/PXL_20221014_050204922.MP-crop.jpg)
 
 ```
 Contents:

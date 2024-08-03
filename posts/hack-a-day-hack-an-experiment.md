@@ -19,6 +19,6 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project was [Hack-An-Experiment](https://tilde.za3k.com/hackaday/experiment/) ([demo](https://tilde.za3k.com/hackaday/experiment/), [source](https://github.com/za3k/day25_experiment)). It’s designed to present the basics of experimental algorithmics, while also getting me acquainted with d3.
 
-[![](../wp-content/uploads/2022/11/screenshot-22-1024x640.png)](https://tilde.za3k.com/hackaday/experiment/)
+[![](/wp-content/uploads/2022/11/screenshot-22-1024x640.png)](https://tilde.za3k.com/hackaday/experiment/)
 
 I have to say, I keep seeing d3 sold as a “graphing” library. And it’s definitely not. Maybe you could write one on top of it.

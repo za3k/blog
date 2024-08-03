@@ -20,4 +20,4 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Mandelbrot](https://tilde.za3k.com/hackaday/mandelbrot/) ([demo](https://tilde.za3k.com/hackaday/mandelbrot/), [source](https://github.com/za3k/day09_mandelbrot)). Interactively explore the fractal world of the Mandelbrot set.
 
-[![](../wp-content/uploads/2022/11/screenshot-8.png)](https://tilde.za3k.com/hackaday/mandelbrot/)
+[![](/wp-content/uploads/2022/11/screenshot-8.png)](https://tilde.za3k.com/hackaday/mandelbrot/)

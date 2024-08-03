@@ -23,7 +23,7 @@ wordpress_slug: multi-universe-rpg-toy
 -   No…
 -   No, and…
 
-[![alt:cube](../wp-content/uploads/2015/04/cube-300x298.jpg)](../wp-content/uploads/2015/04/cube.jpg)
+[![alt:cube](/wp-content/uploads/2015/04/cube-300x298.jpg)](/wp-content/uploads/2015/04/cube.jpg)
 
 Their example:
 

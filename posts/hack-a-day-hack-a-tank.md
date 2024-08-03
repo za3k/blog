@@ -21,4 +21,4 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Tank](https://tilde.za3k.com/hackaday/tank/) ([demo](https://tilde.za3k.com/hackaday/tank/), [source](https://github.com/za3k/day17_tank)). It’s a relaxing fishtank toy. Enjoy.
 
-[![](../wp-content/uploads/2022/11/screenshot-15.png)](../wp-content/uploads/2022/11/screenshot-15.png)
+[![](/wp-content/uploads/2022/11/screenshot-15.png)](/wp-content/uploads/2022/11/screenshot-15.png)

@@ -16,7 +16,7 @@ wordpress_slug: wip-dead-tree-publishing-4
 ---
 I consider Dead Tree Publishing to be **G**ood **E**nough at this point. It’s launched.
 
-[![caption:New site style, FAQ page](../wp-content/uploads/2015/04/2015-04-30-180400_1366x768.jpg)](../wp-content/uploads/2015/04/2015-04-30-180400_1366x768.jpg)
+[![caption:New site style, FAQ page](/wp-content/uploads/2015/04/2015-04-30-180400_1366x768.jpg)](/wp-content/uploads/2015/04/2015-04-30-180400_1366x768.jpg)
 
 I’m going to add support for URLs instead of uploading PDFs, and fix some bugs here for there, but it’s essentially done.
 

@@ -19,8 +19,8 @@ I filled up my paper notebook I use to keep recipes. I typed it up and edited it
 
 Note that most of these recipes are from online or printed sources. Some are written by me, family, or friends.
 
-![](../wp-content/uploads/2020/05/inside.jpeg)
+![](/wp-content/uploads/2020/05/inside.jpeg)
 
-![](../wp-content/uploads/2020/05/outside.jpeg)
+![](/wp-content/uploads/2020/05/outside.jpeg)
 
-![](../wp-content/uploads/2020/05/toc.jpeg)
+![](/wp-content/uploads/2020/05/toc.jpeg)

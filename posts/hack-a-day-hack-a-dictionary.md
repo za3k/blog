@@ -22,6 +22,6 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Dictionary](https://tilde.za3k.com/hackaday/dictionary/) ([demo](https://tilde.za3k.com/hackaday/dictionary/), [source](https://github.com/za3k/day08_dictionary)). It looks up words.
 
-[![](../wp-content/uploads/2022/11/screenshot-7.png)](https://tilde.za3k.com/hackaday/dictionary/)
+[![](/wp-content/uploads/2022/11/screenshot-7.png)](https://tilde.za3k.com/hackaday/dictionary/)
 
 OK, I’ll be honest. I’m phoning this one in. I needed a break.

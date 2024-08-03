@@ -20,9 +20,9 @@ The visuals are pretty much the same. Incidentally I discovered the striations o
 
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
 
-[![](../wp-content/uploads/2023/11/v15b-300x225.png)](../wp-content/uploads/2023/11/v15b.png)
+[![](/wp-content/uploads/2023/11/v15b-300x225.png)](/wp-content/uploads/2023/11/v15b.png)
 
-[![](../wp-content/uploads/2023/11/v16-300x225.png)](../wp-content/uploads/2023/11/v16.png)
+[![](/wp-content/uploads/2023/11/v16-300x225.png)](/wp-content/uploads/2023/11/v16.png)
 
 </figure>
 

@@ -21,4 +21,4 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-An-Adventure](https://tilde.za3k.com/hackaday/adventure/) ([demo](https://tilde.za3k.com/hackaday/adventure/), [source](https://github.com/za3k/day29_adventure)). It’s a coloring book. It’s designed to be relaxing.
 
-[![](../wp-content/uploads/2022/11/screenshot.gif)](https://tilde.za3k.com/hackaday/adventure/)
+[![](/wp-content/uploads/2022/11/screenshot.gif)](https://tilde.za3k.com/hackaday/adventure/)

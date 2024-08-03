@@ -17,10 +17,10 @@ wordpress_slug: hack-a-day-day-04-lashed-table
 ---
 Lashed furniture is made using sticks and rope or twine. Today’s project was to make one out of bamboo and brown paracord. The frame is shown–imagine boards or many pieces of bamboo forming a top.
 
-[![caption:Hello to the young lady who decided to pose and join in the photo!](../wp-content/uploads/2023/11/table-1024x1002.jpg)](../wp-content/uploads/2023/11/table.jpg)
+[![caption:Hello to the young lady who decided to pose and join in the photo!](/wp-content/uploads/2023/11/table-1024x1002.jpg)](/wp-content/uploads/2023/11/table.jpg)
 
 We found this little $5 tool to be incredibly good for cutting bamboo. It’s designed for almost the same thing, cutting metal pipes.
 
-[![](../wp-content/uploads/2023/11/pipe-cutter-300x300.webp)](../wp-content/uploads/2023/11/pipe-cutter.webp)
+[![](/wp-content/uploads/2023/11/pipe-cutter-300x300.webp)](/wp-content/uploads/2023/11/pipe-cutter.webp)
 
 It wasn’t bad for a first try. That said, we decided the top wasn’t flat enough to give a good finish, so the whole thing is going to be burned at the next bonfire.

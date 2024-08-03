@@ -16,6 +16,6 @@ wordpress_slug: old-wikipedia
 ---
 Prefer the old layout of Wikipedia? A couple friends and I made [oldwikipedia.org](https://oldwikipedia.org/)
 
-[![](../wp-content/uploads/2023/02/2023-02-02-144514_1920x1080_scrot-crop-1024x357.png)](../wp-content/uploads/2023/02/2023-02-02-144514_1920x1080_scrot-crop.png)
+[![](/wp-content/uploads/2023/02/2023-02-02-144514_1920x1080_scrot-crop-1024x357.png)](/wp-content/uploads/2023/02/2023-02-02-144514_1920x1080_scrot-crop.png)
 
 Hope you enjoy.

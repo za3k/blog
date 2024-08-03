@@ -27,6 +27,6 @@ Today’s project is [Hack-A-Hang](https://tilde.za3k.com/hackaday/hang/) ([demo
 
 Unfortunately while everything works great on my machine, there’s a bad problem in production, and I ran out of time on this one. I’ll try to get it fixed before the end of the month if it’s easy.
 
-[![](../wp-content/uploads/2022/11/screenshot-17.png)](https://tilde.za3k.com/hackaday/hang/)
+[![](/wp-content/uploads/2022/11/screenshot-17.png)](https://tilde.za3k.com/hackaday/hang/)
 
 Hoo boy, this was one of the technically hardest ones so far. WebRTC is no joke. And not hard in a way where you have to think, hard in a way where the debugging tools are terrible. (Drag and drop was another tough one)

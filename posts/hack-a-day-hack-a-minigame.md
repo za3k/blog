@@ -22,6 +22,6 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Minigame](https://tilde.za3k.com/hackaday/mini/) ([demo](https://tilde.za3k.com/hackaday/mini/), [source](https://github.com/za3k/day26_mini)). It’s the classic Snake, but the twist is you can only save and load the game. Rather than controlling the snake, it moves at random under AI control. You have to repeatedly save and load to make progress.
 
-[![](../wp-content/uploads/2022/11/screenshot-23.png)](https://tilde.za3k.com/hackaday/mini/)
+[![](/wp-content/uploads/2022/11/screenshot-23.png)](https://tilde.za3k.com/hackaday/mini/)
 
 Credit to Jeff Lait’s “[Save Scummer](http://www.zincland.com/7drl/savescummer/)” 7-day roguelike for inspiration. Although actually, this whole minigame is mostly for a future project!

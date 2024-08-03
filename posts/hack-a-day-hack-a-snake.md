@@ -21,4 +21,4 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Snake](https://tilde.za3k.com/hackaday/snake/) ([demo](https://tilde.za3k.com/hackaday/snake/), [source](https://github.com/za3k/day12_snake)). Yesterday I wrote a [game where an AI plays snake](https://blog.za3k.com/hack-a-day-hack-a-minigame/). Today I thought, hey, I should release that with keyboard controls so people can just play Snake.
 
-[![](../wp-content/uploads/2022/11/screenshot-24.png)](https://tilde.za3k.com/hackaday/snake/)
+[![](/wp-content/uploads/2022/11/screenshot-24.png)](https://tilde.za3k.com/hackaday/snake/)

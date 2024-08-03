@@ -15,4 +15,4 @@ wordpress_slug: hack-a-day-day-10-typewriter
 ---
 Try it out [here](https://za3k.github.io/ha3k-10-typewriter/). Code is on [github](https://github.com/za3k/ha3k-10-typewriter).
 
-[![](../wp-content/uploads/2023/11/screenshot-1024x459.png)](https://za3k.github.io/ha3k-10-typewriter/)
+[![](/wp-content/uploads/2023/11/screenshot-1024x459.png)](https://za3k.github.io/ha3k-10-typewriter/)

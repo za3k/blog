@@ -16,7 +16,7 @@ wordpress_slug: hillsfar-lockpicking-20-complete
 ---
 The game can be played [here](https://za3k.github.io/ha3k-20-lockpick/). Source code is [on github](https://za3k.github.io/ha3k-20-lockpick/).
 
-[![](../wp-content/uploads/2023/12/screenshot.png)](https://za3k.github.io/ha3k-20-lockpick/)
+[![](/wp-content/uploads/2023/12/screenshot.png)](https://za3k.github.io/ha3k-20-lockpick/)
 
 Info about the original 1989 Hillsfar game is linked from the demo! Enjoy.
 

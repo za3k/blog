@@ -20,6 +20,6 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Paste](https://tilde.za3k.com/hackaday/paste) ([demo](https://tilde.za3k.com/hackaday/paste), [source](https://github.com/za3k/day05_paste)). You can upload text and share it with others.
 
-[![](../wp-content/uploads/2022/11/screenshot-1.png)](https://tilde.za3k.com/hackaday/paste)
+[![](/wp-content/uploads/2022/11/screenshot-1.png)](https://tilde.za3k.com/hackaday/paste)
 
 Today’s project was an easy one, because I was busy. Took an hour or two.

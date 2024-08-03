@@ -23,4 +23,4 @@ This is November 30th, so this will be the last project.
 
 Today’s project is [Hack-An-MMO](https://tilde.za3k.com/hackaday/mmo/) ([demo](https://tilde.za3k.com/hackaday/mmo/), [source](https://github.com/za3k/day30_mmo)). It’s a small collaborative art RPG. You can draw people, places, and things to populate the tiny world. Have fun!
 
-[![](../wp-content/uploads/2022/11/screenshot-26.png)](https://tilde.za3k.com/hackaday/mmo/)
+[![](/wp-content/uploads/2022/11/screenshot-26.png)](https://tilde.za3k.com/hackaday/mmo/)

@@ -18,9 +18,9 @@ wordpress_slug: e-ink-laptop
 ---
 I’ve been prototyping an e-ink laptop.
 
-[![alt:a wooden box with a keyboard inside and an e-ink screen mounted to it](../wp-content/uploads/2022/10/front_view_open-1024x768.jpg)](../wp-content/uploads/2022/10/front_view_open-scaled.jpg)
+[![alt:a wooden box with a keyboard inside and an e-ink screen mounted to it](/wp-content/uploads/2022/10/front_view_open-1024x768.jpg)](/wp-content/uploads/2022/10/front_view_open-scaled.jpg)
 
-[![caption:Closed “laptop”](../wp-content/uploads/2022/10/front_view-300x225.jpg)](../wp-content/uploads/2022/10/front_view-scaled.jpg)
+[![caption:Closed “laptop”](/wp-content/uploads/2022/10/front_view-300x225.jpg)](/wp-content/uploads/2022/10/front_view-scaled.jpg)
 
 I’m not the first, there have been many other such devices before. I came up with the idea independently, but the specifics are heavily inspired by the [Ultimate Writer](https://alternativebit.fr/posts/ultimate-writer/) by NinjaTrappeur in 2018. Similar to him, my use case is typing without distractions, and reading books. E-ink displays are quite slow to update, so I don’t think it can serve as a general purpose computer. Here’s a video of it in action. It operates at one frame per second.
 
@@ -28,27 +28,27 @@ I’m not the first, there have been many other such devices before. I came up w
 
 The electronics are not fully done. They need better secured, and I’m going to redo the cabling and power back.
 
-[![caption:I broke a screen over-tightening a nut. That said, I like this look pretty well! If the lid was thicker, I know how to avoid screws on the other side, too.](../wp-content/uploads/2022/10/screen_closeup-1024x768.jpg)](../wp-content/uploads/2022/10/screen_closeup-scaled.jpg)
+[![caption:I broke a screen over-tightening a nut. That said, I like this look pretty well! If the lid was thicker, I know how to avoid screws on the other side, too.](/wp-content/uploads/2022/10/screen_closeup-1024x768.jpg)](/wp-content/uploads/2022/10/screen_closeup-scaled.jpg)
 
-[![caption:Early screen progress. I got something to display, but not what I wanted.](../wp-content/uploads/2022/10/early_garbage-crop-300x224.jpg)](../wp-content/uploads/2022/10/early_garbage-crop-scaled.jpg)
+[![caption:Early screen progress. I got something to display, but not what I wanted.](/wp-content/uploads/2022/10/early_garbage-crop-300x224.jpg)](/wp-content/uploads/2022/10/early_garbage-crop-scaled.jpg)
 
-[![caption:I found a really nice, cheap mechanical keyboard on ebay. The main downside is that it’s heavy–730g. It also consumes heavy amounts of power, even when not in use. I have a nearly identical keyboard that doesn’t, which I’ll use for v2.](../wp-content/uploads/2022/10/keyboard_closeup-300x225.jpg)](../wp-content/uploads/2022/10/keyboard_closeup-scaled.jpg)
+[![caption:I found a really nice, cheap mechanical keyboard on ebay. The main downside is that it’s heavy–730g. It also consumes heavy amounts of power, even when not in use. I have a nearly identical keyboard that doesn’t, which I’ll use for v2.](/wp-content/uploads/2022/10/keyboard_closeup-300x225.jpg)](/wp-content/uploads/2022/10/keyboard_closeup-scaled.jpg)
 
-[![caption:I made my own lithium-ion battery pack. It works well, but it doesn’t quite fit so I’m going to redo it with one less cell. It also needs an on/off switch and a right angle USB cable.](../wp-content/uploads/2022/10/battery_back_closeup-300x225.jpg)](../wp-content/uploads/2022/10/battery_back_closeup-scaled.jpg)
+[![caption:I made my own lithium-ion battery pack. It works well, but it doesn’t quite fit so I’m going to redo it with one less cell. It also needs an on/off switch and a right angle USB cable.](/wp-content/uploads/2022/10/battery_back_closeup-300x225.jpg)](/wp-content/uploads/2022/10/battery_back_closeup-scaled.jpg)
 
-[![caption:The prototype is powered by a Raspberry Pi 3. The final version will use a microcontroller to save power. The Pi Zero can also be swapped in with no changes, and uses a third of the power. But it’s noticeably slower and takes 30 seconds to boot. For prototyping I’m using the Pi 3 for now.](../wp-content/uploads/2022/10/pi_closeup-300x225.jpg)](../wp-content/uploads/2022/10/pi_closeup-scaled.jpg)
+[![caption:The prototype is powered by a Raspberry Pi 3. The final version will use a microcontroller to save power. The Pi Zero can also be swapped in with no changes, and uses a third of the power. But it’s noticeably slower and takes 30 seconds to boot. For prototyping I’m using the Pi 3 for now.](/wp-content/uploads/2022/10/pi_closeup-300x225.jpg)](/wp-content/uploads/2022/10/pi_closeup-scaled.jpg)
 
 I’m not the best woodworker, but I’m slowly learning. Here are pictures of case and lid action.
 
-[![caption:Hinged lid. The screen is on the bottom of the lid.](../wp-content/uploads/2022/10/added_back_stops-300x225.jpg)](../wp-content/uploads/2022/10/added_back_stops-scaled.jpg)
+[![caption:Hinged lid. The screen is on the bottom of the lid.](/wp-content/uploads/2022/10/added_back_stops-300x225.jpg)](/wp-content/uploads/2022/10/added_back_stops-scaled.jpg)
 
-[![caption:A wooden stop on each side](../wp-content/uploads/2022/10/back_stop-300x225.jpg)](../wp-content/uploads/2022/10/back_stop-scaled.jpg)
+[![caption:A wooden stop on each side](/wp-content/uploads/2022/10/back_stop-300x225.jpg)](/wp-content/uploads/2022/10/back_stop-scaled.jpg)
 
-[![caption:Wooden stop with lid open. It hits the bottom, bringing the lid/screen to a rest at vertical.](../wp-content/uploads/2022/10/back_stop_action-300x225.jpg)](../wp-content/uploads/2022/10/back_stop_action-scaled.jpg)
+[![caption:Wooden stop with lid open. It hits the bottom, bringing the lid/screen to a rest at vertical.](/wp-content/uploads/2022/10/back_stop_action-300x225.jpg)](/wp-content/uploads/2022/10/back_stop_action-scaled.jpg)
 
-[![caption:Latches on the side](../wp-content/uploads/2022/10/hinge-300x225.jpg)](../wp-content/uploads/2022/10/hinge-scaled.jpg)
+[![caption:Latches on the side](/wp-content/uploads/2022/10/hinge-300x225.jpg)](/wp-content/uploads/2022/10/hinge-scaled.jpg)
 
-[![caption:Don’t put hinges sideways into plywood. But if you do, drill big pilot holes. Out of six screw, one cracked a little.](../wp-content/uploads/2022/10/hinge_crack-300x225.jpg)](../wp-content/uploads/2022/10/hinge_crack-scaled.jpg)
+[![caption:Don’t put hinges sideways into plywood. But if you do, drill big pilot holes. Out of six screw, one cracked a little.](/wp-content/uploads/2022/10/hinge_crack-300x225.jpg)](/wp-content/uploads/2022/10/hinge_crack-scaled.jpg)
 
 On the software end, shout outs to:
 

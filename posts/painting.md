@@ -15,20 +15,20 @@ wordpress_slug: painting
 ---
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
 
-[![caption:Waves, Z Vance 2023](../wp-content/uploads/2023/02/waves-1014x1024.jpg)](../wp-content/uploads/2023/02/waves.jpg)
+[![caption:Waves, Z Vance 2023](/wp-content/uploads/2023/02/waves-1014x1024.jpg)](/wp-content/uploads/2023/02/waves.jpg)
 
 </figure>
 
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
 
-[![caption:Bouquet, Z Vance 2023](../wp-content/uploads/2023/02/small-977x1024.jpg)](../wp-content/uploads/2023/02/small.jpg)
+[![caption:Bouquet, Z Vance 2023](/wp-content/uploads/2023/02/small-977x1024.jpg)](/wp-content/uploads/2023/02/small.jpg)
 
 </figure>
 
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-3 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
 
-[![caption:Worm Statue, Z Vance 2023](../wp-content/uploads/2023/02/art1-crop-448x1024.jpg)](../wp-content/uploads/2023/02/art1-crop.jpg)
+[![caption:Worm Statue, Z Vance 2023](/wp-content/uploads/2023/02/art1-crop-448x1024.jpg)](/wp-content/uploads/2023/02/art1-crop.jpg)
 
-[![caption:Model](../wp-content/uploads/2023/02/statue1-crop-635x1024.jpg)](../wp-content/uploads/2023/02/statue1-crop.jpg)
+[![caption:Model](/wp-content/uploads/2023/02/statue1-crop-635x1024.jpg)](/wp-content/uploads/2023/02/statue1-crop.jpg)
 
 </figure>

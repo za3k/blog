@@ -15,4 +15,4 @@ wordpress_slug: hack-a-day-day-12-screensavers
 ---
 A “silly screensaver”. Demo is [here](https://za3k.github.io/ha3k-12-screensaver/). Source code is [on github](https://github.com/za3k/ha3k-12-screensaver).
 
-[![](../wp-content/uploads/2023/11/screenshot-1.png)](https://za3k.github.io/ha3k-12-screensaver/)
+[![](/wp-content/uploads/2023/11/screenshot-1.png)](https://za3k.github.io/ha3k-12-screensaver/)

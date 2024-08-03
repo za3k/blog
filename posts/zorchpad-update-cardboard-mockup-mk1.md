@@ -14,7 +14,7 @@ wordpress_slug: zorchpad-update-cardboard-mockup-mk1
 ---
 I’ve gotten to the point in Zorchpad development where I’d like to see how the whole thing fits together and if there will be any insurmountable problems. We’re still trying to figure out some things like–will it have one screen or two? What form factor will it be? Will the keyboard fold in half? So I put together a cardboard model.
 
-[![](../wp-content/uploads/2024/05/v0_cardboard_zorchpad-1024x576.jpg)](../wp-content/uploads/2024/05/v0_cardboard_zorchpad.jpg)
+[![](/wp-content/uploads/2024/05/v0_cardboard_zorchpad-1024x576.jpg)](/wp-content/uploads/2024/05/v0_cardboard_zorchpad.jpg)
 
 This model has:
 
@@ -29,7 +29,7 @@ This model has:
 -   A custom keyboard (total power usage: variable/unknown)  
     The keyboard is closely modeled off a standard one, for now.
 
-[![](../wp-content/uploads/2024/05/v0_keyboard.jpg)](../wp-content/uploads/2024/05/v0_keyboard.jpg)
+[![](/wp-content/uploads/2024/05/v0_keyboard.jpg)](/wp-content/uploads/2024/05/v0_keyboard.jpg)
 
 Immediately, a few problems pop out:
 

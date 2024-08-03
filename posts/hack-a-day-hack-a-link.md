@@ -20,6 +20,6 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s (catch-up) project is [Hack-A-Link](https://tilde.za3k.com/hackaday/link) ([demo](https://tilde.za3k.com/hackaday/link), [source](https://github.com/za3k/day02_link)). You can enter a long link, and it will be shortened.
 
-[![](../wp-content/uploads/2022/11/screenshot-3.png)](https://tilde.za3k.com/hackaday/link)
+[![](/wp-content/uploads/2022/11/screenshot-3.png)](https://tilde.za3k.com/hackaday/link)
 
 This one was also pretty easy. About an hour.

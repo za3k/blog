@@ -16,7 +16,7 @@ wordpress_slug: blueprint-maker-13-complete
 ---
 More followup for my house blueprint maker. The project is now done.
 
-[![](../wp-content/uploads/2023/12/2023-12-18-194312_1920x1080_scrot-crop.png)](https://za3k.github.io/ha3k-13-blueprint/)
+[![](/wp-content/uploads/2023/12/2023-12-18-194312_1920x1080_scrot-crop.png)](https://za3k.github.io/ha3k-13-blueprint/)
 
 New features include:
 

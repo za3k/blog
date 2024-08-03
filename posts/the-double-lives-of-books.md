@@ -18,15 +18,15 @@ So that’s where we start. Here’s where I went.
 
 I thought, if these books are just a local convenience for an online version, it’s more artistically satisfying to have some representation of that. So I printed up a card catalog of all my books, both the ones I have digital copies of and not:
 
-[![caption:An example catalog card](../wp-content/uploads/2014/11/sample_card-300x186.png)](../wp-content/uploads/2014/11/sample_card.png)
+[![caption:An example catalog card](/wp-content/uploads/2014/11/sample_card-300x186.png)](/wp-content/uploads/2014/11/sample_card.png)
 
 That’s what a card looks like. There’s information about the book up top, and a link in the form of a [QR code](http://en.wikipedia.org/wiki/QR_code "QR code") in the middle. The link downloads a PDF version of that book. Obviously being a programmer, the cards all all automatically generated.
 
-[![caption:Book with a card inside](../wp-content/uploads/2014/11/book-186x300.jpg)](../wp-content/uploads/2014/11/book.jpg)
+[![caption:Book with a card inside](/wp-content/uploads/2014/11/book-186x300.jpg)](/wp-content/uploads/2014/11/book.jpg)
 
 For the books where I have a physical copy, I put the card in the book, and it feels like I’m touching the digital copy. My friends can pirate their own personal version of the book (saving me the sadness of lost lent-out books I’m sure we’ve all felt at times). And I just thing it looks darn neat. Some physical books I don’t have a digital version of, since the world is not yet perfect. But at least I can identify them at a glance (and consider sending them off to a service like [http://1dollarscan.com/](http://1dollarscan.com/))
 
-[![caption:Card catalog of digital books](../wp-content/uploads/2014/11/catalog-225x300.jpg)](../wp-content/uploads/2014/11/catalog.jpg)
+[![caption:Card catalog of digital books](/wp-content/uploads/2014/11/catalog-225x300.jpg)](/wp-content/uploads/2014/11/catalog.jpg)
 
 And then, I have a box full of all the books I \*don’t\* have a physical copy of, so I can browse through them, and organize them into reading lists or recommendations. It’s not nearly as cool as the ones in books, but it’s sort of nice to keep around.
 

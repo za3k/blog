@@ -20,9 +20,9 @@ The calendar has anything that needs to be done on a specific day. Birthday remi
 
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex" markdown="1">
 
-[![](../wp-content/uploads/2023/07/weekly-crop-246x300.jpg)](../wp-content/uploads/2023/07/weekly-crop.jpg)
+[![](/wp-content/uploads/2023/07/weekly-crop-246x300.jpg)](/wp-content/uploads/2023/07/weekly-crop.jpg)
 
-[![](../wp-content/uploads/2023/07/cal-crop-300x255.jpg)](../wp-content/uploads/2023/07/cal-crop.jpg)
+[![](/wp-content/uploads/2023/07/cal-crop-300x255.jpg)](/wp-content/uploads/2023/07/cal-crop.jpg)
 
 </figure>
 
@@ -38,13 +38,13 @@ You can ignore this one.
 
 A daily TODO list, written on paper. I throw it out at the end of each day, without copying anything off it. (I actually scan it, but I never look at the scans). This one I find very helpful.
 
-[![](../wp-content/uploads/2023/07/todo-daily-crop-748x1024.jpg)](../wp-content/uploads/2023/07/todo-daily-crop.jpg)
+[![](/wp-content/uploads/2023/07/todo-daily-crop-748x1024.jpg)](/wp-content/uploads/2023/07/todo-daily-crop.jpg)
 
 **Master TODO list**
 
 A “master” TODO list, consisting of everything I want to get done long term. I store this as a text file.
 
-[![](../wp-content/uploads/2023/07/todo-crop-894x1024.png)](../wp-content/uploads/2023/07/todo-crop.png)
+[![](/wp-content/uploads/2023/07/todo-crop-894x1024.png)](/wp-content/uploads/2023/07/todo-crop.png)
 
 Each task is a one-line description.
 

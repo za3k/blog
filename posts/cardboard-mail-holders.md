@@ -18,7 +18,7 @@ wordpress_slug: cardboard-mail-holders
 ---
 Our house has seven people, so today I made some mail holders to put on our doors.
 
-[![alt:cardboard_near0.5](../wp-content/uploads/2015/09/cardboard_near0.5-1024x768.jpg)](../wp-content/uploads/2015/09/cardboard_near0.5.jpg)
+[![alt:cardboard_near0.5](/wp-content/uploads/2015/09/cardboard_near0.5-1024x768.jpg)](/wp-content/uploads/2015/09/cardboard_near0.5.jpg)
 
 I basically had some long cardboard boxes, and cut them in half. Then I added new ends and separators in the middle.
 
