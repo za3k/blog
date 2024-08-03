@@ -17,7 +17,7 @@ updated: 2015-01-22 21:17:18-07:00
 wordpress_id: 104
 wordpress_slug: moreorcs-com
 ---
-[![alt:orc](https://blog.za3k.com/wp-content/uploads/2015/01/orc-300x300.jpg)](http://moreorcs.com)
+[![alt:orc](../wp-content/uploads/2015/01/orc-300x300.jpg)](http://moreorcs.com)
 
 My newest site: [http://moreorcs.com/](http://moreorcs.com/)
 

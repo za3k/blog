@@ -19,12 +19,12 @@ wordpress_slug: blast-furance
 ---
 We made a blast furnace, following David Gingery’s [The Charcoal Foundry](https://www.amazon.com/Charcoal-Foundry-Build-Metal-Working/dp/1878087002). Here are some pictures of the firing process. We haven’t melted or cast any metal yet.
 
-[![caption:Slow initial burn to drive out most of the water](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-initial-burn.jpg)](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-initial-burn.jpg)
+[![caption:Slow initial burn to drive out most of the water](../wp-content/uploads/2017/07/furnace-initial-burn.jpg)](../wp-content/uploads/2017/07/furnace-initial-burn.jpg)
 
-[![caption:Blast furnace in action to completely dry it](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-blast.jpg)](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-blast.jpg)
+[![caption:Blast furnace in action to completely dry it](../wp-content/uploads/2017/07/furnace-blast.jpg)](../wp-content/uploads/2017/07/furnace-blast.jpg)
 
-[![caption:You can tell we’re trained professionals by the fan setup](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-fan.jpg)](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-fan.jpg)
+[![caption:You can tell we’re trained professionals by the fan setup](../wp-content/uploads/2017/07/furnace-fan.jpg)](../wp-content/uploads/2017/07/furnace-fan.jpg)
 
-[![caption:Blast furnace meat is best meat](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-grill.jpg)](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-grill.jpg)
+[![caption:Blast furnace meat is best meat](../wp-content/uploads/2017/07/furnace-grill.jpg)](../wp-content/uploads/2017/07/furnace-grill.jpg)
 
-[![caption:Richard looking dubiously at the furnace](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-richard.jpg)](https://blog.za3k.com/wp-content/uploads/2017/07/furnace-richard.jpg)
+[![caption:Richard looking dubiously at the furnace](../wp-content/uploads/2017/07/furnace-richard.jpg)](../wp-content/uploads/2017/07/furnace-richard.jpg)

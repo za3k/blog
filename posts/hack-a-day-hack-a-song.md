@@ -21,4 +21,4 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Song](https://tilde.za3k.com/hackaday/song/) ([demo](https://tilde.za3k.com/hackaday/song/), [source](https://github.com/za3k/day16_song)). It plays greensleeves, and you can edit the music to play something else, too.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-14.png)](https://tilde.za3k.com/hackaday/song/)
+[![](../wp-content/uploads/2022/11/screenshot-14.png)](https://tilde.za3k.com/hackaday/song/)

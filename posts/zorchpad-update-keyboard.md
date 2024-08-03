@@ -16,9 +16,9 @@ wordpress_slug: zorchpad-update-keyboard
 ---
 Another update on the zorchpad. We now have a working 16-button keyboard (sadly no QWERTY yet). Here you can see a simple typing program that shows what you type on screen.
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/05/zorchpad_keyboard-1024x576.jpg)](https://blog.za3k.com/wp-content/uploads/2024/05/zorchpad_keyboard-scaled.jpg)
+[![](../wp-content/uploads/2024/05/zorchpad_keyboard-1024x576.jpg)](../wp-content/uploads/2024/05/zorchpad_keyboard-scaled.jpg)
 
-[![](https://blog.za3k.com/wp-content/uploads/2024/05/zorchpad_keyboard_zoom-1024x331.jpg)](https://blog.za3k.com/wp-content/uploads/2024/05/zorchpad_keyboard_zoom.jpg)
+[![](../wp-content/uploads/2024/05/zorchpad_keyboard_zoom-1024x331.jpg)](../wp-content/uploads/2024/05/zorchpad_keyboard_zoom.jpg)
 
 As mentioned in a [previous post](https://blog.za3k.com/diy-keyboards-and-how-keyboards-work/), the reason we’re using a custom keyboard is to stay to low power usage–much lower than a standard keyboard.
 

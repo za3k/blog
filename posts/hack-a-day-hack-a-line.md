@@ -23,7 +23,7 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Line](https://tilde.za3k.com/hackaday/line/) ([demo](https://tilde.za3k.com/hackaday/line/), [source](https://github.com/za3k/day13_line)). Hack-A-Line is a 5-in-a-row game for two players. You play online against each other by sharing a link.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-11.png)](https://tilde.za3k.com/hackaday/line/)
+[![](../wp-content/uploads/2022/11/screenshot-11.png)](https://tilde.za3k.com/hackaday/line/)
 
 I’m okay with this one, except that there’s one really bad display bug that kind of ruins it. I’m starting to develop a list of projects where I might want to go back and fix something after this month.
 

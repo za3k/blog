@@ -26,7 +26,7 @@ This is my first failure, which I think is good! I was getting bored only attemp
 
 I won’t continue this tomorrow, I’d rather do a new project each day (It’s called Hack-A-**DAY**)! But I might do another Unity3D project before the month is out.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-6.png)](https://tilde.za3k.com/hackaday/icecube/)
+[![](../wp-content/uploads/2022/11/screenshot-6.png)](https://tilde.za3k.com/hackaday/icecube/)
 
 The ice cubes load and fall, and that’s it. No controls, no game. I ran out of time.
 

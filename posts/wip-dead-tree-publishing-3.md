@@ -18,7 +18,7 @@ wordpress_slug: wip-dead-tree-publishing-3
 ---
 Compared with [last update](https://blog.za3k.com/wip-dead-tree-publishing-2/ "WIP: Dead Tree Publishing 2"),  the Dead Tree Publishing website is looking nicer.
 
-[![caption:Looking better](https://blog.za3k.com/wp-content/uploads/2015/04/2015-04-16-184416_1366x768-e1429235272387.jpg)](https://blog.za3k.com/wp-content/uploads/2015/04/2015-04-16-184416_1366x768.jpg)
+[![caption:Looking better](../wp-content/uploads/2015/04/2015-04-16-184416_1366x768-e1429235272387.jpg)](../wp-content/uploads/2015/04/2015-04-16-184416_1366x768.jpg)
 
 It’s served over HTTPS now (not needed for security, but it puts people at ease and enabled Chrome’s autocomplete) and you can order multiple books at a time.
 

@@ -17,7 +17,7 @@ In my recent campaign, I had a handout for the players. I took it out, and on a 
 
 I tore it into quarters in front of their eyes. I wrote on back of the handout pieces “**5**“, “**10**“, “**15**“, “**20**“. *“Make me an investigation check,”* I intoned in my best DM voice. “*I will grant you any pieces under your roll.*“
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/07/scraps-287x300.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/scraps.jpg)
+[![](../wp-content/uploads/2023/07/scraps-287x300.jpg)](../wp-content/uploads/2023/07/scraps.jpg)
 
 They got 23, so I gave them all four scraps. They taped it back together and got the whole handout.
 

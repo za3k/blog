@@ -25,7 +25,7 @@ Today’s project is [Hack-A-Machine](https://tilde.za3k.com/hackaday/machine/) 
 
 I liked this one, but it really didn’t fit into a day too well.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-9.png)](https://tilde.za3k.com/hackaday/machine/)
+[![](../wp-content/uploads/2022/11/screenshot-9.png)](https://tilde.za3k.com/hackaday/machine/)
 
 Features include:
 

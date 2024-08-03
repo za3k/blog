@@ -22,7 +22,7 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Crop](https://tilde.za3k.com/hackaday/crop/) ([demo](https://tilde.za3k.com/hackaday/crop/), [source](https://github.com/za3k/day18_crop)). It crops an image to a fixed size.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-16.png)](https://tilde.za3k.com/hackaday/crop/)
+[![](../wp-content/uploads/2022/11/screenshot-16.png)](https://tilde.za3k.com/hackaday/crop/)
 
 I got help from several people on the CSS, thanks to instantly sharing my work via [ngrok](https://ngrok.com/) from my laptop. Thanks people! Thanks ngrok!
 

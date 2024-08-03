@@ -23,6 +23,6 @@ Infocom introduced (AFAIK) the concept of feelies:
 
 I love to give out feelies for my D&D campaigns. Here are some lil handout props I made:
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/06/scroll-crop-835x1024.jpg)](https://blog.za3k.com/wp-content/uploads/2023/06/scroll-crop.jpg)
+[![](../wp-content/uploads/2023/06/scroll-crop-835x1024.jpg)](../wp-content/uploads/2023/06/scroll-crop.jpg)
 
 I used a receipt printer, q-tips, tape, and [orthodontic rubber bands](https://www.amazon.com/Orthodontic-Elastic-Rubberbands-Dreadlocks-Horse/dp/B00OSR1RBM).

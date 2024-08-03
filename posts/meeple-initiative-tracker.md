@@ -18,10 +18,10 @@ I play D&D. There are a thousand initiative trackers out there. Here’s one I i
 
 First, each player picks a Meeple to be their character’s mini.
 
-[![caption:Four PCs on a wagon move over swampy terrain.](https://blog.za3k.com/wp-content/uploads/2023/07/board-crop-1024x387.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/board-crop.jpg)
+[![caption:Four PCs on a wagon move over swampy terrain.](../wp-content/uploads/2023/07/board-crop-1024x387.jpg)](../wp-content/uploads/2023/07/board-crop.jpg)
 
 Quick, roll initiative! The players all roll, and so do the enemies. We grab a second meeple for each player, as well as second token for each enemy. This becomes the initiative tracker.
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/07/initiative-crop-1-1024x341.jpg)](https://blog.za3k.com/wp-content/uploads/2023/07/initiative-crop-1.jpg)
+[![](../wp-content/uploads/2023/07/initiative-crop-1-1024x341.jpg)](../wp-content/uploads/2023/07/initiative-crop-1.jpg)
 
 This is the initiative order. It’s currently the red meeple hero’s turn. Next up will be the blue meeple hero, then the black cube enemy, and so on.

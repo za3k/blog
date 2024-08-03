@@ -17,7 +17,7 @@ Hack-A-Day 2023 is complete. I did 20 projects in 30 days. Pretty good consideri
 
 The overview of the month is [here](https://za3k.com/hackaday) and highly recommended.
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/12/2023-12-06-154545_1920x1080_scrot-crop-1024x712.png)](https://za3k.com/hackaday)
+[![](../wp-content/uploads/2023/12/2023-12-06-154545_1920x1080_scrot-crop-1024x712.png)](https://za3k.com/hackaday)
 
 I plan to do a little more followup this year than last. Today’s last-minute fixes:
 

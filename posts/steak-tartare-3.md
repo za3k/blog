@@ -15,7 +15,7 @@ updated: 2015-10-03 18:17:30-07:00
 wordpress_id: 193
 wordpress_slug: steak-tartare-3
 ---
-[![alt:steak tartare](https://blog.za3k.com/wp-content/uploads/2015/04/steak-tartare.jpg)](https://blog.za3k.com/wp-content/uploads/2015/04/steak-tartare.jpg)  
+[![alt:steak tartare](../wp-content/uploads/2015/04/steak-tartare.jpg)](../wp-content/uploads/2015/04/steak-tartare.jpg)  
 Recipe is mostly from [Tricia](http://triciaroxanne.wordpress.com).
 
 Ingredients:

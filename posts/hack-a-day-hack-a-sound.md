@@ -33,6 +33,6 @@ You can:
 -   Use a keyboard or mouse
 -   (Mobile not supported)
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-13.png)](https://tilde.za3k.com/hackaday/sound/)
+[![](../wp-content/uploads/2022/11/screenshot-13.png)](https://tilde.za3k.com/hackaday/sound/)
 
 Have fun. I think this was a pretty good toy.

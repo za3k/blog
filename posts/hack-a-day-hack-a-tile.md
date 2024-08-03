@@ -23,7 +23,7 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Tile](https://tilde.za3k.com/hackaday/tile/) ([demo](https://tilde.za3k.com/hackaday/tile/), [source](https://github.com/za3k/day11_tile)). It’s a tile-matching game like dominos.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-10.png)](https://tilde.za3k.com/hackaday/tile/)
+[![](../wp-content/uploads/2022/11/screenshot-10.png)](https://tilde.za3k.com/hackaday/tile/)
 
 Hack-A-Tile is based on mathematical [Wang tiles](https://en.wikipedia.org/wiki/Wang_tile). It was very tempting to call it Hack-A-Wang.
 

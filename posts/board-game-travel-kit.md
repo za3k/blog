@@ -16,10 +16,10 @@ wordpress_slug: board-game-travel-kit
 ---
 I condensed some of card games into one box:
 
-[![caption:Left to right: Doomlings, Star Realms, The Mind, Chrononauts, FitzIt, Are you the traitor?, Are you a werewolf?, Hanabi, Set, Icehouse/Zendo rules, regular playing cards](https://blog.za3k.com/wp-content/uploads/2023/08/cards_open-1024x710.jpg)](https://blog.za3k.com/wp-content/uploads/2023/08/cards_open-scaled.jpg)
+[![caption:Left to right: Doomlings, Star Realms, The Mind, Chrononauts, FitzIt, Are you the traitor?, Are you a werewolf?, Hanabi, Set, Icehouse/Zendo rules, regular playing cards](../wp-content/uploads/2023/08/cards_open-1024x710.jpg)](../wp-content/uploads/2023/08/cards_open-scaled.jpg)
 
 I’ve noticed that board game boxes tend to be a little big. I combined five into one box:
 
-[![caption:Azul, Settlers of Catan, Clank, Concept, Nuclear War](https://blog.za3k.com/wp-content/uploads/2023/08/box_open-1024x834.jpg)](https://blog.za3k.com/wp-content/uploads/2023/08/box_open-scaled.jpg)
+[![caption:Azul, Settlers of Catan, Clank, Concept, Nuclear War](../wp-content/uploads/2023/08/box_open-1024x834.jpg)](../wp-content/uploads/2023/08/box_open-scaled.jpg)
 
-[![caption:This is “portable” if you have a car trunk, maybe! It’s heavy as heck.](https://blog.za3k.com/wp-content/uploads/2023/08/both_closed-1024x843.jpg)](https://blog.za3k.com/wp-content/uploads/2023/08/both_closed.jpg)
+[![caption:This is “portable” if you have a car trunk, maybe! It’s heavy as heck.](../wp-content/uploads/2023/08/both_closed-1024x843.jpg)](../wp-content/uploads/2023/08/both_closed.jpg)

@@ -17,7 +17,7 @@ wordpress_slug: qr-backup-v1-1
 ---
 [qr-backup](https://github.com/za3k/qr-backup) v1.1 is released. qr-backup is a **command-line Linux program**. You can use it to back up a file as a series of QR codes. You can restore the QR codes using a webcam or scanner, and get back the original file.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/09/image-1024x614.png)](https://blog.za3k.com/wp-content/uploads/2022/09/image.png)
+[![](../wp-content/uploads/2022/09/image-1024x614.png)](../wp-content/uploads/2022/09/image.png)
 
 The main features of qr-backup are ease-of-use and futureproofing (restore does not require qr-backup).
 

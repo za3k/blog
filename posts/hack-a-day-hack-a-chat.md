@@ -21,7 +21,7 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Chat](https://tilde.za3k.com/hackaday/chat/). ([demo](https://tilde.za3k.com/hackaday/chat/), [source](https://github.com/za3k/day04_chat)). It’s a free web chat for anyone that goes to the website.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/2022-11-04-201210_1920x1080_scrot-crop-1024x553.png)](https://tilde.za3k.com/hackaday/chat/)
+[![](../wp-content/uploads/2022/11/2022-11-04-201210_1920x1080_scrot-crop-1024x553.png)](https://tilde.za3k.com/hackaday/chat/)
 
 Check out the link above to try out the live demo.
 

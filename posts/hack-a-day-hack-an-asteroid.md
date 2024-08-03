@@ -24,4 +24,4 @@ Today’s project is [Hack-An-Asteroid](https://tilde.za3k.com/hackaday/asteroid
 
 I’m pretty happy with this as my first “visual” game. I made it in Unity3D.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-1024x700.jpg)](https://tilde.za3k.com/hackaday/asteroid/)
+[![](../wp-content/uploads/2022/11/screenshot-1024x700.jpg)](https://tilde.za3k.com/hackaday/asteroid/)

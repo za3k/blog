@@ -22,7 +22,7 @@ It’s november, and I’ve decided this month that I’m going to do 30 project
 
 Today’s project is [Hack-A-Farm](https://tilde.za3k.com/hackaday/farm/) ([demo](https://tilde.za3k.com/hackaday/farm/), [source](https://github.com/za3k/day27_farm)). It’s a simple tile-based RPG. You can walk around as a chicken, admire your house, and plant and harvest two types of crops.
 
-[![](https://blog.za3k.com/wp-content/uploads/2022/11/screenshot-25.png)](https://tilde.za3k.com/hackaday/farm/)
+[![](../wp-content/uploads/2022/11/screenshot-25.png)](https://tilde.za3k.com/hackaday/farm/)
 
 My main goal with this project was to work with spritesheets or animation before, which I had never done. Showing off the individual tiles is deliberate. Also, the game should respond well to smaller and larger screens, I hope.
 

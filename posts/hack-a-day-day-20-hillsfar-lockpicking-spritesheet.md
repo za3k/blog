@@ -25,12 +25,12 @@ Edit: See the [updated post](https://blog.za3k.com/hillsfar-lockpicking-20-compl
 
 Here’s the original minigame:
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/11/2023-11-20-223209_640x400_scrot.png)](https://blog.za3k.com/wp-content/uploads/2023/11/2023-11-20-223209_640x400_scrot.png)
+[![](../wp-content/uploads/2023/11/2023-11-20-223209_640x400_scrot.png)](../wp-content/uploads/2023/11/2023-11-20-223209_640x400_scrot.png)
 
 Here’s my spritesheet:
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/11/out-1024x597.png)](https://blog.za3k.com/wp-content/uploads/2023/11/out.png)
+[![](../wp-content/uploads/2023/11/out-1024x597.png)](../wp-content/uploads/2023/11/out.png)
 
 I made it by splitting up screenshots:
 
-[![](https://blog.za3k.com/wp-content/uploads/2023/11/hillsfar-lockpick-parts.png)](https://blog.za3k.com/wp-content/uploads/2023/11/hillsfar-lockpick-parts.png)
+[![](../wp-content/uploads/2023/11/hillsfar-lockpick-parts.png)](../wp-content/uploads/2023/11/hillsfar-lockpick-parts.png)

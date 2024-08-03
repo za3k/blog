@@ -18,6 +18,6 @@ wordpress_slug: qr-backup
 ---
 I made a new project called [qr-backup](https://github.com/za3k/qr-backup). It’s a command-line program to back up any file to physical paper, using a number of QR codes. You can then restore it, even WITHOUT the qr-backup program, using the provided instructions.
 
-[![](https://blog.za3k.com/wp-content/uploads/2021/05/example.png)](https://blog.za3k.com/wp-content/uploads/2021/05/example.png)
+[![](../wp-content/uploads/2021/05/example.png)](../wp-content/uploads/2021/05/example.png)
 
 I’m fairly satisfied with its current state (can actually back up my files, makes a PDF). There’s definitely some future features I’m looking forward to adding, though.

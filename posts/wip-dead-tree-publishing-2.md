@@ -21,6 +21,6 @@ Today I added credit card processing and address forms–it’s functionally com
 
 Next up I have to clean the site up, because it looks like this:
 
-[![alt:20150402](https://blog.za3k.com/wp-content/uploads/2015/04/20150402.jpg)](https://blog.za3k.com/wp-content/uploads/2015/04/20150402.jpg)
+[![alt:20150402](../wp-content/uploads/2015/04/20150402.jpg)](../wp-content/uploads/2015/04/20150402.jpg)
 
 I’ll also add HTTPS.

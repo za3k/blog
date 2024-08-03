@@ -13,7 +13,7 @@ updated: 2015-10-27 19:10:59-07:00
 wordpress_id: 341
 wordpress_slug: roasted-chickpeas
 ---
-[![alt:roasted](https://blog.za3k.com/wp-content/uploads/2015/10/roasted-300x264.jpg)](https://blog.za3k.com/wp-content/uploads/2015/10/roasted.jpg)Here’s how you make roasted chickpeas (aka garbanzo beans):
+[![alt:roasted](../wp-content/uploads/2015/10/roasted-300x264.jpg)](../wp-content/uploads/2015/10/roasted.jpg)Here’s how you make roasted chickpeas (aka garbanzo beans):
 
 1.  Set the oven to 400F.
 2.  Drain and empty a can or so of chickpeas into a collander and wash them
