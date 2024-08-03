@@ -1,9 +1,11 @@
 # These two properties are always first, and always absolute paths
 source: "/home/zachary/blog"
 destination: "/home/zachary/blog/public"
+
 web_root: "https://blog2.za3k.com"
-domain: "blog2.za3k.com"
 title: 'blog of zachary "za3k" vance'
+# For search bar
+domain: "blog2.za3k.com"
 
 post_dir: "posts"
 comments_dir: "comments"
@@ -13,26 +15,27 @@ static_dir: "static"
 
 author_template: "templates/author.mustache.html"
 category_template: "templates/category.mustache.html"
-deadlinks_template: "templates/deadlinks.mustache.html"
-links_template: "templates/links.mustache.html"
 index_template: "templates/index.mustache.html"
 feed_template: "templates/feed.mustache.html"
 layout_template: "templates/layout.mustache.html"
 post_template: "templates/post.mustache.html"
-postcombined_template: "templates/postcombined.mustache.html"
 tag_template: "templates/tag.mustache.html"
 tagcloud_template: "templates/tagcloud.mustache.html"
 
+# Non-local mode, preferred link address
+author_url: "{{web_root}}/author/{{slug}}/"
+category_url: "{{web_root}}/category/{{slug}}/"
+tag_url: "{{web_root}}/tag/{{slug}}/"
+index_url: "{{web_root}}"
+post_url: "{{web_root}}/{{id}}/"
+feed_url: "{{web_root}}/feed/"
+
 author_destination: "{{destination}}/author/{{slug}}.html"
 category_destination: "{{destination}}/category/{{slug}}.html"
-deadlinks_destination: "{{destination}}/page/deadlinks.html"
-links_destination: "{{destination}}/page/links.html"
 index_destination: "{{destination}}/page/index.html"
 feed_destination: "{{destination}}/page/feed.xml"
 image_destination: "{{destination}}/images/{{image}}"
 page_destination: "{{destination}}/{{page}}"
 post_destination: "{{destination}}/posts/{{id}}.html"
-post_md_destination: "{{destination}}/posts/{{id}}.md.html"
-post_html_destination: "{{destination}}/posts/{{id}}.orig.html"
 static_destination: "{{destination}}/{{relative_path}}"
 tag_destination: "{{destination}}/tag/{{slug}}.html"

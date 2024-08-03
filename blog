@@ -179,7 +179,11 @@ class Templatable(PseudoMap):
 
     @property
     def url(self):
-        return self.blog.web_root + "/" + str(self.output_path.relative_to(Path(self.blog.destination)))
+        url_template = self.blog["{}_url".format(self.type)]
+        if url_template is None:
+            return self.blog.web_root + "/" + str(self.output_path.relative_to(Path(self.blog.destination)))
+        else:
+            return mustache.render(url_template, self.context)
 
     def render_template(source, blog, name, context, replace_links=True):
         template_path = blog["{}_template".format(name)]
@@ -343,7 +347,7 @@ class Image(Templatable):
 
 class Blog(PseudoMap):
     def __init__(self, config="config.yaml", reload=False):
-        self.tags = {}
+        self.tags = {} # Tag -> str
         self.categories = {}
         self.authors = {}
         self._posts = []
@@ -366,6 +370,7 @@ class Blog(PseudoMap):
             if k.endswith("_dir") or k.endswith("_template") or k.endswith("_path"):
                 v = os.path.join(self.source, os.path.expanduser(v))
             self[k] = v
+        self.feed_url = mustache.render(self.feed_url, self)
 
     @property
     def deadlinks(self):
@@ -486,10 +491,6 @@ class Blog(PseudoMap):
             tag.font_size = scale(tag_scaling(tag.num_posts), post_count_range, font_sizes)
         
         return Templatable.render_template(Templatable, blog, "tagcloud", self)
-
-    @property
-    def feed_url(self):
-        return Page("feed", self, use_layout=False).url
 
     def _update_happened(self, path):
         path = Path(path)

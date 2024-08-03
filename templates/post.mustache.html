@@ -7,7 +7,7 @@
 </h1>
 
 <div class="entry-meta">
-<span class="author vcard"> By  <a class="url fn n" href="{{web_root}}/author/{{author.slug}}.html" rel="author" title="View all posts by {{author.tag}}">{{author.tag}}</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="{{date}}"> <a href="{{url}}" rel="bookmark" title="{{time}}"><span class="entry-date">{{day}}</span> <span class="entry-time"> - {{time}}</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="{{date}}">{{day}}</time> 
+<span class="author vcard"> By  <a class="url fn n" href="{{author.url}}" rel="author" title="View all posts by {{author.tag}}">{{author.tag}}</a> <span class="bl_sep">|</span></span> <time class="onDate date published" datetime="{{date}}"> <a href="{{url}}" rel="bookmark" title="{{time}}"><span class="entry-date">{{day}}</span> <span class="entry-time"> - {{time}}</span></a> </time><span class="bl_sep">|</span><time class="updated" datetime="{{date}}">{{day}}</time> 
 
 {{#has_categories}}
 <span class="bl_categ">
@@ -24,11 +24,11 @@
 <div class="entry-utility">
 {{#has_tags}}
     <span class="bl_posted">Tagged
-    {{# tags_list }}<a href="{{web_root}}/tag/{{thing.slug}}.html" rel="tag">{{thing.tag}}</a>{{^last}}, {{/last}}{{/ tags_list }}{{#main_display}}.{{/main_display}}
+    {{# tags_list }}<a href="{{thing.url}}" rel="tag">{{thing.tag}}</a>{{^last}}, {{/last}}{{/ tags_list }}{{#main_display}}.{{/main_display}}
     </span>
 {{/has_tags}}
 {{#main_display}}
-<span class="bl_bookmark"> Bookmark the  <a href="{{url}}" rel="bookmark" title="Permalink to {{title}}"> permalink</a>.</span>
+<span class="bl_bookmark"> Bookmark the <a href="{{url}}" rel="bookmark" title="Permalink to {{title}}"> permalink</a>.</span>
 {{/main_display}}
 </div>
 
