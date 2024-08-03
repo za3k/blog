@@ -35,7 +35,10 @@
 {{#main_display}}
 {{#comments}}
 <div id="comments">
-    <h3 id="comments-title">Responses to <em>{{post_title}}</em></h3>
+    <h3 id="comments-title" style="padding-bottom: 0;">Responses to <em>{{post_title}}</em></h3>
+    <div id="comments-note" style="margin: 1rem 0; color: red;">
+      These comments are archived. Commenting is currently disabled on old posts.
+    </div>
     {{& comments }}
 </div>
 {{/comments}}
