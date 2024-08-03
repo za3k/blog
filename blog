@@ -309,7 +309,7 @@ class Image(Templatable):
     pass # TODO
 
 class Blog(PseudoMap):
-    def __init__(self, config="config.yaml"):
+    def __init__(self, config):
         self.tags = {} # Tag -> str
         self.categories = {}
         self.authors = {}
@@ -375,9 +375,9 @@ class Blog(PseudoMap):
 
     @property
     def static(self):
-        for dirpath, dirnames, filenames in Path(self.static_dir).walk():
+        for dirpath, dirnames, filenames in os.walk(str(self.static_dir)):
             for name in filenames:
-                path = dirpath / name
+                path = Path(dirpath) / name
                 yield Static(path, self)
 
     @property
@@ -440,9 +440,10 @@ if __name__ == "__main__":
     )
     parser.add_argument("-l", "--local", action='store_true', help="use relative paths for links")
     parser.add_argument("-p", "--publish", action='store_true', help="publish to blog2.za3k.com")
+    parser.add_argument("-c", "--config", help="location of config file", default="config.yaml")
     args = parser.parse_args()
 
-    blog = Blog()
+    blog = Blog(config=args.config)
     blog.local = args.local
     if args.local:
         blog.web_root = "file://" + blog.destination
