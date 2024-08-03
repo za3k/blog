@@ -16,7 +16,7 @@
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
-    {{# posts.first10 }}
+    {{# posts }}
 	<item>
 		<title>{{title}}</title>
 		<link>{{url}}</link>
@@ -32,6 +32,6 @@
         <!--<description><![CDATA[SHORT_DESCRIPTION]]></description>-->
         <content:encoded><![CDATA[{{& post}}]]></content:encoded>
     </item>
-    {{/ posts.first10 }}
+    {{/ posts }}
 </channel>
 </rss>

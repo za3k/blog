@@ -2,6 +2,6 @@
     <h1 class="page-title author">Author Archives: <span class="vcard"><a class="url fn n" href="{{ url }}/" title="admin" rel="me">{{ tag }}</a></span></h1>
 </header>
 
-{{# posts.first10 }}
+{{# current_page.posts }}
     {{& post }}
-{{/ posts.first10 }}
+{{/ current_page.posts }}
