@@ -126,43 +126,6 @@ setTimeout(function() {
 </script>
 """
 
-class Link():
-    def __init__(self, original, blog, source):
-        self.original = original
-        self.partial = original.replace("https://blog.za3k.com/","")
-        if self.partial.endswith("/"):
-            self.partial = self.partial.removesuffix("/")
-            if "/" not in self.partial:
-                self.partial = "posts/" + self.partial
-            self.partial += ".html"
-        self.blog = blog
-        self.source = source
-
-    @property
-    def wordpress(self):
-        return "https://blog.za3k.com/" + self.partial
-
-    @property
-    def static(self):
-        return self.blog.web_root + "/" + self.partial
-
-    @property
-    def file(self):
-        return self.blog.destination + "/" + self.partial
-    
-    @property
-    def is_dead(self):
-        return not os.path.exists(self.file)
-
-    def __hash__(self):
-        return hash(self.partial)
-
-    def __lt__(self, other):
-        return self.partial < other.partial
-
-    def __eq__(self, other):
-        return self.partial == other.partial
-
 class Templatable(PseudoMap):
     use_layout = True
     def __init__(self, blog):
@@ -185,13 +148,11 @@ class Templatable(PseudoMap):
         else:
             return mustache.render(url_template, self.context)
 
-    def render_template(source, blog, name, context, replace_links=True):
+    def render_template(source, blog, name, context):
         template_path = blog["{}_template".format(name)]
         with open(template_path, "r") as f:
             template = f.read()
         html = mustache.render(template, context, warn=True)
-        if replace_links:
-            html = blog.replace_links(source, html)
         return html
 
     def content(self):
@@ -246,7 +207,7 @@ class Post(Templatable):
         return '<div class="entry-content">{}</div>'.format(markdown2html(self.md))
 
     def content_combined(self):
-        return self.render_template(self.blog, "post", self.context, replace_links=False).encode("utf8")
+        return self.render_template(self.blog, "post", self.context).encode("utf8")
 
     @property
     def date_rfc822(self):
@@ -352,7 +313,6 @@ class Blog(PseudoMap):
         self.authors = {}
         self._posts = []
         self.reload = reload
-        self.links = set()
         self.now = datetime.datetime.now(datetime.timezone.utc)
         self.now_rfc822 = self.now.strftime(RFC822)
 
@@ -372,26 +332,9 @@ class Blog(PseudoMap):
             self[k] = v
         self.feed_url = mustache.render(self.feed_url, self)
 
-    @property
-    def deadlinks(self):
-        return sorted(link for link in self.links if link.is_dead and all(x not in link.partial for x in ("?replytocom", "#comment")))
-
-    @property
-    def alllinks(self):
-        return sorted(self.links)
-
     @paginated_property
     def posts(self):
         return self._posts
-
-    def replace_links(self, source, html):
-        link_regex = '(?<!srcset=")(?<=")https://blog.za3k.com/([^"]*)(?=")'
-        return re.sub(link_regex, lambda m: self.rewrite_link(source, m), html)
-
-    def rewrite_link(self, source, match):
-        link = Link(match.group(0), self, source.output_path)
-        self.links.add(link)
-        return link.static
 
     def load_comments(self, stem):
         comments_path = Path(self.comments_dir) / (stem + ".html")
