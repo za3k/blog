@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2022-11-10 22:16:17-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - compiler

@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2015-10-27 19:10:59-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - recipe

@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2020-03-21 21:26:52-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - alsa

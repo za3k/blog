@@ -5,7 +5,6 @@ categories:
 - Technical
 date: 2015-01-22 21:12:08-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - email

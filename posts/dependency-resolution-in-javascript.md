@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2015-11-02 18:36:11-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - control flow

@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2020-04-15 15:34:41-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - isitoutyet

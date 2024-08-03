@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2014-12-01 01:24:28-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - hacks

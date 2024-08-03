@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2021-06-06 17:23:06-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - hardware

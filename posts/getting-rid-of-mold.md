@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2024-01-04 09:43:44-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - bad advice

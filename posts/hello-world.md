@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2014-07-19 06:43:42-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags: []
 title: New blog

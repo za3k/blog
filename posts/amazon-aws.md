@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2014-07-26 23:29:47-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - AWS

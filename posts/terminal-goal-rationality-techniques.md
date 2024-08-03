@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2015-07-17 23:15:39-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - rationality

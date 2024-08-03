@@ -5,7 +5,6 @@ categories:
 - Technical
 date: 2022-11-15 18:45:21-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - creative

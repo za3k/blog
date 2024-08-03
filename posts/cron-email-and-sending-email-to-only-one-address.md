@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2020-05-18 22:13:02-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - cron

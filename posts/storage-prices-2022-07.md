@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2022-07-11 15:45:40-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - archiving

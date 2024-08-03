@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2021-02-07 03:30:04-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - game design

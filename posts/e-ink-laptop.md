@@ -5,7 +5,6 @@ categories:
 - Technical
 date: 2022-10-12 15:45:27-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - eink

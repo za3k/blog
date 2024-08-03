@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2024-06-18 16:57:08-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - linux

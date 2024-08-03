@@ -5,7 +5,6 @@ categories:
 - Technical
 date: 2023-02-02 12:47:14-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - website

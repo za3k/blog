@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2014-10-15 03:00:26-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - cybernetics

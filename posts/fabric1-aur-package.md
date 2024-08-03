@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2020-06-04 18:30:31-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - fabric

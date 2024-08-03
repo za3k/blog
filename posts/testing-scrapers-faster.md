@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2021-08-16 19:28:16-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - iteration

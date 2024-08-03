@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2015-04-02 17:38:23-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - dead tree

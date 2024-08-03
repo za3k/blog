@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2015-10-10 17:54:17-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - art

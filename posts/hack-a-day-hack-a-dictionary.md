@@ -5,7 +5,6 @@ categories:
 - Technical
 date: 2022-11-08 13:55:43-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - dictionary

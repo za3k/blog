@@ -4,7 +4,6 @@ categories:
 - Uncategorized
 date: 2020-01-06 16:53:24-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - archiving

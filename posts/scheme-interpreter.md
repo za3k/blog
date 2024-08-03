@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2023-06-24 09:20:14-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - programming

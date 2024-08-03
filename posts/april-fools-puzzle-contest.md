@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2023-04-04 11:33:24-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - irc

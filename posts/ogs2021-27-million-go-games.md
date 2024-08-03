@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2021-10-22 13:15:25-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - data collections

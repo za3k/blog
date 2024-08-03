@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2015-04-30 18:08:01-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - bootstrap

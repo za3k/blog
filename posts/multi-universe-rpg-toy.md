@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2015-04-30 03:28:05-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - game

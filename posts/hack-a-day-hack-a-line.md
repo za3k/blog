@@ -5,7 +5,6 @@ categories:
 - Technical
 date: 2022-11-13 22:27:14-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - games

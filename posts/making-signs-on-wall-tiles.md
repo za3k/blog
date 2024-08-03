@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2024-04-16 20:07:58-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - art

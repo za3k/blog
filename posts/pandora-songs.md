@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2014-12-07 23:30:24-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - music

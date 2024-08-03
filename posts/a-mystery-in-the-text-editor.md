@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2024-05-12 19:59:50-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - command-line

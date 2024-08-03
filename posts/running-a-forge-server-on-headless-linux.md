@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2014-10-04 02:10:39-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - minecraft

@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2023-02-03 13:37:16-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - pakistan

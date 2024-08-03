@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2015-10-17 03:35:05-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - debian

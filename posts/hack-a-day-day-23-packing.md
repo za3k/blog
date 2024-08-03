@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2023-11-23 17:29:27-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - hack-a-day

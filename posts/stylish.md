@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2015-03-28 04:04:55-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - chrome

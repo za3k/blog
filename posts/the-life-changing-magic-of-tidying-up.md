@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2017-04-07 18:01:02-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - book review

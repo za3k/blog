@@ -5,7 +5,6 @@ categories:
 - Technical
 date: 2015-04-24 16:58:38-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - armchair

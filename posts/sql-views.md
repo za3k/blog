@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2015-08-04 20:12:09-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - cgi

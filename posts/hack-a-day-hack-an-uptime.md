@@ -5,7 +5,6 @@ categories:
 - Technical
 date: 2022-12-07 19:24:41-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - hack-a-day

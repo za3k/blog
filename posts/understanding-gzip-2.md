@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2021-07-10 21:36:51-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - compression

@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2016-06-20 17:27:24-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - meta

@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2023-07-12 16:36:15-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - dungeons and dragons

@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2024-05-17 10:04:12-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - zorchpad

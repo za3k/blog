@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2021-05-26 13:39:19-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - self-improvement

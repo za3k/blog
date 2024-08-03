@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2015-04-23 23:03:49-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - android

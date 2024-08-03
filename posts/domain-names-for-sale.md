@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2015-01-22 21:32:15-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - domain names

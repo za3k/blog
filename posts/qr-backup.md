@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2021-05-31 19:41:26-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - announcements

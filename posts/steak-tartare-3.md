@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2015-04-28 23:04:50-07:00
 has-comments: true
-markup: markdown
 source: wordpress
 tags:
 - cooking

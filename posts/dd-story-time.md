@@ -4,7 +4,6 @@ categories:
 - Non-Technical
 date: 2023-07-20 09:17:10-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - roleplaying

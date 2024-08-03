@@ -4,7 +4,6 @@ categories:
 - Technical
 date: 2023-11-22 21:15:14-07:00
 has-comments: false
-markup: markdown
 source: wordpress
 tags:
 - circuits
