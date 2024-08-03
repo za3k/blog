@@ -5,8 +5,7 @@
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4739">
-			July 23, 2021 at 1:47 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 23, 2021 at 1:47 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>“Now we assign a binary codewords of length N, to each length N in the list.<br>
 1:1100,2:0,4:1101,16:1110,17:1111,18:10”</br></p>
@@ -18,8 +17,7 @@
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4740">
-			July 23, 2021 at 2:04 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 23, 2021 at 2:04 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>This is what “Aside: Storing Prefix-Free Codewords as a List of Lengths” is about. The algorithm is given in full in RFC 1952 if you’re interested. Basically, the code words are assigned starting from 0 (or 00, 000, etc) and counting up. As each code is assigned, anything with that code as a prefix becomes unavailable. They are assigned first from shortest to longest, and in the case of ties from leftmost in the list to rightmost in the list.</p>
 <p>So first we assign 0 to the length-1 codeword (0 is lower than 1), then we assign the length-2 codeword 10 (the lowest length-2 code that doesn’t have a prefix 0), and finally we assign the length-4 codewords from left to right (1100, 1101, 1110, 1111 don’t have a prefix of 0 or 10 — they are the lowest and only codewords without one of those prefixes).</p>
@@ -31,8 +29,7 @@
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4741">
-			July 23, 2021 at 3:23 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 23, 2021 at 3:23 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>I think I get it now, as soon as I resolve some compile errors I’m gonna try this:</p>
 <p>“`<br>
@@ -59,8 +56,7 @@
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4742">
-			July 25, 2021 at 12:06 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 25, 2021 at 12:06 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Took me a while to understand that I was supposed to be building the tree at this point (although this method compared to what I though of and implemented prior to this is inefficient both in space and speed, also terribly um-intuitive). I’m having trouble understanding exactly how to extract some literals you’ve mentioned:</p>
 <p>“Byte 18-19: 0000001 10 0110101. Copy “0” code length 11-138 times<br>
@@ -78,8 +74,7 @@ Byte 21-22: 111111 10 0001000 1. Copy “0” code length 11-138 times. 0b000100
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4743">
-			July 25, 2021 at 12:27 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 25, 2021 at 12:27 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>I’m glad this was helpful, but you should really go read RFC 1951 if you’re going to build a decoder. This isn’t meant to be a stand-alone guide.</p>
 <p>I’m pretty lost trying to follow this comment, sorry. To clarify, for the “dynamic” compression, you first extract the CODING TABLE for the literals (the step you’re talking about). Then, you use the coding table to decompress the actual stream of content. It’s a two-step process, which is why it’s so complex.</p>
@@ -91,8 +86,7 @@ Byte 21-22: 111111 10 0001000 1. Copy “0” code length 11-138 times. 0b000100
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4744">
-			July 25, 2021 at 1:41 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 25, 2021 at 1:41 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Was gonna say I already had the code table but when it printed it seems the codes got corrupted, I’ll have to get back to you after fixing it. Anyways I find “guides” that don’t use real examples as this one does to be confusing sometimes, usually where it matters, that’s why I was consulting you who provided those key examples, I got a heck of a lot further with your guide than any other I’ve tried following which didn’t give the byte by byte, bit by bit example.</p>
 </div>
@@ -102,8 +96,7 @@ Byte 21-22: 111111 10 0001000 1. Copy “0” code length 11-138 times. 0b000100
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4745">
-			July 25, 2021 at 1:50 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 25, 2021 at 1:50 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Turned out I was just printing the wrong value, here’s my current output:</p>
 <p>`<br/>
@@ -198,8 +191,7 @@ PrintBytes( 0x556653fbf4a0, 0, 16 )<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4747">
-			July 25, 2021 at 3:32 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 25, 2021 at 3:32 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Never min, I think I know where the literals are coming from now, I did this:</p>
 <p><code><br/>
@@ -223,8 +215,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4756">
-			July 26, 2021 at 7:46 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 26, 2021 at 7:46 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>I think I still misunderstood something somewhere, I’ve done a detailed post on the section I think I’ve mis-interpreted here:</p>
 <p><a href="https://cboard.cprogramming.com/c-programming/180462-increment-gone-wrong.html#post1302477" rel="nofollow ugc">https://cboard.cprogramming.com/c-programming/180462-increment-gone-wrong.html#post1302477</a></p>
@@ -236,8 +227,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4757">
-			July 26, 2021 at 8:54 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 26, 2021 at 8:54 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Sorry, I don’t really want to help someone else debug code or output. I’d suggest following the links at the start of the blog article. Check out ‘infgen’ in particular.</p>
 </div>
@@ -247,8 +237,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4758">
-			July 26, 2021 at 9:34 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 26, 2021 at 9:34 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>I originally gave up on infgen due to an access rights error when I tried installing via the package manager, the server refused to let me download it, then after your last comment I though to look for it’s github page, that one worked out fine, judging by it’s output the only thing I’ve got wrong are the length values for the distance symbols/codes/whatever you want to call them, where do you get that 2 from? same applies to the bit code along side them, where does that come from, is it just an iterated number for each valid symbol?</p>
 </div>
@@ -258,8 +247,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4759">
-			July 26, 2021 at 10:56 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 26, 2021 at 10:56 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>You read 267=260+7 codeword-lengths (the numbers 260 and 7 are given by bytes 10-12 in this example).</p>
 <p>The first 260 codeword-lengths are used for one huffman table: 256 literals (always 256), then 1 “end of block” (always 2), then the remaining 3 are lengths.</p>
@@ -271,8 +259,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4760">
-			July 26, 2021 at 11:50 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 26, 2021 at 11:50 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Even if I use the same method of code generation as before I stiil would need to know where you got those “2”s from in the table immediately following this:</p>
 <p>“We read 7 numbers, that’s the whole distances table. Assign the “standard” binary codewords to generate the following table:”</p>
@@ -285,8 +272,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4762">
-			July 26, 2021 at 12:23 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 26, 2021 at 12:23 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Re-read above the table. The “bits” column is from bytes 24-25.</p>
 </div>
@@ -305,8 +291,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4763">
-			July 26, 2021 at 12:43 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 26, 2021 at 12:43 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>No option to reply so I’ll do it here instead, I still don’t see where the 2 came from, is that a minimum length or from another hard code table? So far I can only see the bits given as a set/unset symbol &amp; code flag, there’s no clear source for the length &amp; extra bits values</p>
 </div>
@@ -316,8 +301,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4764">
-			July 26, 2021 at 5:54 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 26, 2021 at 5:54 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Finally found where you got the 2 from:</p>
 <p><a href="https://www.w3.org/Graphics/PNG/RFC-1951" rel="nofollow ugc">https://www.w3.org/Graphics/PNG/RFC-1951</a></p>
@@ -334,8 +318,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4773">
-			July 31, 2021 at 11:29 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">July 31, 2021 at 11:29 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>I’ve clearly misunderstood something somewhere, could you take a look at the code I outlined in the below post please and see if you can spot what I’m misunderstanding, up until the point I have to lookup previously deflated values I’ve read the bits correctly but I’ve obviously not understood all the implied information correctly, I would post the code here but as you’ve seen these comments don’t support maintaining the code formatting resulting in a more confusing than necessary code.</p>
 <p><a href="https://cboard.cprogramming.com/c-programming/180462-increment-gone-wrong-post1302541.html#post1302541" rel="nofollow ugc">https://cboard.cprogramming.com/c-programming/180462-increment-gone-wrong-post1302541.html#post1302541</a></p>
@@ -346,8 +329,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/a82f569a804e9883d4fc220ed42386f9?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Lee</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-4786">
-			August 2, 2021 at 5:36 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">August 2, 2021 at 5:36 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>You’ll be glad to know I finally got the algorithm right, have not looked at any source code from zlib or other projects so I’m free to slap MIT License on it the whole way through once I convert it to a cleaner version of itself. The unclean version is here for anyone’s reference.</p>
 <p><a href="https://gitlab.com/awsdert/uc-evidence/-/tree/9441a73e59834456c41c1049036fc60925b705a0" rel="nofollow ugc">https://gitlab.com/awsdert/uc-evidence/-/tree/9441a73e59834456c41c1049036fc60925b705a0</a></p>
@@ -360,8 +342,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5413">
-			December 21, 2021 at 1:00 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">December 21, 2021 at 1:00 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>From the Fixed huffman coding section:</p>
 <p>“Byte 10-11: 110 10011000 10010: A literal. 10011000 (152) minus 00110000 (48) is 104. 104 in ASCII is ‘h’.”</p>
@@ -373,8 +354,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5414">
-			December 21, 2021 at 1:11 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">December 21, 2021 at 1:11 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>The binary range (given above) is 00110000-10111111. Rather than decoding the binary value, we decode the offset within that range.</p>
 </div>
@@ -386,8 +366,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5432">
-			December 22, 2021 at 7:27 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">December 22, 2021 at 7:27 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>“Now we assign a binary codewords of length N, to each length N in the list.<br/>
 1:1100,2:0,4:1101,16:1110,17:1111,18:10”</p>
@@ -401,8 +380,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5435">
-			December 22, 2021 at 10:49 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">December 22, 2021 at 10:49 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>I figured it out. It’s this bit from RFC1951:</p>
 <p><code><br/>
@@ -437,8 +415,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5441">
-			December 24, 2021 at 10:38 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">December 24, 2021 at 10:38 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>““Literals” 257-259 (all lengths) have codewords of length 4” Is this a hard and fast rule that’s always true regardless of the data or is this true _just_ for the compressed string in this example?</p>
 </div>
@@ -448,8 +425,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5444">
-			December 25, 2021 at 2:25 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">December 25, 2021 at 2:25 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Just for the example. If it was always true, we wouldn’t have to encode it.</p>
 </div>
@@ -461,8 +437,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7872694d27b3b6fd8d71297a4799a82b?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">neubert</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-5449">
-			December 27, 2021 at 12:54 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">December 27, 2021 at 12:54 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>“Byte 27: 1110 10 0 1. Length 4. Whenever we read a length, we read a distance. The distance is a range, 7-8. The extra bit we read is 0b0=0, plus 7 is Distance 7. So we look back 7 bytes and copy 4. The new output is: baabbbabaab”</p>
 <p>I think there should be an extra a before the baabbbabaab</p>
@@ -473,8 +448,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/83113fa84f7bb884648d75b769d23a6c?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/83113fa84f7bb884648d75b769d23a6c?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">inco</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-8298">
-			June 22, 2022 at 1:56 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">June 22, 2022 at 1:56 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>I’ve been reading quite a bit on DEFLATE in png files and I think this is the exact level of depth i needed to crack this whole mess. Thanks so much for writing this, sources like RFC1951 talk more about abstraction and general rules but to have a few examples lined out here its  EXTREMELY useful. Thanks again</p>
 </div>
@@ -484,8 +458,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/83113fa84f7bb884648d75b769d23a6c?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/83113fa84f7bb884648d75b769d23a6c?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">inco</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-8300">
-			June 22, 2022 at 3:38 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">June 22, 2022 at 3:38 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Small question about reading bits: for Huffman codes of  the code itself defines a length range and then the extra bits are reversed so that they can be interpreted. But should I reverse the distance or the distance extra bits as well?</p>
 </div>
@@ -497,8 +470,7 @@ printf( "num as a character = '%c'\n", num );<br/>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/7b25d5e576e752e12d04d663247f0989?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/7b25d5e576e752e12d04d663247f0989?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">Ricardo</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-11528">
-			May 31, 2024 at 4:32 am</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">May 31, 2024 at 4:32 am </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Byte 31: 10 111000: Literal ‘b’<br/>
 Byte 31: 10 1110 00: Length 4, Distance 1. We look back 1 byte and copy 4. The new output is: bbbbb</p>
@@ -512,8 +484,7 @@ Should I repeat the ‘b’ four times?</p>
 <div class="comment-author vcard">
 <img alt="" class="avatar avatar-40 photo" decoding="async" height="40" loading="lazy" src="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=40&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/09485be3ee1e86da6e39412f5c1b2a48?s=80&amp;d=mm&amp;r=g 2x" width="40"/><cite class="fn">admin</cite> <span class="says">says:</span>
 </div><!-- .comment-author .vcard -->
-<div class="comment-meta commentmetadata"><a href="https://blog.za3k.com/understanding-gzip-2/#comment-11531">
-			May 31, 2024 at 5:23 pm</a> </div><!-- .comment-meta .commentmetadata -->
+<div class="comment-meta commentmetadata">May 31, 2024 at 5:23 pm </div><!-- .comment-meta .commentmetadata -->
 <div class="comment-body">
 <p>Distance is how far back you start. Copy is how many symbols you copy.<br/>
 You just blindly copy characters starting DISTANCE back, but since you’re appending to the string, you never run out of symbols to copy.</p>
