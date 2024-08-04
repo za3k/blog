@@ -6,7 +6,7 @@ date: 2024-08-02 23:15:00-07:00
 has-comments: false
 tags:
 - blog
-title: Goodbye Wordpress
+title: Goodbye wordpress
 ---
 I've changed the backend of my blog. You *shouldn't* notice any differences, except that comments are disabled for the time being. 
 
