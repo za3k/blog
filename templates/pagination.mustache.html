@@ -1,12 +1,10 @@
-<div class="pagination_container">
-    <nav class="pagination">
-        {{# pages }}
-            {{# is_current }}
-                <span class="current">{{ page_num }}</span>
-            {{/ is_current }}
-            {{^ is_current }}
-                <a href="{{ url }}" class="inactive">{{ page_num }}</a>
-            {{/ is_current }}
-        {{/ pages }}
-    </nav>
-</div>
+<nav class="pagination">
+    {{# pages }}
+        {{# is_current }}
+            <span class="current">{{ page_num }}</span>
+        {{/ is_current }}
+        {{^ is_current }}
+            <a href="{{ url }}">{{ page_num }}</a>
+        {{/ is_current }}
+    {{/ pages }}
+</nav>
