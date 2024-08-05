@@ -4887,6 +4887,10 @@ a:hover {
 	color: #999;
 }
 
+#site-description a:hover {
+	text-decoration: underline;
+}
+
 #header-container {
 	position: absolute;
 	top: 0;
