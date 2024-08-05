@@ -4882,6 +4882,11 @@ a:hover {
 	color: #999;
 }
 
+/* za3k*/
+#site-description a {
+	color: #999;
+}
+
 #header-container {
 	position: absolute;
 	top: 0;
@@ -7838,4 +7843,3 @@ body .wp-caption {
     --wp--style--unstable-gallery-gap: var(--wp--style--gallery-gap-default, var(--gallery-block--gutter-size, var(--wp--style--block-gap, 0.5em)));
     gap: var(--wp--style--gallery-gap-default, var(--gallery-block--gutter-size, var(--wp--style--block-gap, 0.5em)));
 }
-
