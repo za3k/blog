@@ -33,10 +33,6 @@ img.wp-smiley, img.emoji {
 .wp-block-audio {
     box-sizing: border-box;
 }
-.wp-block-audio figcaption {
-    margin-bottom: 1em;
-    margin-top: 0.5em;
-}
 .wp-block-audio audio {
     min-width: 300px;
     width: 100%;
@@ -923,9 +919,16 @@ section.wp-block-cover-image > h2 {
 .wp-block-embed {
     overflow-wrap: break-word;
 }
+.wp-block-audio figcaption,
+.wp-block-image figcaption,
 .wp-block-embed figcaption {
-    margin-bottom: 1em;
-    margin-top: 0.5em;
+    /* Za3k */
+    width: 100%;
+    text-align: center;
+    background: #F9F9F9;
+    padding: 10px 5px 5px 5px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 12.6px;
 }
 .wp-block-embed iframe {
     max-width: 100%;
@@ -1480,10 +1483,6 @@ h6.has-text-align-right[style*="writing-mode"]:where([style*="vertical-rl"]) {
 .wp-block-image .aligncenter {
     margin-left: auto;
     margin-right: auto;
-}
-.wp-block-image figcaption {
-    margin-bottom: 1em;
-    margin-top: 0.5em;
 }
 .wp-block-image .is-style-rounded img,
 .wp-block-image.is-style-circle-mask img,

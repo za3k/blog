@@ -17,6 +17,9 @@ def post_process(soup):
                 img['alt'] = img['alt'].removeprefix('caption:')
             caption = img['alt']
 
+        if "/" not in img["src"]:
+            img["src"] = "/images/" + img["src"]
+
         if img.parent.name == "a":
             img = img.parent
         img.wrap(figure)

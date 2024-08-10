@@ -26,6 +26,7 @@ import os, os.path
 import re
 import subprocess
 import yaml
+import zoneinfo
 from markdown2html import markdown2html
 
 from pathlib import Path
@@ -170,18 +171,6 @@ class Templatable(PseudoMap):
     def context(self):
         return collections.ChainMap(self, self.blog)
 
-class Static(Templatable):
-    use_layout = False
-    def __init__(self, path, blog):
-        super().__init__(blog)
-        self.path = path
-    def content(self):
-        with open(self.path, "rb") as f:
-            return f.read()
-    @property
-    def relative_path(self):
-        return self.path.relative_to(self.blog.static_dir)
-
 class Post(Templatable):
     def __init__(self, parsed, blog, comments):
         super().__init__(blog)
@@ -190,6 +179,10 @@ class Post(Templatable):
         for k, v in parsed.items():
             if k in {"tags", "author", "categories"}:
                 k = "_" + k
+            if isinstance(v, datetime.date):
+                tz = zoneinfo.ZoneInfo(blog.timezone)
+                time = datetime.time(18,0,0)
+                v = datetime.datetime.combine(v, time, tz)
             self[k] = v
         self.post_title = self.title # Avoids a dumb thing with str.title in a template
 
@@ -304,12 +297,32 @@ class Page(Templatable):
     def type(self):
         return self.page_name
 
+class Static(Templatable):
+    use_layout = False
+    def __init__(self, path, blog):
+        super().__init__(blog)
+        self.path = path
+    def content(self):
+        with open(self.path, "rb") as f:
+            return f.read()
+    @property
+    def relative_path(self):
+        return self.path.relative_to(self.blog.static_dir)
+
 class Image(Templatable):
     use_layout = False
-    pass # TODO
+    def __init__(self, path, blog):
+        super().__init__(blog)
+        self.path = path
+    def content(self):
+        with open(self.path, "rb") as f:
+            return f.read()
+    @property
+    def filename(self):
+        return self.path.name
 
 class Blog(PseudoMap):
-    def __init__(self, config):
+    def __init__(self, configs):
         self.tags = {} # Tag -> str
         self.categories = {}
         self.authors = {}
@@ -317,8 +330,8 @@ class Blog(PseudoMap):
         self.now = datetime.datetime.now(datetime.timezone.utc)
         self.now_rfc822 = self.now.strftime(RFC822)
 
-        self.config = os.path.abspath(config)
-        self.load_config(config)
+        for config in configs:
+            self.load_config(os.path.abspath(config))
         self.load_posts()
 
     def load_config(self, path):
@@ -343,7 +356,6 @@ class Blog(PseudoMap):
         for post_input_path in Path(self.post_dir).iterdir():
             fm = frontmatter.load(post_input_path)
             comments = self.load_comments(post_input_path.stem)
-            assert fm["has-comments"] == (comments is not None)
             self.add_post(Post(fm, self, comments))
         self.posts = sorted(self.posts, key=lambda post: post.date, reverse=True)
 
@@ -389,7 +401,10 @@ class Blog(PseudoMap):
 
     @property
     def images(self):
-        return [] # TODO
+        for dirpath, dirnames, filenames in os.walk(str(self.image_dir)):
+            for name in filenames:
+                path = Path(dirpath) / name
+                yield Image(path, self)
 
     def generate_all(blog):
         for image in blog.images:
@@ -436,10 +451,10 @@ if __name__ == "__main__":
         description="Generate za3k's blog from markdown files with YAML frontmatter and some templates",
     )
     parser.add_argument("-l", "--local", action='store_true', help="use relative paths for links")
-    parser.add_argument("-c", "--config", help="location of config file", default="config.yaml")
+    parser.add_argument("-c", "--config", help="location of config file", default=["config.yaml"], action='append')
     args = parser.parse_args()
 
-    blog = Blog(config=args.config)
+    blog = Blog(configs=args.config)
     blog.local = args.local
     if args.local:
         blog.web_root = "file://" + blog.destination

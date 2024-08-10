@@ -2,11 +2,12 @@
 source: "/home/zachary/blog"
 destination: "/home/zachary/blog/public"
 
-web_root: "https://blog2.za3k.com"
+web_root: "https://blog.za3k.com"
 title: 'blog of zachary "za3k" vance'
 # For search bar
-domain: "blog2.za3k.com"
+domain: "blog.za3k.com"
 posts_per_page: 10
+timezone: "America/New_York"
 
 post_dir: "posts"
 comments_dir: "comments"
@@ -43,7 +44,7 @@ category_paginated_destination: "{{destination}}/category/{{slug}}.{{page_num}}.
 index_destination: "{{destination}}/page/index.html"
 index_paginated_destination: "{{destination}}/page/index.{{page_num}}.html"
 feed_destination: "{{destination}}/page/feed.xml"
-image_destination: "{{destination}}/images/{{image}}"
+image_destination: "{{destination}}/images/{{filename}}"
 page_destination: "{{destination}}/{{page}}"
 post_destination: "{{destination}}/posts/{{id}}.html"
 static_destination: "{{destination}}/{{relative_path}}"
