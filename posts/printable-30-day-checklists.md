@@ -7,7 +7,7 @@ tags:
 - organization
 - habits
 title: Printable 30-Day Checklists
-link: [link](https://za3k.com/archive/checklists/checklist26.pdf)
+link: "[link](https://za3k.com/archive/checklists/checklist26.pdf)"
 ---
 I've been keeping track of my daily exercise using a checklist on the wall.
 
