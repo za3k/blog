@@ -330,13 +330,15 @@ class Blog(PseudoMap):
         self.now = datetime.datetime.now(datetime.timezone.utc)
         self.now_rfc822 = self.now.strftime(RFC822)
 
-        for config in configs:
-            self.load_config(os.path.abspath(config))
+        self.load_configs([os.path.abspath(config) for config in configs])
         self.load_posts()
 
-    def load_config(self, path):
-        with open(path) as f:
-            config = yaml.safe_load(f)
+    def load_configs(self, paths):
+        config = {}
+        for path in paths:
+            with open(path) as f:
+                for k, v in yaml.safe_load(f).items():
+                    config[k] = v
 
         for k in {"source", "destination"}:
             self[k] = os.path.expanduser(config.pop(k))
