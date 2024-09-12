@@ -133,7 +133,7 @@ class Templatable(PseudoMap):
             for start in range(0, len(self.posts), per_page):
                 number = start//per_page + 1
                 p = {
-                    "posts": self.posts[start:start+per_page],
+                    "posts": [p for p in self.posts[start:start+per_page] if not p.is_draft],
                     "page_num": number,
                 }
                 p["url"] = mustache.render(paginated_url_template, collections.ChainMap(p, self.context))
@@ -240,6 +240,10 @@ class Post(Templatable):
     @property
     def has_categories(self):
         return len(self.categories) > 0
+
+    @property
+    def is_draft(self):
+        return hasattr(self, "status") and self.status == "draft"
 
     def content(self):
         c = super().content()
