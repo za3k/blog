@@ -17,6 +17,7 @@ def post_process(soup):
                 img['alt'] = img['alt'].removeprefix('caption:')
             caption = img['alt']
 
+        img["src"] = img["src"].replace("../images/", "")
         if "/" not in img["src"]:
             img["src"] = "/images/" + img["src"]
 
