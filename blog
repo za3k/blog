@@ -181,7 +181,12 @@ class Post(Templatable):
                 k = "_" + k
             if isinstance(v, datetime.date):
                 tz = zoneinfo.ZoneInfo(blog.timezone)
-                time = datetime.time(18,0,0)
+                
+                if hasattr(v, "time"):
+                    time = v.time()
+                else:
+                    time = datetime.time(18,0,0)
+                print(parsed["title"], v, time)
                 v = datetime.datetime.combine(v, time, tz)
             self[k] = v
         self.post_title = self.title # Avoids a dumb thing with str.title in a template

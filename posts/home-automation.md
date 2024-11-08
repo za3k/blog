@@ -2,7 +2,7 @@
 author: admin
 categories:
 - Technical
-date: 2024-11-07
+date: 2024-11-07 18:00:00
 tags:
 - data logging
 - home automation

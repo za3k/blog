@@ -2,7 +2,7 @@
 author: admin
 categories:
 - Technical
-date: 2024-11-07
+date: 2024-11-07 18:01:00
 tags:
 - hack-a-day
 title: 'Hack-a-Day, Day 07: When Does the Sun Come Back?'
