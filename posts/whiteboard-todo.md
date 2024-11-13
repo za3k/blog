@@ -5,6 +5,7 @@ categories:
 date: 2024-11-12
 tags:
 - crafts
+- hack-a-day
 title: 'Hack-a-Day, Day 12: Whiteboard to-do list'
 ---
 
@@ -14,7 +15,7 @@ Today I made a TODO list. It has whiteboard sections to write tasks in, an erase
 
 The blue is mostly spray paint, with some hand acrylic painting near the tape. The various bits on top are held in place with magnets, which I epoxied.
 
-The cost to make this was $17. $5 for the whiteboard marker, $5 for the MDF board, and $7 for the timer. The eraser I made for free, I already had paints, whiteboard tape, epoxy, and magnets.
+The cost to make this was $17. $5 for the whiteboard marker, $5 for the MDF board, and $7 for the timer. The eraser I made for free. I already had paints, whiteboard tape, epoxy, and magnets.
 
 ![caption: in-progress whiteboard. note some blue LEDs on the right](whiteboard-todo-making.jpg)
 
