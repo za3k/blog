@@ -2,12 +2,12 @@
 author: admin
 categories:
 - Non-Technical
-date: 2024-11-15
+date: 2024-11-14
 tags:
 - video games
 - board games
 - hack-a-day
-title: 'Hack-a-Day, Day 15: Can''t Stop'
+title: 'Hack-a-Day, Day 14: Can''t Stop'
 ---
 
 [![caption: can't stop won't stop](cant-stop.png)](https://za3k.github.io/cant-stop/)
