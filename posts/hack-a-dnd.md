@@ -2,7 +2,7 @@
 author: admin
 categories:
 - Non-Technical
-date: 2024-??-??
+date: 2024-11-19
 tags:
 - role-playing
 - dnd
