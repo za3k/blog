@@ -11,7 +11,7 @@ title: 'Hack-a-Day, Day 23: Unfinished Game'
 
 Today I wrote a game called **Little Herbalist**. Or at least, I started to.
 
-![caption: part of "little herbalist"](little-herbalist1.png)
+[![caption: part of "little herbalist"](little-herbalist1.png)](https://za3k.github.io/little-herbalist/)
 
 I'm pretty pleased with what I have--random ingredients appearing in various colors, which you can add to a brewing potion. The potion changes colors based on what ingredients you've added.
 
