@@ -12,7 +12,7 @@ One feature I really liked about older ThinkPad models was that when you plugged
 
 The downside to system beeping is that it gets really annoying. I don't want a failed tab completion to go "beep" aloud, especially when I'm in public.
 
-As a result, I really, really aggressively turn off all kinds of system bells, etc. Sadly, I get no beeps either.
+I aggressively turn off all kinds of system bells, etc. Sadly, I get no beeps either.
 
 Today I wrote a little python script to monitor power beep how I want. It plays it through my computer speakers (unmuting them if needed, just long enough to beep). It works for me on both ALSA and pulseaudio with an ALSA bridge (I have a few computers on each).
 
