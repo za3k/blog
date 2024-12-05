@@ -15,6 +15,6 @@ I made a coding challenge, vaguely tied up as a game. Your goal is to complete s
 
 It put together about 10 challenges, together with some story narration.
 
-**IF THIS MESSAGE MESSAGE IS UP, THE GAME IS PROBABLY BUGGY:** The game problems are currently untested. There may very well be some bugs. If you play, please send me correct answers so I can include them, as well as any bugs you find.
+The game problems are now tested.
 
 You can [play online](https://za3k.github.io/no-room-for-error). The code is [on github](https://github.com/za3k/no-room-for-error)
