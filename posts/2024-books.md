@@ -1,0 +1,159 @@
+---
+author: admin
+categories:
+- Non-Technical
+date: 2025-01-09
+tags:
+- book review
+- books
+- review
+- yearly review
+title: '2024 Books'
+---
+Here’s a list of books I read in 2024. The ones in bold I recommend.
+
+**Fiction**:
+
+- Aether's Blessing (Aether's Revival Book 1) by Daniel Schinhofen
+- Agartha Loop 1-2 by RavensDagger
+- All the Skills 3-4 by Honour Rae
+- Among Others by Jo Dalton
+- Assistant and the Villain 1 by Hannah Nicole Maehrer
+    - Assistant to the Villain (Book 1)
+- Androne 1-2 by Dwain Worrell
+    - Androne (Book 1)
+    - Alliance (Book 2)
+- Arcane Ascension 4-5 by Andrew Rowe
+    - The Silence of Unworthy Gods (Book 4)
+    - When Wizards Follow Fools (Book 5)
+- Astral Odyssey by Virgil Knightley, Jay Aury
+- Babel 1-4 by Josiah Bancroft
+    - Senlin Ascends (Book 1)
+    - Arm of the Sphinx (Book 2)
+    - The Hod King (Book 3)
+    - The Fall of Babel (Book 4)
+- Beware of Chicken by Casualfarmer
+- Blood for Power 1 by Scott W. James
+- Book of the Dead: Awakening by RinoZ
+- Budding Scientist in a Fantasy World 1-2 by Acaswell
+    - A Small Town in Southern Illvaria (Book 1)
+    - **Society of Starry Eyes (Book 2)**
+- The Coworker by Freida McFadden
+- Cultination Begins with Generosity by Plutus
+- Dead Tired 1-2 by RavensDagger
+- Delve by SenescentSoul
+- Discovery of Witches by Deborah Harness
+- Discworld by Terry Pratchett
+    - Science of Discworld by Terry Pratchett et al
+    - Night Watch by Terry Pratchett
+- Disinherited Prince 1-6 by Guy Antibes
+    - The Disinherited Prince
+    - The Monk's Habit (The Disinherited Prince Book 2)
+    - A Sip of Magic (The Disinherited Prince Book 3)
+    - The Sleeping God (The Disinherited Prince Book 4)
+    - The Emperor's Pet (The Disinherited Prince Book 5)
+    - The Misplaced Prince (The Disinherited Prince Book 6)
+- Dumb Luck and Dead Heroes 1-2 by Skyler Ramirez
+    - The Worst Ship in the Fleet (Book 1)
+    - The Worst Spies in the Sector (Book 2)
+- Dungeon Devotee by Nixia
+- Dungeon Crawler Carl by Matt Dinniman
+    - This Inevitable Ruin (Book 7)
+- Eight 1-3 by Samer Rabadi
+- Flail Against Infinity by Valentine
+- God of Density by ToraAKR
+    - Dawn of the Density God (Book 1)
+- Gods of the Game 1-2 by Phil Tucker
+    - Krieg Chess (Book 1)
+- Grand Game by Tom Elliot
+    - Wolf in the Void, The Grand Game, Book 5: A Dark Fantasy LitRPG Adventure by Tom Elliot
+    - A Scion's Duty, The Grand Game, Book 6: A Dark Fantasy LitRPG Adventure by Tom Elliot
+    - Ancient Debts, The Grand Game, Book 7: A Dark Fantasy LitRPG Adventure by Tom Elliot
+- Grimmwald by Jay Aury
+- Heavenly Shae by daneislazy
+- Hell Difficulty Tutorial by Cerim
+- Heretical Fishing by Haylock Jobson
+- Immortal Great Souls 3 by Phil Tucker
+    - LastRock (Book 3)
+- Industrial Strength Magic by Macronomicon
+    - Industrial Strength Magic (Book 1)
+    - Sequel.exe (Book 2)
+    - Rival.EXE (Book 3)
+- The Kaiju Preservation Society by John Scalzi
+- Law of the Jungle 1-8
+    - Law of the Jungle (Book 1): A Wuxia Progression Fantasy Adventure Series by Vasily Mahanenko
+- Library System Reset by K.T. Hanna
+    - Library System Reset: Overdue (Book 1)
+    - Library System Reset: Damaged (Book 2)
+    - Library System Reset: Rebound (Book 3)
+- **Machine of Death edited by Matthew Bennardo and Ryan North**
+- Magic's Mantle by Bruce Sentar
+- Mercy of Gods by James S.A. Corey
+- Millenial Mage by J.L. Mullins
+    - Eskau (Book 7)
+    - Ironbound (Book 8)
+- Minute Mage 1-2 by Reg Rome
+- Morning Glory Milking Farm by C.M. Nascosta
+- Murder Your Employer by Rupert Holmes
+- Murderbot Diaries 1-2 by Martha Wells
+    - Artificial Condition (Book 2)
+    - Rogue Protocol (Book 3)
+- Never Die Twice by Maxime J. Durand (Void Herald)
+- Newt and Demon by Edwin M. Griffiths
+- Nothing Mage 3 by J. P. Valentine
+    - Syzygy (Book 3)
+- Orconomics by J. Zachary Pike
+- Pale by wildbow
+- Path of Ascension 1-7 by C. Mantis
+- **Press Start to Play edited by Daniel H. Wilson and John Joseph Adams**
+- The Primal Hunter 1-2 by Zogarth
+- Quest Academy 1-3 by Brian J. Nordon
+    - Quest Academy: Silvers (Book 1)
+    - Quest Academy: Scavengers (Book 2)
+    - Quest Academy: Saviors (Book 3)
+- Revelation Space / Prefect Dreyfus by Alastair Reynolds
+    - The Prefect
+    - Elysium Fire
+    - Machine Vendetta
+    - Revelation Space
+- Royals of Villain Academy 1-4 by Eva Chase
+- Seek by wildbow
+- Shades of Magic 2 by V.E. Schwab
+    - A Gathering of Shadows: A Novel (Shades of Magic Book 2) by V. E. Schwab
+- She of Many Dragons by Honour Rae
+- Stargazers War by J.P. Valentine
+    - To Flail Against Infinity (Book 1)
+    - To Catch a Falling Leaf (Book 2)
+- Mortal Techniques by Rob J. Hayes
+    - Spirits of Vengeance (Book 3)
+- Steerswoman 4 by Rosemary Kirstein
+    - Words of Power (Book 4)
+- Strings of Empire by Guy Antibes
+    - The Wizard Corps (Book 1)
+    - The Cloister Wizard (Book 2)
+- Three Kinds of Lucky by Kim Harrison
+- Translation State by Ann Leckie
+- Undying Magician 3 by Shane Purdy
+    - The Undying Caverns (Book 3)
+- Unbound 1-6 by Nicoli Gonnella
+    - Dissonance (Book 1)
+    - Silence (Book 2)
+    - Hunger (Book 3)
+    - Fury (Book 4)
+    - Threshold (Book 5)
+    - Expanse (Book 6)
+- Villain for Hire 1-4 by Jay Aury
+    - Villain for Hire: Bad Girls Abound (Book 1)
+    - Villain for Hire: Damsels and Deathrays (Book 2)
+    - Villain for Hire: Maidens and Master Minds (Book 3)
+    - Villain for Hire: Hell on High Heels (Book 4)
+    - Villain for Hire: Fembots with Benefits (Book 5)
+- The Villainess Is An SS+ Rank Adventurer 1 by Kaye Ng
+- The Way of Shadows by Brent Weeks
+
+**nonfiction**:
+
+- Coders at Work by Peter Seibel
+- The Madman's Library by Edward Brooke-Hitching
+- To-Do List Formula by Damon Zahariades
+- Veneering Made Easy by Herman Hjorth
