@@ -14,144 +14,135 @@ Here’s a list of books I read in 2024. The ones in bold I recommend.
 
 **Fiction**:
 
-- Aether's Blessing (Aether's Revival Book 1) by Daniel Schinhofen
-- Agartha Loop 1-2 by RavensDagger
-- All the Skills 3-4 by Honour Rae
+- (Aether's Revival, Book 1) Aether's Blessing by Daniel Schinhofen
+- Agartha Loop 1 by RavensDagger
+- Agartha Loop 2 by RavensDagger
+- All the Skills 3 by Honour Rae
+- All the Skills 4 by Honour Rae
 - Among Others by Jo Dalton
-- Assistant and the Villain 1 by Hannah Nicole Maehrer
-    - Assistant to the Villain (Book 1)
-- Androne 1-2 by Dwain Worrell
-    - Androne (Book 1)
-    - Alliance (Book 2)
-- Arcane Ascension 4-5 by Andrew Rowe
-    - The Silence of Unworthy Gods (Book 4)
-    - When Wizards Follow Fools (Book 5)
+- Assistant to the Villain (Book 1) by Hannah Nicole Maehrer
+- (Androne, Book 1) Androne by Dwain Worrell
+- (Androne, Book 2) Alliance by Dwain Worrell
+- (Arcane Ascension, Book 4) The Silence of Unworthy Gods by Andrew Rowe
+- (Arcane Ascension, Book 5) When Wizards Follow Fools by Andrew Rowe
 - Astral Odyssey by Virgil Knightley, Jay Aury
-- Babel 1-4 by Josiah Bancroft
-    - Senlin Ascends (Book 1)
-    - Arm of the Sphinx (Book 2)
-    - The Hod King (Book 3)
-    - The Fall of Babel (Book 4)
+- (Babel, Book 1) Senlin Ascends by Josiah Bancroft
+- (Babel, Book 2) Arm of the Sphinx by Josiah Bancroft
+- (Babel, Book 3) The Hod King by Josiah Bancroft
+- (Babel, Book 4) The Fall of Babel by Josiah Bancroft
 - Beware of Chicken by Casualfarmer
 - Blood for Power 1 by Scott W. James
 - Book of the Dead: Awakening by RinoZ
-- Budding Scientist in a Fantasy World 1-2 by Acaswell
-    - A Small Town in Southern Illvaria (Book 1)
-    - **Society of Starry Eyes (Book 2)**
+- (Budding Scientist in a Fantasy World, Book 1) A Small Town in Southern Illvaria by Acaswell
+- **(Budding Scientist in a Fantasy World, Book 2) Society of Starry Eyes by Acaswell**
 - The Coworker by Freida McFadden
 - Cultination Begins with Generosity by Plutus
-- Dead Tired 1-2 by RavensDagger
+- Dead Tired 1 by RavensDagger
+- Dead Tired 2 by RavensDagger
 - Delve by SenescentSoul
 - Discovery of Witches by Deborah Harness
-- Discworld by Terry Pratchett
-    - Science of Discworld by Terry Pratchett et al
-    - Night Watch by Terry Pratchett
-- Disinherited Prince 1-6 by Guy Antibes
-    - The Disinherited Prince
-    - The Monk's Habit (The Disinherited Prince Book 2)
-    - A Sip of Magic (The Disinherited Prince Book 3)
-    - The Sleeping God (The Disinherited Prince Book 4)
-    - The Emperor's Pet (The Disinherited Prince Book 5)
-    - The Misplaced Prince (The Disinherited Prince Book 6)
-- Dumb Luck and Dead Heroes 1-2 by Skyler Ramirez
-    - The Worst Ship in the Fleet (Book 1)
-    - The Worst Spies in the Sector (Book 2)
+- (Discworld) Science of Discworld by Terry Pratchett et al
+- (Discworld) Night Watch by Terry Pratchett
+- (Disinherited Prince, Book 1) The Disinherited Prince by Guy Antibes
+- (Disinherited Prince, Book 2) The Monk's Habit by Guy Antibes
+- (Disinherited Prince, Book 3) A Sip of Magic by Guy Antibes
+- (Disinherited Prince, Book 4) The Sleeping God by Guy Antibes
+- (Disinherited Prince, Book 5) The Emperor's Pet by Guy Antibes
+- (Disinherited Prince, Book 6) The Misplaced Prince by Guy Antibes
+- (Dumb Luck and Dead Heroes, Book 1) The Worst Ship in the Fleet by Skyler Ramirez
+- (Dumb Luck and Dead Heroes, Book 1) The Worst Spies in the Sector by Skyler Ramirez
 - Dungeon Devotee by Nixia
-- Dungeon Crawler Carl by Matt Dinniman
-    - This Inevitable Ruin (Book 7)
-- Eight 1-3 by Samer Rabadi
-- Flail Against Infinity by Valentine
-- God of Density by ToraAKR
-    - Dawn of the Density God (Book 1)
-- Gods of the Game 1-2 by Phil Tucker
-    - Krieg Chess (Book 1)
-- Grand Game by Tom Elliot
-    - Wolf in the Void, The Grand Game, Book 5: A Dark Fantasy LitRPG Adventure by Tom Elliot
-    - A Scion's Duty, The Grand Game, Book 6: A Dark Fantasy LitRPG Adventure by Tom Elliot
-    - Ancient Debts, The Grand Game, Book 7: A Dark Fantasy LitRPG Adventure by Tom Elliot
+- (Dungeon Crawler Carl, Book 7) This Inevitable Ruin by Matt Dinniman
+- Eight by Samer Rabadi
+- Eight 2 by Samer Rabadi
+- Eight 3 by Samer Rabadi
+- (God of Density, Book 1) Dawn of the Density God by ToraAKR
+- (Gods of the Game, Book 1) Krieg Chess by Phil Tucker
+- (Gods of the Game, Book 2) Gods of the Game by Phil Tucker
+- (Grand Game, Book 5) Wolf in the Void by Tom Elliot
+- (Grand Game, Book 6) A Scion's Duty by Tom Elliot
+- (Grand Game, Book 7) Ancient Debts by Tom Elliot
 - Grimmwald by Jay Aury
 - Heavenly Shae by daneislazy
 - Hell Difficulty Tutorial by Cerim
 - Heretical Fishing by Haylock Jobson
-- Immortal Great Souls 3 by Phil Tucker
-    - LastRock (Book 3)
-- Industrial Strength Magic by Macronomicon
-    - Industrial Strength Magic (Book 1)
-    - Sequel.exe (Book 2)
-    - Rival.EXE (Book 3)
+- (Immortal Great Souls, Book 3) LastRock by Phil Tucker
+- (Industrial Strength Magic, Book 1) Industrial Strength Magic by Macronomicon
+- (Industrial Strength Magic, Book 2) Sequel.exe by Macronomicon
+- (Industrial Strength Magic, Book 3) Rival.EXE by Macronomicon
 - The Kaiju Preservation Society by John Scalzi
-- Law of the Jungle 1-8
-    - Law of the Jungle (Book 1): A Wuxia Progression Fantasy Adventure Series by Vasily Mahanenko
-- Library System Reset by K.T. Hanna
-    - Library System Reset: Overdue (Book 1)
-    - Library System Reset: Damaged (Book 2)
-    - Library System Reset: Rebound (Book 3)
+- Law of the Jungle 1 by Vasily Mahanenko
+- Law of the Jungle 2 by Vasily Mahanenko
+- Law of the Jungle 3 by Vasily Mahanenko
+- Law of the Jungle 4 by Vasily Mahanenko
+- Law of the Jungle 5 by Vasily Mahanenko
+- Law of the Jungle 6 by Vasily Mahanenko
+- Law of the Jungle 7 by Vasily Mahanenko
+- Law of the Jungle 8 by Vasily Mahanenko
+- Library System Reset (Book 1): Overdue by K.T. Hanna
+- Library System Reset (Book 2): Damaged by K.T. Hanna
+- Library System Reset (Book 3): Rebound by K.T. Hanna
 - **Machine of Death edited by Matthew Bennardo and Ryan North**
 - Magic's Mantle by Bruce Sentar
 - Mercy of Gods by James S.A. Corey
-- Millenial Mage by J.L. Mullins
-    - Eskau (Book 7)
-    - Ironbound (Book 8)
-- Minute Mage 1-2 by Reg Rome
+- **(Millenial Mage, Book 7) Eskau by J.L. Mullins**
+- (Millienial Mage, Book 8) Ironbound by J.L. Mullins
+- Minute Mage 1 by Reg Rome
+- Minute Mage 2 by Reg Rome
 - Morning Glory Milking Farm by C.M. Nascosta
 - Murder Your Employer by Rupert Holmes
-- Murderbot Diaries 1-2 by Martha Wells
-    - Artificial Condition (Book 2)
-    - Rogue Protocol (Book 3)
+- (Murderbot, Book 2) Artificial Condition by Martha Wells
+- (Murderbot, Book 3) Rogue Protocol by Martha Wells
 - Never Die Twice by Maxime J. Durand (Void Herald)
 - Newt and Demon by Edwin M. Griffiths
-- Nothing Mage 3 by J. P. Valentine
-    - Syzygy (Book 3)
+- (Nothing Mage, Book 3) Syzygy by J. P. Valentine
 - Orconomics by J. Zachary Pike
 - Pale by wildbow
-- Path of Ascension 1-7 by C. Mantis
+- Path of Ascension 1 by C. Mantis
+- Path of Ascension 2 by C. Mantis
+- Path of Ascension 3 by C. Mantis
+- Path of Ascension 4 by C. Mantis
+- Path of Ascension 5 by C. Mantis
+- Path of Ascension 6 by C. Mantis
+- Path of Ascension 7 by C. Mantis
 - **Press Start to Play edited by Daniel H. Wilson and John Joseph Adams**
-- The Primal Hunter 1-2 by Zogarth
-- Quest Academy 1-3 by Brian J. Nordon
-    - Quest Academy: Silvers (Book 1)
-    - Quest Academy: Scavengers (Book 2)
-    - Quest Academy: Saviors (Book 3)
-- Revelation Space / Prefect Dreyfus by Alastair Reynolds
-    - The Prefect
-    - Elysium Fire
-    - Machine Vendetta
-    - Revelation Space
+- The Primal Hunter 1 by Zogarth
+- The Primal Hunter 2 by Zogarth
+- Quest Academy (Book 1): Silvers by Brian J. Nordon
+- Quest Academy (Book 2): Scavengers by Brian J. Nordon
+- Quest Academy (Book 3): Saviors by Brian J. Nordon
+- (Revelation Space) The Prefect by Alastair Reynolds
+- (Revelation Space) Elysium Fire by Alastair Reynolds
+- (Revelation Space) Machine Vendetta by Alastair Reynolds
+- (Revelation Space) Revelation Space by Alastair Reynolds
 - Royals of Villain Academy 1-4 by Eva Chase
 - Seek by wildbow
-- Shades of Magic 2 by V.E. Schwab
-    - A Gathering of Shadows: A Novel (Shades of Magic Book 2) by V. E. Schwab
+- (Shades of Magic, Book 2) A Gathering of Shadows by V.E. Schwab
 - She of Many Dragons by Honour Rae
-- Stargazers War by J.P. Valentine
-    - To Flail Against Infinity (Book 1)
-    - To Catch a Falling Leaf (Book 2)
-- Mortal Techniques by Rob J. Hayes
-    - Spirits of Vengeance (Book 3)
-- Steerswoman 4 by Rosemary Kirstein
-    - Words of Power (Book 4)
-- Strings of Empire by Guy Antibes
-    - The Wizard Corps (Book 1)
-    - The Cloister Wizard (Book 2)
+- (Stargazers War, Book 1) To Flail Against Infinity by J.P. Valentine
+- (Stargazers War, Book 2) To Catch a Falling Leaf by J.P. Valentine
+- (Mortal Techniques, Book 3) Spirits of Vengeance by Rob J. Hayes
+- (Steerswoman, Book 4) Words of Power by Rosemary Kirstein
+- (Strings of Empire, Book 1) The Wizard Corps by Guy Antibes
+- (Strings of Empire, Book 2) The Cloister Wizard by Guy Antibes
 - Three Kinds of Lucky by Kim Harrison
 - Translation State by Ann Leckie
-- Undying Magician 3 by Shane Purdy
-    - The Undying Caverns (Book 3)
-- Unbound 1-6 by Nicoli Gonnella
-    - Dissonance (Book 1)
-    - Silence (Book 2)
-    - Hunger (Book 3)
-    - Fury (Book 4)
-    - Threshold (Book 5)
-    - Expanse (Book 6)
-- Villain for Hire 1-4 by Jay Aury
-    - Villain for Hire: Bad Girls Abound (Book 1)
-    - Villain for Hire: Damsels and Deathrays (Book 2)
-    - Villain for Hire: Maidens and Master Minds (Book 3)
-    - Villain for Hire: Hell on High Heels (Book 4)
-    - Villain for Hire: Fembots with Benefits (Book 5)
+- (Undying Magician, Book 3) The Undying Caverns by Shane Purdy
+- (Unbound, Book 1) Dissonance by Nicoli Gonnella
+- (Unbound, Book 1) Silence by Nicoli Gonnella
+- (Unbound, Book 1) Hunger by Nicoli Gonnella
+- (Unbound, Book 1) Fury by Nicoli Gonnella
+- (Unbound, Book 1) Threshold by Nicoli Gonnella
+- (Unbound, Book 1) Expanse by Nicoli Gonnella
+- Villain for Hire (Book 1): Bad Girls Abound by Jay Aury
+- Villain for Hire (Book 2): Damsels and Deathrays by Jay Aury
+- Villain for Hire (Book 3): Maidens and Master Minds by Jay Aury
+- Villain for Hire (Book 4): Hell on High Heels by Jay Aury
+- Villain for Hire (Book 5): Fembots with Benefits by Jay Aury
 - The Villainess Is An SS+ Rank Adventurer 1 by Kaye Ng
 - The Way of Shadows by Brent Weeks
 
-**nonfiction**:
+**Nonfiction**:
 
 - Coders at Work by Peter Seibel
 - The Madman's Library by Edward Brooke-Hitching
