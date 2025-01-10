@@ -2,7 +2,7 @@
 author: admin
 categories:
 - Non-Technical
-date: 2025-01-09
+date: 2025-01-09 01:00:00-07:00
 tags:
 - book review
 - books
