@@ -32,7 +32,7 @@ Here’s a list of books I read in 2023 (a year later!). The ones in bold I reco
 - (Astra Academy, Book 1) Academy Arcanist by Shami Stovall
 - (Astra Academy, Book 2) Mimic Arcanist by Shami Stovall
 - The Atlantis Gene by A.G. Riddle
-- (Body Electric, Book 3) Hardware: A Male-Male Erotic Robot Romance by Electra Shepherd
+- (Body Electric, Book 3) Hardware by Electra Shepherd
 - **Bridge of Birds by Barry Hughart**
 - (Brightest Shadow, Book 1) The Brightest Shadow by Sarah Lin
 - (Brightest Shadow, Book 3) The Unnecessary Victory by Sarah Lin
