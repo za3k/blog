@@ -1,0 +1,183 @@
+---
+author: admin
+categories:
+- Non-Technical
+date: 2025-01-09
+tags:
+- book review
+- books
+- review
+- yearly review
+title: '2023 Books'
+---
+Here’s a list of books I read in 2023 (a year later!). The ones in bold I recommend.
+
+- All the Skills 1 by Honour Rae
+- All The Skills 2 by Honour Rae
+- (Alpha Physics, Book 1) Wagga by Alex Kozlowski
+- (Alpha Physics, Book 2) Delay by Mr Alex Kozlowski
+- (Alpha Physics, Book 3) Disquiet by Mr Alex Kozlowski
+- (Alpha Physics, Book 4) Albury by Alex Kozlowski
+- (Alpha Physics, Book 5) Dungeon by Alex Kozlowski
+- (Alpha Physics, Book 6) Home Bound by Alex Kozlowski
+- The Amber Project by J.N. Chaney
+- Amelia The Level Zero Hero 1 by V.A. Lewis, Melas Delta
+- Among Strangers by Robert Silverberg
+- **(Arcane Ascension, Book 1) Sufficiently Advanced Magic by Andrew Rowe**
+- (Arcane Ascension, Book 2) On the Shoulders of Titans by Andrew Rowe
+- (Arcane Ascension, Book 2) The Torch that Ignites the Stars by Andrew Rowe
+- (Arcane Awakening, Book 1) Imperial Wizard by J Parsons
+- (Arcane Awakening, Book 2) Imperial Wizard 2: Ambitions by J Parsons, Niki Prince
+- Armada by Ernest Cline
+- (Astra Academy, Book 1) Academy Arcanist by Shami Stovall
+- (Astra Academy, Book 2) Mimic Arcanist by Shami Stovall
+- The Atlantis Gene by A.G. Riddle
+- (Body Electric, Book 3) Hardware: A Male-Male Erotic Robot Romance by Electra Shepherd
+- **Bridge of Birds by Barry Hughart**
+- (Brightest Shadow, Book 1) The Brightest Shadow by Sarah Lin
+- (Brightest Shadow, Book 3) The Unnecessary Victory by Sarah Lin
+- (Budding Scientist in a Fantasy World, Book 1) Small Town in Southern Illvaria by Acaswell
+- Brute Force by Scott Meyer
+- The Chemist By Stephanie Meyer
+- Clear (Comixology Originals) by Scott Snyder, Will Dennis, Francis Manapul, AndWorld Design
+- (Completionist Chronicles, Book 1) Ritualist by Dakota Krout
+- (Completionist Chronicles, Book 2) Regicide by Dakota Krout
+- (Completionist Chronicles, Book 3) Rexus, Side Quest by Dakota Krout
+- (Completionist Chronicles, Book 4) Raze by Dakota Krout
+- (Completionist Chronicles, Book 5) Ruthless by Dakota Krout
+- (Completionist Chronicles, Book 6) Inflame by Dakota Krout
+- (Completionist Chronicles, Book 7) Invent by Dakota Krout
+- (Completionist Chronicles, Book 8) Implode by Dakota Krout
+- (Completionist Chronicles, Book 9) Tenacity by Dakota Krout
+- (Completionist Chronicles, Book 10) Thesaurize by Dakota Krout
+- **Conspiracy of Truths by Alexandra Rowland**
+- (Cradle, Book 12) Waybound by Will Wight
+- Dawn of the Void 1 by Phil Tucker
+- Dawn of the Void 2 by Phil Tucker
+- Dawn of the Void 3 by Phil Tucker
+- Dead Tired 1 by RavensDagger
+- (Divine Dungeon, Book 1) Dungeon Born by Dakota Krout
+- (Dungeon Crawler Carl, Book 1) Dungeon Crawler Carl by Matt Dinniman
+- (Dungeon Crawler Carl, Book 2) Carl's Doomsday Scenario by Matt Dinniman
+- (Dungeon Crawler Carl, Book 3) The Dungeon Anarchist's Cookbook by Matt Dinniman
+- (Dungeon Crawler Carl, Book 4) The Butcher's Masquerade by Matt Dinniman
+- (Dungeon Crawler Carl, Book 4) The Gate of the Feral Gods by Matt Dinniman
+- (Dungeon Crawler Carl, Book 6) The Eye of the Bedlam Bride by Matt Dinniman
+- (Dungeon from the Void, Book 1) The Void Dungeon by Shane Purdy
+- (Dungeon from the Void, Book 2) The Dungeon Delve by Shane Purdy
+- (Dungeon from the Void, Book 3) The Dungeon Assault by Shane Purdy
+- (Dungeon from the Void, Book 4) The Neutral Nation by Shane Purdy
+- (Elemental Magic, Book 1) SORCERER by Michael Nowotny, Mark Woodhouse, Trent Landt
+- Ella Minnow Pea by Mark Dunn
+- Emergency Skin by N. K. Jemisin
+- Enter System (Natural Laws Apocalypse Book 1) by Tom Larcombe
+- (Evander Tailer, Book 1) The Enchanter by Tobias Begley
+- (Evander Tailer, Book 2) The Diviner by Tobias Begley
+- The Extractionist by Kimberly Unger
+- The Final Decree by Shami Stovall
+- First Contact by D. L. Harrison
+- (Galactogon, Book 1) Start the Game by Vasily Mahanenko
+- (Gild, Book 1) Gild by Raven Kennedy
+- (Gild, Book 2) Glint by Raven Kennedy
+- (Gild, Book 3) Gleam by Raven Kennedy
+- (Good Guys, Book 1) One More Last Time by Eric Ugland
+- The Good Samaritan by John Marrs
+- (Grand Game, Book 1) The Grand Game by Tom Elliot
+- (Grand Game, Book 2) Way of the Wolf by Tom Elliot
+- (Grand Game, Book 3) World Nexus by Tom Elliot
+- (Grand Game, Book 4) House Wolf by Tom Elliot
+- (Heavenly Throne, Book 1) Force Cultivation by Yuri Ajin
+- The Hedge Wizard by Alex Maher
+- The Housemaid by Freida McFadden
+- How Long Til Black Future Month by NK Jemisin
+- **Hunter x Hunter by Yoshihiro Togashi**
+- (Immortal Great Souls, Book 1) Bastion by Phil Tucker
+- (Immortal Great Souls, book 2) The Rascor Plains by Phil Tucker
+- (Iron Widow, Book 1) Iron Widow by Xiran Jay Zhao
+- The Killing Moon by NK Jemisin
+- The Last Conversation by Paul Tremblay
+- (Last Horizon, Book 1) The Captain by Will Wight
+- Ledge by Stacey McEwan
+- Machine of Death, edited by Matthew Bennardo and Ryan North
+- (Mage Errant, Book 1) Into the Labyrinth by John Bierce
+- Mage Stones: Part 1 by D.J. Dammeyer
+- (Magic 2.0, Book 1) Off to Be the Wizard by Scott Meyer, Liz Pulido
+- (Menocht Loop, Book 2) The False Ascendant by Lorne Ryburn, caerulex, Silas Sontag
+- (Menochy Loop, Book 1) The Menocht Loop by Lorne Ryburn, caerulex, Silas Sontag
+- Mickey 7 by Edward Ashton
+- **(Millenial Mage, Book 1) Mageling by J.L. Mullins**
+- (Millenial Mage, Book 2) Mage by J.L. Mullins
+- (Millenial Mage, Book 3) Binding by J.L. Mullins
+- (Millenial Mage, Book 5) Bound by J.L. Mullins
+- (Millenial Mage, Book 5) Fusing by J.L. Mullins
+- (Millenial Mage, Book 6) Fused by J.L. Mullins
+- (Monarch, Book 1) Monarch: A Prince Out of Time by J. McCoy, Eligos
+- (Murderbot, Book 1) All Systems Red by Martha Wells
+- (Naga Brides, Book 1) Viper by Naomi Lucas
+- Natural History of Hell by Jeffrey Ford
+- Nettle & Bone by T Kingfisher
+- Never Lie by Freida McFadden
+- (Nexus Games, Book 2) The Nexus Gamesby Shami Stovall
+- (Nexus Games, Book 2) The Nexus Knight by Shami Stovall
+- (Nexus Games, Book 3) The Nexus Challenge by Shami Stovall
+- (Nothing Mage, Book 1) The Nothing Mage by J. P. Valentine
+- (Nothing Mage, Book 2) Untolled by J. P. Valentine
+- The One by John Marrs
+- One Piece by Eiichiro Oda
+- Page Keeper 1 by Dante King
+- (Paranoid Mage, Book 1) Paranoid Mage 1 by Inadvisably Compelled
+- (Paranoid Mage, Book 2) Renegade Mage 2 by Inadvisably Compelled
+- (Paranoid Mage, Book 3) Heretic Mage 3 by Inadvisably Compelled
+- The Perfect Run by Maxime J. Durand
+- Poor Man's Fight by Elliott Kay
+- Quantum Radio by A.G. Riddle
+- Randomize by Andy Weir
+- (Reckoners, Book 1) Steelheart by Brandon Sanderson
+- (Reckoners, Book 2) Firefight by Brandon Sanderson
+- (Reckoners, Book 3) Calamity by Brandin Sanderson
+- (Resonance Cycle, Book 1) Divine Invasion by Aaron Renfroe
+- Rueberry Orchard by Michele Notaro
+- (Selection, Book 1) The Selection by Kiera Cass
+- (Selection, Book 2) The Elite by Kiera Cass
+- (Selection, Book 3) The One by Kiera Cass
+- The Silent Patient by Alex Michaelides
+- The Silver Queendom by Dan Koboldt
+- (Solar Clipper, Book 1) Quarter Share by Nathan Lowell
+- (Solar Clipper, Book 2) Half Share by Nathan Lowell
+- (Solar Clipper, Book 3) Full Share by Nathan Lowell
+- Spell Thief: A Deck Building LitRPG Adventure (Tower of Cards Book 1) by J Pal
+- Starter Villain by John Scalzi
+- (Sybil, Book 1) Primordial Ascension by Azrie
+- (System Universe, Book 1) System Change by SunriseCV
+- (System Universe, Book 2) Torith by SunriseCV
+- (System Universe, Book 3) Savannah by SunriseCV
+- Teleport by Joshua T. Calvert
+- The Thinking Machine by Jaques Futrelle
+- (This Trilogy is Broken, Book 1) This Quest is Bullshit! by J. P. Valentine
+- (This Trilogy is Broken, Book 2) This Class is Bonkers! by J. P. Valentine
+- (This Trilogy is Broken, Book 3) This Guild is Batty! by J. P. Valentine
+- (This Trilogy is Broken, Book 4) This Plot is Bananas! by J. P. Valentine
+- (Thomas Covenant, Book 1) Lord Foul's Bane by Stephen R. Donaldson
+- (Titan, Book 1) Nova Terra: Titan by Seth Ring
+- (Titan, Book 2) Nova Terra: Greymane by Seth Ring
+- (Undying Magician, Book 1) The Arcane Academy by Shane Purdy
+- (Undying Magician, Book 2) Kingdom of the Fallen by Shane Purdy
+- (Warformed, Book 1) Iron Prince by Bryce O'Connor, Luke Chmilenko
+- (Warformed, Book 2) Fire and Ice by ?
+- The Watchmaker of Filigree Street by Natasha Pulley
+- (Weirdest Noob, Book 1) The Weirdest Noob by Arthur Stone, Mark Berelekhis, Mikhail Yagupov
+- (Weirkey, Book 2) Rainhorn by Sarah Lin
+- (Weirkey, Book 3) Archcrafter by Sarah Lin
+- (Weirkey, Book 4) Chasmfall by Sarah Lin
+- (Weirkey, Book 5) Bondsfungi by Sarah Lin
+- (Weirkey, Book 6) Bloodcrete by Sarah Lin
+- (Whimbrel House, Book 1) Keeper of Enchanted Rooms by Charlie N. Holmberg
+- (Whimbrel House, Book 2) Heir of Uncertain Magic by Charlie N. Holmberg
+- The Wizard's Butler by Nathan Lowell
+- You Have Arrived at Your Destination by Amor Towles
+
+**Non-Fiction**
+
+- Be Slightly Evil by Venkatesh Rao (of Ribbonfarm)
+- Toki Pona: The Language of Good by Sonja Lang
+- **The Ultimate Micro-RPG Book edited by James D'Amato**
