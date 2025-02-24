@@ -8,6 +8,9 @@ tags:
 - books
 title: 'OCaml Manual'
 ---
+
+Update: the book is available for sale on Lulu to the public. [Volume 1](https://www.lulu.com/shop/inria-and-zachary-vance/ocaml-manual-53-vol-1/hardcover/product-zm9gr4w.html) and [Volume 2](https://www.lulu.com/shop/inria-and-zachary-vance/the-ocaml-manual-53-vol-2/hardcover/product-849pyq5.html).
+
 Recently I've been teaching myself new programming languages with books. I got one for D, Elixir, Erlang, and Go. 
 
 OCaml was also on my list of languages to learn, but there is no good OCaml book available. I started reading an online course textbook (for Cornell's [CS 3110](https://cs3110.github.io/textbook/cover.html)), only to find it painfully slow, beginner-level, and aimed at course tools besides. Eventually, I found the official OCaml manual to be the best source of information.
