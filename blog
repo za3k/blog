@@ -31,6 +31,7 @@ import time
 import yaml
 import zoneinfo
 from markdown2html import markdown2html
+from functools import cache, cached_property
 
 from pathlib import Path
 
@@ -265,7 +266,7 @@ class Post(Templatable):
 
     # TODO: Add an 'above the fold' part, maybe
 
-    @property
+    @cached_property
     def post(self):
         return '<div class="entry-content">{}</div>'.format(markdown2html(self.md))
 
@@ -322,6 +323,7 @@ class Post(Templatable):
     def is_draft(self):
         return hasattr(self, "status") and self.status == "draft"
 
+    @cache
     def content(self):
         c = super().content()
         if self.blog.local:
