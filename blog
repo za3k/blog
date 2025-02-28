@@ -20,11 +20,14 @@ sys.dont_write_bytecode = True
 import argparse
 import chevron as mustache
 import collections
+import contextlib
 import datetime
+import logging
 import math
 import os, os.path
 import re
 import subprocess
+import time
 import yaml
 import zoneinfo
 from markdown2html import markdown2html
@@ -44,6 +47,76 @@ class PseudoMap():
             raise KeyError()
     def __setitem__(self, key, value):
         setattr(self, key, value)
+
+class Timer():
+    def __init__(self):
+        self.enabled = True
+        self.active_timers = []
+    def enable(self, flag): self.enabled = bool(flag)
+        
+    @contextlib.contextmanager
+    def __call__(self, timer_name, repeated=False):
+        if self.enabled:
+            self.start_timer(timer_name, repeated=repeated)
+            yield
+            self.stop_timer()
+        else:
+            yield
+
+    def now(self):
+        return time.time()
+
+    def start_timer(self, name, repeated):
+        if repeated and self.peek_type() != "record":
+            record = ("record", 0, 0, name)
+            self.active_timers.append(record)
+
+        timer = ("repeat" if repeated else "single", self.now(), name)
+        self.active_timers.append(timer)
+
+    def peek_type(self):
+        if len(self.active_timers) > 0:
+            return self.active_timers[-1][0]
+
+    def stop_timer(self):
+        # Repeated timer case (when leaving executions)
+        while self.peek_type() == "record":
+            _, count, elapsed_s, name = self.active_timers.pop()
+            print("{}{} (x{}, {}ms/ea, {}ms total)".format(
+                "  " * len(self.active_timers), # Padding
+                name,
+                count,
+                int(elapsed_s/count*1000),
+                int(elapsed_s*1000),
+            ))
+
+        # Repeated timer case (one iteration)
+        if self.peek_type() == "repeat":
+            _, start_time, name = self.active_timers.pop()
+            end_time = self.now()
+            elapsed_s = end_time - start_time
+
+            # Combine with existing record on the stack
+            assert self.peek_type() == "record"
+            _, count, record_elapsed_s, record_name = self.active_timers.pop()
+            assert name == record_name
+            combined = ("record", 1 + count, elapsed_s+record_elapsed_s, name)
+
+            # Push back onto the stack, assuming more will show up
+            self.active_timers.append(combined)
+            return
+        elif self.peek_type() == "single":
+            # Normal timer case
+            _, start_time, name = self.active_timers.pop()
+            end_time = self.now()
+            elapsed_s = end_time - start_time
+            print("{}{} ({}ms)".format(
+                "  " * len(self.active_timers), # Padding
+                name,
+                int(elapsed_s*1000)
+            ))
+        else: assert False, "Unknown record type"
+timer = Timer()
 
 # I have verified wordpress slugs match this format too
 allowable="abcdefghijklmnopqrstuvwxyz0123456789-"
@@ -338,8 +411,10 @@ class Blog(PseudoMap):
         self.now = datetime.datetime.now(datetime.timezone.utc)
         self.now_rfc822 = self.now.strftime(RFC822)
 
-        self.load_configs([os.path.abspath(config) for config in configs])
-        self.load_posts()
+        with timer("load configs"):
+            self.load_configs([os.path.abspath(config) for config in configs])
+        with timer("load posts"):
+            self.load_posts()
 
     def load_configs(self, paths):
         config = {}
@@ -363,11 +438,14 @@ class Blog(PseudoMap):
                 return f.read()
 
     def load_posts(self):
-        for post_input_path in Path(self.post_dir).iterdir():
-            fm = frontmatter.load(post_input_path)
-            comments = self.load_comments(post_input_path.stem)
-            self.add_post(Post(fm, self, comments))
-        self.posts = sorted(self.posts, key=lambda post: post.date, reverse=True)
+        with timer("load one post"):
+            for post_input_path in Path(self.post_dir).iterdir():
+                with timer("load one post", repeated=True):
+                    fm = frontmatter.load(post_input_path)
+                    comments = self.load_comments(post_input_path.stem)
+                    self.add_post(Post(fm, self, comments))
+        with timer("sort"):
+            self.posts = sorted(self.posts, key=lambda post: post.date, reverse=True)
 
     def add_post(self, post):
         self.posts.append(post)
@@ -417,20 +495,34 @@ class Blog(PseudoMap):
                 yield Image(path, self)
 
     def generate_all(blog):
-        for image in blog.images:
-            image.output()
-        for static in blog.static:
-            static.output()
-        for post in blog.posts:
-            post.output()
-        for tag in blog.tags.values():
-            tag.output()
-        for category in blog.categories.values():
-            category.output()
-        for author in blog.authors.values():
-            author.output()
-        for page in blog.pages:
-            page.output()
+        with timer("image"):
+            for image in blog.images:
+                with timer("image", repeated=True):
+                    image.output()
+        with timer("static"):
+            for static in blog.static:
+                with timer("static", repeated=True):
+                    static.output()
+        with timer("post"):
+            for post in blog.posts:
+                with timer("post", repeated=True):
+                        post.output()
+        with timer("tag"):
+            for tag in blog.tags.values():
+                with timer("tag", repeated=True):
+                    tag.output()
+        with timer("category"):
+            for category in blog.categories.values():
+                with timer("category", repeated=True):
+                    category.output()
+        with timer("author"):
+            for author in blog.authors.values():
+                with timer("author", repeated=True):
+                    author.output()
+        with timer("page"):
+            for page in blog.pages:
+                with timer("page", repeated=True):
+                    page.output()
 
     @property
     def tagcloud(self, font_sizes=range(8, 22), limit=45):
@@ -462,12 +554,19 @@ if __name__ == "__main__":
     )
     parser.add_argument("-l", "--local", action='store_true', help="use relative paths for links")
     parser.add_argument("-c", "--config", help="location of config file", default=["config.yaml"], action='append')
+    parser.add_argument("-t", "--timing", action='store_true', help="print timing information for debugging")
     args = parser.parse_args()
+    
+    timer.enable(args.timing)
 
-    blog = Blog(configs=args.config)
-    blog.local = args.local
-    if args.local:
-        blog.web_root = "file://" + blog.destination
+    with timer("overall"):
+        with timer("load phase"):
+            blog = Blog(configs=args.config)
+        blog.local = args.local
+        if args.local:
+            blog.web_root = "file://" + blog.destination
 
-    blog.clean()
-    blog.generate_all()
+        with timer("clean phase"):
+            blog.clean()
+        with timer("generate phase"):
+            blog.generate_all()
