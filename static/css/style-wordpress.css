@@ -238,12 +238,31 @@ img.wp-smiley, img.emoji {
 .wp-block-code {
     box-sizing: border-box;
 }
-.wp-block-code code {
+
+/* Za3k stuff */
+pre.wp-block-code {
+    padding: 16px;
+    background-color: #f6f8fa;
+    border: 0;
+}
+.entry-content .wp-block-code code {
     display: block;
     font-family: inherit;
     overflow-wrap: break-word;
     white-space: pre-wrap;
+    background-color: transparent;
 }
+.entry-content code {
+	display: inline; /* Makes it shorter */
+	padding: .2em .4em;
+    border-radius: 6px;
+    font-size: 13.6px;
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    color: #1B1B1B;
+	background-color: #818b981f;
+}
+
+
 .wp-block-columns {
     align-items: normal !important;
     box-sizing: border-box;
@@ -4467,7 +4486,7 @@ a img {
 }
 
 .wp-block-separator {
-	max-width: 25%;
+	max-width: 50%;
 }
 .wp-block-separator.is-style-wide {
 	max-width: 100%;
@@ -4559,14 +4578,6 @@ pre {
 
 code {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-
-.entry-content code {
-	display: inline-block;
-	padding: 2px 10px;
-	border-left: 3px solid #EEEEEE;
-    color: #1B1B1B;
-	background-color: #FAFAFA;
 }
 
 /* =Structure
@@ -4683,7 +4694,6 @@ hr {
 	margin-bottom: 1em;
 }
 
-.entry-content ul,
 .entry-summary ul  {
 	margin-left: 1.5em;
 }
@@ -4693,13 +4703,17 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-.entry-content ul > li {
-	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMi8wNy8xMXqJzycAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABTUlEQVQokXWSTW4aQRCFv+meaegZhl+JrbN2llaO4Ozj+BqOc7wg5BNEvgMSmtkhAdMDI5ruyoIEKRJ+Ui3qqV7p1U8iIgIgIogISikAQgicz2cAsiy78omISIyRqqp4f/9N27YAFEXBw8MXptMpMUastaRpShJjlNVqxWLxi1t4fPzKcDik1+sxGAxQIsJyucC55ma8vS2x1rLb7fDekyqlqKr6ZneApnFYa1mv10wmE9IL2Xwo+IfT6UQIgTTGiDE9NpvNzcLZbMbxeLzmynvP8/P3D2d4evpGXdcYY9BaowDu7z/z+voTa3Oaxv31nfPy8oO7u0845yjLEmMMSQhBDocDXdeR5zn9fh8Roes66rpmv98zHo+Zz+cURXE5XAiBtm3Zbrc45/DeA2CMoSxLRqMReZ6jtb4IAGKMeO+v20iSBK01WZb99xp/AFsZw9KxTe1UAAAAAElFTkSuQmCC') left 10px no-repeat;
-	padding-left: 20px;
+/* Za3k */
+.entry-content ul {
+	padding-left: 1.5em;
 }
-
+.entry-content li {
+	margin-left: 20px;
+    line-height: 24px;
+    list-style: disc;
+}
 .entry-content li li {
-	margin-left: 15px;
+    list-style: circle;
 }
 
 .entry-content ul[class^='wp-block'],
@@ -4714,8 +4728,8 @@ hr {
 ol {
 	list-style-type: decimal;
 	margin-left: 1.5em;
-
 }
+
 ol ol {
 	list-style-type: upper-alpha;
 }
