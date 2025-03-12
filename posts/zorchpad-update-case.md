@@ -19,7 +19,9 @@ It's been a while (9 months) since I've posted about the Zorchpad. Basically, I 
 
 Blame any aesthetic shortcomings on me -- I pushed him pretty hard on "we're just testing electronics! It should look like shit!
 
-Now I am feeling much better and mostly unstuck. I'm ready to start work on the pad again. Even though no big milestones have been accomplished recently, this seems like a good time to summarize the state of the project. 
+Now I am feeling much better and mostly unstuck. I'm ready to start work on the pad again. <3 Thanks Adam!
+
+Even though no big milestones have been accomplished recently, this seems like a good time to summarize the state of the project. 
 
 tl;dr: **The power budget is 1 milli-watt.** As a bit of context, Kragen's approach to making a computer that lasts a long time is to avoid parts that fail. In his experience (he walks around with pocket computers a lot), this seems to include dead batteries. They're out of charge, or need replaced, or there's no power outlet, or he forgot his charger. So his design does not include a battery. Instead, the whole thing is designed to run on solar cells indoors, and hide any power failures from the user. Think an old-school pocket calculator. So, because we want to run on indoor solar, we have a REALLY small power budget (1 milli-watt). Personally, I think even if you have to run on battery, low power use will still be cool.
 
