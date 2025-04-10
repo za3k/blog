@@ -25,7 +25,7 @@ A reproduction case and some debugging tips are [in the bounty details](https://
 
 The reward is 10 hours of my time.
 
-#### Bounty 2: Code a one-page C program to restore qr-backup backups
+#### Bounty 2: Code a <s>one-page</s> short C program to restore qr-backup backups
 
 qr-backup is designed to save to paper, and restore from the command-line.
 
@@ -39,11 +39,11 @@ but, it's possible that someday we might lose all the nice infrastructure we hav
 
 who knows! wouldn't it be great if you could **still** restore?
 
-this feature request is to add a printable, 1-page C program which you can type in by hand, compile, and use to restore backups from an image.
+this feature request is to add a printable, <s>1-page</s> short C program which you can type in by hand, compile, and use to restore backups from an image.
 
 ---
 
-This is a very difficult technical challenge in minimization. You should provide a 1-page (2KB) version of qr-backup's restore process, written in C. Library use is not allowed. Arguments will be accepted for other short programs if 2KB is impossible.
+This is a very difficult technical challenge in minimization. You should provide a <s>1-page (2KB)</s> short version of qr-backup's restore process, written in C. Library use is not allowed. <s>Arguments will be accepted for other short programs if 2KB is impossible. </s>
 
 Details are [in the bounty description](https://github.com/za3k/qr-backup/issues/70).
 
