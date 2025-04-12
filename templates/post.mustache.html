@@ -37,11 +37,15 @@
 <div id="comments">
     <h3 id="comments-title" style="padding-bottom: 0;">Responses to <em>{{post_title}}</em></h3>
     <div id="comments-note" style="margin: 1rem 0; color: red;">
-      These comments are archived. Commenting is currently disabled on old posts.
+      These comments are archived from wordpress.
     </div>
     {{& comments }}
 </div>
 {{/comments}}
-{{/main_display}}
+<script src="https://blog.za3k.com/comments/js/embed.min.js"></script>
 
+<section id="isso-thread">
+    <noscript>Javascript needs to be activated to view comments.</noscript>
+</section>
+{{/main_display}}
 </article>
