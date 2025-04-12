@@ -1,3 +1,8 @@
+/* All of this was blindly copied from wordpress's combined styles in 2024.
+   Some changes have been made since.
+   90% of it could probably be removed with no pixels changing.
+*/
+
 /* Originally inline CSS */
 img.wp-smiley, img.emoji {
     display: inline !important;
@@ -4311,37 +4316,6 @@ a img {
 	border: none;
 }
 
-/* ICON FONT - ELUSIVE */
-@font-face {
-	font-family: 'elusive';
-	src: url('resources/fonts/elusive.eot');
-	src: url('resources/fonts/elusive.eot?#iefix') format('embedded-opentype'),
-	   url('resources/fonts/elusive.woff') format('woff'),
-	   url('resources/fonts/elusive.ttf') format('truetype'),
-	   url('resources/fonts/elusive.svg?#elusive') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-[class^="crycon-"]:before,
-[class*=" crycon-"]:before {
-	font-family: "elusive";
-	font-style: normal;
-	font-weight: normal;
-	speak: none;
-	display: inline-block;
-	text-decoration: inherit;
-	width: 1em;
-	margin-right: .2em;
-	text-align: center;
-	font-variant: normal;
-	text-transform: none;
-	line-height: inherit;
-	margin-left: .2em;
-	cursor:inherit;
-	font-size:inherit;
-}
-
 /* Post info */
 .crycon-author:before { content: '\e801'; }
 .crycon-category:before { content: '\e805'; }
@@ -7669,14 +7643,6 @@ body .wp-caption {
 		text-transform: uppercase;
 	}
 
-	#nav-toggle span:before {
-		content: "\e820";
-		font-family: "elusive";
-		font-size: 16px;
-		height: 40px;
-		line-height: 40px;
-	}
-
 	#access {
 		display: none;
 		margin-top: 0;
@@ -7859,4 +7825,8 @@ body .wp-caption {
 .wp-block-gallery.wp-block-gallery-1 {
     --wp--style--unstable-gallery-gap: var(--wp--style--gallery-gap-default, var(--gallery-block--gutter-size, var(--wp--style--block-gap, 0.5em)));
     gap: var(--wp--style--gallery-gap-default, var(--gallery-block--gutter-size, var(--wp--style--block-gap, 0.5em)));
+}
+
+#isso-thread {
+    margin-top: 2em;
 }
