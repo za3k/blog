@@ -7827,6 +7827,12 @@ body .wp-caption {
     gap: var(--wp--style--gallery-gap-default, var(--gallery-block--gutter-size, var(--wp--style--block-gap, 0.5em)));
 }
 
-#isso-thread {
+#isso-thread, .leave-comment {
     margin-top: 2em !important;
+}
+
+.leave-comment {
+    display: block;
+    margin: 1em auto 0;
+    text-align: center;
 }
