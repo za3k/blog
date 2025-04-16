@@ -5,5 +5,5 @@ categories:
 date: 2025-??-??
 tags:
 - untagged
-title: 'TITLE'
+title: TITLE
 ---

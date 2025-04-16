@@ -7836,3 +7836,7 @@ body .wp-caption {
     margin: 1em auto 0;
     text-align: center;
 }
+
+.entry-content li > p:first-child:has(+ ol, + ul) {
+    margin-bottom: 0;
+}

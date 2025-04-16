@@ -13,13 +13,13 @@ Sometimes I try to figure out what to do in a given week, and my first step is t
 Recently I tried going the other way, with much more success. I call this exercise **telescoping**. It takes 7 minutes, and is performed as follows:
 
 1. Open a text document or grab a piece of paper. Grab a kitchen timer with an alarm, or your phone's alarm app.
-2. For one minute, answer: *What do I want to do today?*
-4. For one minute, answer: *What do I want to do this week?*
-5. For one minute, answer: *What do I want to do this month?*
-6. For one minute, answer: *What do I want to do this year?*
-7. For one minute, answer: *What do I want to do this month?*
-8. For one minute, answer: *What do I want to do this week?*
-9. For one minute, answer: *What do I want to do today?*
+2. For one minute, answer: *What do I want to happen today?*
+4. For one minute, answer: *What do I want to happen this week?*
+5. For one minute, answer: *What do I want to happen this month?*
+6. For one minute, answer: *What do I want to happen this year?*
+7. For one minute, answer: *What do I want to happen this month?*
+8. For one minute, answer: *What do I want to happen this week?*
+9. For one minute, answer: *What do I want to happen today?*
 
 I found this a bit enlightening. Here's an early example (I type fast):
 
@@ -68,6 +68,8 @@ I found this a bit enlightening. Here's an early example (I type fast):
     - Think about how to get sleep consistently, maybe?
 
 I realized went from "Make progress on the zorchpad" to having a specific list of parts to order, and noticing I needed sleep. It helped me prioritize what I wanted to do.
+
+I think it's more helpful to think about outcomes (*What do I want to happen*) rather than tasks (*What do I need to do?*), although I usually try to do both.
 
 I did this two or three times, and kept finding it helpful. I decided to find out what happened if I did it every day.
 
