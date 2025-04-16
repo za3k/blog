@@ -80,3 +80,7 @@ Basically, it was pretty helpful to think through things I hadn't. The main bene
 The most surprising thing for me was that one minute quickly became *too long*. I reduced it to 30 seconds per step.
 
 On the one hand, it's not that helpful. On the other hand, it takes 3.5 minutes, and it's a nice way to orient to the day. So, might or might not keep doing it.
+
+The most useful part is that I can see my long term goals. Each day, they can shift. Do I want to keep working toward this thing? Have I had a long term goal that I haven't been working toward? Writing it anew each day is a much different feeling than glancing at a to-do list and either crossing it out or ignoring it (and feels much healthier).
+
+Overall I'd recommend trying it at least once. I don't think it's for everyone, but I suspect it will help people like me that don't have clear goals.
