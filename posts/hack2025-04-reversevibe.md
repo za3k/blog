@@ -7,7 +7,8 @@ tags:
 - hack-a-day
 - llm
 - vibe coding
-title: Reverse Vibe Coding
+slug: reverse-vibe-coding
+title: "Hack-a-Day, Day 04: Reverse Vibe Coding"
 ---
 Yikes, been having some back pain, and the past few days it's been tougher to work. I've started four projects in four days, without too much to show for it.
 
