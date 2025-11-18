@@ -2,10 +2,11 @@
 author: admin
 categories:
 - Technical
-date: 2025-11-18
+date: 2025-11-17
 tags:
 - python
 - programming
+- hack-a-day
 slug: python-challenges
 title: "Hack-a-Day, Day 17: Python Challenge"
 ---

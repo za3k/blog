@@ -6,6 +6,7 @@ date: 2025-11-03
 tags:
 - programming
 - voxel
+- hack-a-day
 slug: hack-voxel
 title: "Hack-A-Day, Day 03: Voxel Rendering"
 ---
