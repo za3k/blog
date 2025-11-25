@@ -6,6 +6,7 @@ date: 2025-11-05
 tags:
 - hack-a-day
 - language
+- ai coding
 slug: german-language-reader
 title: "Hack-a-Day, Day 05: German Language Reader"
 ---
@@ -23,5 +24,7 @@ I had hoped to have a German mode, but the German wiktionary API [has been down]
 If you're technically inclined, it's not too bad to substitute in your own book. You'll need it in TXT format (to extract the words), and HTML format (to display).
 
 I'm happy with this project, although I am posting it on the 10th, quite a bit late.
+
+I had some minor help from Claude.
 
 Enjoy!

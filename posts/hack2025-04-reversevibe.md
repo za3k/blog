@@ -7,6 +7,7 @@ tags:
 - hack-a-day
 - llm
 - vibe coding
+- ai coding
 slug: reverse-vibe-coding
 title: "Hack-a-Day, Day 04: Reverse Vibe Coding"
 ---

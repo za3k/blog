@@ -8,6 +8,7 @@ tags:
 - vibe coding
 - hack-a-day
 - throwaway
+- ai coding
 title: "Hack-a-Day, Day 15: Vibe Chat"
 ---
 
