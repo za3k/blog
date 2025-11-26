@@ -9,7 +9,7 @@ tags:
 - cooking
 - ai coding
 slug: lulu-cli
-title: "Hack-a-Day, Day 22: Command line book publishing"
+title: "Hack-a-Day, Day 25: Command line book publishing"
 ---
 [Hack-a-Day](https://za3k.com/hackaday) is my self-imposed challenge to do one project a day, for all of November.
 

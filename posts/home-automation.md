@@ -74,7 +74,7 @@ My solution was to get some smart curtains, and have them automatically go down 
 
 ![caption: Smart curtains from IKEA](smart-curtains.jpg)
 
-This worked fine, after I got the curtains set up. I've completely forgotten about them, which is exactly how I like my home automation--I want to never think about it. For more about how to set up IKEA smart curtains, see [my notes](2024-10-17-ikea.txt). It comes with 6 manuals.
+This worked fine, after I got the curtains set up. I've completely forgotten about them, which is exactly how I like my home automation--I want to never think about it. For more about how to set up IKEA smart curtains, see [my notes](https://za3k.com/archive/smart-curtains). It comes with 6 manuals.
 
 [blinds](https://github.com/za3k/short-programs#blinds-mqtt2mqtt) controls my blinds via the computer, and [mqtt2mqtt](https://github.com/za3k/short-programs#blinds-mqtt2mqtt) allows my IKEA remote to control them too. cron and [heliocron](https://github.com/mfreeborn/heliocron) automatically open and close the curtains on a timer.
 
