@@ -2,7 +2,7 @@
 author: admin
 categories:
 - Uncategorized
-date: 2025-12-20
+date: 2025-12-20 18:00:00
 tags:
 - untagged
 title: Shaders Gone Mad
