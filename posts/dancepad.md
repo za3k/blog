@@ -25,12 +25,12 @@ You can test with `evtest`. Pick the XBox controller. If it shows up and shows e
 
 Assuming that works fine, you can play now! Let's add it to systemd. Make these two files as root in any text editor.
 
-    # /etc/udev/rules.d/99-dancepad.rules                                                                  15s  130 :(
+    # /etc/udev/rules.d/99-dancepad.rules
     ACTION=="add", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="0268", ATTRS{product}=="PLAYSTATION(R)3 Controller", TAG+="systemd", ENV{SYSTEMD_WANTS}="xboxdrv-dancepad.service"
 
 &nbsp;
 
-    # /etc/systemd/system/xboxdrv-dancepad.service                                                            15ms  :)
+    # /etc/systemd/system/xboxdrv-dancepad.service
     [Unit]
     Description=Xbox controller driver for dance pad
 
