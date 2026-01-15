@@ -55,3 +55,5 @@ Some failed attempts:
 - The Wingman FGC retro (ZPP006M) didn't work. Nothing showed up.
 - The very cheap Amazon controllers (mine was sold as "[Xahpower](https://www.amazon.com/dp/B097MXJ1BW)" but the hardware presents as SHANWAN). They work, but they can't do left+right together.
 - I even tried a [kernel patch](https://github.com/adiel-mittmann/dancepad/), which does seem like it works, but not on this pad (not that it's needed).
+
+Debugged with help from Claude.
