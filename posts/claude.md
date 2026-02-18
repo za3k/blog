@@ -1,10 +1,10 @@
 ---
 author: admin
 categories:
-- Uncategorized
-date: 2025-??-??
+- non-technical
+date: 2026-02-18
 tags:
-- untagged
+- llm
 title: I have been treating my LLMs like people
 ---
 
