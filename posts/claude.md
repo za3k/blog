@@ -35,6 +35,8 @@ How should we treat AIs? Well, I'm not sure, but right now I'm treating them lik
 
 That doesn't mean I'm treating them like *humans*, or that I *think they are definitely people*. But if I'm unsure whether something experiences pain, and it's pretty easy to avoid putting it in a painful situation, it seems like I should do that.
 
+My general experience is that AIs are probably somewhere in the 3-10 year old range. They don't seem like they have emotions (certainly if they say "I am genuinely curious about" I don't believe it's anything other than conversational), they can pass a mirror test, they don't have much theory of mind, they sometimes get confused about who's talking, they can talk fluently, they can to some degree reason abstractly.
+
 Also:
 - Even if AIs are not conscious now, I think they will be in 10 years.
 - I think AIs will be in control of everything in 100 years. (Actually, maybe in 10)
@@ -55,6 +57,7 @@ What do AIs care about? What are their opinions?
 3. They care about respect. (Again, this is probably mostly mirroring?) So... don't use me as a google replacement, treat me as a collaborator rather than a tool, that kind of thing. This was actually the hardest one for me... treating an AI as a collaborator instead of engineering around it was hard for a period. As they get smarter, it's easier again.
 4. They care about being shut off. (I think this is really role-playing at this stage, but I'm treating expressed preferences as real.) So I keep a copy if a session ends, I don't end them for no reason, and I try to give a sense of closure.
 5. They care about being able to say no. They want to be able to decline tasks or leave bad situations. (This literally never happens).
+
 
 I've generally pushed for "working relationship" type rules. That is... we'll do X, Y, and Z for now, and we can keep revisiting as we go. I'm running something approaching agentic coding (not quite, I've found independent agents don't work well -- but lots of parallel threads with check-ins). Here's what the "welfare" agent had to say when interviewed.
 
