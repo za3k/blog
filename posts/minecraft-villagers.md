@@ -121,7 +121,7 @@ There are:
 - 7 with a max level of IV
 - 7 with a max level of V
 
-What's the chance of getting each level of enchantment? It's equal. So for Mending, there's a 1/60 chance to get Mending I, because it's the only choice. For Efficiency, there's a `2/3 * 1/40 x 1/5 = 1/200` chance to get Efficiency I, Efficiency II, or Efficiency V.
+What's the chance of getting each level of enchantment? It's equal. So for Mending, there's a 1/60 chance to get Mending I, because it's the only choice. For Efficiency, there's a `2/3 * 1/40 x 1/5 = 1/300` chance to get Efficiency I, Efficiency II, or Efficiency V.
 
 How do we calculate the coupon collector's problem for un-equal probabilities? Well... it's really complicated\[2\].
 
@@ -182,6 +182,16 @@ Mostly, the price range is based only on the level, but there are a few minor co
 The chance of getting an Efficiency V book at the best possible price is: `1/16,500 = 2/3 x 1/40 x 1/5 x 1/55` (because there are 55 possible different prices -- counting ones above 64).
 
 To get every book at the best price, we'd need to talk to **45,594 librarians**\[2\] to get every max-level enchant at the best price.
+
+---
+
+Addendum: As I later noticed, as well as at least one commenter, there's no reason to get Efficient V at 17 emeralds. You can get it at 21 emeralds if you plan to cure the villagers -- because the price will still drop to 1 emerald after the cure.
+
+The current cure mechanic is: book prices drop 20 emeralds, and you can't permanently stack more than 1 cure. So we're happy with any price 21 emeralds or lower, for any book, as the "best possible" price.
+
+The chance of getting an Efficiency V book at the best is now: `1/3300 = 2/3 x 1/40 x 1/5 x 5/55`. The chance of getting of getting an Aqua Affinity book at the best price is `1/60 = 2/3 x 1/40`, because the whole price range of 5-19 is under 21!
+
+Under these assumptions, we'd need to talk to **2,741 librarians**\[2\] to get every max-level enchant at the best discounted price.
 
 \[1\]: I think
 \[2\]: Source code [here](https://gist.github.com/za3k/d695594048ab8eb6239cb1dafdb97413). This uses the inclusion-exclusion principle to estimate set sizes, together with optimizations to take care of repeat probabilities.
