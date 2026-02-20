@@ -55,13 +55,13 @@ OR, contribute to a future edition, and we'll give you digital back-issues!
 > 
 > The stated plan is to NOT SELL IT. Only give copies to contributors (but give enough for them to give some as gifts) and get contributions to defray printing costs from the friends who actually have any money
 
-The [digital version](https://za3k.com/archive/FOOM_00.pdf) is free online.
+The [digital version](https://za3k.com/archive/FOOM_00.pdf) is free online. (Please don't share with non-contributors.)
 
-The print version is available on Lulu:
+The print version is available on Lulu, and we're okay if you want to buy gift copies for friends:
 
 - In [color](https://www.lulu.com/shop/zachary-vance-and-jennifer-rodriguez-mueller/foom-v00/hardcover/product-p6wz9eg.html) for $33 US.
 - In [black and white](https://www.lulu.com/shop/zachary-vance-and-jennifer-rodriguez-mueller/foom-v00/hardcover/product-q6wmjzv.html) for $17 US.
 
-We're not making any money -- that's just what it costs to print.
+(We're not making any money -- that's just what it costs to print.)
 
 Enjoy for the centuries/months to come!
