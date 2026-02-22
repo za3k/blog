@@ -21,4 +21,4 @@ Two friends and I wrote the intro to “Pint-Sized”, a 90s sitcom that never e
 
 We used DALL-E and stable diffusion for images, [Photopea](https://www.photopea.com/) to add captions, and Google’s [AI Test Kitchen](https://aitestkitchen.withgoogle.com/experiments/music-lm) for the backing music. Cheers were added with audacity. The video was edited together with ffmpeg.
 
-Credits: za3k, stetson blake, jeremy mcintyre
+Credits: za3k, S, jeremy mcintyre
