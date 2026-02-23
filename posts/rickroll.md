@@ -5,8 +5,8 @@ categories:
 date: 2026-02-23
 tags:
 - video
-- ai
-title: Steganographic Rickroll
+- llm
+title: "\"Steganographic\" Rickroll"
 ---
 
 Claude wrote me a tool to encode data in videos.
