@@ -19,4 +19,8 @@ Encoded in the (fairly obvious) big on-screen pixels is a copy of the complete w
 
 They can be decoded with [this tool](https://gist.githubusercontent.com/za3k/d2d993685a23be04bc3ee5b28281e6d4/raw/0a27700266ff726604d802a9263bda552c57b67a/gistfile1.txt).
 
+    curl https://gist.githubusercontent.com/za3k/d2d993685a23be04bc3ee5b28281e6d4/raw/0a27700266ff726604d802a9263bda552c57b67a/gistfile1.txt -o decode.py
+    yt-dlp "https://www.youtube.com/watch?v=EAhEepVNYj8" -o rickroll.mkv
+    python decode.py rickroll.mkv
+
 Thanks Claude!
