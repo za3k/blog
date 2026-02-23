@@ -60,13 +60,13 @@ Anyway, eventually we got a working version! It's very complicated. First, we lo
 
 How do we locate them? They have black-white-black-white-black runs in the ratio of: 1:1:3:1:1, passing through the center, along horizontal and vertical lines.
 
-![](qrrestore-finder-skewed.png)
+![caption: false positives are no big deal](qrrestore-finder-skewed.png)
 
 If it's rotated, it's still the same *ratio* through the center -- but every length is up to 41% longer.
 
 This gets us several "candidate" centers. There might be some false positives (shown above), but the three real finders should be included. Then we basically guess the right finders, and run some checks. In the worst case, a check could be "try to decode the QR, assuming this is right" -- it's brute-force but it works.
 
-![](qrrestore-deskew.png)
+![caption: explaining the concept of flattening to a technical audience](qrrestore-deskew.png)
 
 We apply homography to "flatten" and de-rotate the image, using the finder locations. Then we detect the QR version, size, encoding, and apply error correction for any damaged or smudged pixels.
 
@@ -91,7 +91,7 @@ Now we have [qr_strip.c](https://za3k.com/archive/qrbackup/qr_strip.c), sitting 
 
 Now the final pass. C code doesn't need whitespace. And why use all those long, descriptive variable names?
 
-![](qrrestore-minified.png)
+![caption: why are all my code reviews just AAAAAAAAH](qrrestore-minified.png)
 
 Running it through a custom minifier, we reduce the size [even smaller](https://za3k.com/archive/qrbackup/qr_strip_mini3.c).
 
